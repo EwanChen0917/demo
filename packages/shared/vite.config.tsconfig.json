@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "types": ["node", "vite/client"]
+  },
+  "include": ["vite.config.*.ts"]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@app/b",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "../../dist/b/index.js",
+  "module": "../../dist/b/index.esm.js",
+  "types": "../../dist/b/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run build:types",
+    "build:types": "tsc --declaration --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "vue": "catalog:",
+    "element-plus": "catalog:",
+    "@app/shared": "workspace:*",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "typescript": "catalog:"
+  }
+}

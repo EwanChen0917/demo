@@ -1,0 +1,17 @@
+{
+  "name": "@app/shared",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "typescript": "catalog:"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "vue3-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:main": "pnpm --filter @app/main dev",
+    "dev:main:host": "pnpm --filter @app/main dev -- --host 0.0.0.0 --port 5172",
+    "preview:main": "pnpm --filter @app/main exec vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "preview": "pnpm run preview:main",
+    "dev": "pnpm run dev:main",
+    "dev:host": "pnpm run dev:main:host",
+    "build:a": "pnpm --filter @app/a build",
+    "build:b": "pnpm --filter @app/b build",
+    "build:types": "pnpm --filter @app/a build:types && pnpm --filter @app/b build:types",
+    "build:main": "pnpm --filter @app/main build",
+    "build": "rm -rf dist && pnpm run build:a && pnpm run build:b && pnpm run build:main",
+    "style:sync": "node scripts/sync-styles.js",
+    "lint": "pnpm run lint:main && pnpm run lint:a && pnpm run lint:b",
+    "lint:main": "pnpm --filter @app/main lint",
+    "lint:a": "pnpm --filter @app/a lint",
+    "lint:b": "pnpm --filter @app/b lint"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "terser": "catalog:",
+    "typescript": "catalog:"
+  }
+}
