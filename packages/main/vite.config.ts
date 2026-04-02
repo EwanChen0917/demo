@@ -3,10 +3,11 @@ import {
   createProdConfig,
   createDevConfig,
   getOutDirConfig,
+  commonCssConfig,
 } from "../shared/vite.config.ts";
-import path from "path";
-import { fileURLToPath } from "url";
-import { createRequire } from "module";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
@@ -20,6 +21,18 @@ const elementPlusPath = path.dirname(
 );
 const workspaceRoot = path.resolve(__dirname, "../../");
 const buildOutDirConfig = getOutDirConfig(__dirname);
+const commonResolveConfig = {
+  dedupe: ["vue", "vue-router", "element-plus"],
+  alias: {
+    "@": path.resolve(__dirname, "./src"),
+    "@app/a": path.resolve(__dirname, "../a/src"),
+    "@app/b": path.resolve(__dirname, "../b/src"),
+    "@app/shared": path.resolve(__dirname, "../shared/src"),
+    vue: vueRuntimePath,
+    "vue-router": vueRouterPath,
+    "element-plus": elementPlusPath,
+  },
+};
 const elementPlusPlugins = [
   AutoImport({
     imports: ["vue", "vue-router"],
@@ -27,6 +40,7 @@ const elementPlusPlugins = [
     dts: path.resolve(__dirname, "src/auto-imports.d.ts"),
   }),
   Components({
+    dirs: ["../shared/src/components"],
     resolvers: [ElementPlusResolver({ importStyle: "css" })],
     dts: path.resolve(__dirname, "src/components.d.ts"),
   }),
@@ -45,22 +59,10 @@ export default defineConfig(({ mode }) => {
     return {
       ...prodConfig,
       root: workspaceRoot,
-      base: "./",
+      base: "/",
       plugins: [...(prodConfig.plugins ?? []), ...elementPlusPlugins],
-      server: {
-        port: 5172,
-      },
-      resolve: {
-        dedupe: ["vue", "vue-router", "element-plus"],
-        alias: {
-          "@": path.resolve(__dirname, "./src"),
-          "@app/a": path.resolve(__dirname, "../a/src"),
-          "@app/b": path.resolve(__dirname, "../b/src"),
-          vue: vueRuntimePath,
-          "vue-router": vueRouterPath,
-          "element-plus": elementPlusPath,
-        },
-      },
+      resolve: commonResolveConfig,
+      ...commonCssConfig,
       build: {
         ...buildOutDirConfig,
         ...prodConfig.build,
@@ -70,28 +72,31 @@ export default defineConfig(({ mode }) => {
           output: {
             ...sharedOutput,
             manualChunks(id) {
-              if (id.includes("/packages/a/")) {
-                return "feature-a";
+              // 自动分包所有内部工作区包
+              const pkgMatch = id.match(/\/packages\/([^\/]+)\//);
+              if (pkgMatch) {
+                return `feature-${pkgMatch[1]}`;
               }
 
-              if (id.includes("/packages/b/")) {
-                return "feature-b";
+              // 自动分包所有第三方模块
+              if (id.includes("/node_modules/.pnpm/")) {
+                const pnpmMatch = id.match(
+                  /\/node_modules\/\.pnpm\/([^\/]+)\//,
+                );
+                if (pnpmMatch) {
+                  const packageFolder = pnpmMatch[1].split("@")[0];
+                  return `vendor-${packageFolder.replace(/\+/g, "-")}`;
+                }
+                return "vendor";
               }
 
-              if (id.includes("element-plus")) {
-                return "element-plus";
-              }
-
-              if (id.includes("@element-plus")) {
-                return "element-plus";
-              }
-
-              if (id.includes("vue-router")) {
-                return "vue-router";
-              }
-
-              if (id.includes("/node_modules/vue/")) {
-                return "vue-core";
+              if (id.includes("/node_modules/")) {
+                const match = id.match(
+                  /\/node_modules\/((?:@[^\/]+\/)?[^\/]+)/,
+                );
+                if (match) {
+                  return `vendor-${match[1].replace(/[@/]/g, "-")}`;
+                }
               }
             },
           },
@@ -104,23 +109,11 @@ export default defineConfig(({ mode }) => {
     return {
       ...devConfig,
       root: workspaceRoot,
-      base: "./",
+      base: "/",
       plugins: [...(devConfig.plugins ?? []), ...elementPlusPlugins],
+      resolve: commonResolveConfig,
+      ...commonCssConfig,
       build: buildOutDirConfig,
-      server: {
-        port: 5172,
-      },
-      resolve: {
-        dedupe: ["vue", "vue-router", "element-plus"],
-        alias: {
-          "@": path.resolve(__dirname, "./src"),
-          "@app/a": path.resolve(__dirname, "../a/src"),
-          "@app/b": path.resolve(__dirname, "../b/src"),
-          vue: vueRuntimePath,
-          "vue-router": vueRouterPath,
-          "element-plus": elementPlusPath,
-        },
-      },
     };
   }
 });

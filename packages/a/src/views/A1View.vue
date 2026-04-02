@@ -13,7 +13,7 @@ import { ref } from "vue";
 const counter1 = ref(0);
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .box-card {
   padding: 16px;
 }

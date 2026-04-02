@@ -3,6 +3,17 @@ export { baseConfig, getOutDirConfig } from "./vite.config.base.ts";
 export { createDevConfig } from "./vite.config.dev.ts";
 export { createProdConfig } from "./vite.config.prod.ts";
 
+// 公共配置常量
+export const commonCssConfig = {
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ["legacy-js-api"],
+      },
+    },
+  },
+};
+
 // 自动环境选择配置
 import type { UserConfig } from "vite";
 import { createDevConfig } from "./vite.config.dev.ts";

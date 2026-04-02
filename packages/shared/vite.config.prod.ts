@@ -7,6 +7,17 @@ interface LibConfig {
   fileName?: (format: string) => string;
 }
 
+// 公共 CSS 配置 - 与 baseConfig 中保持一致
+const commonCssConfig = {
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: ["legacy-js-api"],
+      },
+    },
+  },
+};
+
 // 生产环境配置 - 在基础配置基础上增加生产构建优化
 export const createProdConfig = (
   overrides: UserConfig = {},
@@ -45,6 +56,7 @@ export const createProdConfig = (
 
   return {
     ...baseConfig,
+    ...commonCssConfig,
     build: buildConfig,
     ...overrides,
   };

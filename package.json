@@ -1,6 +1,10 @@
 {
   "name": "vue3-monorepo",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -11,20 +15,31 @@
     "preview": "pnpm run preview:main",
     "dev": "pnpm run dev:main",
     "dev:host": "pnpm run dev:main:host",
+    "build:shared": "pnpm --filter @app/shared build",
     "build:a": "pnpm --filter @app/a build",
     "build:b": "pnpm --filter @app/b build",
     "build:types": "pnpm --filter @app/a build:types && pnpm --filter @app/b build:types",
     "build:main": "pnpm --filter @app/main build",
-    "build": "rm -rf dist && pnpm run build:a && pnpm run build:b && pnpm run build:main",
-    "style:sync": "node scripts/sync-styles.js",
+    "build": "rm -rf dist && pnpm run build:shared && pnpm run build:a && pnpm run build:b && pnpm run build:main",
     "lint": "pnpm run lint:main && pnpm run lint:a && pnpm run lint:b",
     "lint:main": "pnpm --filter @app/main lint",
     "lint:a": "pnpm --filter @app/a lint",
     "lint:b": "pnpm --filter @app/b lint"
   },
+  "dependencies": {
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "element-plus": "catalog:"
+  },
   "devDependencies": {
     "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "sass": "catalog:",
     "terser": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "unplugin-auto-import": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
   }
 }

@@ -11,16 +11,6 @@
   "dependencies": {
     "@app/a": "workspace:*",
     "@app/b": "workspace:*",
-    "@app/shared": "workspace:*",
-    "element-plus": "catalog:",
-    "vue": "catalog:",
-    "vue-router": "catalog:"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "catalog:",
-    "typescript": "catalog:",
-    "unplugin-auto-import": "catalog:",
-    "unplugin-vue-components": "catalog:",
-    "vite": "catalog:"
+    "@app/shared": "workspace:*"
   }
 }

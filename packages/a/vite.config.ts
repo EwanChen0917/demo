@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import { createProdConfig, createDevConfig } from "../shared/vite.config.ts";
-import path from "path";
-import { fileURLToPath } from "url";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { commonCssConfig } from "../shared/vite.config.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -17,23 +18,19 @@ export default defineConfig(({ mode }) => {
     return {
       ...prodConfig,
       root: __dirname,
+      ...commonCssConfig,
       build: {
         ...prodConfig.build,
         rollupOptions: {
           external: ["vue", "vue-router", "element-plus"],
         },
       },
-      server: {
-        port: 5173,
-      },
     };
   } else {
     return {
       ...createDevConfig(),
       root: __dirname,
-      server: {
-        port: 5173,
-      },
+      ...commonCssConfig,
     };
   }
 });

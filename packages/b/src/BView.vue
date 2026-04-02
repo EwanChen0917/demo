@@ -14,7 +14,7 @@ import { ref } from "vue";
 const text = ref("");
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .b-container {
   padding: 2rem;
   max-width: 1200px;

@@ -12,14 +12,6 @@
     "build:types": "tsc --declaration --emitDeclarationOnly"
   },
   "dependencies": {
-    "vue": "catalog:",
-    "element-plus": "catalog:",
-    "@app/shared": "workspace:*",
-    "vue-router": "catalog:"
-  },
-  "devDependencies": {
-    "vite": "catalog:",
-    "@vitejs/plugin-vue": "catalog:",
-    "typescript": "catalog:"
+    "@app/shared": "workspace:*"
   }
 }

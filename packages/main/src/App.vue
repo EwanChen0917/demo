@@ -2,6 +2,9 @@
   <div class="main-app">
     <nav class="app-navigation">
       <el-menu mode="horizontal" :default-active="$route.path" class="nav-menu">
+        <el-menu-item index="/">
+          <router-link to="/">首页</router-link>
+        </el-menu-item>
         <el-sub-menu index="/a">
           <template #title>A 模块</template>
           <el-menu-item index="/a/a1">
@@ -25,7 +28,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style scoped lang="scss">
 .main-app {
   min-height: 100vh;
   display: flex;

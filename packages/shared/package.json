@@ -5,13 +5,18 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc --declaration --emitDeclarationOnly --declarationDir dist/types"
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
   },
-  "devDependencies": {
-    "vite": "catalog:",
-    "@vitejs/plugin-vue": "catalog:",
-    "typescript": "catalog:"
+  "scripts": {
+    "build": "vite build --config vite.lib.config.ts"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
   }
 }

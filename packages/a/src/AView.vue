@@ -30,7 +30,7 @@ import { ref } from "vue";
 const clickCount = ref(0);
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .a-container {
   padding: 2rem;
   max-width: 1200px;
