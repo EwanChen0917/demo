@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "main": "../../dist/a/index.js",
-  "module": "../../dist/a/index.esm.js",
+  "module": "../../dist/a/index.js",
   "types": "../../dist/a/index.d.ts",
   "scripts": {
     "dev": "vite",

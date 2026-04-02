@@ -1,15 +1,12 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import AView from "../AView.vue";
-import A1View from "../views/A1View.vue";
-import A2View from "../views/A2View.vue";
 
 export const aRoute: RouteRecordRaw = {
   path: "/a",
   name: "A",
-  component: AView,
+  component: () => import("../AView.vue"),
   children: [
-    { path: "a1", name: "A1", component: A1View },
-    { path: "a2", name: "A2", component: A2View },
+    { path: "a1", name: "A1", component: () => import("../views/A1View.vue") },
+    { path: "a2", name: "A2", component: () => import("../views/A2View.vue") },
   ],
 };
 

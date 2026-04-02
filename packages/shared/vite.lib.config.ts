@@ -20,8 +20,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      formats: ["es", "cjs"],
-      fileName: (format) => (format === "es" ? "index.esm.js" : "index.js"),
+      formats: ["es"],
+      fileName: () => "index.js",
     },
     rollupOptions: {
       external: ["vue"],

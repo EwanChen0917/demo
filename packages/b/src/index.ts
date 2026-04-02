@@ -1,3 +1,4 @@
-import BView from './BView.vue';
+import BView from "./BView.vue";
+import { bRoute, createBRouter } from "./router";
 
-export { BView };
+export { BView, bRoute, createBRouter };

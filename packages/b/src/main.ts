@@ -1,4 +1,8 @@
-import { createApp } from 'vue';
-import BView from './BView.vue';
+import { createApp } from "vue";
+import BView from "./BView.vue";
+import { BaseButton, BaseInput } from "@app/shared";
 
-createApp(BView).mount('#app');
+const app = createApp(BView);
+app.component("BaseButton", BaseButton);
+app.component("BaseInput", BaseInput);
+app.mount("#app");

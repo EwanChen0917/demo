@@ -4,12 +4,12 @@ import {
   createDevConfig,
   getOutDirConfig,
   commonCssConfig,
+  createComponentsPlugin,
 } from "../shared/vite.config.ts";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -22,7 +22,7 @@ const elementPlusPath = path.dirname(
 const workspaceRoot = path.resolve(__dirname, "../../");
 const buildOutDirConfig = getOutDirConfig(__dirname);
 const commonResolveConfig = {
-  dedupe: ["vue", "vue-router", "element-plus"],
+  dedupe: ["vue", "vue-router", "pinia", "element-plus"],
   alias: {
     "@": path.resolve(__dirname, "./src"),
     "@app/a": path.resolve(__dirname, "../a/src"),
@@ -39,11 +39,10 @@ const elementPlusPlugins = [
     resolvers: [ElementPlusResolver()],
     dts: path.resolve(__dirname, "src/auto-imports.d.ts"),
   }),
-  Components({
-    dirs: ["../shared/src/components"],
-    resolvers: [ElementPlusResolver({ importStyle: "css" })],
-    dts: path.resolve(__dirname, "src/components.d.ts"),
-  }),
+  createComponentsPlugin(
+    ["../shared/src/components"],
+    path.resolve(__dirname, "src/components.d.ts"),
+  ),
 ];
 
 export default defineConfig(({ mode }) => {
@@ -72,31 +71,31 @@ export default defineConfig(({ mode }) => {
           output: {
             ...sharedOutput,
             manualChunks(id) {
-              // 自动分包所有内部工作区包
-              const pkgMatch = id.match(/\/packages\/([^\/]+)\//);
-              if (pkgMatch) {
-                return `feature-${pkgMatch[1]}`;
+              // 自动按业务包聚合源码 chunk：
+              // 命中 packages/<pkg>/src 下任意文件，避免对命名和目录结构有硬性要求
+              const pkgChunkMatch = id.match(/\/packages\/([^/]+)\/src\//);
+              if (pkgChunkMatch) {
+                const pkgName = pkgChunkMatch[1];
+                if (pkgName !== "main" && pkgName !== "shared") {
+                  return `feature-${pkgName}`;
+                }
               }
 
-              // 自动分包所有第三方模块
-              if (id.includes("/node_modules/.pnpm/")) {
-                const pnpmMatch = id.match(
-                  /\/node_modules\/\.pnpm\/([^\/]+)\//,
-                );
-                if (pnpmMatch) {
-                  const packageFolder = pnpmMatch[1].split("@")[0];
-                  return `vendor-${packageFolder.replace(/\+/g, "-")}`;
-                }
-                return "vendor";
+              // 第三方依赖做粗粒度分包，避免拆分过细
+              if (id.includes("element-plus") || id.includes("@element-plus")) {
+                return "vendor-ui";
+              }
+
+              if (
+                id.includes("/node_modules/vue/") ||
+                id.includes("vue-router") ||
+                id.includes("/node_modules/pinia/")
+              ) {
+                return "vendor-vue";
               }
 
               if (id.includes("/node_modules/")) {
-                const match = id.match(
-                  /\/node_modules\/((?:@[^\/]+\/)?[^\/]+)/,
-                );
-                if (match) {
-                  return `vendor-${match[1].replace(/[@/]/g, "-")}`;
-                }
+                return "vendor";
               }
             },
           },

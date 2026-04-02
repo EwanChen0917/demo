@@ -1,5 +1,7 @@
-declare module '*.vue' {
-  import type { DefineComponent } from 'vue';
+/// <reference path="./auto-imports.d.ts" />
+
+declare module "*.vue" {
+  import type { DefineComponent } from "vue";
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }

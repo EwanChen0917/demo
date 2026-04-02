@@ -16,6 +16,7 @@
         <router-link to="/a/a2">
           <el-button type="warning">进入 A2 子路由</el-button>
         </router-link>
+        <BaseButton>这是一个来自 shared 包的按钮组件</BaseButton>
       </div>
     </el-card>
 

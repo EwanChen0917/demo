@@ -5,12 +5,12 @@
       <p>这是来自 b 工程的内容。</p>
       <el-input v-model="text" placeholder="输入内容" class="input-field" />
       <p class="input-display">当前输入: {{ text }}</p>
+      <base-button>这是一个来自 shared 包的按钮组件</base-button>
     </el-card>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 const text = ref("");
 </script>
 
