@@ -27,6 +27,7 @@
 - Element Plus
 - Sass
 - pnpm workspace
+- Commitlint + Husky
 
 ## TypeScript 配置策略
 
@@ -86,6 +87,65 @@ shared 目前包含示例组件。
 项目已接入 Sass，Vue SFC 样式统一使用 `lang="scss"`。
 
 同时在 Vite 配置中统一启用了 `silenceDeprecations: ["legacy-js-api"]`，用于静默 Sass legacy-js-api 警告。
+
+## 环境变量
+
+项目使用根目录 `.env` 作为统一环境变量入口。
+
+- 所有前端环境变量请使用 `VITE_` 前缀
+- `main`、`a`、`b`、`shared` 均可读取根 `.env`
+- 示例。
+
+```env
+VITE_APP_NAME=Vue3 Monorepo
+VITE_API_BASE=/api
+```
+
+在代码中通过 `import.meta.env.VITE_XXX` 读取。
+
+## 构建优化
+
+生产构建默认启用以下优化。
+
+- `reportCompressedSize: false`，减少构建阶段额外统计开销
+- 仅应用构建启用预压缩，产出 `gz` 与 `br` 两种格式
+- `main` 配置了更高的 chunk 告警阈值，避免 UI 基础包体积导致的噪声告警
+
+说明。
+
+- `br` 优先用于现代浏览器，压缩率更高
+- `gz` 作为兼容兜底格式
+- Nginx 可通过静态压缩文件直接返回，降低线上 CPU 压缩开销
+
+## 提交规范
+
+项目已接入 Commitlint 与 Husky。
+
+- 规则：`@commitlint/config-conventional`
+- 钩子：`.husky/commit-msg`
+- 手动校验：`pnpm run lint:commit`
+
+提交信息示例。
+
+```text
+feat: add user search panel
+fix: handle empty router state
+chore: update build config
+```
+
+## SVG 图标
+
+项目已集成 SVG 雪碧图能力，可按需使用。
+
+- 图标目录：`packages/main/src/icons`、`packages/shared/src/icons`
+- 组件：`SvgIcon`
+- symbol 规则：`icon-[dir]-[name]`
+
+示例。
+
+```vue
+<SvgIcon name="play" size="20px" color="#333" />
+```
 
 ## 开发命令
 

@@ -5,6 +5,7 @@ import { createProdConfig } from "./vite.config.prod.ts";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import dts from "vite-plugin-dts";
 import path from "node:path";
 import { createRequire } from "node:module";
@@ -49,6 +50,15 @@ export const createElementPlusPlugins = (
   ),
 ];
 
+// 创建 SVG 雪碧图插件（传入图标目录路径数组）
+export const createSvgSprite = (iconDirs: string[]) =>
+  createSvgIconsPlugin({
+    iconDirs,
+    symbolId: "icon-[dir]-[name]",
+    inject: "body-last",
+    customDomId: "__svg_sprite__",
+  });
+
 // 创建子包（a、b 等）的完整 Vite 配置
 export const createSubPackageViteConfig = (
   packageName: string,
@@ -56,6 +66,7 @@ export const createSubPackageViteConfig = (
   options: { generateDts?: boolean } = {},
 ) => {
   const __dirname = packageRoot || process.cwd();
+  const workspaceRoot = path.resolve(__dirname, "../../");
 
   const libConfig = {
     entry: path.resolve(__dirname, "src/index.ts"),
@@ -86,6 +97,7 @@ export const createSubPackageViteConfig = (
       return {
         ...prodConfig,
         root: __dirname,
+        envDir: workspaceRoot,
         plugins: [
           ...(prodConfig.plugins ?? []),
           ...elementPlusPlugins,
@@ -104,6 +116,7 @@ export const createSubPackageViteConfig = (
       return {
         ...devConfig,
         root: __dirname,
+        envDir: workspaceRoot,
         plugins: [...(devConfig.plugins ?? []), ...elementPlusPlugins],
         ...commonCssConfig,
       };

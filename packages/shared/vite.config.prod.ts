@@ -1,9 +1,10 @@
-import type { UserConfig, LibraryFormats } from "vite";
+import type { UserConfig, LibraryFormats, Plugin } from "vite";
 import {
   baseConfig,
   commonCssConfig,
   getOutDirConfig,
 } from "./vite.config.base.ts";
+import compression from "vite-plugin-compression2";
 
 interface LibConfig {
   entry?: string;
@@ -24,6 +25,7 @@ export const createProdConfig = (
 
   const buildConfig: any = {
     minify: "terser",
+    reportCompressedSize: false,
     sourcemap: false,
     terserOptions: {
       compress: {
@@ -47,9 +49,24 @@ export const createProdConfig = (
     buildConfig.lib = libConfig;
   }
 
+  // 应用构建时启用预压缩（库构建由消费方决定，不预压缩）
+  const compressionPlugins: Plugin[] = !libConfig
+    ? [
+        compression({ algorithm: "gzip", exclude: [/\.(br)$/] }),
+        compression({
+          algorithm: "brotliCompress",
+          filename: "[path][base].br",
+        }),
+      ]
+    : [];
+
   return {
     ...baseConfig,
     ...commonCssConfig,
+    plugins: [
+      ...((baseConfig.plugins as Plugin[]) ?? []),
+      ...compressionPlugins,
+    ],
     build: buildConfig,
     ...overrides,
   };

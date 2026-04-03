@@ -25,23 +25,31 @@
     "lint": "pnpm run lint:main && pnpm run lint:a && pnpm run lint:b",
     "lint:main": "pnpm --filter @app/main lint",
     "lint:a": "pnpm --filter @app/a lint",
-    "lint:b": "pnpm --filter @app/b lint"
+    "lint:b": "pnpm --filter @app/b lint",
+    "lint:commit": "commitlint --from HEAD~1 --to HEAD --verbose",
+    "prepare": "husky"
   },
   "dependencies": {
     "element-plus": "catalog:",
+    "fast-glob": "^3.3.3",
     "pinia": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
+    "husky": "^9.1.7",
     "sass": "catalog:",
     "terser": "catalog:",
     "typescript": "catalog:",
     "unplugin-auto-import": "catalog:",
     "unplugin-vue-components": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-dts": "catalog:"
+    "vite-plugin-compression2": "^1.3.3",
+    "vite-plugin-dts": "catalog:",
+    "vite-plugin-svg-icons": "^2.0.1"
   }
 }

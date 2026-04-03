@@ -5,6 +5,7 @@ import {
   getOutDirConfig,
   commonCssConfig,
   createElementPlusPlugins,
+  createSvgSprite,
 } from "../shared/vite.config.ts";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -34,6 +35,10 @@ const commonResolveConfig = {
 const elementPlusPlugins = createElementPlusPlugins(__dirname, [
   "../shared/src/components",
 ]);
+const svgSpritePlugin = createSvgSprite([
+  path.resolve(__dirname, "src/icons"),
+  path.resolve(__dirname, "../shared/src/icons"),
+]);
 
 export default defineConfig(({ mode }) => {
   if (mode === "production") {
@@ -49,12 +54,17 @@ export default defineConfig(({ mode }) => {
       ...prodConfig,
       root: workspaceRoot,
       base: "/",
-      plugins: [...(prodConfig.plugins ?? []), ...elementPlusPlugins],
+      plugins: [
+        ...(prodConfig.plugins ?? []),
+        ...elementPlusPlugins,
+        svgSpritePlugin,
+      ],
       resolve: commonResolveConfig,
       ...commonCssConfig,
       build: {
         ...buildOutDirConfig,
         ...prodConfig.build,
+        chunkSizeWarningLimit: 1000,
         rollupOptions: {
           ...sharedRollupOptions,
           external: [],
@@ -99,7 +109,11 @@ export default defineConfig(({ mode }) => {
       ...devConfig,
       root: workspaceRoot,
       base: "/",
-      plugins: [...(devConfig.plugins ?? []), ...elementPlusPlugins],
+      plugins: [
+        ...(devConfig.plugins ?? []),
+        ...elementPlusPlugins,
+        svgSpritePlugin,
+      ],
       resolve: commonResolveConfig,
       ...commonCssConfig,
       build: buildOutDirConfig,
