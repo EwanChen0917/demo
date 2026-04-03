@@ -2,9 +2,7 @@
   <div class="home-page">
     <el-card class="hero-card" shadow="hover">
       <h1>主应用首页</h1>
-      <p>
-        欢迎进入 Vue3 Monorepo 示例。你可以从上方导航进入 A、B 两个业务模块。
-      </p>
+      <p>欢迎进入 Vue3 Monorepo 示例。你可以从上方导航进入 A、B 两个业务模块。</p>
 
       <div class="quick-actions">
         <router-link to="/a/a1">

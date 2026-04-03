@@ -1,10 +1,6 @@
-import type { UserConfig, LibraryFormats, Plugin } from "vite";
-import {
-  baseConfig,
-  commonCssConfig,
-  getOutDirConfig,
-} from "./vite.config.base.ts";
-import compression from "vite-plugin-compression2";
+import type { UserConfig, LibraryFormats, Plugin } from 'vite';
+import { baseConfig, commonCssConfig, getOutDirConfig } from './vite.config.base.ts';
+import compression from 'vite-plugin-compression2';
 
 interface LibConfig {
   entry?: string;
@@ -19,12 +15,10 @@ export const createProdConfig = (
   packageName?: string,
   libConfig?: LibConfig,
 ): UserConfig => {
-  const buildOutDirConfig = packageRoot
-    ? getOutDirConfig(packageRoot, packageName)
-    : {};
+  const buildOutDirConfig = packageRoot ? getOutDirConfig(packageRoot, packageName) : {};
 
   const buildConfig: any = {
-    minify: "terser",
+    minify: 'terser',
     reportCompressedSize: false,
     sourcemap: false,
     terserOptions: {
@@ -36,8 +30,8 @@ export const createProdConfig = (
     rollupOptions: {
       output: {
         manualChunks: {
-          vue: ["vue", "vue-router", "pinia"],
-          "element-plus": ["element-plus"],
+          vue: ['vue', 'vue-router', 'pinia'],
+          'element-plus': ['element-plus'],
         },
       },
     },
@@ -52,10 +46,10 @@ export const createProdConfig = (
   // 应用构建时启用预压缩（库构建由消费方决定，不预压缩）
   const compressionPlugins: Plugin[] = !libConfig
     ? [
-        compression({ algorithm: "gzip", exclude: [/\.(br)$/] }),
+        compression({ algorithm: 'gzip', exclude: [/\.(br)$/] }),
         compression({
-          algorithm: "brotliCompress",
-          filename: "[path][base].br",
+          algorithm: 'brotliCompress',
+          filename: '[path][base].br',
         }),
       ]
     : [];
@@ -63,10 +57,7 @@ export const createProdConfig = (
   return {
     ...baseConfig,
     ...commonCssConfig,
-    plugins: [
-      ...((baseConfig.plugins as Plugin[]) ?? []),
-      ...compressionPlugins,
-    ],
+    plugins: [...((baseConfig.plugins as Plugin[]) ?? []), ...compressionPlugins],
     build: buildConfig,
     ...overrides,
   };

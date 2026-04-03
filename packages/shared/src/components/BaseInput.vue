@@ -17,15 +17,15 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  modelValue: "",
-  placeholder: "",
+  modelValue: '',
+  placeholder: '',
   disabled: false,
 });
 
-const emit = defineEmits<{ "update:modelValue": [value: string] }>();
+const emit = defineEmits<{ 'update:modelValue': [value: string] }>();
 
 function handleInput(event: Event) {
-  emit("update:modelValue", (event.target as HTMLInputElement).value);
+  emit('update:modelValue', (event.target as HTMLInputElement).value);
 }
 </script>
 

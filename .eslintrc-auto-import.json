@@ -1,0 +1,13 @@
+{
+  "globals": {
+    "ref": "readonly",
+    "computed": "readonly",
+    "watch": "readonly",
+    "watchEffect": "readonly",
+    "onMounted": "readonly",
+    "onUnmounted": "readonly",
+    "defineProps": "readonly",
+    "defineEmits": "readonly",
+    "withDefaults": "readonly"
+  }
+}

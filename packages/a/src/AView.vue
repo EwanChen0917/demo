@@ -3,9 +3,7 @@
     <el-card class="main-card">
       <h2>A 应用页面</h2>
       <p>这是来自 a 工程的内容。</p>
-      <el-button type="primary" @click="clickCount++"
-        >点击 {{ clickCount }} 次</el-button
-      >
+      <el-button type="primary" @click="clickCount++">点击 {{ clickCount }} 次</el-button>
 
       <el-divider />
 
@@ -27,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue';
 const clickCount = ref(0);
 </script>
 

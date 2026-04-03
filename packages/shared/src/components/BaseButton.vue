@@ -1,11 +1,7 @@
 <template>
   <button
     class="base-button"
-    :class="[
-      `base-button--${type}`,
-      `base-button--${size}`,
-      { 'is-disabled': disabled },
-    ]"
+    :class="[`base-button--${type}`, `base-button--${size}`, { 'is-disabled': disabled }]"
     :disabled="disabled"
     @click="handleClick"
   >
@@ -15,14 +11,14 @@
 
 <script setup lang="ts">
 interface Props {
-  type?: "primary" | "default" | "danger";
-  size?: "small" | "medium" | "large";
+  type?: 'primary' | 'default' | 'danger';
+  size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  type: "default",
-  size: "medium",
+  type: 'default',
+  size: 'medium',
   disabled: false,
 });
 
@@ -30,7 +26,7 @@ const emit = defineEmits<{ click: [event: MouseEvent] }>();
 
 function handleClick(event: MouseEvent) {
   if (!props.disabled) {
-    emit("click", event);
+    emit('click', event);
   }
 }
 </script>

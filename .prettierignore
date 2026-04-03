@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.pnpm-store
+
+# generated files
+packages/*/src/auto-imports.d.ts
+packages/*/src/components.d.ts
+
+# lockfiles
+pnpm-lock.yaml

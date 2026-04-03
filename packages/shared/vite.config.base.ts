@@ -1,8 +1,7 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import type { UserConfig } from "vite";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import vue from '@vitejs/plugin-vue';
+import type { UserConfig } from 'vite';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -11,7 +10,7 @@ export const commonCssConfig = {
   css: {
     preprocessorOptions: {
       scss: {
-        silenceDeprecations: ["legacy-js-api"],
+        silenceDeprecations: ['legacy-js-api'],
       },
     },
   },
@@ -23,14 +22,14 @@ export const baseConfig: UserConfig = {
   ...commonCssConfig,
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 };
 
 // 获取统一的输出目录配置
 export const getOutDirConfig = (packageRoot: string, packageName?: string) => {
-  const rootDir = path.resolve(packageRoot, "../../");
+  const rootDir = path.resolve(packageRoot, '../../');
 
   if (packageName) {
     // 所有工程统一输出到 dist/{packageName}
@@ -42,7 +41,7 @@ export const getOutDirConfig = (packageRoot: string, packageName?: string) => {
 
   // 未指定工程名时，默认输出到根 dist
   return {
-    outDir: path.resolve(rootDir, "dist"),
+    outDir: path.resolve(rootDir, 'dist'),
     emptyOutDir: false,
   };
 };
