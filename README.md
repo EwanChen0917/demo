@@ -133,6 +133,20 @@ fix: handle empty router state
 chore: update build config
 ```
 
+## 代码规范与格式化
+
+项目统一使用 ESLint 9 + Prettier 3。
+
+- 一键检查：`pnpm run lint`
+- 一键格式化：`pnpm run format`
+- 仅检查格式：`pnpm run format:check`
+
+VS Code 配置建议。
+
+- 旧配置 `javascript.format.enable` 与 `typescript.format.enable` 已废弃
+- 请改用 `js/ts.format.enabled`
+- 建议保留 `editor.defaultFormatter: esbenp.prettier-vscode` 并关闭 `source.fixAll.eslint` 的保存时自动修复，避免与 Prettier 冲突
+
 ## SVG 图标
 
 项目已集成 SVG 雪碧图能力，可按需使用。
