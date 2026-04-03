@@ -74,9 +74,14 @@ export const createSubPackageViteConfig = (
     fileName: () => "index.js",
   };
 
-  const elementPlusPlugins = createElementPlusPlugins(__dirname, [
-    path.resolve(__dirname, "./src"),
-  ]);
+  const componentDirs = Array.from(
+    new Set([
+      path.resolve(__dirname, "./src"),
+      path.resolve(__dirname, "../shared/src/components"),
+    ]),
+  );
+
+  const elementPlusPlugins = createElementPlusPlugins(__dirname, componentDirs);
 
   const dtsPlugin = options.generateDts
     ? dts({

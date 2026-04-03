@@ -4,12 +4,6 @@ import {
   type RouteRecordRaw,
 } from "vue-router";
 
-export type ModuleNavItem = {
-  title: string;
-  path: string;
-  children?: ModuleNavItem[];
-};
-
 export const bRoute: RouteRecordRaw = {
   path: "/b",
   name: "B",
