@@ -5,23 +5,5 @@
     { "path": "./packages/main" },
     { "path": "./packages/a" },
     { "path": "./packages/b" }
-  ],
-  "compilerOptions": {
-    "composite": true,
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "baseUrl": ".",
-    "paths": {
-      "@app/a": ["dist/a/index.d.ts"],
-      "@app/b": ["dist/b/index.d.ts"]
-    },
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "types": ["node", "vite/client"]
-  }
+  ]
 }

@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // 公共 CSS 配置 - Sass silenceDeprecations
-const commonCssConfig = {
+export const commonCssConfig = {
   css: {
     preprocessorOptions: {
       scss: {

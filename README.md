@@ -28,6 +28,19 @@
 - Sass
 - pnpm workspace
 
+## TypeScript 配置策略
+
+项目采用分层 tsconfig，兼顾精简与扩展。
+
+- `tsconfig.base.json`：所有包共享的编译选项与路径映射
+- `tsconfig.json`：仅作为 solution file，维护工程 references
+- `packages/*/tsconfig.json`：只保留各包差异化配置（如 `rootDir`、`outDir`、特定 types）
+
+说明。
+
+- `@app/shared` 在根路径映射到源码入口，方便开发时跳转与联调
+- `a`、`b` 在各自 tsconfig 中覆盖 `@app/shared` 到 shared 的声明文件产物，避免 `emitDeclarationOnly` 与 `rootDir` 冲突
+
 ## 目录结构
 
 ```text
@@ -124,7 +137,7 @@ pnpm run build:main
 
 ## 构建输出
 
-所有构建产物统一输出到仓库根目录下的 dist。
+业务运行时代码输出到仓库根目录下的 `dist`，shared 的类型声明输出到包内 `dist/types`。
 
 典型输出结构如下。
 
@@ -132,6 +145,9 @@ pnpm run build:main
 dist/
   index.html
   assets/
+  shared/
+    index.js
+    style.css
   a/
     index.js
     style.css
@@ -140,13 +156,21 @@ dist/
     index.js
     style.css
     index.d.ts
+
+packages/
+  shared/
+    dist/
+      types/
+        index.d.ts
 ```
 
 说明。
 
 - dist/index.html 是主应用浏览器入口
 - dist/assets 是主应用资源
+- dist/shared 是 shared 库的 JS/CSS 产物
 - dist/a 和 dist/b 是业务子包库产物
+- packages/shared/dist/types/index.d.ts 是 shared 声明文件，供 a/b 类型构建消费
 
 ## 预览与静态运行
 

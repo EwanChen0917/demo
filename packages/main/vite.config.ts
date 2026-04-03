@@ -4,13 +4,11 @@ import {
   createDevConfig,
   getOutDirConfig,
   commonCssConfig,
-  createComponentsPlugin,
+  createElementPlusPlugins,
 } from "../shared/vite.config.ts";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
-import AutoImport from "unplugin-auto-import/vite";
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
@@ -33,17 +31,9 @@ const commonResolveConfig = {
     "element-plus": elementPlusPath,
   },
 };
-const elementPlusPlugins = [
-  AutoImport({
-    imports: ["vue", "vue-router"],
-    resolvers: [ElementPlusResolver()],
-    dts: path.resolve(__dirname, "src/auto-imports.d.ts"),
-  }),
-  createComponentsPlugin(
-    ["../shared/src/components"],
-    path.resolve(__dirname, "src/components.d.ts"),
-  ),
-];
+const elementPlusPlugins = createElementPlusPlugins(__dirname, [
+  "../shared/src/components",
+]);
 
 export default defineConfig(({ mode }) => {
   if (mode === "production") {

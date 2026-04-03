@@ -1,22 +1,15 @@
 import type { UserConfig, LibraryFormats } from "vite";
-import { baseConfig, getOutDirConfig } from "./vite.config.base.ts";
+import {
+  baseConfig,
+  commonCssConfig,
+  getOutDirConfig,
+} from "./vite.config.base.ts";
 
 interface LibConfig {
   entry?: string;
   formats?: readonly LibraryFormats[];
   fileName?: (format: string) => string;
 }
-
-// 公共 CSS 配置 - 与 baseConfig 中保持一致
-const commonCssConfig = {
-  css: {
-    preprocessorOptions: {
-      scss: {
-        silenceDeprecations: ["legacy-js-api"],
-      },
-    },
-  },
-};
 
 // 生产环境配置 - 在基础配置基础上增加生产构建优化
 export const createProdConfig = (
@@ -41,7 +34,7 @@ export const createProdConfig = (
     rollupOptions: {
       output: {
         manualChunks: {
-          vue: ["vue", "vue-router"],
+          vue: ["vue", "vue-router", "pinia"],
           "element-plus": ["element-plus"],
         },
       },

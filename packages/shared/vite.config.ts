@@ -1,27 +1,30 @@
 // 统一导出所有 Vite 配置
-import type { UserConfig } from "vite";
-import { baseConfig, getOutDirConfig } from "./vite.config.base.ts";
+import { commonCssConfig, getOutDirConfig } from "./vite.config.base.ts";
 import { createDevConfig } from "./vite.config.dev.ts";
 import { createProdConfig } from "./vite.config.prod.ts";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import dts from "vite-plugin-dts";
 import path from "node:path";
+import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
 
-export { baseConfig, getOutDirConfig };
+const _require = createRequire(import.meta.url);
+const _dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// 从根 package.json 的 dependencies 自动推导 workspace 级外部依赖
+const rootPkg = _require(path.resolve(_dirname, "../../package.json"));
+const workspaceExternals: (string | RegExp)[] = [
+  ...Object.keys(rootPkg.dependencies ?? {}),
+  // 覆盖所有 scoped 子包，如 @element-plus/icons-vue
+  /@element-plus\/.*/,
+];
+
+export { getOutDirConfig };
 export { createDevConfig };
 export { createProdConfig };
-
-// 公共配置常量
-export const commonCssConfig = {
-  css: {
-    preprocessorOptions: {
-      scss: {
-        silenceDeprecations: ["legacy-js-api"],
-      },
-    },
-  },
-};
+export { commonCssConfig };
 
 export const createComponentsPlugin = (dirsPath: string[], dtsPath: string) => {
   return Components({
@@ -31,10 +34,26 @@ export const createComponentsPlugin = (dirsPath: string[], dtsPath: string) => {
   });
 };
 
+export const createElementPlusPlugins = (
+  packageRoot: string,
+  componentDirs: string[],
+) => [
+  AutoImport({
+    imports: ["vue", "vue-router"],
+    resolvers: [ElementPlusResolver()],
+    dts: path.resolve(packageRoot, "src/auto-imports.d.ts"),
+  }),
+  createComponentsPlugin(
+    componentDirs,
+    path.resolve(packageRoot, "src/components.d.ts"),
+  ),
+];
+
 // 创建子包（a、b 等）的完整 Vite 配置
 export const createSubPackageViteConfig = (
   packageName: string,
   packageRoot?: string,
+  options: { generateDts?: boolean } = {},
 ) => {
   const __dirname = packageRoot || process.cwd();
 
@@ -44,15 +63,17 @@ export const createSubPackageViteConfig = (
     fileName: () => "index.js",
   };
 
-  const componentsPlugin = createComponentsPlugin(
-    [path.resolve(__dirname, "./src")],
-    path.resolve(__dirname, "src/components.d.ts"),
-  );
-  const autoImportPlugin = AutoImport({
-    imports: ["vue", "vue-router"],
-    resolvers: [ElementPlusResolver()],
-    dts: path.resolve(__dirname, "src/auto-imports.d.ts"),
-  });
+  const elementPlusPlugins = createElementPlusPlugins(__dirname, [
+    path.resolve(__dirname, "./src"),
+  ]);
+
+  const dtsPlugin = options.generateDts
+    ? dts({
+        include: ["src/**/*.ts", "src/**/*.vue"],
+        outDir: "dist/types",
+        insertTypesEntry: true,
+      })
+    : null;
 
   return ({ mode }: { mode?: string }) => {
     if (mode === "production") {
@@ -67,14 +88,14 @@ export const createSubPackageViteConfig = (
         root: __dirname,
         plugins: [
           ...(prodConfig.plugins ?? []),
-          autoImportPlugin,
-          componentsPlugin,
+          ...elementPlusPlugins,
+          ...(dtsPlugin ? [dtsPlugin] : []),
         ],
         ...commonCssConfig,
         build: {
           ...prodConfig.build,
           rollupOptions: {
-            external: ["vue", "vue-router", "element-plus"],
+            external: workspaceExternals,
           },
         },
       };
@@ -83,47 +104,9 @@ export const createSubPackageViteConfig = (
       return {
         ...devConfig,
         root: __dirname,
-        plugins: [
-          ...(devConfig.plugins ?? []),
-          autoImportPlugin,
-          componentsPlugin,
-        ],
+        plugins: [...(devConfig.plugins ?? []), ...elementPlusPlugins],
         ...commonCssConfig,
       };
     }
-  };
-};
-
-// 自动环境选择配置
-interface LibConfig {
-  entry?: string;
-  formats?: any[];
-  fileName?: (format: string) => string;
-}
-
-export const createAutoConfig = (
-  overrides: UserConfig = {},
-  packageRoot?: string,
-  packageName?: string,
-  libConfig?: LibConfig,
-) => {
-  return ({ mode }: { mode?: string }) => {
-    if (mode === "development") {
-      return {
-        ...createDevConfig(),
-        ...overrides,
-      };
-    } else if (mode === "production") {
-      return {
-        ...createProdConfig({}, packageRoot, packageName, libConfig),
-        ...overrides,
-      };
-    }
-
-    // 默认使用开发配置
-    return {
-      ...createDevConfig(),
-      ...overrides,
-    };
   };
 };

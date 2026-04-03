@@ -1,12 +1,9 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "composite": true,
     "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true,
     "allowImportingTsExtensions": true,
-    "types": ["node", "vite/client"]
+    "emitDeclarationOnly": true
   },
   "include": ["*.ts", "src/**/*.ts", "src/**/*.vue"]
 }

@@ -1,12 +1,12 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "composite": true,
     "outDir": "../../dist/a",
     "rootDir": "src",
-    "types": ["node", "vite/client", "unplugin-auto-import/types"],
-    "declaration": true,
-    "declarationMap": true
+    "paths": {
+      "@app/shared": ["../../packages/shared/dist/types/index.d.ts"]
+    },
+    "types": ["node", "vite/client", "unplugin-auto-import/types"]
   },
   "include": ["src"]
 }
