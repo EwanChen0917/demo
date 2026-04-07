@@ -22,6 +22,8 @@
     "build:types": "pnpm --filter @app/a build:types && pnpm --filter @app/b build:types",
     "build:main": "pnpm --filter @app/main build",
     "build": "rm -rf dist && pnpm -r --filter \"./packages/**\" --if-present run build",
+    "build:check:externals": "node scripts/check-subpackage-externals.mjs",
+    "build:ci": "pnpm run build && pnpm run build:check:externals",
     "lint": "pnpm run lint:main && pnpm run lint:a && pnpm run lint:b",
     "lint:main": "pnpm --filter @app/main lint",
     "lint:a": "pnpm --filter @app/a lint",

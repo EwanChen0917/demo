@@ -14,5 +14,10 @@
   },
   "dependencies": {
     "@app/shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "element-plus": "*",
+    "vue": "*",
+    "vue-router": "*"
   }
 }

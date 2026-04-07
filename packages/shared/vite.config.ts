@@ -16,8 +16,11 @@ const _dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // 从根 package.json 的 dependencies 自动推导 workspace 级外部依赖
 const rootPkg = _require(path.resolve(_dirname, '../../package.json'));
+const escapeRegExp = (input: string) => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const rootDependencyNames = Object.keys(rootPkg.dependencies ?? {});
 const workspaceExternals: (string | RegExp)[] = [
-  ...Object.keys(rootPkg.dependencies ?? {}),
+  ...rootDependencyNames,
+  ...rootDependencyNames.map((dep) => new RegExp(`^${escapeRegExp(dep)}(?:/.*)?$`)),
   // 覆盖所有 scoped 子包，如 @element-plus/icons-vue
   /@element-plus\/.*/,
 ];
@@ -27,7 +30,7 @@ export { createDevConfig };
 export { createProdConfig };
 export { commonCssConfig };
 
-export const createComponentsPlugin = (dirsPath: string[], dtsPath: string) => {
+export const createComponentsPlugin = (dirsPath: string[], dtsPath: string): any => {
   return Components({
     dirs: dirsPath,
     resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
@@ -41,7 +44,10 @@ export const createElementPlusPlugins = (packageRoot: string, componentDirs: str
     resolvers: [ElementPlusResolver()],
     dts: path.resolve(packageRoot, 'src/auto-imports.d.ts'),
   }),
-  createComponentsPlugin(componentDirs, path.resolve(packageRoot, 'src/components.d.ts')),
+  createComponentsPlugin(
+    componentDirs.map((dir) => (path.isAbsolute(dir) ? dir : path.resolve(packageRoot, dir))),
+    path.resolve(packageRoot, 'src/components.d.ts'),
+  ),
 ];
 
 // 创建 SVG 雪碧图插件（传入图标目录路径数组）
@@ -75,7 +81,7 @@ export const createSubPackageViteConfig = (
     ]),
   );
 
-  const elementPlusPlugins = createElementPlusPlugins(__dirname, componentDirs);
+  const subPackagePlugins = createElementPlusPlugins(__dirname, componentDirs);
 
   const dtsPlugin = options.generateDts
     ? dts({
@@ -87,14 +93,16 @@ export const createSubPackageViteConfig = (
 
   return ({ mode }: { mode?: string }) => {
     if (mode === 'production') {
-      const prodConfig = createProdConfig({}, __dirname, packageName, libConfig);
+      const prodConfig = createProdConfig({}, __dirname, packageName, libConfig, {
+        compress: true,
+      });
       return {
         ...prodConfig,
         root: __dirname,
         envDir: workspaceRoot,
         plugins: [
           ...(prodConfig.plugins ?? []),
-          ...elementPlusPlugins,
+          ...subPackagePlugins,
           ...(dtsPlugin ? [dtsPlugin] : []),
         ],
         ...commonCssConfig,
@@ -111,7 +119,7 @@ export const createSubPackageViteConfig = (
         ...devConfig,
         root: __dirname,
         envDir: workspaceRoot,
-        plugins: [...(devConfig.plugins ?? []), ...elementPlusPlugins],
+        plugins: [...(devConfig.plugins ?? []), ...subPackagePlugins],
         ...commonCssConfig,
       };
     }

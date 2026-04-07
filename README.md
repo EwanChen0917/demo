@@ -80,7 +80,10 @@ shared 目前包含示例组件。
 - BaseButton
 - BaseInput
 
-注意: shared 仍然保留 `src/index.ts` 作为库构建导出入口，新增组件时需要在该文件补充导出。
+说明。
+
+- 若仅在模板中使用（自动注册），新增 shared 组件通常无需修改 `shared/src/index.ts`
+- 若需要在脚本中显式 `import { Xxx } from '@app/shared'`，则需要在 `shared/src/index.ts` 增加对应导出
 
 ## 样式策略
 
@@ -192,6 +195,22 @@ pnpm run dev:host
 ```bash
 pnpm run build
 ```
+
+### 构建后外部依赖校验
+
+```bash
+pnpm run build:check:externals
+```
+
+该命令会检查 `dist/a`、`dist/b` 的可达产物，确保 Element Plus 仍以 external 方式引用，而不是被重复打包进子包。
+
+### CI 一体化构建校验
+
+```bash
+pnpm run build:ci
+```
+
+该命令会先执行全量构建，再执行外部依赖校验，适合用于 CI 流水线。
 
 构建顺序。
 

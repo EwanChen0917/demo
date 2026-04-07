@@ -5,13 +5,16 @@
       <p>这是来自 b 工程的内容。</p>
       <el-input v-model="text" placeholder="输入内容" class="input-field" />
       <p class="input-display">当前输入: {{ text }}</p>
-      <base-button>这是一个来自 shared 包的按钮组件</base-button>
+      <BaseButton @click="clearInput">这是一个来自 shared 包的按钮组件</BaseButton>
     </el-card>
   </div>
 </template>
 
 <script setup lang="ts">
-const text = ref("");
+const text = ref('');
+const clearInput = () => {
+  text.value = '';
+};
 </script>
 
 <style scoped lang="scss">
