@@ -4,14 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "gen:api": "node ./scripts/gen-swagger-api.mjs",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{ts,vue}\" --ignore-pattern \"src/**/*.d.ts\""
   },
+  "devDependencies": {
+    "swagger-typescript-api": "^13.2.16"
+  },
   "dependencies": {
     "@app/a": "workspace:*",
     "@app/b": "workspace:*",
-    "@app/shared": "workspace:*"
+    "@app/shared": "workspace:*",
+    "axios": "^1.12.2"
   }
 }

@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "scripts": {
+    "gen:api": "pnpm --filter @app/main run gen:api",
     "dev:main": "pnpm --filter @app/main dev",
     "dev:main:host": "pnpm --filter @app/main dev -- --host 0.0.0.0 --port 5172",
     "preview:main": "pnpm --filter @app/main exec vite preview --host 127.0.0.1 --port 4173",

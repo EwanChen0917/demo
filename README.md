@@ -188,6 +188,24 @@ pnpm run dev
 pnpm run dev:host
 ```
 
+## Swagger API 代码生成
+
+### 执行生成
+
+```bash
+pnpm run gen:api
+```
+
+默认读取 `packages/main/swagger.config.mjs`。可在该文件中配置 `mass` 数组批量拉取多个 OpenAPI/Swagger 文档并生成对应代码。
+
+### 认证头配置
+
+可通过环境变量注入认证头，避免将敏感信息写入代码。
+
+```bash
+SWAGGER_AUTHORIZATION='Basic xxxxx' pnpm run gen:api
+```
+
 ## 构建命令
 
 ### 全量构建
