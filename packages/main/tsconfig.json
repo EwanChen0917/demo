@@ -2,7 +2,14 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/main",
-    "rootDir": "src"
+    "rootDir": "src",
+    "tsBuildInfoFile": "../../dist/main/tsconfig.tsbuildinfo",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@app/shared": ["../../packages/shared/src/index.ts"],
+      "@app/a": ["../../dist/a/index.d.ts"],
+      "@app/b": ["../../dist/b/index.d.ts"]
+    }
   },
   "references": [{ "path": "../a" }, { "path": "../b" }],
   "include": ["src"]
