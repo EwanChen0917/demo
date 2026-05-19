@@ -1,0 +1,32 @@
+// 舆情等级颜色
+$level-p0-color: #f53f3f; // 红色
+$level-p1-color: #ff9f22; // 橙色
+$level-p2-color: #fadb14; // 黄色
+$level-p3-color: #258dff; // 蓝色
+
+// 情感颜色
+$sentiment-positive: #02b96b; // 绿色
+$sentiment-negative: #f53f3f; // 红色
+$sentiment-neutral: #999999; // 灰色
+
+// 工单状态颜色
+$status-processing: #258dff; // 蓝色
+$status-resolved: #02b96b; // 绿色
+$status-no-need: #999999; // 灰色
+
+// 间距
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+
+// 圆角
+$border-radius-sm: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+
+// 文本颜色
+$text-primary: #1f1f1f;
+$text-secondary: #666666;
+$text-tertiary: #999999;

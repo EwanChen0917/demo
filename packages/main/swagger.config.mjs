@@ -53,6 +53,32 @@ export default {
       ns: 'product',
       group: '商品中心',
     },
+    {
+      ns: 'common',
+      group: '通用模块',
+    },
+    {
+      ns: 'platform',
+      group: '平台模块',
+    },
+    {
+      ns: 'member',
+      group: '账户系统',
+    },
+    {
+      ns: 'personalCenter',
+      group: '个人中心',
+    },
+    { ns: 'zoneConversion', group: '区转换', url: 'lute-ai-server' },
+    {
+      ns: 'mdpMember',
+      group: '账户系统',
+      fullUrl: `${
+        process.env.SWAGGER_ENV === 'production'
+          ? 'https://station-admin-api.cozyprogram.com'
+          : 'https://station-admin-api-dev.luteos.com'
+      }/v3/api-docs/${encodeURIComponent('账户系统')}`,
+    },
   ].map(({ ns, group, url, fullUrl }) => ({
     name: ns,
     output: path.resolve(process.cwd(), `./src/api/${ns}`),

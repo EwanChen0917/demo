@@ -1,0 +1,49 @@
+.dm5-status-tag {
+  border: none;
+  font-weight: 500;
+  border-radius: 12px;
+  padding: 0 10px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.status-draft {
+  background: #94a3b8;
+  color: #fff;
+}
+
+.status-approving {
+  background: #2563eb;
+  color: #fff;
+}
+
+.status-rejected,
+.status-inner-rejected {
+  background: #ef4444;
+  color: #fff;
+}
+
+.status-executing {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.status-inner-check {
+  background: #f97316;
+  color: #fff;
+}
+
+.status-to-receive {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.status-to-feedback {
+  background: #14b8a6;
+  color: #fff;
+}
+
+.status-complete {
+  background: #22c55e;
+  color: #fff;
+}

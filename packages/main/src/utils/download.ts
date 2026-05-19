@@ -70,3 +70,45 @@ export function downloadFileSteam(response: AxiosResponse) {
     console.log(error);
   }
 }
+
+const stripFileNameQuotes = (value: string) => {
+  return value.trim().replace(/^["']|["']$/g, '');
+};
+
+const decodeFileName = (value: string) => {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+};
+
+const getFileNameFromDisposition = (contentDisposition?: string) => {
+  if (!contentDisposition) return '';
+
+  const utf8Match = contentDisposition.match(/filename\*\s*=\s*(?:UTF-8'[^']*')?([^;]+)/i);
+  if (utf8Match?.[1]) {
+    return decodeFileName(stripFileNameQuotes(utf8Match[1]));
+  }
+
+  const fileNameMatch = contentDisposition.match(/filename\s*=\s*("([^"]+)"|[^;]+)/i);
+  if (fileNameMatch?.[1]) {
+    return decodeFileName(stripFileNameQuotes(fileNameMatch[1]));
+  }
+
+  return '';
+};
+
+export function downloadFileSteamForResolvedName(response: AxiosResponse) {
+  try {
+    const fileName =
+      getFileNameFromDisposition(response.headers['content-disposition']) || 'download';
+    const blob = new Blob([response.data], {
+      type: response.headers['content-type'],
+    });
+    if (!blob) throw new Error('download url is avalid!');
+    saveAs(blob, fileName);
+  } catch (error) {
+    console.log(error);
+  }
+}

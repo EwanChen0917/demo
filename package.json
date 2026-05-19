@@ -14,7 +14,7 @@
     "dev:main:host": "pnpm --filter @app/main dev -- --host 0.0.0.0 --port 5172",
     "preview:main": "pnpm --filter @app/main exec vite preview --host 127.0.0.1 --port 4173",
     "preview": "pnpm run preview:main",
-    "dev": "pnpm run dev:main",
+    "dev": "pnpm run dev:main --mode dev",
     "dev:host": "pnpm run dev:main:host",
     "build:shared": "pnpm --filter @app/shared build",
     "build:a": "pnpm --filter @app/a build",
@@ -35,11 +35,14 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "element-plus": "catalog:",
+    "@lute-root-ui/element-plus": "^1.0.36",
+    "@vue-flow/core": "^1.48.2",
     "fast-glob": "^3.3.3",
     "pinia": "catalog:",
     "vue": "catalog:",
-    "vue-router": "catalog:"
+    "vue-router": "catalog:",
+    "vxe-pc-ui": "^4.14.12",
+    "vxe-table": "^4.18.13"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",

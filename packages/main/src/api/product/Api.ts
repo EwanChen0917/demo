@@ -1,6 +1,5 @@
 /* eslint-disable */
 /* tslint:disable */
-// @ts-nocheck
 /*
  * ---------------------------------------------------------------
  * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
@@ -44,6 +43,7 @@ import {
   B2CProductListingResp,
   BatchOperatorReq,
   BrandDetailResp,
+  BrandListQueryAllResp,
   BrandListQueryReq,
   BrandListQueryResp,
   BrandOperateReq,
@@ -118,7 +118,6 @@ import {
   ListingQueryTagV2Req,
   ListingTagResp,
   LuteConditionResp,
-  MSkuRelationListResp,
   MacAddrOperateReq,
   MacAddrQueryReq,
   MacAddrQueryResp,
@@ -171,6 +170,7 @@ import {
   ModelProductConnectReq,
   ModelSaveReq,
   ModelSaveResp,
+  MSkuRelationListResp,
   MsrpBatchQueryReq,
   MsrpBatchSaveResp,
   MsrpCalculateBaseReq,
@@ -232,6 +232,7 @@ import {
   ProductPerformanceDetailResp,
   ProductPerformanceResp,
   ProductRelationListResp,
+  ProductSaveReq,
   ProductSaveResp,
   ProductSellerSkuQueryResp,
   ProductShadowDetailStaticsSearchReq,
@@ -289,8 +290,6 @@ import {
   SeriesProductConnectReq,
   SeriesSaveReq,
   SeriesSaveResp,
-  ShopUserAccountListResp,
-  ShopUserAccountResp,
   ShopifyBatchOperatorSaveReq,
   ShopifyListingParentResp,
   ShopifyListingReq,
@@ -298,6 +297,8 @@ import {
   ShopifyProductListingReq,
   ShopifyProductListingResp,
   ShopifySonListingResp,
+  ShopUserAccountListResp,
+  ShopUserAccountResp,
   SkuActiveDiscountPlanAddReq,
   SkuActiveDiscountPlanQueryResp,
   SkuSnQueryReq,
@@ -324,8 +325,6 @@ import {
   TagProductResp,
   TagSaveReq,
   TagSaveResp,
-  TikTokListingProductReq,
-  TikTokProductListingResp,
   TiktokAdsPlatformSkuQueryResp,
   TiktokAdsQueryReq,
   TiktokAdsQueryResp,
@@ -333,6 +332,8 @@ import {
   TiktokAdsSkuSaveResp,
   TiktokAffiliateAccountsSpuQueryReq,
   TiktokAffiliateAccountsSpuQueryResp,
+  TikTokListingProductReq,
+  TikTokProductListingResp,
   TiktokWeekReportQueryReq,
   TiktokWeekReportQueryResp,
   UpdateCategoryReq,
@@ -343,29 +344,27 @@ import {
   WalmartProductListingResp,
   WeekApproveLogResp,
   WorkflowSubmitResp,
-  _,
-} from "./data-contracts";
-import { ContentType, HttpClient, RequestParams } from "./http-client";
+} from './data-contracts';
+import { ContentType, HttpClient, RequestParams } from './http-client';
 
-export class Api<
-  SecurityDataType = unknown,
-> extends HttpClient<SecurityDataType> {
+export class Api<SecurityDataType = unknown> extends HttpClient<SecurityDataType> {
   /**
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name BatchModifyPlanUsingPost2
+   * @name LuteosProductAmazonListingBatchModifyPlan
    * @summary 亚马逊-在线商父ASIN批量添加/更新计划人员
    * @request POST:/api/luteos/product/amazon/listing/batchModifyPlan
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  batchModifyPlanUsingPost2 = (
+  luteosProductAmazonListingBatchModifyPlan = (
     req: ListingBatchModifyPlanReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/amazon/listing/batchModifyPlan`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -374,17 +373,18 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name BatchUpdateOperatorUsingPost1
+   * @name LuteosProductAmazonListingBatchUpdateOperator
    * @summary 在线商品新增/更新运营人员
    * @request POST:/api/luteos/product/amazon/listing/batchUpdateOperator
+   * @response `200` `CommonRespObject` OK
    */
-  batchUpdateOperatorUsingPost1 = (
+  luteosProductAmazonListingBatchUpdateOperator = (
     req: BatchOperatorReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/amazon/listing/batchUpdateOperator`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -393,17 +393,15 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name DownloadUsingPost10
+   * @name LuteosProductAmazonListingDownload
    * @summary 亚马逊父子维度导出-V2
    * @request POST:/api/luteos/product/amazon/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost10 = (
-    req: AmazonProductListingReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductAmazonListingDownload = (req: AmazonProductListingReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/amazon/listing/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -412,15 +410,16 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name DownloadUsingPost9
+   * @name LuteosProductAmazonListingListingDownload
    * @summary 亚马逊父子维度导出
    * @request POST:/api/luteos/product/amazon/listing/listing/download
    * @deprecated
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost9 = (req: AmazonListingReq, params: RequestParams = {}) =>
+  luteosProductAmazonListingListingDownload = (req: AmazonListingReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/amazon/listing/listing/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -429,18 +428,19 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name QueryListingTagUsingPost5
+   * @name LuteosProductAmazonListingListingQueryTag
    * @summary 亚马逊在线商品父维度标签查询
    * @request POST:/api/luteos/product/amazon/listing/listing/queryTag
    * @deprecated
+   * @response `200` `ListingTagResp` OK
    */
-  queryListingTagUsingPost5 = (
+  luteosProductAmazonListingListingQueryTag = (
     req: ListingQueryTagReq,
     params: RequestParams = {},
   ) =>
     this.request<ListingTagResp, any>({
       path: `/api/luteos/product/amazon/listing/listing/queryTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -449,18 +449,19 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name UpdateTagUsingPost5
+   * @name LuteosProductAmazonListingListingUpdateTag
    * @summary 亚马逊在线商品父维度标签保存更新
    * @request POST:/api/luteos/product/amazon/listing/listing/updateTag
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  updateTagUsingPost5 = (
+  luteosProductAmazonListingListingUpdateTag = (
     req: ListingBatchModifyTagReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/amazon/listing/listing/updateTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -469,17 +470,18 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name UpdateTagV2UsingPost1
+   * @name LuteosProductAmazonListingListingUpdateTagV2
    * @summary 在线商品标签保存更新
    * @request POST:/api/luteos/product/amazon/listing/listing/updateTagV2
+   * @response `200` `CommonRespObject` OK
    */
-  updateTagV2UsingPost1 = (
+  luteosProductAmazonListingListingUpdateTagV2 = (
     req: ListingBatchModifyTagV2Req,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/amazon/listing/listing/updateTagV2`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -488,17 +490,18 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name QueryListUsingPost31
+   * @name LuteosProductAmazonListingQueryAsinPage
    * @summary 亚马逊-在线商品分页查询-V2
    * @request POST:/api/luteos/product/amazon/listing/queryAsinPage
+   * @response `200` `AmazonProductListingResp` OK
    */
-  queryListUsingPost31 = (
+  luteosProductAmazonListingQueryAsinPage = (
     req: AmazonProductListingReq,
     params: RequestParams = {},
   ) =>
     this.request<AmazonProductListingResp, any>({
       path: `/api/luteos/product/amazon/listing/queryAsinPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -507,18 +510,19 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name QueryParentAsinUsingPost1
+   * @name LuteosProductAmazonListingQueryParentAsinPage
    * @summary 亚马逊-在线商品父ASIN分页查询
    * @request POST:/api/luteos/product/amazon/listing/queryParentAsinPage
    * @deprecated
+   * @response `200` `AmazonListingParentResp` OK
    */
-  queryParentAsinUsingPost1 = (
+  luteosProductAmazonListingQueryParentAsinPage = (
     req: AmazonListingReq,
     params: RequestParams = {},
   ) =>
     this.request<AmazonListingParentResp, any>({
       path: `/api/luteos/product/amazon/listing/queryParentAsinPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -527,34 +531,19 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name QueryAsinUsingPost1
+   * @name LuteosProductAmazonListingQueryParentSonPage
    * @summary 亚马逊-在线商品子ASIN分页查询
    * @request POST:/api/luteos/product/amazon/listing/queryParentSonPage
    * @deprecated
+   * @response `200` `AmazonListingResp` OK
    */
-  queryAsinUsingPost1 = (req: AmazonListingReq, params: RequestParams = {}) =>
-    this.request<AmazonListingResp, any>({
-      path: `/api/luteos/product/amazon/listing/queryParentSonPage`,
-      method: "POST",
-      body: req,
-      type: ContentType.Json,
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags 亚马逊-在线商品
-   * @name QueryListingTagV2UsingPost1
-   * @summary 在线商品标签查询
-   * @request POST:/api/luteos/product/amazon/listing/queryTagV2
-   */
-  queryListingTagV2UsingPost1 = (
-    req: ListingQueryTagV2Req,
+  luteosProductAmazonListingQueryParentSonPage = (
+    req: AmazonListingReq,
     params: RequestParams = {},
   ) =>
-    this.request<ListingTagResp, any>({
-      path: `/api/luteos/product/amazon/listing/queryTagV2`,
-      method: "POST",
+    this.request<AmazonListingResp, any>({
+      path: `/api/luteos/product/amazon/listing/queryParentSonPage`,
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -563,17 +552,35 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name SaveOperatorV2UsingPost1
+   * @name LuteosProductAmazonListingQueryTagV2
+   * @summary 在线商品标签查询
+   * @request POST:/api/luteos/product/amazon/listing/queryTagV2
+   * @response `200` `ListingTagResp` OK
+   */
+  luteosProductAmazonListingQueryTagV2 = (req: ListingQueryTagV2Req, params: RequestParams = {}) =>
+    this.request<ListingTagResp, any>({
+      path: `/api/luteos/product/amazon/listing/queryTagV2`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 亚马逊-在线商品
+   * @name LuteosProductAmazonListingSaveOperatorV2
    * @summary 在线商品保存运营人员
    * @request POST:/api/luteos/product/amazon/listing/saveOperatorV2
+   * @response `200` `CommonRespObject` OK
    */
-  saveOperatorV2UsingPost1 = (
+  luteosProductAmazonListingSaveOperatorV2 = (
     req: OperatorCommonSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/amazon/listing/saveOperatorV2`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -582,17 +589,18 @@ export class Api<
    * No description
    *
    * @tags 亚马逊-在线商品
-   * @name SaveProductLinkV2UsingPost1
+   * @name LuteosProductAmazonListingSaveProductLinkV2
    * @summary 在线商品保存商品链接
    * @request POST:/api/luteos/product/amazon/listing/saveProductLinkV2
+   * @response `200` `CommonRespObject` OK
    */
-  saveProductLinkV2UsingPost1 = (
+  luteosProductAmazonListingSaveProductLinkV2 = (
     req: ProductLinkCommonSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/amazon/listing/saveProductLinkV2`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -601,17 +609,18 @@ export class Api<
    * No description
    *
    * @tags 亚马逊运营人员稽查
-   * @name DownloadUsingPost11
+   * @name LuteosProductAmazonOperatorCheckDownload
    * @summary 导出
    * @request POST:/api/luteos/product/amazon/operatorCheck/download
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost11 = (
+  luteosProductAmazonOperatorCheckDownload = (
     req: AmazonProductOperatorCheckReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/amazon/operatorCheck/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -620,17 +629,18 @@ export class Api<
    * No description
    *
    * @tags 亚马逊运营人员稽查
-   * @name QueryDetailUsingPost7
+   * @name LuteosProductAmazonOperatorCheckQueryDetail
    * @summary 详情查询
    * @request POST:/api/luteos/product/amazon/operatorCheck/queryDetail
+   * @response `200` `CommonRespListAmazonOperatorCheckDetailBean` OK
    */
-  queryDetailUsingPost7 = (
+  luteosProductAmazonOperatorCheckQueryDetail = (
     req: AmazonProductOperatorCheckDetailReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespListAmazonOperatorCheckDetailBean, any>({
       path: `/api/luteos/product/amazon/operatorCheck/queryDetail`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -639,17 +649,18 @@ export class Api<
    * No description
    *
    * @tags 亚马逊运营人员稽查
-   * @name QueryListUsingPost32
+   * @name LuteosProductAmazonOperatorCheckQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/amazon/operatorCheck/queryList
+   * @response `200` `AmazonProductOperatorListResp` OK
    */
-  queryListUsingPost32 = (
+  luteosProductAmazonOperatorCheckQueryList = (
     req: AmazonProductOperatorCheckReq,
     params: RequestParams = {},
   ) =>
     this.request<AmazonProductOperatorListResp, any>({
       path: `/api/luteos/product/amazon/operatorCheck/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -658,31 +669,30 @@ export class Api<
    * No description
    *
    * @tags 亚马逊运营人员稽查
-   * @name QuerySpuGtmListUsingGet1
+   * @name LuteosProductAmazonOperatorCheckQuerySpuGtmList
    * @summary 查询GTM小组列表
    * @request GET:/api/luteos/product/amazon/operatorCheck/querySpuGtmList
+   * @response `200` `CommonRespListString` OK
    */
-  querySpuGtmListUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductAmazonOperatorCheckQuerySpuGtmList = (params: RequestParams = {}) =>
     this.request<CommonRespListString, any>({
       path: `/api/luteos/product/amazon/operatorCheck/querySpuGtmList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 属性管理
-   * @name ConnectCategoryUsingPost2
+   * @name LuteosProductAttrConnectCategory
    * @summary 属性关联分类
    * @request POST:/api/luteos/product/attr/connectCategory
+   * @response `200` `CommonRespBoolean` OK
    */
-  connectCategoryUsingPost2 = (
-    req: AttrCategoryConnectReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductAttrConnectCategory = (req: AttrCategoryConnectReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/attr/connectCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -691,14 +701,15 @@ export class Api<
    * No description
    *
    * @tags 属性管理
-   * @name ExportAttrUsingPost1
+   * @name LuteosProductAttrExportAttr
    * @summary 属性信息导出
    * @request POST:/api/luteos/product/attr/exportAttr
+   * @response `200` `CommonExportResp` OK
    */
-  exportAttrUsingPost1 = (req: AttrListQueryReq, params: RequestParams = {}) =>
+  luteosProductAttrExportAttr = (req: AttrListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/attr/exportAttr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -707,14 +718,15 @@ export class Api<
    * No description
    *
    * @tags 属性管理
-   * @name OperateAttrUsingPost1
+   * @name LuteosProductAttrOperateAttr
    * @summary 属性操作
    * @request POST:/api/luteos/product/attr/operateAttr
+   * @response `200` `CommonRespBoolean` OK
    */
-  operateAttrUsingPost1 = (req: AttrOperateReq, params: RequestParams = {}) =>
+  luteosProductAttrOperateAttr = (req: AttrOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/attr/operateAttr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -723,11 +735,12 @@ export class Api<
    * No description
    *
    * @tags 属性管理
-   * @name QueryAttrDetailUsingGet1
+   * @name LuteosProductAttrQueryAttrDetail
    * @summary 属性详情查询
    * @request GET:/api/luteos/product/attr/queryAttrDetail
+   * @response `200` `AttrDetailResp` OK
    */
-  queryAttrDetailUsingGet1 = (
+  luteosProductAttrQueryAttrDetail = (
     query: {
       /** 属性编码,必填 */
       attrCode: string;
@@ -736,7 +749,7 @@ export class Api<
   ) =>
     this.request<AttrDetailResp, any>({
       path: `/api/luteos/product/attr/queryAttrDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -744,11 +757,12 @@ export class Api<
    * No description
    *
    * @tags 属性管理
-   * @name QueryAttrListUsingGet1
+   * @name LuteosProductAttrQueryAttrList
    * @summary 属性列表查询
    * @request GET:/api/luteos/product/attr/queryAttrList
+   * @response `200` `AttrListQueryResp` OK
    */
-  queryAttrListUsingGet1 = (
+  luteosProductAttrQueryAttrList = (
     query: {
       /** 属性Id */
       attrCode?: string;
@@ -777,7 +791,7 @@ export class Api<
   ) =>
     this.request<AttrListQueryResp, any>({
       path: `/api/luteos/product/attr/queryAttrList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -785,11 +799,12 @@ export class Api<
    * No description
    *
    * @tags 属性管理
-   * @name QueryCategoryLeveListUsingGet1
+   * @name LuteosProductAttrQueryCategoryLevelList
    * @summary 分类列表查询
    * @request GET:/api/luteos/product/attr/queryCategoryLevelList
+   * @response `200` `CategoryLevelQueryInAttrResp` OK
    */
-  queryCategoryLeveListUsingGet1 = (
+  luteosProductAttrQueryCategoryLevelList = (
     query: {
       /** 分类id */
       categoryCode?: string;
@@ -816,7 +831,7 @@ export class Api<
   ) =>
     this.request<CategoryLevelQueryInAttrResp, any>({
       path: `/api/luteos/product/attr/queryCategoryLevelList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -824,11 +839,12 @@ export class Api<
    * No description
    *
    * @tags 商品管理, 属性管理
-   * @name QueryProductAttrListUsingGet1
+   * @name LuteosProductAttrQueryProductAttrList
    * @summary 商品属性列表查询
    * @request GET:/api/luteos/product/attr/queryProductAttrList
+   * @response `200` `ProductAttrListQueryResp` OK
    */
-  queryProductAttrListUsingGet1 = (
+  luteosProductAttrQueryProductAttrList = (
     query?: {
       /** 五级分类编码 */
       categoryCode?: string;
@@ -837,7 +853,7 @@ export class Api<
   ) =>
     this.request<ProductAttrListQueryResp, any>({
       path: `/api/luteos/product/attr/queryProductAttrList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -845,14 +861,15 @@ export class Api<
    * No description
    *
    * @tags 属性管理
-   * @name SaveOrUpdateAttrUsingPost1
+   * @name LuteosProductAttrSaveOrUpdateAttr
    * @summary 属性信息保存
    * @request POST:/api/luteos/product/attr/saveOrUpdateAttr
+   * @response `200` `AttrSaveResp` OK
    */
-  saveOrUpdateAttrUsingPost1 = (req: AttrSaveReq, params: RequestParams = {}) =>
+  luteosProductAttrSaveOrUpdateAttr = (req: AttrSaveReq, params: RequestParams = {}) =>
     this.request<AttrSaveResp, any>({
       path: `/api/luteos/product/attr/saveOrUpdateAttr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -861,17 +878,15 @@ export class Api<
    * No description
    *
    * @tags 属性管理
-   * @name SaveOrUpdateAttrValUsingPost1
+   * @name LuteosProductAttrSaveOrUpdateAttrVal
    * @summary 属性值信息保存
    * @request POST:/api/luteos/product/attr/saveOrUpdateAttrVal
+   * @response `200` `AttrValSaveResp` OK
    */
-  saveOrUpdateAttrValUsingPost1 = (
-    req: AttrValSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductAttrSaveOrUpdateAttrVal = (req: AttrValSaveReq, params: RequestParams = {}) =>
     this.request<AttrValSaveResp, any>({
       path: `/api/luteos/product/attr/saveOrUpdateAttrVal`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -880,31 +895,33 @@ export class Api<
    * No description
    *
    * @tags B2C-在线商品
-   * @name QueryProductListingPageUsingGet1
+   * @name LuteosProductB2CListingQueryChannelList
    * @summary b2c-渠道列表
    * @request GET:/api/luteos/product/b2c/listing/queryChannelList
+   * @response `200` `B2CChannelResp` OK
    */
-  queryProductListingPageUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductB2CListingQueryChannelList = (params: RequestParams = {}) =>
     this.request<B2CChannelResp, any>({
       path: `/api/luteos/product/b2c/listing/queryChannelList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags B2C-在线商品
-   * @name QueryProductListingPageUsingPost5
+   * @name LuteosProductB2CListingQueryProductListingPage
    * @summary b2c-在线商品分页查询-V2
    * @request POST:/api/luteos/product/b2c/listing/queryProductListingPage
+   * @response `200` `B2CProductListingResp` OK
    */
-  queryProductListingPageUsingPost5 = (
+  luteosProductB2CListingQueryProductListingPage = (
     req: B2CListingProductReq,
     params: RequestParams = {},
   ) =>
     this.request<B2CProductListingResp, any>({
       path: `/api/luteos/product/b2c/listing/queryProductListingPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -913,17 +930,15 @@ export class Api<
    * No description
    *
    * @tags 产品条形码
-   * @name CancelUsingPost1
+   * @name LuteosProductBarcodeCancel
    * @summary 产品条形码取消
    * @request POST:/api/luteos/product/barcode/cancel
+   * @response `200` `CommonRespObject` OK
    */
-  cancelUsingPost1 = (
-    req: ProductBarCodeCancelReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductBarcodeCancel = (req: ProductBarCodeCancelReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/barcode/cancel`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -932,14 +947,15 @@ export class Api<
    * No description
    *
    * @tags 产品条形码, 红人管理
-   * @name DownLoadMetaOrderTemplateUsingPost2
+   * @name LuteosProductBarcodeDownLoadBarCodeTemplate
    * @summary 下载导入条形码模板
    * @request POST:/api/luteos/product/barcode/downLoadBarCodeTemplate
+   * @response `200` `CommonRespString` OK
    */
-  downLoadMetaOrderTemplateUsingPost2 = (params: RequestParams = {}) =>
+  luteosProductBarcodeDownLoadBarCodeTemplate = (params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/barcode/downLoadBarCodeTemplate`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -947,17 +963,15 @@ export class Api<
    * No description
    *
    * @tags 产品条形码
-   * @name ExportUsingPost11
+   * @name LuteosProductBarcodeExport
    * @summary 产品条形码导出信息
    * @request POST:/api/luteos/product/barcode/export
+   * @response `200` `CommonExportResp` OK
    */
-  exportUsingPost11 = (
-    req: ProductBarCodeQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductBarcodeExport = (req: ProductBarCodeQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/barcode/export`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -966,17 +980,15 @@ export class Api<
    * No description
    *
    * @tags 产品条形码
-   * @name QueryListUsingPost39
+   * @name LuteosProductBarcodeQueryList
    * @summary 产品条形码查询
    * @request POST:/api/luteos/product/barcode/queryList
+   * @response `200` `ProductBarCodeQueryResp` OK
    */
-  queryListUsingPost39 = (
-    req: ProductBarCodeQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductBarcodeQueryList = (req: ProductBarCodeQueryReq, params: RequestParams = {}) =>
     this.request<ProductBarCodeQueryResp, any>({
       path: `/api/luteos/product/barcode/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -985,17 +997,18 @@ export class Api<
    * No description
    *
    * @tags 产品条形码
-   * @name SaveOrUpdateUsingPost14
+   * @name LuteosProductBarcodeSaveOrUpdate
    * @summary 商品条形码保存
    * @request POST:/api/luteos/product/barcode/saveOrUpdate
+   * @response `200` `CommonRespObject` OK
    */
-  saveOrUpdateUsingPost14 = (
+  luteosProductBarcodeSaveOrUpdate = (
     req: ProductBarCodeSaveUpdateReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/barcode/saveOrUpdate`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1004,17 +1017,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name BatchOperateProductUsingPost1
+   * @name LuteosProductBatchOperateProduct
    * @summary 商品信息批量操作
    * @request POST:/api/luteos/product/batchOperateProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  batchOperateProductUsingPost1 = (
-    req: ProductBatchOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductBatchOperateProduct = (req: ProductBatchOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/batchOperateProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1023,17 +1034,15 @@ export class Api<
    * No description
    *
    * @tags 品牌管理
-   * @name ConnectProductUsingPost5
+   * @name LuteosProductBrandConnectProduct
    * @summary 品牌关联商品
    * @request POST:/api/luteos/product/brand/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  connectProductUsingPost5 = (
-    req: BrandProductConnectReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductBrandConnectProduct = (req: BrandProductConnectReq, params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/brand/connectProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1042,17 +1051,15 @@ export class Api<
    * No description
    *
    * @tags 品牌管理
-   * @name ExportBrandUsingPost1
+   * @name LuteosProductBrandExportBrand
    * @summary 品牌信息导出
    * @request POST:/api/luteos/product/brand/exportBrand
+   * @response `200` `CommonExportResp` OK
    */
-  exportBrandUsingPost1 = (
-    req: BrandListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductBrandExportBrand = (req: BrandListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/brand/exportBrand`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1061,14 +1068,15 @@ export class Api<
    * No description
    *
    * @tags 品牌管理
-   * @name OperateBrandUsingPost1
+   * @name LuteosProductBrandOperateBrand
    * @summary 品牌操作
    * @request POST:/api/luteos/product/brand/operateBrand
+   * @response `200` `CommonRespString` OK
    */
-  operateBrandUsingPost1 = (req: BrandOperateReq, params: RequestParams = {}) =>
+  luteosProductBrandOperateBrand = (req: BrandOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/brand/operateBrand`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1077,11 +1085,27 @@ export class Api<
    * No description
    *
    * @tags 品牌管理
-   * @name QueryBrandDetailUsingGet1
+   * @name LuteosProductBrandQueryBrandAll
+   * @summary 获取所有品牌
+   * @request GET:/api/luteos/product/brand/queryBrandAll
+   * @response `200` `BrandListQueryAllResp` OK
+   */
+  luteosProductBrandQueryBrandAll = (params: RequestParams = {}) =>
+    this.request<BrandListQueryAllResp, any>({
+      path: `/api/luteos/product/brand/queryBrandAll`,
+      method: 'GET',
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 品牌管理
+   * @name LuteosProductBrandQueryBrandDetail
    * @summary 品牌详情查询
    * @request GET:/api/luteos/product/brand/queryBrandDetail
+   * @response `200` `BrandDetailResp` OK
    */
-  queryBrandDetailUsingGet1 = (
+  luteosProductBrandQueryBrandDetail = (
     query: {
       /** 品牌编码 */
       brandCode: string;
@@ -1090,7 +1114,7 @@ export class Api<
   ) =>
     this.request<BrandDetailResp, any>({
       path: `/api/luteos/product/brand/queryBrandDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1098,11 +1122,12 @@ export class Api<
    * No description
    *
    * @tags 品牌管理
-   * @name QueryBrandListUsingGet1
+   * @name LuteosProductBrandQueryBrandList
    * @summary 品牌列表查询
    * @request GET:/api/luteos/product/brand/queryBrandList
+   * @response `200` `BrandListQueryResp` OK
    */
-  queryBrandListUsingGet1 = (
+  luteosProductBrandQueryBrandList = (
     query: {
       /** 品牌编号 */
       brandCode?: string;
@@ -1131,7 +1156,7 @@ export class Api<
   ) =>
     this.request<BrandListQueryResp, any>({
       path: `/api/luteos/product/brand/queryBrandList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1139,17 +1164,15 @@ export class Api<
    * No description
    *
    * @tags 品牌管理
-   * @name SaveOrUpdateBrandUsingPost1
+   * @name LuteosProductBrandSaveOrUpdateBrand
    * @summary 品牌信息保存
    * @request POST:/api/luteos/product/brand/saveOrUpdateBrand
+   * @response `200` `BrandSaveResp` OK
    */
-  saveOrUpdateBrandUsingPost1 = (
-    req: BrandSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductBrandSaveOrUpdateBrand = (req: BrandSaveReq, params: RequestParams = {}) =>
     this.request<BrandSaveResp, any>({
       path: `/api/luteos/product/brand/saveOrUpdateBrand`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1158,17 +1181,15 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name ConnectAttrUsingPost1
+   * @name LuteosProductCategoryConnectAttr
    * @summary 分类关联属性
    * @request POST:/api/luteos/product/category/connectAttr
+   * @response `200` `CommonRespBoolean` OK
    */
-  connectAttrUsingPost1 = (
-    req: CategoryAttrConnectReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductCategoryConnectAttr = (req: CategoryAttrConnectReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/category/connectAttr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1177,17 +1198,15 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name ExportCategoryUsingPost1
+   * @name LuteosProductCategoryExportCategory
    * @summary 分类信息导出
    * @request POST:/api/luteos/product/category/exportCategory
+   * @response `200` `CommonExportResp` OK
    */
-  exportCategoryUsingPost1 = (
-    req: CategoryListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductCategoryExportCategory = (req: CategoryListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/category/exportCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1196,17 +1215,15 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name OperateModelUsingPost2
+   * @name LuteosProductCategoryOperateCategory
    * @summary 分类操作
    * @request POST:/api/luteos/product/category/operateCategory
+   * @response `200` `CommonRespBoolean` OK
    */
-  operateModelUsingPost2 = (
-    req: CategoryOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductCategoryOperateCategory = (req: CategoryOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/category/operateCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1215,11 +1232,12 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name QueryCategoryDetailUsingGet1
+   * @name LuteosProductCategoryQueryCategoryDetail
    * @summary 分类详情查询
    * @request GET:/api/luteos/product/category/queryCategoryDetail
+   * @response `200` `CategoryDetailResp` OK
    */
-  queryCategoryDetailUsingGet1 = (
+  luteosProductCategoryQueryCategoryDetail = (
     query: {
       /** 分类编码 */
       categoryCode: string;
@@ -1228,7 +1246,7 @@ export class Api<
   ) =>
     this.request<CategoryDetailResp, any>({
       path: `/api/luteos/product/category/queryCategoryDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1236,11 +1254,12 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name QueryCategoryLevelListUsingGet1
+   * @name LuteosProductCategoryQueryCategoryLevelList
    * @summary 分类下级查询
    * @request GET:/api/luteos/product/category/queryCategoryLevelList
+   * @response `200` `CategoryLevelQueryResp` OK
    */
-  queryCategoryLevelListUsingGet1 = (
+  luteosProductCategoryQueryCategoryLevelList = (
     query: {
       /** 分类编码 */
       categoryCode: string;
@@ -1249,7 +1268,7 @@ export class Api<
   ) =>
     this.request<CategoryLevelQueryResp, any>({
       path: `/api/luteos/product/category/queryCategoryLevelList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1257,11 +1276,12 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name QueryCategoryListUsingGet2
+   * @name LuteosProductCategoryQueryCategoryList
    * @summary 分类列表查询
    * @request GET:/api/luteos/product/category/queryCategoryList
+   * @response `200` `CategoryListQueryResp` OK
    */
-  queryCategoryListUsingGet2 = (
+  luteosProductCategoryQueryCategoryList = (
     query: {
       /** 分类id */
       categoryCode?: string;
@@ -1295,7 +1315,7 @@ export class Api<
   ) =>
     this.request<CategoryListQueryResp, any>({
       path: `/api/luteos/product/category/queryCategoryList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1303,11 +1323,12 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name QueryCategoryListByParamUsingGet1
+   * @name LuteosProductCategoryQueryCategoryListByParam
    * @summary 查询分类列表-不含层级
    * @request GET:/api/luteos/product/category/queryCategoryListByParam
+   * @response `200` `CategoryListQueryResp` OK
    */
-  queryCategoryListByParamUsingGet1 = (
+  luteosProductCategoryQueryCategoryListByParam = (
     query: {
       /** 分类编码 */
       categoryCode?: string;
@@ -1344,7 +1365,7 @@ export class Api<
   ) =>
     this.request<CategoryListQueryResp, any>({
       path: `/api/luteos/product/category/queryCategoryListByParam`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1352,11 +1373,12 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name QueryCategoryTopAndLeafLevelListUsingGet1
+   * @name LuteosProductCategoryQueryCategoryTopAndLeafLevelList
    * @summary 分类一级/五级查询
    * @request GET:/api/luteos/product/category/queryCategoryTopAndLeafLevelList
+   * @response `200` `CategoryLevelQueryResp` OK
    */
-  queryCategoryTopAndLeafLevelListUsingGet1 = (
+  luteosProductCategoryQueryCategoryTopAndLeafLevelList = (
     query: {
       /** 分类编码 */
       categoryCode: string;
@@ -1365,7 +1387,7 @@ export class Api<
   ) =>
     this.request<CategoryLevelQueryResp, any>({
       path: `/api/luteos/product/category/queryCategoryTopAndLeafLevelList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1373,11 +1395,12 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name GetCategoryTreeUsingGet2
+   * @name LuteosProductCategoryQueryCategoryTree
    * @summary 获取分类树
    * @request GET:/api/luteos/product/category/queryCategoryTree
+   * @response `200` `CategoryTreeResp` OK
    */
-  getCategoryTreeUsingGet2 = (
+  luteosProductCategoryQueryCategoryTree = (
     query?: {
       /** 分类编码, 不传则查询整棵分类树 */
       categoryCode?: string;
@@ -1405,7 +1428,7 @@ export class Api<
   ) =>
     this.request<CategoryTreeResp, any>({
       path: `/api/luteos/product/category/queryCategoryTree`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1413,11 +1436,12 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name QuerySubCategoryListUsingGet1
+   * @name LuteosProductCategoryQuerySubCategoryList
    * @summary 下级分类列表查询
    * @request GET:/api/luteos/product/category/querySubCategoryList
+   * @response `200` `CategoryListQueryResp` OK
    */
-  querySubCategoryListUsingGet1 = (
+  luteosProductCategoryQuerySubCategoryList = (
     query: {
       /** 分类编码 */
       categoryCode: string;
@@ -1426,7 +1450,7 @@ export class Api<
   ) =>
     this.request<CategoryListQueryResp, any>({
       path: `/api/luteos/product/category/querySubCategoryList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1434,28 +1458,15 @@ export class Api<
    * No description
    *
    * @tags 商品分类管理
-   * @name QueryThreeCategoryUsingGet1
-   * @summary 查询三级分类
-   * @request GET:/api/luteos/product/category/queryThreeCategory
-   */
-  queryThreeCategoryUsingGet1 = (params: RequestParams = {}) =>
-    this.request<CategoryListQueryResp, any>({
-      path: `/api/luteos/product/category/queryThreeCategory`,
-      method: "GET",
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags 商品分类管理
-   * @name SaveCategoryUsingPost2
+   * @name LuteosProductCategorySaveOrUpdateCategory
    * @summary 分类信息保存
    * @request POST:/api/luteos/product/category/saveOrUpdateCategory
+   * @response `200` `CategorySaveResp` OK
    */
-  saveCategoryUsingPost2 = (req: CategorySaveReq, params: RequestParams = {}) =>
+  luteosProductCategorySaveOrUpdateCategory = (req: CategorySaveReq, params: RequestParams = {}) =>
     this.request<CategorySaveResp, any>({
       path: `/api/luteos/product/category/saveOrUpdateCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1464,17 +1475,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name CheckRepeatProductUsingPost1
+   * @name LuteosProductCheckRepeatProduct
    * @summary 商品编码重复校验
    * @request POST:/api/luteos/product/checkRepeatProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  checkRepeatProductUsingPost1 = (
-    req: ProductCheckRepeatReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductCheckRepeatProduct = (req: ProductCheckRepeatReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/checkRepeatProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1483,17 +1492,18 @@ export class Api<
    * No description
    *
    * @tags 在线商品标签
-   * @name UpdateTagUsingPost6
+   * @name LuteosProductCommonListingListingUpdateTag
    * @summary 在线商品标签保存更新
    * @request POST:/api/luteos/product/common/listing/listing/updateTag
+   * @response `200` `CommonRespObject` OK
    */
-  updateTagUsingPost6 = (
+  luteosProductCommonListingListingUpdateTag = (
     req: ListingBatchModifyTagV2Req,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/common/listing/listing/updateTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1502,17 +1512,15 @@ export class Api<
    * No description
    *
    * @tags 在线商品标签
-   * @name QueryListingTagUsingPost6
+   * @name LuteosProductCommonListingQueryTag
    * @summary 在线商品标签查询
    * @request POST:/api/luteos/product/common/listing/queryTag
+   * @response `200` `ListingTagResp` OK
    */
-  queryListingTagUsingPost6 = (
-    req: ListingQueryTagV2Req,
-    params: RequestParams = {},
-  ) =>
+  luteosProductCommonListingQueryTag = (req: ListingQueryTagV2Req, params: RequestParams = {}) =>
     this.request<ListingTagResp, any>({
       path: `/api/luteos/product/common/listing/queryTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1521,17 +1529,18 @@ export class Api<
    * No description
    *
    * @tags 在线商品标签
-   * @name SaveOperatorUsingPost4
+   * @name LuteosProductCommonListingSaveOperator
    * @summary 在线商品保存运营人员
    * @request POST:/api/luteos/product/common/listing/saveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  saveOperatorUsingPost4 = (
+  luteosProductCommonListingSaveOperator = (
     req: OperatorCommonSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/common/listing/saveOperator`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1540,17 +1549,18 @@ export class Api<
    * No description
    *
    * @tags 在线商品标签
-   * @name SaveProductLinkUsingPost4
+   * @name LuteosProductCommonListingSaveProductLink
    * @summary 在线商品保存商品链接
    * @request POST:/api/luteos/product/common/listing/saveProductLink
+   * @response `200` `CommonRespObject` OK
    */
-  saveProductLinkUsingPost4 = (
+  luteosProductCommonListingSaveProductLink = (
     req: ProductLinkCommonSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/common/listing/saveProductLink`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1559,17 +1569,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name ConnectCategoryUsingPost3
+   * @name LuteosProductConnectCategory
    * @summary 商品关联分类
    * @request POST:/api/luteos/product/connectCategory
+   * @response `200` `CommonRespBoolean` OK
    */
-  connectCategoryUsingPost3 = (
-    req: ProductConnectCategoryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductConnectCategory = (req: ProductConnectCategoryReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/connectCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1578,11 +1586,12 @@ export class Api<
    * No description
    *
    * @tags 衍生项目管理
-   * @name DownloadUsingGet1
+   * @name LuteosProductDeriveDownload
    * @summary 衍生项目列表导出
    * @request GET:/api/luteos/product/derive/download
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingGet1 = (
+  luteosProductDeriveDownload = (
     query: {
       /** 申请原因 */
       applyReason?: string;
@@ -1626,7 +1635,7 @@ export class Api<
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/derive/download`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1634,11 +1643,12 @@ export class Api<
    * No description
    *
    * @tags 衍生项目管理
-   * @name QueryDeriveListUsingGet1
+   * @name LuteosProductDeriveQueryDeriveList
    * @summary 衍生项目列表查询
    * @request GET:/api/luteos/product/derive/queryDeriveList
+   * @response `200` `DeriveQueryResp` OK
    */
-  queryDeriveListUsingGet1 = (
+  luteosProductDeriveQueryDeriveList = (
     query: {
       /** 申请原因 */
       applyReason?: string;
@@ -1682,7 +1692,7 @@ export class Api<
   ) =>
     this.request<DeriveQueryResp, any>({
       path: `/api/luteos/product/derive/queryDeriveList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1690,31 +1700,30 @@ export class Api<
    * No description
    *
    * @tags 衍生项目管理
-   * @name QueryDeriveListParamUsingGet1
+   * @name LuteosProductDeriveQueryDeriveListParam
    * @summary 衍生项目列表查询参数
    * @request GET:/api/luteos/product/derive/queryDeriveListParam
+   * @response `200` `DeriveListParamResp` OK
    */
-  queryDeriveListParamUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductDeriveQueryDeriveListParam = (params: RequestParams = {}) =>
     this.request<DeriveListParamResp, any>({
       path: `/api/luteos/product/derive/queryDeriveListParam`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 易仓SKU管理
-   * @name ExportEccangSkuUsingPost1
+   * @name LuteosProductEccangSkuExportEccangSku
    * @summary 导出供应链SKU
    * @request POST:/api/luteos/product/eccangSku/exportEccangSku
+   * @response `200` `CommonExportResp` OK
    */
-  exportEccangSkuUsingPost1 = (
-    req: EccangSkuQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductEccangSkuExportEccangSku = (req: EccangSkuQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/eccangSku/exportEccangSku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1723,11 +1732,12 @@ export class Api<
    * No description
    *
    * @tags 易仓SKU管理
-   * @name QueryEccangSkuFullListUsingGet1
+   * @name LuteosProductEccangSkuQueryEccangSkuFullList
    * @summary 供应链SKU列表全字段查询
    * @request GET:/api/luteos/product/eccangSku/queryEccangSkuFullList
+   * @response `200` `EccangSkuFullQueryResp` OK
    */
-  queryEccangSkuFullListUsingGet1 = (
+  luteosProductEccangSkuQueryEccangSkuFullList = (
     query: {
       /** 关键字 名称/供应链sku */
       keyword?: string;
@@ -1750,7 +1760,7 @@ export class Api<
   ) =>
     this.request<EccangSkuFullQueryResp, any>({
       path: `/api/luteos/product/eccangSku/queryEccangSkuFullList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1758,11 +1768,12 @@ export class Api<
    * No description
    *
    * @tags 易仓SKU管理
-   * @name QueryEccangSkuListUsingGet1
+   * @name LuteosProductEccangSkuQueryEccangSkuList
    * @summary 供应链SKU列表查询
    * @request GET:/api/luteos/product/eccangSku/queryEccangSkuList
+   * @response `200` `EccangSkuQueryResp` OK
    */
-  queryEccangSkuListUsingGet1 = (
+  luteosProductEccangSkuQueryEccangSkuList = (
     query: {
       /**
        * 导出类型 1:导出界面信息，2：导出销售映射全表
@@ -1800,7 +1811,7 @@ export class Api<
   ) =>
     this.request<EccangSkuQueryResp, any>({
       path: `/api/luteos/product/eccangSku/queryEccangSkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1808,14 +1819,15 @@ export class Api<
    * No description
    *
    * @tags 易仓SKU管理
-   * @name SyncEccangUsingPost1
+   * @name LuteosProductEccangSkuSyncEccang
    * @summary 同步易仓
    * @request POST:/api/luteos/product/eccangSku/syncEccang
+   * @response `200` `CommonRespObject` OK
    */
-  syncEccangUsingPost1 = (req: EccangSkuQueryReq, params: RequestParams = {}) =>
+  luteosProductEccangSkuSyncEccang = (req: EccangSkuQueryReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/eccangSku/syncEccang`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1824,17 +1836,15 @@ export class Api<
    * No description
    *
    * @tags 易仓SKU管理
-   * @name ExportEccangSkuV2UsingPost1
+   * @name LuteosProductEccangSkuV2ExportEccangSku
    * @summary 导出供应链SKU-v2
    * @request POST:/api/luteos/product/eccangSku/v2/exportEccangSku
+   * @response `200` `CommonExportResp` OK
    */
-  exportEccangSkuV2UsingPost1 = (
-    req: EccangSkuQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductEccangSkuV2ExportEccangSku = (req: EccangSkuQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/eccangSku/v2/exportEccangSku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1843,11 +1853,12 @@ export class Api<
    * No description
    *
    * @tags 易仓SKU管理
-   * @name QueryEccangSkuListV2UsingGet1
+   * @name LuteosProductEccangSkuV2QueryEccangSkuList
    * @summary 供应链SKU列表查询-v2
    * @request GET:/api/luteos/product/eccangSku/v2/queryEccangSkuList
+   * @response `200` `EccangSkuQueryV2Resp` OK
    */
-  queryEccangSkuListV2UsingGet1 = (
+  luteosProductEccangSkuV2QueryEccangSkuList = (
     query: {
       /**
        * 导出类型 1:导出界面信息，2：导出销售映射全表
@@ -1885,7 +1896,7 @@ export class Api<
   ) =>
     this.request<EccangSkuQueryV2Resp, any>({
       path: `/api/luteos/product/eccangSku/v2/queryEccangSkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1893,11 +1904,12 @@ export class Api<
    * No description
    *
    * @tags 商品到期推荐策略管理
-   * @name InfoUsingGet2
+   * @name LuteosProductExpireConfigInfo
    * @summary 获取商品到期配置详情
    * @request GET:/api/luteos/product/expire-config/info
+   * @response `200` `void` OK
    */
-  infoUsingGet2 = (
+  luteosProductExpireConfigInfo = (
     query?: {
       /** recordCode */
       recordCode?: string;
@@ -1906,7 +1918,7 @@ export class Api<
   ) =>
     this.request<void, any>({
       path: `/api/luteos/product/expire-config/info`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1914,28 +1926,30 @@ export class Api<
    * No description
    *
    * @tags 商品到期推荐策略管理
-   * @name ListUsingGet15
+   * @name LuteosProductExpireConfigList
    * @summary 获取商品到期配置列表
    * @request GET:/api/luteos/product/expire-config/list
+   * @response `200` `void` OK
    */
-  listUsingGet15 = (params: RequestParams = {}) =>
+  luteosProductExpireConfigList = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/expire-config/list`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 商品到期推荐策略管理
-   * @name SaveUsingPost20
+   * @name LuteosProductExpireConfigSave
    * @summary 新增商品到期配置
    * @request POST:/api/luteos/product/expire-config/save
+   * @response `200` `void` OK
    */
-  saveUsingPost20 = (params: RequestParams = {}) =>
+  luteosProductExpireConfigSave = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/expire-config/save`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -1943,14 +1957,15 @@ export class Api<
    * No description
    *
    * @tags 商品到期推荐策略管理
-   * @name UpdateUsingPost7
+   * @name LuteosProductExpireConfigUpdate
    * @summary 更新商品到期配置
    * @request POST:/api/luteos/product/expire-config/update
+   * @response `200` `void` OK
    */
-  updateUsingPost7 = (params: RequestParams = {}) =>
+  luteosProductExpireConfigUpdate = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/expire-config/update`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -1958,17 +1973,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name ExportProductUsingPost5
+   * @name LuteosProductExportProduct
    * @summary 商品导出信息
    * @request POST:/api/luteos/product/exportProduct
+   * @response `200` `CommonExportResp` OK
    */
-  exportProductUsingPost5 = (
-    req: ProductListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductExportProduct = (req: ProductListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/exportProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -1977,11 +1990,12 @@ export class Api<
    * No description
    *
    * @tags 组合产品管理
-   * @name QueryGroupDetailUsingGet2
+   * @name LuteosProductGroupQueryGroupDetail
    * @summary 组合产品详情查询
    * @request GET:/api/luteos/product/group/queryGroupDetail
+   * @response `200` `ProductGroupDetailResp` OK
    */
-  queryGroupDetailUsingGet2 = (
+  luteosProductGroupQueryGroupDetail = (
     query: {
       /** 组合产品SPU */
       groupProductSpu: string;
@@ -1990,7 +2004,7 @@ export class Api<
   ) =>
     this.request<ProductGroupDetailResp, any>({
       path: `/api/luteos/product/group/queryGroupDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -1998,11 +2012,12 @@ export class Api<
    * No description
    *
    * @tags 组合产品管理
-   * @name QueryProductGroupListUsingGet2
+   * @name LuteosProductGroupQueryProductGroupList
    * @summary 组合产品列表查询
    * @request GET:/api/luteos/product/group/queryProductGroupList
+   * @response `200` `ProductGroupListResp` OK
    */
-  queryProductGroupListUsingGet2 = (
+  luteosProductGroupQueryProductGroupList = (
     query: {
       /** 分类编码，如果传分类编码，分类等级一定要赋值 */
       categoryCode?: string;
@@ -2038,7 +2053,7 @@ export class Api<
   ) =>
     this.request<ProductGroupListResp, any>({
       path: `/api/luteos/product/group/queryProductGroupList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2046,17 +2061,15 @@ export class Api<
    * No description
    *
    * @tags 组合产品管理
-   * @name SaveProductGroupUsingPost2
+   * @name LuteosProductGroupSaveProductGroup
    * @summary 组合产品信息保存
    * @request POST:/api/luteos/product/group/saveProductGroup
+   * @response `200` `ProductGroupSaveResp` OK
    */
-  saveProductGroupUsingPost2 = (
-    req: ProductGroupSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductGroupSaveProductGroup = (req: ProductGroupSaveReq, params: RequestParams = {}) =>
     this.request<ProductGroupSaveResp, any>({
       path: `/api/luteos/product/group/saveProductGroup`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2065,11 +2078,12 @@ export class Api<
    * No description
    *
    * @tags 组合SKU管理
-   * @name QueryGroupDetailUsingGet3
+   * @name LuteosProductGroupSkuQueryGroupSkuDetail
    * @summary 组合SKU详情查询
    * @request GET:/api/luteos/product/group/sku/queryGroupSkuDetail
+   * @response `200` `ProductGroupSkuDetailResp` OK
    */
-  queryGroupDetailUsingGet3 = (
+  luteosProductGroupSkuQueryGroupSkuDetail = (
     query: {
       /** 组合SKU编码 */
       groupSkuCode: string;
@@ -2078,7 +2092,7 @@ export class Api<
   ) =>
     this.request<ProductGroupSkuDetailResp, any>({
       path: `/api/luteos/product/group/sku/queryGroupSkuDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2086,11 +2100,12 @@ export class Api<
    * No description
    *
    * @tags 组合SKU管理
-   * @name QueryProductGroupListUsingGet3
+   * @name LuteosProductGroupSkuQueryProductGroupSkuList
    * @summary 组合SKU列表查询
    * @request GET:/api/luteos/product/group/sku/queryProductGroupSkuList
+   * @response `200` `ProductGroupSkuListResp` OK
    */
-  queryProductGroupListUsingGet3 = (
+  luteosProductGroupSkuQueryProductGroupSkuList = (
     query: {
       /** 分类编码，如果传分类编码，分类等级一定要赋值 */
       categoryCode?: string;
@@ -2126,7 +2141,7 @@ export class Api<
   ) =>
     this.request<ProductGroupSkuListResp, any>({
       path: `/api/luteos/product/group/sku/queryProductGroupSkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2134,17 +2149,18 @@ export class Api<
    * No description
    *
    * @tags 组合SKU管理
-   * @name SaveProductGroupUsingPost3
+   * @name LuteosProductGroupSkuSaveProductGroupSku
    * @summary 组合SKU信息保存
    * @request POST:/api/luteos/product/group/sku/saveProductGroupSku
+   * @response `200` `ProductGroupSkuSaveResp` OK
    */
-  saveProductGroupUsingPost3 = (
+  luteosProductGroupSkuSaveProductGroupSku = (
     req: ProductGroupSkuSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<ProductGroupSkuSaveResp, any>({
       path: `/api/luteos/product/group/sku/saveProductGroupSku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2153,11 +2169,12 @@ export class Api<
    * No description
    *
    * @tags 产品品线管理
-   * @name QueryDetailUsingGet10
+   * @name LuteosProductLineQueryDetail
    * @summary 查询详情
    * @request GET:/api/luteos/product/line/queryDetail
+   * @response `200` `ProductLineDetailResp` OK
    */
-  queryDetailUsingGet10 = (
+  luteosProductLineQueryDetail = (
     query: {
       /** code */
       code: string;
@@ -2166,7 +2183,7 @@ export class Api<
   ) =>
     this.request<ProductLineDetailResp, any>({
       path: `/api/luteos/product/line/queryDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2174,17 +2191,15 @@ export class Api<
    * No description
    *
    * @tags 产品品线管理
-   * @name QueryListUsingPost40
+   * @name LuteosProductLineQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/line/queryList
+   * @response `200` `ProductLineListResp` OK
    */
-  queryListUsingPost40 = (
-    req: ProductLineListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductLineQueryList = (req: ProductLineListQueryReq, params: RequestParams = {}) =>
     this.request<ProductLineListResp, any>({
       path: `/api/luteos/product/line/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2193,17 +2208,15 @@ export class Api<
    * No description
    *
    * @tags 产品品线管理
-   * @name SaveOrUpdateUsingPost15
+   * @name LuteosProductLineSaveOrUpdate
    * @summary 新增或者编辑品线
    * @request POST:/api/luteos/product/line/saveOrUpdate
+   * @response `200` `CommonRespListProductLineSaveResp` OK
    */
-  saveOrUpdateUsingPost15 = (
-    req: ProductLineSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductLineSaveOrUpdate = (req: ProductLineSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespListProductLineSaveResp, any>({
       path: `/api/luteos/product/line/saveOrUpdate`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2212,17 +2225,15 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name BatchOperateMacAddrUsingPost1
+   * @name LuteosProductMacBatchOperateMacAddr
    * @summary 批量操作MAC地址
    * @request POST:/api/luteos/product/mac/batchOperateMacAddr
+   * @response `200` `CommonRespVoid` OK
    */
-  batchOperateMacAddrUsingPost1 = (
-    req: MacAddrOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMacBatchOperateMacAddr = (req: MacAddrOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/mac/batchOperateMacAddr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2231,17 +2242,15 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name CheckRelSupplySkuUsingPost1
+   * @name LuteosProductMacCheckRelSupplySku
    * @summary 关联供应链产品sku校验
    * @request POST:/api/luteos/product/mac/checkRelSupplySku
+   * @response `200` `CommonRespVoid` OK
    */
-  checkRelSupplySkuUsingPost1 = (
-    req: MacRelSupplyCheckReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMacCheckRelSupplySku = (req: MacRelSupplyCheckReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/mac/checkRelSupplySku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2250,17 +2259,15 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name ExportMacAddrUsingPost1
+   * @name LuteosProductMacExportMacAddr
    * @summary MAC地址导出
    * @request POST:/api/luteos/product/mac/exportMacAddr
+   * @response `200` `CommonExportResp` OK
    */
-  exportMacAddrUsingPost1 = (
-    req: MacAddrQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMacExportMacAddr = (req: MacAddrQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/mac/exportMacAddr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2269,14 +2276,15 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name OperateUsingPost4
+   * @name LuteosProductMacOperate
    * @summary 贴片工厂操作
    * @request POST:/api/luteos/product/mac/operate
+   * @response `200` `MacFactoryOperateResp` OK
    */
-  operateUsingPost4 = (req: MacFactoryOperateReq, params: RequestParams = {}) =>
+  luteosProductMacOperate = (req: MacFactoryOperateReq, params: RequestParams = {}) =>
     this.request<MacFactoryOperateResp, any>({
       path: `/api/luteos/product/mac/operate`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2285,17 +2293,18 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name OperateProductCodeUsingPost1
+   * @name LuteosProductMacOperateProductCode
    * @summary 产品代码操作
    * @request POST:/api/luteos/product/mac/operateProductCode
+   * @response `200` `MacProductCodeOperateResp` OK
    */
-  operateProductCodeUsingPost1 = (
+  luteosProductMacOperateProductCode = (
     req: MacProductCodeOperateReq,
     params: RequestParams = {},
   ) =>
     this.request<MacProductCodeOperateResp, any>({
       path: `/api/luteos/product/mac/operateProductCode`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2304,11 +2313,12 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name QueryDetailUsingGet8
+   * @name LuteosProductMacQueryDetail
    * @summary 贴片工厂详情查询
    * @request GET:/api/luteos/product/mac/queryDetail
+   * @response `200` `MacFactoryDetailResp` OK
    */
-  queryDetailUsingGet8 = (
+  luteosProductMacQueryDetail = (
     query: {
       /** 工厂编码 */
       factoryCode: string;
@@ -2317,7 +2327,7 @@ export class Api<
   ) =>
     this.request<MacFactoryDetailResp, any>({
       path: `/api/luteos/product/mac/queryDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2325,11 +2335,12 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name QueryListUsingGet6
+   * @name LuteosProductMacQueryList
    * @summary 贴片工厂列表查询
    * @request GET:/api/luteos/product/mac/queryList
+   * @response `200` `MacFactoryQueryResp` OK
    */
-  queryListUsingGet6 = (
+  luteosProductMacQueryList = (
     query: {
       /** 供应商名称/工厂名称/工厂代码 */
       keyword?: string;
@@ -2352,7 +2363,7 @@ export class Api<
   ) =>
     this.request<MacFactoryQueryResp, any>({
       path: `/api/luteos/product/mac/queryList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2360,17 +2371,15 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name QueryMacAddressListUsingPost4
+   * @name LuteosProductMacQueryMacAddressList
    * @summary MAC地址列表查询
    * @request POST:/api/luteos/product/mac/queryMacAddressList
+   * @response `200` `MacAddrQueryResp` OK
    */
-  queryMacAddressListUsingPost4 = (
-    req: MacAddrQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMacQueryMacAddressList = (req: MacAddrQueryReq, params: RequestParams = {}) =>
     this.request<MacAddrQueryResp, any>({
       path: `/api/luteos/product/mac/queryMacAddressList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2379,11 +2388,12 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name QueryProductCodeDetailUsingGet1
+   * @name LuteosProductMacQueryProductCodeDetail
    * @summary 产品代码详情查询
    * @request GET:/api/luteos/product/mac/queryProductCodeDetail
+   * @response `200` `MacProductCodeDetailResp` OK
    */
-  queryProductCodeDetailUsingGet1 = (
+  luteosProductMacQueryProductCodeDetail = (
     query?: {
       /** 产品代码 */
       productCode?: string;
@@ -2392,7 +2402,7 @@ export class Api<
   ) =>
     this.request<MacProductCodeDetailResp, any>({
       path: `/api/luteos/product/mac/queryProductCodeDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2400,11 +2410,12 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name QueryProductCodeListUsingGet1
+   * @name LuteosProductMacQueryProductCodeList
    * @summary 产品代码列表查询
    * @request GET:/api/luteos/product/mac/queryProductCodeList
+   * @response `200` `MacProductCodeQueryResp` OK
    */
-  queryProductCodeListUsingGet1 = (
+  luteosProductMacQueryProductCodeList = (
     query: {
       /** 产品代码/系列/关联项目 */
       keyword?: string;
@@ -2427,7 +2438,7 @@ export class Api<
   ) =>
     this.request<MacProductCodeQueryResp, any>({
       path: `/api/luteos/product/mac/queryProductCodeList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2435,11 +2446,12 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name QueryPurchaseOrderListUsingPost1
+   * @name LuteosProductMacQueryPurchaseOrderList
    * @summary PO采购订单查询
    * @request POST:/api/luteos/product/mac/queryPurchaseOrderList
+   * @response `200` `PurchaseOrderQueryResp` OK
    */
-  queryPurchaseOrderListUsingPost1 = (
+  luteosProductMacQueryPurchaseOrderList = (
     query: {
       /** 工厂代码 */
       factoryCode?: string;
@@ -2468,7 +2480,7 @@ export class Api<
   ) =>
     this.request<PurchaseOrderQueryResp, any>({
       path: `/api/luteos/product/mac/queryPurchaseOrderList`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -2477,31 +2489,30 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name QuerySupplierCodeListUsingGet1
+   * @name LuteosProductMacQuerySupplierList
    * @summary 供应商列表查询
    * @request GET:/api/luteos/product/mac/querySupplierList
+   * @response `200` `CommonRespMacSupplierQueryResp` OK
    */
-  querySupplierCodeListUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductMacQuerySupplierList = (params: RequestParams = {}) =>
     this.request<CommonRespMacSupplierQueryResp, any>({
       path: `/api/luteos/product/mac/querySupplierList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags MAC地址管理
-   * @name SaveFactoryUsingPost1
+   * @name LuteosProductMacSaveFactory
    * @summary 贴片工厂新增
    * @request POST:/api/luteos/product/mac/saveFactory
+   * @response `200` `MacFactorySaveResp` OK
    */
-  saveFactoryUsingPost1 = (
-    req: MacFactorySaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMacSaveFactory = (req: MacFactorySaveReq, params: RequestParams = {}) =>
     this.request<MacFactorySaveResp, any>({
       path: `/api/luteos/product/mac/saveFactory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2510,17 +2521,15 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name SaveMacAddressUsingPost1
+   * @name LuteosProductMacSaveMacAddress
    * @summary MAC地址保存
    * @request POST:/api/luteos/product/mac/saveMacAddress
+   * @response `200` `CommonRespVoid` OK
    */
-  saveMacAddressUsingPost1 = (
-    req: MacAddrSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMacSaveMacAddress = (req: MacAddrSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/mac/saveMacAddress`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2529,17 +2538,15 @@ export class Api<
    * No description
    *
    * @tags MAC地址管理
-   * @name SaveProductCodeUsingPost1
+   * @name LuteosProductMacSaveProductCode
    * @summary 产品代码保存
    * @request POST:/api/luteos/product/mac/saveProductCode
+   * @response `200` `MacProductCodeSaveResp` OK
    */
-  saveProductCodeUsingPost1 = (
-    req: MacProductCodeSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMacSaveProductCode = (req: MacProductCodeSaveReq, params: RequestParams = {}) =>
     this.request<MacProductCodeSaveResp, any>({
       path: `/api/luteos/product/mac/saveProductCode`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2548,17 +2555,15 @@ export class Api<
    * No description
    *
    * @tags 内购用户地址管理
-   * @name DeleteUserAddrUsingPost1
+   * @name LuteosProductMallAddrDeleteUserAddr
    * @summary 删除用户地址
    * @request POST:/api/luteos/product/mall/addr/deleteUserAddr
+   * @response `200` `CommonRespObject` OK
    */
-  deleteUserAddrUsingPost1 = (
-    req: MallUserDeleteReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallAddrDeleteUserAddr = (req: MallUserDeleteReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/mall/addr/deleteUserAddr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2567,25 +2572,27 @@ export class Api<
    * No description
    *
    * @tags 内购用户地址管理
-   * @name QueryDefaultAddrUsingGet1
+   * @name LuteosProductMallAddrQueryDefaultAddr
    * @summary 查询用户默认地址
    * @request GET:/api/luteos/product/mall/addr/queryDefaultAddr
+   * @response `200` `MallUserDefaultAddrResp` OK
    */
-  queryDefaultAddrUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductMallAddrQueryDefaultAddr = (params: RequestParams = {}) =>
     this.request<MallUserDefaultAddrResp, any>({
       path: `/api/luteos/product/mall/addr/queryDefaultAddr`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 内购用户地址管理
-   * @name QueryUserAddrUsingGet1
+   * @name LuteosProductMallAddrQueryUserAddr
    * @summary 查询用户地址详情
    * @request GET:/api/luteos/product/mall/addr/queryUserAddr
+   * @response `200` `MallUserDefaultAddrResp` OK
    */
-  queryUserAddrUsingGet1 = (
+  luteosProductMallAddrQueryUserAddr = (
     query?: {
       /** 地址编码 */
       addressCode?: string;
@@ -2594,7 +2601,7 @@ export class Api<
   ) =>
     this.request<MallUserDefaultAddrResp, any>({
       path: `/api/luteos/product/mall/addr/queryUserAddr`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2602,31 +2609,30 @@ export class Api<
    * No description
    *
    * @tags 内购用户地址管理
-   * @name QueryUserAddrListUsingGet1
+   * @name LuteosProductMallAddrQueryUserAddrList
    * @summary 查询地址管理列表
    * @request GET:/api/luteos/product/mall/addr/queryUserAddrList
+   * @response `200` `MallUserAddrListResp` OK
    */
-  queryUserAddrListUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductMallAddrQueryUserAddrList = (params: RequestParams = {}) =>
     this.request<MallUserAddrListResp, any>({
       path: `/api/luteos/product/mall/addr/queryUserAddrList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 内购用户地址管理
-   * @name SaveUserAddrUsingPost1
+   * @name LuteosProductMallAddrSaveUserAddr
    * @summary 保存用户地址
    * @request POST:/api/luteos/product/mall/addr/saveUserAddr
+   * @response `200` `MallUserAddrSaveResp` OK
    */
-  saveUserAddrUsingPost1 = (
-    req: MallUserAddrSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallAddrSaveUserAddr = (req: MallUserAddrSaveReq, params: RequestParams = {}) =>
     this.request<MallUserAddrSaveResp, any>({
       path: `/api/luteos/product/mall/addr/saveUserAddr`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2635,11 +2641,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name ConfirmReceiveUsingPost1
+   * @name LuteosProductMallConfirmReceive
    * @summary 确认收货
    * @request POST:/api/luteos/product/mall/confirmReceive
+   * @response `200` `CommonRespVoid` OK
    */
-  confirmReceiveUsingPost1 = (
+  luteosProductMallConfirmReceive = (
     query: {
       /** orderCode */
       orderCode: string;
@@ -2648,7 +2655,7 @@ export class Api<
   ) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/mall/confirmReceive`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -2657,14 +2664,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name ExportOrderUsingPost1
+   * @name LuteosProductMallExportOrder
    * @summary 导出内购订单
    * @request POST:/api/luteos/product/mall/exportOrder
+   * @response `200` `CommonExportResp` OK
    */
-  exportOrderUsingPost1 = (req: MallOrderListReq, params: RequestParams = {}) =>
+  luteosProductMallExportOrder = (req: MallOrderListReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/mall/exportOrder`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2673,17 +2681,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name ExportProductListUsingPost1
+   * @name LuteosProductMallExportProductList
    * @summary 导出内购产品清单
    * @request POST:/api/luteos/product/mall/exportProductList
+   * @response `200` `CommonExportResp` OK
    */
-  exportProductListUsingPost1 = (
-    req: MallProductListReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallExportProductList = (req: MallProductListReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/mall/exportProductList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2692,17 +2698,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name OperateOrderUsingPost3
+   * @name LuteosProductMallOperateOrder
    * @summary 操作内购订单
    * @request POST:/api/luteos/product/mall/operateOrder
+   * @response `200` `CommonRespObject` OK
    */
-  operateOrderUsingPost3 = (
-    req: MallOrderOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallOperateOrder = (req: MallOrderOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/mall/operateOrder`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2711,17 +2715,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name OperateProductUsingPost2
+   * @name LuteosProductMallOperateProduct
    * @summary 操作内购商品
    * @request POST:/api/luteos/product/mall/operateProduct
+   * @response `200` `MallProductSaveResp` OK
    */
-  operateProductUsingPost2 = (
-    req: MallProductOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallOperateProduct = (req: MallProductOperateReq, params: RequestParams = {}) =>
     this.request<MallProductSaveResp, any>({
       path: `/api/luteos/product/mall/operateProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2730,11 +2732,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name QueryOrderDetailUsingGet1
+   * @name LuteosProductMallQueryOrderDetail
    * @summary 查询内购订单详情-管理端
    * @request GET:/api/luteos/product/mall/queryOrderDetail
+   * @response `200` `MallOrderDetailResp` OK
    */
-  queryOrderDetailUsingGet1 = (
+  luteosProductMallQueryOrderDetail = (
     query: {
       /**
        * 操作类型 0-管理端 1-用户端
@@ -2748,7 +2751,7 @@ export class Api<
   ) =>
     this.request<MallOrderDetailResp, any>({
       path: `/api/luteos/product/mall/queryOrderDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2756,11 +2759,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name QueryOrderListUsingGet1
+   * @name LuteosProductMallQueryOrderList
    * @summary 查询内购订单列表-管理端
    * @request GET:/api/luteos/product/mall/queryOrderList
+   * @response `200` `MallOrderListResp` OK
    */
-  queryOrderListUsingGet1 = (
+  luteosProductMallQueryOrderList = (
     query: {
       /** 创建人 */
       creator?: string;
@@ -2806,7 +2810,7 @@ export class Api<
   ) =>
     this.request<MallOrderListResp, any>({
       path: `/api/luteos/product/mall/queryOrderList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2814,11 +2818,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name QueryOrderStatusUsingGet1
+   * @name LuteosProductMallQueryOrderStatus
    * @summary 查询内购订单支付状态
    * @request GET:/api/luteos/product/mall/queryOrderStatus
+   * @response `200` `MallOrderStatusResp` OK
    */
-  queryOrderStatusUsingGet1 = (
+  luteosProductMallQueryOrderStatus = (
     query: {
       /** 订单编码 */
       orderCode: string;
@@ -2827,7 +2832,7 @@ export class Api<
   ) =>
     this.request<MallOrderStatusResp, any>({
       path: `/api/luteos/product/mall/queryOrderStatus`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2835,11 +2840,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name QueryProductDetailUsingGet1
+   * @name LuteosProductMallQueryProductDetail
    * @summary 查询内购商品详情
    * @request GET:/api/luteos/product/mall/queryProductDetail
+   * @response `200` `MallProductDetailResp` OK
    */
-  queryProductDetailUsingGet1 = (
+  luteosProductMallQueryProductDetail = (
     query: {
       /** 供应链sku */
       productSku: string;
@@ -2848,7 +2854,7 @@ export class Api<
   ) =>
     this.request<MallProductDetailResp, any>({
       path: `/api/luteos/product/mall/queryProductDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2856,17 +2862,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name QueryProductListUsingPost3
+   * @name LuteosProductMallQueryProductList
    * @summary 查询内购商品列表
    * @request POST:/api/luteos/product/mall/queryProductList
+   * @response `200` `MallProductListResp` OK
    */
-  queryProductListUsingPost3 = (
-    req: MallProductListReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallQueryProductList = (req: MallProductListReq, params: RequestParams = {}) =>
     this.request<MallProductListResp, any>({
       path: `/api/luteos/product/mall/queryProductList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2875,17 +2879,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name SaveProductUsingPost2
+   * @name LuteosProductMallSaveProduct
    * @summary 保存内购商品
    * @request POST:/api/luteos/product/mall/saveProduct
+   * @response `200` `MallProductSaveResp` OK
    */
-  saveProductUsingPost2 = (
-    req: MallProductSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallSaveProduct = (req: MallProductSaveReq, params: RequestParams = {}) =>
     this.request<MallProductSaveResp, any>({
       path: `/api/luteos/product/mall/saveProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2894,11 +2896,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城管理
-   * @name SyncErpUsingGet1
+   * @name LuteosProductMallSyncErp
    * @summary 同步易仓
    * @request GET:/api/luteos/product/mall/syncErp
+   * @response `200` `CommonRespVoid` OK
    */
-  syncErpUsingGet1 = (
+  luteosProductMallSyncErp = (
     query: {
       /** orderCode */
       orderCode: string;
@@ -2907,7 +2910,7 @@ export class Api<
   ) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/mall/syncErp`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2915,17 +2918,18 @@ export class Api<
    * No description
    *
    * @tags 内购商城用户端管理
-   * @name OperateOrderUsingPost2
+   * @name LuteosProductMallUserOperateOrder
    * @summary 操作订单
    * @request POST:/api/luteos/product/mall/user/operateOrder
+   * @response `200` `CommonRespVoid` OK
    */
-  operateOrderUsingPost2 = (
+  luteosProductMallUserOperateOrder = (
     req: MallClientOrderOperateReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/mall/user/operateOrder`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2934,17 +2938,18 @@ export class Api<
    * No description
    *
    * @tags 内购商城用户端管理
-   * @name OperateShoppingCartUsingPost1
+   * @name LuteosProductMallUserOperateShoppingCart
    * @summary 操作购物车
    * @request POST:/api/luteos/product/mall/user/operateShoppingCart
+   * @response `200` `MallShopCartOperateResp` OK
    */
-  operateShoppingCartUsingPost1 = (
+  luteosProductMallUserOperateShoppingCart = (
     req: MallShopCartOperateReq,
     params: RequestParams = {},
   ) =>
     this.request<MallShopCartOperateResp, any>({
       path: `/api/luteos/product/mall/user/operateShoppingCart`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -2953,11 +2958,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城用户端管理
-   * @name PreTradeUsingGet1
+   * @name LuteosProductMallUserPreTrade
    * @summary 测试生成二维码
    * @request GET:/api/luteos/product/mall/user/preTrade
+   * @response `200` `CommonRespString` OK
    */
-  preTradeUsingGet1 = (
+  luteosProductMallUserPreTrade = (
     query: {
       /** orderCode */
       orderCode: string;
@@ -2970,7 +2976,7 @@ export class Api<
   ) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/mall/user/preTrade`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -2978,14 +2984,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城用户端管理
-   * @name QueryCartCountUsingPost1
+   * @name LuteosProductMallUserQueryCartCount
    * @summary 查询购物车清单数量
    * @request POST:/api/luteos/product/mall/user/queryCartCount
+   * @response `200` `MallShopCartCountResp` OK
    */
-  queryCartCountUsingPost1 = (params: RequestParams = {}) =>
+  luteosProductMallUserQueryCartCount = (params: RequestParams = {}) =>
     this.request<MallShopCartCountResp, any>({
       path: `/api/luteos/product/mall/user/queryCartCount`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -2993,17 +3000,18 @@ export class Api<
    * No description
    *
    * @tags 内购商城用户端管理
-   * @name QueryProductClientListUsingPost1
+   * @name LuteosProductMallUserQueryProductList
    * @summary 查询商品首页列表
    * @request POST:/api/luteos/product/mall/user/queryProductList
+   * @response `200` `MallProductClientListResp` OK
    */
-  queryProductClientListUsingPost1 = (
+  luteosProductMallUserQueryProductList = (
     req: MallProductClientListReq,
     params: RequestParams = {},
   ) =>
     this.request<MallProductClientListResp, any>({
       path: `/api/luteos/product/mall/user/queryProductList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3012,11 +3020,12 @@ export class Api<
    * No description
    *
    * @tags 内购商城用户端管理
-   * @name QueryShoppingCartListUsingGet1
+   * @name LuteosProductMallUserQueryShoppingCartList
    * @summary 查询购物车列表
    * @request GET:/api/luteos/product/mall/user/queryShoppingCartList
+   * @response `200` `MallShopCartListResp` OK
    */
-  queryShoppingCartListUsingGet1 = (
+  luteosProductMallUserQueryShoppingCartList = (
     query: {
       /**
        * 页数
@@ -3037,7 +3046,7 @@ export class Api<
   ) =>
     this.request<MallShopCartListResp, any>({
       path: `/api/luteos/product/mall/user/queryShoppingCartList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3045,17 +3054,15 @@ export class Api<
    * No description
    *
    * @tags 内购商城用户端管理
-   * @name SubmitOrderUsingPost1
+   * @name LuteosProductMallUserSubmitOrder
    * @summary 提交订单
    * @request POST:/api/luteos/product/mall/user/submitOrder
+   * @response `200` `MallOrderSubmitResp` OK
    */
-  submitOrderUsingPost1 = (
-    req: MallOrderSubmitReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMallUserSubmitOrder = (req: MallOrderSubmitReq, params: RequestParams = {}) =>
     this.request<MallOrderSubmitResp, any>({
       path: `/api/luteos/product/mall/user/submitOrder`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3064,17 +3071,15 @@ export class Api<
    * No description
    *
    * @tags 型号管理
-   * @name ConnectProductUsingPost6
+   * @name LuteosProductModelConnectProduct
    * @summary 型号关联商品
    * @request POST:/api/luteos/product/model/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  connectProductUsingPost6 = (
-    req: ModelProductConnectReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductModelConnectProduct = (req: ModelProductConnectReq, params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/model/connectProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3083,17 +3088,15 @@ export class Api<
    * No description
    *
    * @tags 型号管理
-   * @name ExportModelUsingPost1
+   * @name LuteosProductModelExportModel
    * @summary 型号信息导出
    * @request POST:/api/luteos/product/model/exportModel
+   * @response `200` `CommonExportResp` OK
    */
-  exportModelUsingPost1 = (
-    req: ModelListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductModelExportModel = (req: ModelListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/model/exportModel`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3102,14 +3105,15 @@ export class Api<
    * No description
    *
    * @tags 型号管理
-   * @name OperateModelUsingPost3
+   * @name LuteosProductModelOperateModel
    * @summary 型号操作
    * @request POST:/api/luteos/product/model/operateModel
+   * @response `200` `CommonRespString` OK
    */
-  operateModelUsingPost3 = (req: ModelOperateReq, params: RequestParams = {}) =>
+  luteosProductModelOperateModel = (req: ModelOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/model/operateModel`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3118,11 +3122,12 @@ export class Api<
    * No description
    *
    * @tags 型号管理
-   * @name QueryModelDetailUsingGet1
+   * @name LuteosProductModelQueryModelDetail
    * @summary 型号详情查询
    * @request GET:/api/luteos/product/model/queryModelDetail
+   * @response `200` `ModelDetailResp` OK
    */
-  queryModelDetailUsingGet1 = (
+  luteosProductModelQueryModelDetail = (
     query: {
       /** 型号编码 */
       modelCode: string;
@@ -3131,7 +3136,7 @@ export class Api<
   ) =>
     this.request<ModelDetailResp, any>({
       path: `/api/luteos/product/model/queryModelDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3139,11 +3144,12 @@ export class Api<
    * No description
    *
    * @tags 型号管理
-   * @name QueryModelListUsingGet1
+   * @name LuteosProductModelQueryModelList
    * @summary 型号列表查询
    * @request GET:/api/luteos/product/model/queryModelList
+   * @response `200` `ModelListQueryResp` OK
    */
-  queryModelListUsingGet1 = (
+  luteosProductModelQueryModelList = (
     query: {
       /** 勾选导出的编码 */
       codeList?: string[];
@@ -3170,7 +3176,7 @@ export class Api<
   ) =>
     this.request<ModelListQueryResp, any>({
       path: `/api/luteos/product/model/queryModelList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3178,17 +3184,15 @@ export class Api<
    * No description
    *
    * @tags 型号管理
-   * @name SaveOrUpdateModelUsingPost1
+   * @name LuteosProductModelSaveOrUpdateModel
    * @summary 型号信息保存
    * @request POST:/api/luteos/product/model/saveOrUpdateModel
+   * @response `200` `ModelSaveResp` OK
    */
-  saveOrUpdateModelUsingPost1 = (
-    req: ModelSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductModelSaveOrUpdateModel = (req: ModelSaveReq, params: RequestParams = {}) =>
     this.request<ModelSaveResp, any>({
       path: `/api/luteos/product/model/saveOrUpdateModel`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3197,17 +3201,15 @@ export class Api<
    * No description
    *
    * @tags 在线商品跟卖监控
-   * @name QueryChartDataUsingPost1
+   * @name LuteosProductMonitorQueryChartData
    * @summary 趋势图数据
    * @request POST:/api/luteos/product/monitor/queryChartData
+   * @response `200` `OnlineProductChartResp` OK
    */
-  queryChartDataUsingPost1 = (
-    req: OnlineProductChartReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMonitorQueryChartData = (req: OnlineProductChartReq, params: RequestParams = {}) =>
     this.request<OnlineProductChartResp, any>({
       path: `/api/luteos/product/monitor/queryChartData`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3216,17 +3218,15 @@ export class Api<
    * No description
    *
    * @tags 在线商品跟卖监控
-   * @name QueryListUsingPost38
+   * @name LuteosProductMonitorQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/monitor/queryList
+   * @response `200` `OnlineProductMonitorResp` OK
    */
-  queryListUsingPost38 = (
-    req: OnlineProductMonitorReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMonitorQueryList = (req: OnlineProductMonitorReq, params: RequestParams = {}) =>
     this.request<OnlineProductMonitorResp, any>({
       path: `/api/luteos/product/monitor/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3235,17 +3235,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name AddActiveUsingPost2
+   * @name LuteosProductMsrpAddActive
    * @summary 活动折扣计划表-SPU新增编辑
    * @request POST:/api/luteos/product/msrp/addActive
+   * @response `200` `CommonRespObject` OK
    */
-  addActiveUsingPost2 = (
-    req: ActiveDiscountPlanAddReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpAddActive = (req: ActiveDiscountPlanAddReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/addActive`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3254,17 +3252,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name AddSkuActiveUsingPost2
+   * @name LuteosProductMsrpAddSkuActive
    * @summary 活动折扣计划表-SKU新增编辑
    * @request POST:/api/luteos/product/msrp/addSkuActive
+   * @response `200` `CommonRespObject` OK
    */
-  addSkuActiveUsingPost2 = (
-    req: SkuActiveDiscountPlanAddReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpAddSkuActive = (req: SkuActiveDiscountPlanAddReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/addSkuActive`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3273,17 +3269,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name ApproveActiveUsingPost2
+   * @name LuteosProductMsrpApproveActive
    * @summary 活动折扣计划表-提交审批
    * @request POST:/api/luteos/product/msrp/approveActive
+   * @response `200` `CommonRespObject` OK
    */
-  approveActiveUsingPost2 = (
-    req: DiscountPlanWeekApproveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpApproveActive = (req: DiscountPlanWeekApproveReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/approveActive`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3292,17 +3286,18 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name BatchAddActiveUsingPost2
+   * @name LuteosProductMsrpBatchAddActive
    * @summary 活动折扣计划表-批量保存
    * @request POST:/api/luteos/product/msrp/batchAddActive
+   * @response `200` `CommonRespObject` OK
    */
-  batchAddActiveUsingPost2 = (
+  luteosProductMsrpBatchAddActive = (
     req: ActiveDiscountPlanBatchAddReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/batchAddActive`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3311,14 +3306,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name BatchSaveUsingPost2
+   * @name LuteosProductMsrpBatchSave
    * @summary msrp管理-批量编辑保存
    * @request POST:/api/luteos/product/msrp/batchSave
+   * @response `200` `MsrpBatchSaveResp` OK
    */
-  batchSaveUsingPost2 = (req: MsrpSaveReq, params: RequestParams = {}) =>
+  luteosProductMsrpBatchSave = (req: MsrpSaveReq, params: RequestParams = {}) =>
     this.request<MsrpBatchSaveResp, any>({
       path: `/api/luteos/product/msrp/batchSave`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3327,11 +3323,12 @@ export class Api<
    * No description
    *
    * @tags msrp定价测算管理
-   * @name GetOnlinePromotionRateUsingGet2
+   * @name LuteosProductMsrpCalculationGetOnlinePromotionRate
    * @summary 定价测算-线上促销率查询
    * @request GET:/api/luteos/product/msrp/calculation/getOnlinePromotionRate
+   * @response `200` `CommonRespMsrpOnlinePromotionResp` OK
    */
-  getOnlinePromotionRateUsingGet2 = (
+  luteosProductMsrpCalculationGetOnlinePromotionRate = (
     query: {
       /** channel */
       channel: string;
@@ -3346,7 +3343,7 @@ export class Api<
   ) =>
     this.request<CommonRespMsrpOnlinePromotionResp, any>({
       path: `/api/luteos/product/msrp/calculation/getOnlinePromotionRate`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3354,31 +3351,33 @@ export class Api<
    * No description
    *
    * @tags msrp定价测算管理
-   * @name QueryAllEuSiteUsingGet2
+   * @name LuteosProductMsrpCalculationQueryAllEuSite
    * @summary 定价测算-EU范围站点
    * @request GET:/api/luteos/product/msrp/calculation/queryAllEuSite
+   * @response `200` `CommonRespListString` OK
    */
-  queryAllEuSiteUsingGet2 = (params: RequestParams = {}) =>
+  luteosProductMsrpCalculationQueryAllEuSite = (params: RequestParams = {}) =>
     this.request<CommonRespListString, any>({
       path: `/api/luteos/product/msrp/calculation/queryAllEuSite`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags msrp定价测算管理
-   * @name QueryCalculateBaseDataUsingPost2
+   * @name LuteosProductMsrpCalculationQueryCalculateBaseData
    * @summary 定价测算-BI数据查询
    * @request POST:/api/luteos/product/msrp/calculation/queryCalculateBaseData
+   * @response `200` `CommonRespMsrpCalculateBaseDataResp` OK
    */
-  queryCalculateBaseDataUsingPost2 = (
+  luteosProductMsrpCalculationQueryCalculateBaseData = (
     req: MsrpCalculateBaseReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespMsrpCalculateBaseDataResp, any>({
       path: `/api/luteos/product/msrp/calculation/queryCalculateBaseData`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3387,39 +3386,42 @@ export class Api<
    * No description
    *
    * @tags msrp定价测算管理
-   * @name QueryChannelUsingGet2
+   * @name LuteosProductMsrpCalculationQueryChannel
    * @summary 定价测算-渠道下拉框
    * @request GET:/api/luteos/product/msrp/calculation/queryChannel
+   * @response `200` `CommonRespListString` OK
    */
-  queryChannelUsingGet2 = (params: RequestParams = {}) =>
+  luteosProductMsrpCalculationQueryChannel = (params: RequestParams = {}) =>
     this.request<CommonRespListString, any>({
       path: `/api/luteos/product/msrp/calculation/queryChannel`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags msrp定价测算管理
-   * @name QueryCurrencyUsingGet2
+   * @name LuteosProductMsrpCalculationQueryCurrency
    * @summary 定价测算-汇率查询
    * @request GET:/api/luteos/product/msrp/calculation/queryCurrency
+   * @response `200` `CommonRespMapStringOdsFinanceCurrency` OK
    */
-  queryCurrencyUsingGet2 = (params: RequestParams = {}) =>
+  luteosProductMsrpCalculationQueryCurrency = (params: RequestParams = {}) =>
     this.request<CommonRespMapStringOdsFinanceCurrency, any>({
       path: `/api/luteos/product/msrp/calculation/queryCurrency`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags msrp定价测算管理
-   * @name QueryDetailUsingPost8
+   * @name LuteosProductMsrpCalculationQueryDetail
    * @summary msrp定价测算-详情
    * @request POST:/api/luteos/product/msrp/calculation/queryDetail
+   * @response `200` `CommonRespMsrpCalculatePriceDetailResp` OK
    */
-  queryDetailUsingPost8 = (
+  luteosProductMsrpCalculationQueryDetail = (
     query: {
       /**
        * id
@@ -3431,7 +3433,7 @@ export class Api<
   ) =>
     this.request<CommonRespMsrpCalculatePriceDetailResp, any>({
       path: `/api/luteos/product/msrp/calculation/queryDetail`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -3440,14 +3442,15 @@ export class Api<
    * No description
    *
    * @tags msrp定价测算管理
-   * @name QueryListUsingPost34
+   * @name LuteosProductMsrpCalculationQueryList
    * @summary msrp定价测算列表查询
    * @request POST:/api/luteos/product/msrp/calculation/queryList
+   * @response `200` `MsrpCalculatePriceQueryListResp` OK
    */
-  queryListUsingPost34 = (req: MsrpQueryListReq, params: RequestParams = {}) =>
+  luteosProductMsrpCalculationQueryList = (req: MsrpQueryListReq, params: RequestParams = {}) =>
     this.request<MsrpCalculatePriceQueryListResp, any>({
       path: `/api/luteos/product/msrp/calculation/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3456,17 +3459,18 @@ export class Api<
    * No description
    *
    * @tags msrp定价测算管理
-   * @name SaveCalculateMsrpUsingPost2
+   * @name LuteosProductMsrpCalculationSave
    * @summary msrp定价测算-新增
    * @request POST:/api/luteos/product/msrp/calculation/save
+   * @response `200` `CommonRespObject` OK
    */
-  saveCalculateMsrpUsingPost2 = (
+  luteosProductMsrpCalculationSave = (
     req: MsrpCalculatePriceDetailSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/calculation/save`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3475,11 +3479,12 @@ export class Api<
    * No description
    *
    * @tags msrp定价测算管理
-   * @name SubmitCalculateMsrpUsingPost2
+   * @name LuteosProductMsrpCalculationSubmit
    * @summary msrp定价测算-确定
    * @request POST:/api/luteos/product/msrp/calculation/submit
+   * @response `200` `CommonRespObject` OK
    */
-  submitCalculateMsrpUsingPost2 = (
+  luteosProductMsrpCalculationSubmit = (
     query: {
       /**
        * id
@@ -3491,7 +3496,7 @@ export class Api<
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/calculation/submit`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -3500,17 +3505,18 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name CancelApproveActiveUsingPost2
+   * @name LuteosProductMsrpCancelApproveActive
    * @summary 活动折扣计划表-撤销审批
    * @request POST:/api/luteos/product/msrp/cancelApproveActive
+   * @response `200` `CommonRespObject` OK
    */
-  cancelApproveActiveUsingPost2 = (
+  luteosProductMsrpCancelApproveActive = (
     req: DiscountPlanWeekCancelReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/cancelApproveActive`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3519,17 +3525,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name DeleteSkuDetailUsingPost2
+   * @name LuteosProductMsrpDeleteSkuDetail
    * @summary msrp管理-删除sku
    * @request POST:/api/luteos/product/msrp/deleteSkuDetail
+   * @response `200` `CommonRespVoid` OK
    */
-  deleteSkuDetailUsingPost2 = (
-    req: MsrpSpuDetailReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpDeleteSkuDetail = (req: MsrpSpuDetailReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/msrp/deleteSkuDetail`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3538,17 +3542,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name EditActiveUsingPost2
+   * @name LuteosProductMsrpEditActive
    * @summary 活动折扣计划表-点击触笔进入编辑
    * @request POST:/api/luteos/product/msrp/editActive
+   * @response `200` `CommonRespObject` OK
    */
-  editActiveUsingPost2 = (
-    req: DiscountPlanWeekEditReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpEditActive = (req: DiscountPlanWeekEditReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/editActive`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3557,14 +3559,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name ExportMsrpUsingPost2
+   * @name LuteosProductMsrpExportMsrp
    * @summary MSRP管理导出
    * @request POST:/api/luteos/product/msrp/exportMsrp
+   * @response `200` `CommonExportResp` OK
    */
-  exportMsrpUsingPost2 = (req: MsrpQueryListReq, params: RequestParams = {}) =>
+  luteosProductMsrpExportMsrp = (req: MsrpQueryListReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/msrp/exportMsrp`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3573,11 +3576,12 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryApproveLogUsingGet2
+   * @name LuteosProductMsrpQueryApproveLog
    * @summary 活动折扣计划表-审批记录
    * @request GET:/api/luteos/product/msrp/queryApproveLog
+   * @response `200` `WeekApproveLogResp` OK
    */
-  queryApproveLogUsingGet2 = (
+  luteosProductMsrpQueryApproveLog = (
     query?: {
       /** 记录编码 */
       code?: string;
@@ -3586,7 +3590,7 @@ export class Api<
   ) =>
     this.request<WeekApproveLogResp, any>({
       path: `/api/luteos/product/msrp/queryApproveLog`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3594,17 +3598,18 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryBatchActiveUsingPost2
+   * @name LuteosProductMsrpQueryBatchActive
    * @summary 活动折扣计划表-批量编辑查询
    * @request POST:/api/luteos/product/msrp/queryBatchActive
+   * @response `200` `ActiveDiscountPlanBatchEditQueryResp` OK
    */
-  queryBatchActiveUsingPost2 = (
+  luteosProductMsrpQueryBatchActive = (
     req: ActiveDiscountPlanBatchEditQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<ActiveDiscountPlanBatchEditQueryResp, any>({
       path: `/api/luteos/product/msrp/queryBatchActive`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3613,17 +3618,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryBatchEditListUsingPost2
+   * @name LuteosProductMsrpQueryBatchEditList
    * @summary msrp管理-批量编辑查询
    * @request POST:/api/luteos/product/msrp/queryBatchEditList
+   * @response `200` `CommonRespMsrpQueryChannelBatchListResp` OK
    */
-  queryBatchEditListUsingPost2 = (
-    req: MsrpBatchQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpQueryBatchEditList = (req: MsrpBatchQueryReq, params: RequestParams = {}) =>
     this.request<CommonRespMsrpQueryChannelBatchListResp, any>({
       path: `/api/luteos/product/msrp/queryBatchEditList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3632,11 +3635,12 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryEditActiveUsingGet2
+   * @name LuteosProductMsrpQueryEditActive
    * @summary 活动折扣计划表-SPU列表编辑查询&详情查询
    * @request GET:/api/luteos/product/msrp/queryEditActive
+   * @response `200` `ActiveDiscountPlanAddQueryResp` OK
    */
-  queryEditActiveUsingGet2 = (
+  luteosProductMsrpQueryEditActive = (
     query?: {
       /** 渠道编码 */
       channel?: string;
@@ -3655,7 +3659,7 @@ export class Api<
   ) =>
     this.request<ActiveDiscountPlanAddQueryResp, any>({
       path: `/api/luteos/product/msrp/queryEditActive`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3663,14 +3667,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryListUsingPost35
+   * @name LuteosProductMsrpQueryList
    * @summary msrp列表查询
    * @request POST:/api/luteos/product/msrp/queryList
+   * @response `200` `MsrpQueryListResp` OK
    */
-  queryListUsingPost35 = (req: MsrpQueryListReq, params: RequestParams = {}) =>
+  luteosProductMsrpQueryList = (req: MsrpQueryListReq, params: RequestParams = {}) =>
     this.request<MsrpQueryListResp, any>({
       path: `/api/luteos/product/msrp/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3679,11 +3684,12 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryOneSkuDetailUsingGet2
+   * @name LuteosProductMsrpQueryOneSkuDetail
    * @summary msrp管理-查询sku详情
    * @request GET:/api/luteos/product/msrp/queryOneSkuDetail
+   * @response `200` `CommonRespMsrpSkuDetailBean` OK
    */
-  queryOneSkuDetailUsingGet2 = (
+  luteosProductMsrpQueryOneSkuDetail = (
     query: {
       /** countryCode */
       countryCode: string;
@@ -3696,7 +3702,7 @@ export class Api<
   ) =>
     this.request<CommonRespMsrpSkuDetailBean, any>({
       path: `/api/luteos/product/msrp/queryOneSkuDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3704,11 +3710,12 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryOneSpuDetailUsingGet2
+   * @name LuteosProductMsrpQueryOneSpuDetail
    * @summary msrp管理-促销查spu详情
    * @request GET:/api/luteos/product/msrp/queryOneSpuDetail
+   * @response `200` `CommonRespMsrpSpuDetailResp` OK
    */
-  queryOneSpuDetailUsingGet2 = (
+  luteosProductMsrpQueryOneSpuDetail = (
     query: {
       /** channel */
       channel: string;
@@ -3721,7 +3728,7 @@ export class Api<
   ) =>
     this.request<CommonRespMsrpSpuDetailResp, any>({
       path: `/api/luteos/product/msrp/queryOneSpuDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3729,11 +3736,12 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryOperatorBySpuAndCountryAndChannelUsingGet2
+   * @name LuteosProductMsrpQueryOperatorBySpuAndCountryAndChannel
    * @summary 根据spu,国家，渠道获取运营人员
    * @request GET:/api/luteos/product/msrp/queryOperatorBySpuAndCountryAndChannel
+   * @response `200` `CommonRespOperatorQueryResp` OK
    */
-  queryOperatorBySpuAndCountryAndChannelUsingGet2 = (
+  luteosProductMsrpQueryOperatorBySpuAndCountryAndChannel = (
     query: {
       /** channel */
       channel: string;
@@ -3746,7 +3754,7 @@ export class Api<
   ) =>
     this.request<CommonRespOperatorQueryResp, any>({
       path: `/api/luteos/product/msrp/queryOperatorBySpuAndCountryAndChannel`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3754,17 +3762,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryPlanListUsingPost2
+   * @name LuteosProductMsrpQueryPlanList
    * @summary 活动折扣计划表-列表查询
    * @request POST:/api/luteos/product/msrp/queryPlanList
+   * @response `200` `ActiveDiscountPlanListResp` OK
    */
-  queryPlanListUsingPost2 = (
-    req: ActiveDiscountPlanReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpQueryPlanList = (req: ActiveDiscountPlanReq, params: RequestParams = {}) =>
     this.request<ActiveDiscountPlanListResp, any>({
       path: `/api/luteos/product/msrp/queryPlanList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3773,11 +3779,12 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QueryRelationLogUsingGet3
+   * @name LuteosProductMsrpQueryRelationLog
    * @summary msrp日志详情查询
    * @request GET:/api/luteos/product/msrp/queryRelationLog
+   * @response `200` `SaleSkuLogDetailQueryResp` OK
    */
-  queryRelationLogUsingGet3 = (
+  luteosProductMsrpQueryRelationLog = (
     query: {
       /**
        * 是否统计分页总数量 1-是 0-否 默认否
@@ -3821,7 +3828,7 @@ export class Api<
   ) =>
     this.request<SaleSkuLogDetailQueryResp, any>({
       path: `/api/luteos/product/msrp/queryRelationLog`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3829,17 +3836,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QuerySkuDetailUsingPost2
+   * @name LuteosProductMsrpQuerySkuDetail
    * @summary msrp管理-查询sku详情
    * @request POST:/api/luteos/product/msrp/querySkuDetail
+   * @response `200` `CommonRespMsrpSkuDetailResp` OK
    */
-  querySkuDetailUsingPost2 = (
-    req: MsrpSpuDetailReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpQuerySkuDetail = (req: MsrpSpuDetailReq, params: RequestParams = {}) =>
     this.request<CommonRespMsrpSkuDetailResp, any>({
       path: `/api/luteos/product/msrp/querySkuDetail`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3848,11 +3853,12 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QuerySkuEditActiveUsingGet2
+   * @name LuteosProductMsrpQuerySkuEditActive
    * @summary 活动折扣计划表-SKU列表编辑查询&详情查询
    * @request GET:/api/luteos/product/msrp/querySkuEditActive
+   * @response `200` `SkuActiveDiscountPlanQueryResp` OK
    */
-  querySkuEditActiveUsingGet2 = (
+  luteosProductMsrpQuerySkuEditActive = (
     query: {
       /** 记录编码 */
       code: string;
@@ -3861,7 +3867,7 @@ export class Api<
   ) =>
     this.request<SkuActiveDiscountPlanQueryResp, any>({
       path: `/api/luteos/product/msrp/querySkuEditActive`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3869,17 +3875,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QuerySkuListUsingPost2
+   * @name LuteosProductMsrpQuerySkuList
    * @summary msrp管理新增-查询
    * @request POST:/api/luteos/product/msrp/querySkuList
+   * @response `200` `MsrpQueryChannelListResp` OK
    */
-  querySkuListUsingPost2 = (
-    req: MsrpSkuListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpQuerySkuList = (req: MsrpSkuListQueryReq, params: RequestParams = {}) =>
     this.request<MsrpQueryChannelListResp, any>({
       path: `/api/luteos/product/msrp/querySkuList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3888,17 +3892,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name QuerySpuDetailUsingPost2
+   * @name LuteosProductMsrpQuerySpuDetail
    * @summary msrp管理-查询spu详情
    * @request POST:/api/luteos/product/msrp/querySpuDetail
+   * @response `200` `CommonRespMsrpSpuDetailResp` OK
    */
-  querySpuDetailUsingPost2 = (
-    req: MsrpSpuDetailReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMsrpQuerySpuDetail = (req: MsrpSpuDetailReq, params: RequestParams = {}) =>
     this.request<CommonRespMsrpSpuDetailResp, any>({
       path: `/api/luteos/product/msrp/querySpuDetail`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3907,14 +3909,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name SaveMsrpUsingPost2
+   * @name LuteosProductMsrpSave
    * @summary msrp管理-新增
    * @request POST:/api/luteos/product/msrp/save
+   * @response `200` `CommonRespObject` OK
    */
-  saveMsrpUsingPost2 = (req: MsrpSaveReq, params: RequestParams = {}) =>
+  luteosProductMsrpSave = (req: MsrpSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/msrp/save`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3923,14 +3926,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name SaveSkuUsingPost3
+   * @name LuteosProductMsrpSaveSku
    * @summary msrp管理-sku编辑
    * @request POST:/api/luteos/product/msrp/saveSku
+   * @response `200` `MsrpSaveSkuResp` OK
    */
-  saveSkuUsingPost3 = (req: MsrpSaveSkuReq, params: RequestParams = {}) =>
+  luteosProductMsrpSaveSku = (req: MsrpSaveSkuReq, params: RequestParams = {}) =>
     this.request<MsrpSaveSkuResp, any>({
       path: `/api/luteos/product/msrp/saveSku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3939,14 +3943,15 @@ export class Api<
    * No description
    *
    * @tags msrp管理
-   * @name SaveSpuUsingPost2
+   * @name LuteosProductMsrpSaveSpu
    * @summary msrp管理-spu编辑
    * @request POST:/api/luteos/product/msrp/saveSpu
+   * @response `200` `MsrpSaveSpuResp` OK
    */
-  saveSpuUsingPost2 = (req: MsrpSaveSpuReq, params: RequestParams = {}) =>
+  luteosProductMsrpSaveSpu = (req: MsrpSaveSpuReq, params: RequestParams = {}) =>
     this.request<MsrpSaveSpuResp, any>({
       path: `/api/luteos/product/msrp/saveSpu`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3955,17 +3960,15 @@ export class Api<
    * No description
    *
    * @tags 多平台价格监控
-   * @name QueryListUsingPost36
+   * @name LuteosProductMultiPriceQueryList
    * @summary 多平台价格列表查询
    * @request POST:/api/luteos/product/multi-price/queryList
+   * @response `200` `CommonRespMultiPriceQueryListResp` OK
    */
-  queryListUsingPost36 = (
-    req: MultiPriceQueryListReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductMultiPriceQueryList = (req: MultiPriceQueryListReq, params: RequestParams = {}) =>
     this.request<CommonRespMultiPriceQueryListResp, any>({
       path: `/api/luteos/product/multi-price/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -3974,11 +3977,12 @@ export class Api<
    * No description
    *
    * @tags 多平台价格监控
-   * @name QueryPriceDetailUsingGet1
+   * @name LuteosProductMultiPriceQueryPriceDetail
    * @summary 查询价格详情
    * @request GET:/api/luteos/product/multi-price/queryPriceDetail
+   * @response `200` `CommonRespListMultiPriceDetailResp` OK
    */
-  queryPriceDetailUsingGet1 = (
+  luteosProductMultiPriceQueryPriceDetail = (
     query: {
       /** code */
       code: string;
@@ -3989,7 +3993,7 @@ export class Api<
   ) =>
     this.request<CommonRespListMultiPriceDetailResp, any>({
       path: `/api/luteos/product/multi-price/queryPriceDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -3997,17 +4001,18 @@ export class Api<
    * No description
    *
    * @tags 线下渠道-在线商品
-   * @name QueryProductListingPageUsingPost6
+   * @name LuteosProductOfflineListingQueryProductListingPage
    * @summary 线下渠道-在线商品分页查询-V2
    * @request POST:/api/luteos/product/offline/listing/queryProductListingPage
+   * @response `200` `OfflineProductListingResp` OK
    */
-  queryProductListingPageUsingPost6 = (
+  luteosProductOfflineListingQueryProductListingPage = (
     req: OfflineListingProductReq,
     params: RequestParams = {},
   ) =>
     this.request<OfflineProductListingResp, any>({
       path: `/api/luteos/product/offline/listing/queryProductListingPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4016,17 +4021,18 @@ export class Api<
    * No description
    *
    * @tags 商品SKU新旧产品映射管理
-   * @name ExportUsingPost12
+   * @name LuteosProductOldNewMappingExport
    * @summary 导出
    * @request POST:/api/luteos/product/oldNewMapping/export
+   * @response `200` `CommonExportResp` OK
    */
-  exportUsingPost12 = (
+  luteosProductOldNewMappingExport = (
     req: ProductSkuOldNewListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/oldNewMapping/export`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4035,11 +4041,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU新旧产品映射管理
-   * @name QueryListUsingGet7
+   * @name LuteosProductOldNewMappingQueryList
    * @summary 列表查询
    * @request GET:/api/luteos/product/oldNewMapping/queryList
+   * @response `200` `ProductSkuOldNewMappingResp` OK
    */
-  queryListUsingGet7 = (
+  luteosProductOldNewMappingQueryList = (
     query: {
       /**
        * gtm组Id
@@ -4074,7 +4081,7 @@ export class Api<
   ) =>
     this.request<ProductSkuOldNewMappingResp, any>({
       path: `/api/luteos/product/oldNewMapping/queryList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4082,17 +4089,18 @@ export class Api<
    * No description
    *
    * @tags 商品SKU新旧产品映射管理
-   * @name SaveOrUpdateSkuOldNewUsingPost1
+   * @name LuteosProductOldNewMappingSaveOrUpdate
    * @summary 商品sku新旧保存
    * @request POST:/api/luteos/product/oldNewMapping/saveOrUpdate
+   * @response `200` `CommonRespString` OK
    */
-  saveOrUpdateSkuOldNewUsingPost1 = (
+  luteosProductOldNewMappingSaveOrUpdate = (
     req: ProductSkuOldNewSaveOrUpdReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/oldNewMapping/saveOrUpdate`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4101,11 +4109,12 @@ export class Api<
    * No description
    *
    * @tags 新平台-在线商品
-   * @name ExportUsingGet1
+   * @name LuteosProductOnlineExport
    * @summary 导出
    * @request GET:/api/luteos/product/online/export
+   * @response `200` `CommonExportResp` OK
    */
-  exportUsingGet1 = (
+  luteosProductOnlineExport = (
     query: {
       /** 渠道 */
       channel?: string;
@@ -4142,7 +4151,7 @@ export class Api<
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/online/export`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4150,17 +4159,15 @@ export class Api<
    * No description
    *
    * @tags 新平台-在线商品
-   * @name QueryListingTagUsingPost7
+   * @name LuteosProductOnlineListingQueryTag
    * @summary 标签查询
    * @request POST:/api/luteos/product/online/listing/queryTag
+   * @response `200` `ListingTagResp` OK
    */
-  queryListingTagUsingPost7 = (
-    req: ListingQueryTagReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductOnlineListingQueryTag = (req: ListingQueryTagReq, params: RequestParams = {}) =>
     this.request<ListingTagResp, any>({
       path: `/api/luteos/product/online/listing/queryTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4169,17 +4176,15 @@ export class Api<
    * No description
    *
    * @tags 新平台-在线商品
-   * @name QueryListUsingPost37
+   * @name LuteosProductOnlineQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/online/queryList
+   * @response `200` `OnlineProductQueryResp` OK
    */
-  queryListUsingPost37 = (
-    req: OnlineProductQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductOnlineQueryList = (req: OnlineProductQueryReq, params: RequestParams = {}) =>
     this.request<OnlineProductQueryResp, any>({
       path: `/api/luteos/product/online/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4188,14 +4193,15 @@ export class Api<
    * No description
    *
    * @tags 新平台-在线商品
-   * @name SaveUsingPost19
+   * @name LuteosProductOnlineSave
    * @summary 保存在线商品
    * @request POST:/api/luteos/product/online/save
+   * @response `200` `CommonRespObject` OK
    */
-  saveUsingPost19 = (req: OnlineProductSaveReq, params: RequestParams = {}) =>
+  luteosProductOnlineSave = (req: OnlineProductSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/online/save`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4204,14 +4210,15 @@ export class Api<
    * No description
    *
    * @tags 新平台-在线商品
-   * @name SaveOperatorUsingPost5
+   * @name LuteosProductOnlineSaveOperator
    * @summary 保存运营人员
    * @request POST:/api/luteos/product/online/saveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  saveOperatorUsingPost5 = (req: OperatorSaveReq, params: RequestParams = {}) =>
+  luteosProductOnlineSaveOperator = (req: OperatorSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/online/saveOperator`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4220,17 +4227,15 @@ export class Api<
    * No description
    *
    * @tags 新平台-在线商品
-   * @name SaveProductLinkUsingPost5
+   * @name LuteosProductOnlineSaveProductLink
    * @summary 保存商品链接
    * @request POST:/api/luteos/product/online/saveProductLink
+   * @response `200` `CommonRespObject` OK
    */
-  saveProductLinkUsingPost5 = (
-    req: ProductLinkSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductOnlineSaveProductLink = (req: ProductLinkSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/online/saveProductLink`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4239,17 +4244,15 @@ export class Api<
    * No description
    *
    * @tags 新平台-在线商品
-   * @name SaveTagUsingPost1
+   * @name LuteosProductOnlineSaveTag
    * @summary 保存标签
    * @request POST:/api/luteos/product/online/saveTag
+   * @response `200` `CommonRespObject` OK
    */
-  saveTagUsingPost1 = (
-    req: ListingBatchModifyTagReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductOnlineSaveTag = (req: ListingBatchModifyTagReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/online/saveTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4258,17 +4261,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name OperateProductUsingPost3
+   * @name LuteosProductOperateProduct
    * @summary 商品信息操作
    * @request POST:/api/luteos/product/operateProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  operateProductUsingPost3 = (
-    req: ProductOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductOperateProduct = (req: ProductOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/operateProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4277,17 +4278,18 @@ export class Api<
    * No description
    *
    * @tags 在线商品-产品表现
-   * @name QueryPerformanceUsingPost1
+   * @name LuteosProductPerformanceQueryPerformance
    * @summary 在线商品-商品表现-V2
    * @request POST:/api/luteos/product/performance/queryPerformance
+   * @response `200` `WalmartProductListingResp` OK
    */
-  queryPerformanceUsingPost1 = (
+  luteosProductPerformanceQueryPerformance = (
     req: PerformanceProductReq,
     params: RequestParams = {},
   ) =>
     this.request<WalmartProductListingResp, any>({
       path: `/api/luteos/product/performance/queryPerformance`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4296,11 +4298,12 @@ export class Api<
    * No description
    *
    * @tags 产品表现
-   * @name QuerySkuListUsingGet3
+   * @name LuteosProductPerformanceQuerySkuList
    * @summary SKU列表查询
    * @request GET:/api/luteos/product/performance/querySkuList
+   * @response `200` `ProductPerformanceResp` OK
    */
-  querySkuListUsingGet3 = (
+  luteosProductPerformanceQuerySkuList = (
     query: {
       /** 渠道 */
       channel?: string;
@@ -4338,7 +4341,7 @@ export class Api<
   ) =>
     this.request<ProductPerformanceResp, any>({
       path: `/api/luteos/product/performance/querySkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4346,11 +4349,12 @@ export class Api<
    * No description
    *
    * @tags 产品表现
-   * @name QuerySkuPerformanceUsingGet1
+   * @name LuteosProductPerformanceQuerySkuPerformance
    * @summary SKU产品表现
    * @request GET:/api/luteos/product/performance/querySkuPerformance
+   * @response `200` `ProductPerformanceDetailResp` OK
    */
-  querySkuPerformanceUsingGet1 = (
+  luteosProductPerformanceQuerySkuPerformance = (
     query: {
       /** 渠道 */
       channel?: string;
@@ -4385,7 +4389,7 @@ export class Api<
   ) =>
     this.request<ProductPerformanceDetailResp, any>({
       path: `/api/luteos/product/performance/querySkuPerformance`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4393,17 +4397,18 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name ApplyListUsingPost1
+   * @name LuteosProductPromotionPlanApplyList
    * @summary 促销计划申请列表
    * @request POST:/api/luteos/product/promotion-plan/applyList
+   * @response `200` `PromotionPlanApplyListResp` OK
    */
-  applyListUsingPost1 = (
+  luteosProductPromotionPlanApplyList = (
     req: PromotionPlanListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<PromotionPlanApplyListResp, any>({
       path: `/api/luteos/product/promotion-plan/applyList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4412,17 +4417,15 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name CreateUsingPost1
+   * @name LuteosProductPromotionPlanCreate
    * @summary 促销计划-新增
    * @request POST:/api/luteos/product/promotion-plan/create
+   * @response `200` `CommonRespVoid` OK
    */
-  createUsingPost1 = (
-    req: PromotionPlanCreateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductPromotionPlanCreate = (req: PromotionPlanCreateReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/promotion-plan/create`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4431,17 +4434,18 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name CreateCheckUsingPost1
+   * @name LuteosProductPromotionPlanCreateCheck
    * @summary 促销计划-新增校验
    * @request POST:/api/luteos/product/promotion-plan/createCheck
+   * @response `200` `CommonRespPlanCreateCheckResp` OK
    */
-  createCheckUsingPost1 = (
+  luteosProductPromotionPlanCreateCheck = (
     req: PromotionPlanCreateReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespPlanCreateCheckResp, any>({
       path: `/api/luteos/product/promotion-plan/createCheck`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4450,11 +4454,12 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name DeleteUsingPost8
+   * @name LuteosProductPromotionPlanDelete
    * @summary 促销计划-删除
    * @request POST:/api/luteos/product/promotion-plan/delete
+   * @response `200` `CommonRespPromotionPlanDeleteResp` OK
    */
-  deleteUsingPost8 = (
+  luteosProductPromotionPlanDelete = (
     query: {
       /** confirm */
       confirm: boolean;
@@ -4465,7 +4470,7 @@ export class Api<
   ) =>
     this.request<CommonRespPromotionPlanDeleteResp, any>({
       path: `/api/luteos/product/promotion-plan/delete`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -4474,11 +4479,12 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name DetailUsingGet6
+   * @name LuteosProductPromotionPlanDetail
    * @summary 促销计划-详情
    * @request GET:/api/luteos/product/promotion-plan/detail
+   * @response `200` `CommonRespPromotionPlanDetailResp` OK
    */
-  detailUsingGet6 = (
+  luteosProductPromotionPlanDetail = (
     query: {
       /** planCode */
       planCode: string;
@@ -4487,7 +4493,7 @@ export class Api<
   ) =>
     this.request<CommonRespPromotionPlanDetailResp, any>({
       path: `/api/luteos/product/promotion-plan/detail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4495,17 +4501,18 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name ExportPromotionPlanUsingPost1
+   * @name LuteosProductPromotionPlanExportPromotionPlan
    * @summary 促销计划导出
    * @request POST:/api/luteos/product/promotion-plan/exportPromotionPlan
+   * @response `200` `CommonExportResp` OK
    */
-  exportPromotionPlanUsingPost1 = (
+  luteosProductPromotionPlanExportPromotionPlan = (
     req: PromotionPlanListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/promotion-plan/exportPromotionPlan`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4514,11 +4521,12 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name GetAddActivityDetailUsingGet1
+   * @name LuteosProductPromotionPlanGetAddActivityDetail
    * @summary 添加活动详情列表
    * @request GET:/api/luteos/product/promotion-plan/getAddActivityDetail
+   * @response `200` `CommonRespAddActivityDetailResp` OK
    */
-  getAddActivityDetailUsingGet1 = (
+  luteosProductPromotionPlanGetAddActivityDetail = (
     query: {
       /** planCodeList */
       planCodeList: string[];
@@ -4527,7 +4535,7 @@ export class Api<
   ) =>
     this.request<CommonRespAddActivityDetailResp, any>({
       path: `/api/luteos/product/promotion-plan/getAddActivityDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4535,17 +4543,18 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name ListBySkuUsingPost1
+   * @name LuteosProductPromotionPlanListBySku
    * @summary 促销计划-SKU维度分页列表
    * @request POST:/api/luteos/product/promotion-plan/listBySku
+   * @response `200` `PromotionPlanListQuerySkuResp` OK
    */
-  listBySkuUsingPost1 = (
+  luteosProductPromotionPlanListBySku = (
     req: PromotionPlanListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<PromotionPlanListQuerySkuResp, any>({
       path: `/api/luteos/product/promotion-plan/listBySku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4554,17 +4563,18 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name ListBySpuUsingPost1
+   * @name LuteosProductPromotionPlanListBySpu
    * @summary 促销计划-SPU维度分页列表
    * @request POST:/api/luteos/product/promotion-plan/listBySpu
+   * @response `200` `PromotionPlanListQuerySpuResp` OK
    */
-  listBySpuUsingPost1 = (
+  luteosProductPromotionPlanListBySpu = (
     req: PromotionPlanListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<PromotionPlanListQuerySpuResp, any>({
       path: `/api/luteos/product/promotion-plan/listBySpu`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4573,11 +4583,12 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name QuerySkuListUsingGet4
+   * @name LuteosProductPromotionPlanQuerySkuList
    * @summary 查询sku列表
    * @request GET:/api/luteos/product/promotion-plan/querySkuList
+   * @response `200` `CommonRespMsrpSkuListResp` OK
    */
-  querySkuListUsingGet4 = (
+  luteosProductPromotionPlanQuerySkuList = (
     query: {
       /** countryCode */
       countryCode: string;
@@ -4588,7 +4599,7 @@ export class Api<
   ) =>
     this.request<CommonRespMsrpSkuListResp, any>({
       path: `/api/luteos/product/promotion-plan/querySkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4596,11 +4607,12 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name QuerySpuListUsingGet1
+   * @name LuteosProductPromotionPlanQuerySpuList
    * @summary 查询spu列表
    * @request GET:/api/luteos/product/promotion-plan/querySpuList
+   * @response `200` `CommonRespProductListQueryResp` OK
    */
-  querySpuListUsingGet1 = (
+  luteosProductPromotionPlanQuerySpuList = (
     query: {
       /** 时间排序,默认false */
       asc?: boolean;
@@ -4699,7 +4711,7 @@ export class Api<
   ) =>
     this.request<CommonRespProductListQueryResp, any>({
       path: `/api/luteos/product/promotion-plan/querySpuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4707,17 +4719,15 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name ReviewUsingPost1
+   * @name LuteosProductPromotionPlanReview
    * @summary 促销计划-审核
    * @request POST:/api/luteos/product/promotion-plan/review
+   * @response `200` `CommonRespVoid` OK
    */
-  reviewUsingPost1 = (
-    req: PromotionPlanReviewReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductPromotionPlanReview = (req: PromotionPlanReviewReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/promotion-plan/review`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4726,17 +4736,18 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name ReviewListUsingPost1
+   * @name LuteosProductPromotionPlanReviewList
    * @summary 促销计划-审核列表
    * @request POST:/api/luteos/product/promotion-plan/reviewList
+   * @response `200` `CommonRespPromotionPlanReviewListResp` OK
    */
-  reviewListUsingPost1 = (
+  luteosProductPromotionPlanReviewList = (
     req: PromotionPlanReviewListReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespPromotionPlanReviewListResp, any>({
       path: `/api/luteos/product/promotion-plan/reviewList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4745,17 +4756,15 @@ export class Api<
    * No description
    *
    * @tags 促销计划
-   * @name UpdateUsingPost9
+   * @name LuteosProductPromotionPlanUpdate
    * @summary 促销计划-更新
    * @request POST:/api/luteos/product/promotion-plan/update
+   * @response `200` `CommonRespVoid` OK
    */
-  updateUsingPost9 = (
-    req: PromotionPlanCreateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductPromotionPlanUpdate = (req: PromotionPlanCreateReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/promotion-plan/update`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4764,11 +4773,12 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name QueryDetailUsingGet9
+   * @name LuteosProductQueryDetail
    * @summary 商品详情查询
    * @request GET:/api/luteos/product/queryDetail
+   * @response `200` `ProductDetailQueryResp` OK
    */
-  queryDetailUsingGet9 = (
+  luteosProductQueryDetail = (
     query: {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
       operationType: string;
@@ -4779,7 +4789,7 @@ export class Api<
   ) =>
     this.request<ProductDetailQueryResp, any>({
       path: `/api/luteos/product/queryDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4787,11 +4797,12 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name QueryOperatorListUsingGet4
+   * @name LuteosProductQueryOperatorList
    * @summary 获取采购员列表
    * @request GET:/api/luteos/product/queryOperatorList
+   * @response `200` `PurchaseOperatorQueryResp` OK
    */
-  queryOperatorListUsingGet4 = (
+  luteosProductQueryOperatorList = (
     query: {
       /** 产品经理编码 */
       productManagerCode: string;
@@ -4800,7 +4811,7 @@ export class Api<
   ) =>
     this.request<PurchaseOperatorQueryResp, any>({
       path: `/api/luteos/product/queryOperatorList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4808,11 +4819,12 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name QueryPlatfromSkuIdentifyUsingGet1
+   * @name LuteosProductQueryPlatfromSkuIdentify
    * @summary 原平台标识查询
    * @request GET:/api/luteos/product/queryPlatfromSkuIdentify
+   * @response `200` `CommonRespListString` OK
    */
-  queryPlatfromSkuIdentifyUsingGet1 = (
+  luteosProductQueryPlatfromSkuIdentify = (
     query: {
       /** 渠道 */
       channel: string;
@@ -4825,7 +4837,7 @@ export class Api<
   ) =>
     this.request<CommonRespListString, any>({
       path: `/api/luteos/product/queryPlatfromSkuIdentify`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4833,46 +4845,30 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name QueryProductPerfectionUsingGet1
+   * @name LuteosProductQueryProductPerfection
    * @summary 获取商品列表信息完善度
    * @request GET:/api/luteos/product/queryProduct/perfection
+   * @response `200` `ProductPerfectionQueryResp` OK
    */
-  queryProductPerfectionUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductQueryProductPerfection = (params: RequestParams = {}) =>
     this.request<ProductPerfectionQueryResp, any>({
       path: `/api/luteos/product/queryProduct/perfection`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 商品管理
-   * @name QueryProductAllModelListUsingPost1
-   * @summary 产品型号列表查询
-   * @request POST:/api/luteos/product/queryProductAllModelList
-   */
-  queryProductAllModelListUsingPost1 = (params: RequestParams = {}) =>
-    this.request<CommonRespString, any>({
-      path: `/api/luteos/product/queryProductAllModelList`,
-      method: "POST",
-      type: ContentType.Json,
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags 商品管理
-   * @name QueryProductByCategoryUsingPost1
+   * @name LuteosProductQueryProductByCategory
    * @summary 根据分类查询商品
    * @request POST:/api/luteos/product/queryProductByCategory
+   * @response `200` `ProductCategoryResp` OK
    */
-  queryProductByCategoryUsingPost1 = (
-    req: ProductCategoryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductQueryProductByCategory = (req: ProductCategoryReq, params: RequestParams = {}) =>
     this.request<ProductCategoryResp, any>({
       path: `/api/luteos/product/queryProductByCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -4881,11 +4877,12 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name QueryProductInfoUsingGet1
+   * @name LuteosProductQueryProductInfo
    * @summary 商品信息查询
    * @request GET:/api/luteos/product/queryProductInfo
+   * @response `200` `ProductInfoResp` OK
    */
-  queryProductInfoUsingGet1 = (
+  luteosProductQueryProductInfo = (
     query: {
       /** 商品spu编码 */
       productSpu: string;
@@ -4894,7 +4891,7 @@ export class Api<
   ) =>
     this.request<ProductInfoResp, any>({
       path: `/api/luteos/product/queryProductInfo`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -4902,11 +4899,12 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name QueryProductListUsingGet3
+   * @name LuteosProductQueryProductList
    * @summary 商品列表查询
    * @request GET:/api/luteos/product/queryProductList
+   * @response `200` `ProductListQueryResp` OK
    */
-  queryProductListUsingGet3 = (
+  luteosProductQueryProductList = (
     query: {
       /** 时间排序,默认false */
       asc?: boolean;
@@ -5005,7 +5003,7 @@ export class Api<
   ) =>
     this.request<ProductListQueryResp, any>({
       path: `/api/luteos/product/queryProductList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5013,45 +5011,48 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name QueryProductRelationListUsingGet1
+   * @name LuteosProductQueryProductRelationList
    * @summary 商品关联信息列表查询
    * @request GET:/api/luteos/product/queryProductRelationList
+   * @response `200` `ProductRelationListResp` OK
    */
-  queryProductRelationListUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductQueryProductRelationList = (params: RequestParams = {}) =>
     this.request<ProductRelationListResp, any>({
       path: `/api/luteos/product/queryProductRelationList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 商品管理
-   * @name QuerySupplySkuUsingGet1
+   * @name LuteosProductQuerySupplySku
    * @summary 供应链SKU查询
    * @request GET:/api/luteos/product/querySupplySku
+   * @response `200` `CommonRespListString` OK
    */
-  querySupplySkuUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductQuerySupplySku = (params: RequestParams = {}) =>
     this.request<CommonRespListString, any>({
       path: `/api/luteos/product/querySupplySku`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 批量删除, 竞品监控
-   * @name BatchDeletedUsingPost5
+   * @name LuteosProductRankingListBatchDeleted
    * @summary 批量删除
    * @request POST:/api/luteos/product/rankingList/batchDeleted
+   * @response `200` `CommonRespString` OK
    */
-  batchDeletedUsingPost5 = (
+  luteosProductRankingListBatchDeleted = (
     req: AmazonRankingListBatchOperationReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/rankingList/batchDeleted`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5060,17 +5061,18 @@ export class Api<
    * No description
    *
    * @tags 批量编辑, 竞品监控
-   * @name BatchOperationUsingPost1
+   * @name LuteosProductRankingListBatchOperation
    * @summary 批量编辑
    * @request POST:/api/luteos/product/rankingList/batchOperation
+   * @response `200` `CommonRespString` OK
    */
-  batchOperationUsingPost1 = (
+  luteosProductRankingListBatchOperation = (
     req: AmazonRankingListBatchOperationReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/rankingList/batchOperation`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5079,14 +5081,15 @@ export class Api<
    * No description
    *
    * @tags 竞品监控
-   * @name DownTemplateUsingPost3
+   * @name LuteosProductRankingListDownTemplate
    * @summary 下载-竞品监控导入模板
    * @request POST:/api/luteos/product/rankingList/downTemplate
+   * @response `200` `CommonRespString` OK
    */
-  downTemplateUsingPost3 = (params: RequestParams = {}) =>
+  luteosProductRankingListDownTemplate = (params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/rankingList/downTemplate`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -5094,17 +5097,18 @@ export class Api<
    * No description
    *
    * @tags 竞品监控, 编辑
-   * @name OperationUsingPost1
+   * @name LuteosProductRankingListOperation
    * @summary 编辑运营/组长/备注
    * @request POST:/api/luteos/product/rankingList/operation
+   * @response `200` `CommonRespString` OK
    */
-  operationUsingPost1 = (
+  luteosProductRankingListOperation = (
     req: AmazonRankingListOperationReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/rankingList/operation`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5113,17 +5117,18 @@ export class Api<
    * No description
    *
    * @tags 竞品监控
-   * @name QueryListUsingPost33
+   * @name LuteosProductRankingListQueryList
    * @summary 竞品监控列表查询
    * @request POST:/api/luteos/product/rankingList/queryList
+   * @response `200` `CommonRespAmazonRankingListQueryListResp` OK
    */
-  queryListUsingPost33 = (
+  luteosProductRankingListQueryList = (
     req: AmazonRankingListQueryListReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespAmazonRankingListQueryListResp, any>({
       path: `/api/luteos/product/rankingList/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5132,17 +5137,15 @@ export class Api<
    * No description
    *
    * @tags 竞品监控
-   * @name SaveUsingPost18
+   * @name LuteosProductRankingListSave
    * @summary 新增/编辑
    * @request POST:/api/luteos/product/rankingList/save
+   * @response `200` `CommonRespVoid` OK
    */
-  saveUsingPost18 = (
-    req: AmazonRankingListSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductRankingListSave = (req: AmazonRankingListSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/rankingList/save`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5151,11 +5154,12 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name RemoveProductUsingGet1
+   * @name LuteosProductRemoveProduct
    * @summary 删除商品
    * @request GET:/api/luteos/product/removeProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  removeProductUsingGet1 = (
+  luteosProductRemoveProduct = (
     query: {
       /** 商品编码 */
       productSpu: string;
@@ -5164,7 +5168,7 @@ export class Api<
   ) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/removeProduct`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5172,17 +5176,15 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name ExportSaleSkuUsingPost1
+   * @name LuteosProductSaleSkuExportSaleSku
    * @summary 导出销售映射
    * @request POST:/api/luteos/product/saleSku/exportSaleSku
+   * @response `200` `CommonExportResp` OK
    */
-  exportSaleSkuUsingPost1 = (
-    req: SaleSkuQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSaleSkuExportSaleSku = (req: SaleSkuQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/saleSku/exportSaleSku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5191,11 +5193,12 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name QueryDictSalesChannelListUsingPost1
+   * @name LuteosProductSaleSkuQueryDictSalesChannelList
    * @summary 查询销售渠道字典表
    * @request POST:/api/luteos/product/saleSku/queryDictSalesChannelList
+   * @response `200` `DictSalesChannelResp` OK
    */
-  queryDictSalesChannelListUsingPost1 = (
+  luteosProductSaleSkuQueryDictSalesChannelList = (
     query: {
       /** 关键词 */
       keyword?: string;
@@ -5224,7 +5227,7 @@ export class Api<
   ) =>
     this.request<DictSalesChannelResp, any>({
       path: `/api/luteos/product/saleSku/queryDictSalesChannelList`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -5233,14 +5236,15 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name QueryLuteChannelListUsingPost1
+   * @name LuteosProductSaleSkuQueryLuteChannelList
    * @summary 查询路特筛选条件
    * @request POST:/api/luteos/product/saleSku/queryLuteChannelList
+   * @response `200` `LuteConditionResp` OK
    */
-  queryLuteChannelListUsingPost1 = (params: RequestParams = {}) =>
+  luteosProductSaleSkuQueryLuteChannelList = (params: RequestParams = {}) =>
     this.request<LuteConditionResp, any>({
       path: `/api/luteos/product/saleSku/queryLuteChannelList`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -5248,11 +5252,12 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name QueryRelationLogUsingGet4
+   * @name LuteosProductSaleSkuQueryRelationLog
    * @summary 日志详情查询
    * @request GET:/api/luteos/product/saleSku/queryRelationLog
+   * @response `200` `SaleSkuLogDetailQueryResp` OK
    */
-  queryRelationLogUsingGet4 = (
+  luteosProductSaleSkuQueryRelationLog = (
     query: {
       /**
        * 页数
@@ -5275,7 +5280,7 @@ export class Api<
   ) =>
     this.request<SaleSkuLogDetailQueryResp, any>({
       path: `/api/luteos/product/saleSku/queryRelationLog`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5283,11 +5288,12 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name QuerySaleSkuDetailUsingGet1
+   * @name LuteosProductSaleSkuQuerySaleSkuDetail
    * @summary 销售映射详情查询
    * @request GET:/api/luteos/product/saleSku/querySaleSkuDetail
+   * @response `200` `SaleSkuDetailQueryResp` OK
    */
-  querySaleSkuDetailUsingGet1 = (
+  luteosProductSaleSkuQuerySaleSkuDetail = (
     query: {
       /** 唯一键 */
       uniqueCode: string;
@@ -5296,7 +5302,7 @@ export class Api<
   ) =>
     this.request<SaleSkuDetailQueryResp, any>({
       path: `/api/luteos/product/saleSku/querySaleSkuDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5304,11 +5310,12 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name QuerySaleSkuListUsingGet1
+   * @name LuteosProductSaleSkuQuerySaleSkuList
    * @summary 销售映射列表查询
    * @request GET:/api/luteos/product/saleSku/querySaleSkuList
+   * @response `200` `SaleSkuQueryResp` OK
    */
-  querySaleSkuListUsingGet1 = (
+  luteosProductSaleSkuQuerySaleSkuList = (
     query: {
       /** 渠道 */
       channel?: string;
@@ -5355,7 +5362,7 @@ export class Api<
   ) =>
     this.request<SaleSkuQueryResp, any>({
       path: `/api/luteos/product/saleSku/querySaleSkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5363,25 +5370,27 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name QuerySourceUsingGet1
+   * @name LuteosProductSaleSkuQuerySource
    * @summary 获取数据来源
    * @request GET:/api/luteos/product/saleSku/querySource
+   * @response `200` `SaleSkuSourcelQueryResp` OK
    */
-  querySourceUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSaleSkuQuerySource = (params: RequestParams = {}) =>
     this.request<SaleSkuSourcelQueryResp, any>({
       path: `/api/luteos/product/saleSku/querySource`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 销售映射管理
-   * @name RemoveSaleSkuRelationUsingPost1
+   * @name LuteosProductSaleSkuRemoveSaleSkuRelation
    * @summary 删除销售映射关系
    * @request POST:/api/luteos/product/saleSku/removeSaleSkuRelation
+   * @response `200` `CommonRespBoolean` OK
    */
-  removeSaleSkuRelationUsingPost1 = (
+  luteosProductSaleSkuRemoveSaleSkuRelation = (
     query?: {
       /** uniqueCode */
       uniqueCode?: string;
@@ -5390,7 +5399,7 @@ export class Api<
   ) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/saleSku/removeSaleSkuRelation`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -5399,17 +5408,15 @@ export class Api<
    * No description
    *
    * @tags 销售映射管理
-   * @name SaveSaleSkuRelationUsingPost1
+   * @name LuteosProductSaleSkuSaveSaleSkuRelation
    * @summary 保存销售映射关系
    * @request POST:/api/luteos/product/saleSku/saveSaleSkuRelation
+   * @response `200` `SaleSkuSaveResp` OK
    */
-  saveSaleSkuRelationUsingPost1 = (
-    req: SaleSkuSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSaleSkuSaveSaleSkuRelation = (req: SaleSkuSaveReq, params: RequestParams = {}) =>
     this.request<SaleSkuSaveResp, any>({
       path: `/api/luteos/product/saleSku/saveSaleSkuRelation`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5418,17 +5425,18 @@ export class Api<
    * No description
    *
    * @tags 销售映射缺失管理
-   * @name ExportSaleSkuRelationMissUsingPost1
+   * @name LuteosProductSaleSkuRelationMissExport
    * @summary 导出销售映射缺失
    * @request POST:/api/luteos/product/saleSkuRelationMiss/export
+   * @response `200` `CommonExportResp` OK
    */
-  exportSaleSkuRelationMissUsingPost1 = (
+  luteosProductSaleSkuRelationMissExport = (
     req: SaleSkuRelationMissQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/saleSkuRelationMiss/export`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5437,11 +5445,12 @@ export class Api<
    * No description
    *
    * @tags 销售映射缺失管理
-   * @name QuerySaleSkuRelationMissListUsingGet1
+   * @name LuteosProductSaleSkuRelationMissQueryList
    * @summary 销售映射缺失列表查询
    * @request GET:/api/luteos/product/saleSkuRelationMiss/queryList
+   * @response `200` `SaleSkuRelationMissQueryResp` OK
    */
-  querySaleSkuRelationMissListUsingGet1 = (
+  luteosProductSaleSkuRelationMissQueryList = (
     query: {
       /** 渠道 */
       channel?: string;
@@ -5486,7 +5495,7 @@ export class Api<
   ) =>
     this.request<SaleSkuRelationMissQueryResp, any>({
       path: `/api/luteos/product/saleSkuRelationMiss/queryList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5494,14 +5503,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name SaveProductUsingPost3
+   * @name LuteosProductSaveProduct
    * @summary 商品信息保存
    * @request POST:/api/luteos/product/saveProduct
+   * @response `200` `ProductSaveResp` OK
    */
-  saveProductUsingPost3 = (req: _, params: RequestParams = {}) =>
+  luteosProductSaveProduct = (req: ProductSaveReq, params: RequestParams = {}) =>
     this.request<ProductSaveResp, any>({
       path: `/api/luteos/product/saveProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5510,11 +5520,12 @@ export class Api<
    * No description
    *
    * @tags RPA在线商品
-   * @name ExportSellerSkuUnusualListUsingGet1
+   * @name LuteosProductSellerSkuExportSellerSkuUnusualList
    * @summary 导出销售异常
    * @request GET:/api/luteos/product/seller/sku/exportSellerSkuUnusualList
+   * @response `200` `CommonExportResp` OK
    */
-  exportSellerSkuUnusualListUsingGet1 = (
+  luteosProductSellerSkuExportSellerSkuUnusualList = (
     query: {
       /**
        * 页数
@@ -5535,7 +5546,7 @@ export class Api<
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/seller/sku/exportSellerSkuUnusualList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5543,11 +5554,12 @@ export class Api<
    * No description
    *
    * @tags RPA在线商品
-   * @name OperateSellerSkuStatusUsingGet1
+   * @name LuteosProductSellerSkuOperateSellerSkuStatus
    * @summary 变更商品提醒状态
    * @request GET:/api/luteos/product/seller/sku/operateSellerSkuStatus
+   * @response `200` `void` OK
    */
-  operateSellerSkuStatusUsingGet1 = (
+  luteosProductSellerSkuOperateSellerSkuStatus = (
     query: {
       /** 店铺渠道 */
       channel: string;
@@ -5565,7 +5577,7 @@ export class Api<
   ) =>
     this.request<void, any>({
       path: `/api/luteos/product/seller/sku/operateSellerSkuStatus`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5573,11 +5585,12 @@ export class Api<
    * No description
    *
    * @tags RPA在线商品
-   * @name QuerySellerSkuUnusualListUsingGet1
+   * @name LuteosProductSellerSkuQuerySellerSkuUnusualList
    * @summary 查询销售异常
    * @request GET:/api/luteos/product/seller/sku/querySellerSkuUnusualList
+   * @response `200` `ProductSellerSkuQueryResp` OK
    */
-  querySellerSkuUnusualListUsingGet1 = (
+  luteosProductSellerSkuQuerySellerSkuUnusualList = (
     query: {
       /**
        * 页数
@@ -5598,7 +5611,7 @@ export class Api<
   ) =>
     this.request<ProductSellerSkuQueryResp, any>({
       path: `/api/luteos/product/seller/sku/querySellerSkuUnusualList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5606,17 +5619,18 @@ export class Api<
    * No description
    *
    * @tags 敏感类型管理
-   * @name ConnectProductUsingPost7
+   * @name LuteosProductSensitiveTypeConnectProduct
    * @summary 敏感类型关联商品
    * @request POST:/api/luteos/product/sensitiveType/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  connectProductUsingPost7 = (
+  luteosProductSensitiveTypeConnectProduct = (
     req: SensitiveTypeProductConnectReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/sensitiveType/connectProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5625,17 +5639,18 @@ export class Api<
    * No description
    *
    * @tags 敏感类型管理
-   * @name ExportSensitiveTypeUsingPost1
+   * @name LuteosProductSensitiveTypeExportSensitiveType
    * @summary 敏感类型信息导出
    * @request POST:/api/luteos/product/sensitiveType/exportSensitiveType
+   * @response `200` `CommonExportResp` OK
    */
-  exportSensitiveTypeUsingPost1 = (
+  luteosProductSensitiveTypeExportSensitiveType = (
     req: SensitiveTypeListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/sensitiveType/exportSensitiveType`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5644,17 +5659,18 @@ export class Api<
    * No description
    *
    * @tags 敏感类型管理
-   * @name OperateSensitiveTypeUsingPost1
+   * @name LuteosProductSensitiveTypeOperateSensitiveType
    * @summary 敏感类型操作
    * @request POST:/api/luteos/product/sensitiveType/operateSensitiveType
+   * @response `200` `CommonRespString` OK
    */
-  operateSensitiveTypeUsingPost1 = (
+  luteosProductSensitiveTypeOperateSensitiveType = (
     req: SensitiveTypeOperateReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/sensitiveType/operateSensitiveType`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5663,11 +5679,12 @@ export class Api<
    * No description
    *
    * @tags 敏感类型管理
-   * @name QuerySensitiveTypeDetailUsingGet1
+   * @name LuteosProductSensitiveTypeQuerySensitiveTypeDetail
    * @summary 敏感类型详情查询
    * @request GET:/api/luteos/product/sensitiveType/querySensitiveTypeDetail
+   * @response `200` `SensitiveTypeDetailResp` OK
    */
-  querySensitiveTypeDetailUsingGet1 = (
+  luteosProductSensitiveTypeQuerySensitiveTypeDetail = (
     query: {
       /** 敏感类型编码 */
       sensitiveTypeCode: string;
@@ -5676,7 +5693,7 @@ export class Api<
   ) =>
     this.request<SensitiveTypeDetailResp, any>({
       path: `/api/luteos/product/sensitiveType/querySensitiveTypeDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5684,11 +5701,12 @@ export class Api<
    * No description
    *
    * @tags 敏感类型管理
-   * @name QuerySensitiveTypeListUsingGet1
+   * @name LuteosProductSensitiveTypeQuerySensitiveTypeList
    * @summary 敏感类型列表查询
    * @request GET:/api/luteos/product/sensitiveType/querySensitiveTypeList
+   * @response `200` `SensitiveTypeListQueryResp` OK
    */
-  querySensitiveTypeListUsingGet1 = (
+  luteosProductSensitiveTypeQuerySensitiveTypeList = (
     query: {
       /** 勾选导出的编码 */
       codeList?: string[];
@@ -5717,7 +5735,7 @@ export class Api<
   ) =>
     this.request<SensitiveTypeListQueryResp, any>({
       path: `/api/luteos/product/sensitiveType/querySensitiveTypeList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5725,17 +5743,18 @@ export class Api<
    * No description
    *
    * @tags 敏感类型管理
-   * @name SaveOrUpdateSensitiveTypeUsingPost1
+   * @name LuteosProductSensitiveTypeSaveOrUpdateSensitiveType
    * @summary 敏感类型信息保存
    * @request POST:/api/luteos/product/sensitiveType/saveOrUpdateSensitiveType
+   * @response `200` `SensitiveTypeSaveResp` OK
    */
-  saveOrUpdateSensitiveTypeUsingPost1 = (
+  luteosProductSensitiveTypeSaveOrUpdateSensitiveType = (
     req: SensitiveTypeSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<SensitiveTypeSaveResp, any>({
       path: `/api/luteos/product/sensitiveType/saveOrUpdateSensitiveType`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5744,17 +5763,15 @@ export class Api<
    * No description
    *
    * @tags 系列管理
-   * @name ConnectProductUsingPost8
+   * @name LuteosProductSeriesConnectProduct
    * @summary 系列关联商品
    * @request POST:/api/luteos/product/series/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  connectProductUsingPost8 = (
-    req: SeriesProductConnectReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSeriesConnectProduct = (req: SeriesProductConnectReq, params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/series/connectProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5763,17 +5780,15 @@ export class Api<
    * No description
    *
    * @tags 系列管理
-   * @name ExportSeriesUsingPost1
+   * @name LuteosProductSeriesExportSeries
    * @summary 系列信息导出
    * @request POST:/api/luteos/product/series/exportSeries
+   * @response `200` `CommonExportResp` OK
    */
-  exportSeriesUsingPost1 = (
-    req: SeriesListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSeriesExportSeries = (req: SeriesListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/series/exportSeries`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5782,17 +5797,15 @@ export class Api<
    * No description
    *
    * @tags 系列管理
-   * @name OperateSeriesUsingPost1
+   * @name LuteosProductSeriesOperateSeries
    * @summary 系列操作
    * @request POST:/api/luteos/product/series/operateSeries
+   * @response `200` `CommonRespString` OK
    */
-  operateSeriesUsingPost1 = (
-    req: SeriesOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSeriesOperateSeries = (req: SeriesOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespString, any>({
       path: `/api/luteos/product/series/operateSeries`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5801,11 +5814,12 @@ export class Api<
    * No description
    *
    * @tags 系列管理
-   * @name QuerySeriesDetailUsingGet1
+   * @name LuteosProductSeriesQuerySeriesDetail
    * @summary 系列详情查询
    * @request GET:/api/luteos/product/series/querySeriesDetail
+   * @response `200` `SeriesDetailResp` OK
    */
-  querySeriesDetailUsingGet1 = (
+  luteosProductSeriesQuerySeriesDetail = (
     query: {
       /** 系列编码 */
       seriesCode: string;
@@ -5814,7 +5828,7 @@ export class Api<
   ) =>
     this.request<SeriesDetailResp, any>({
       path: `/api/luteos/product/series/querySeriesDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5822,11 +5836,12 @@ export class Api<
    * No description
    *
    * @tags 系列管理
-   * @name QuerySeriesListUsingGet1
+   * @name LuteosProductSeriesQuerySeriesList
    * @summary 系列列表查询
    * @request GET:/api/luteos/product/series/querySeriesList
+   * @response `200` `SeriesListQueryResp` OK
    */
-  querySeriesListUsingGet1 = (
+  luteosProductSeriesQuerySeriesList = (
     query: {
       /** 勾选导出的编码 */
       codeList?: string[];
@@ -5853,7 +5868,7 @@ export class Api<
   ) =>
     this.request<SeriesListQueryResp, any>({
       path: `/api/luteos/product/series/querySeriesList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -5861,17 +5876,15 @@ export class Api<
    * No description
    *
    * @tags 系列管理
-   * @name SaveOrUpdateSeriesUsingPost1
+   * @name LuteosProductSeriesSaveOrUpdateSeries
    * @summary 系列信息保存
    * @request POST:/api/luteos/product/series/saveOrUpdateSeries
+   * @response `200` `SeriesSaveResp` OK
    */
-  saveOrUpdateSeriesUsingPost1 = (
-    req: SeriesSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSeriesSaveOrUpdateSeries = (req: SeriesSaveReq, params: RequestParams = {}) =>
     this.request<SeriesSaveResp, any>({
       path: `/api/luteos/product/series/saveOrUpdateSeries`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5880,17 +5893,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name ShadowSearchUsingPost1
+   * @name LuteosProductShadowSearch
    * @summary 产品影子查询
    * @request POST:/api/luteos/product/shadowSearch
+   * @response `200` `CommonRespProductShadowSearchResp` OK
    */
-  shadowSearchUsingPost1 = (
-    req: ProductShadowSearchReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductShadowSearch = (req: ProductShadowSearchReq, params: RequestParams = {}) =>
     this.request<CommonRespProductShadowSearchResp, any>({
       path: `/api/luteos/product/shadowSearch`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5899,17 +5910,18 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name ShadowSearchStatisticsDetailUsingPost1
+   * @name LuteosProductShadowSearchStatisticsDetail
    * @summary 产品影子统计信息详情
    * @request POST:/api/luteos/product/shadowSearchStatisticsDetail
+   * @response `200` `CommonRespProductShadowDetailStatisticsResp` OK
    */
-  shadowSearchStatisticsDetailUsingPost1 = (
+  luteosProductShadowSearchStatisticsDetail = (
     req: ProductShadowDetailStaticsSearchReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespProductShadowDetailStatisticsResp, any>({
       path: `/api/luteos/product/shadowSearchStatisticsDetail`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5918,18 +5930,19 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name BatchModifyPlanUsingPost3
+   * @name LuteosProductShopifyListingBatchModifyPlan
    * @summary 独立站-在线商父ASIN批量添加/更新计划人员
    * @request POST:/api/luteos/product/shopify/listing/batchModifyPlan
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  batchModifyPlanUsingPost3 = (
+  luteosProductShopifyListingBatchModifyPlan = (
     req: ListingBatchModifyPlanReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/shopify/listing/batchModifyPlan`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5938,17 +5951,18 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name BatchSaveOperatorUsingPost1
+   * @name LuteosProductShopifyListingBatchSaveOperator
    * @summary 独立站-批量保存运营人员
    * @request POST:/api/luteos/product/shopify/listing/batchSaveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  batchSaveOperatorUsingPost1 = (
+  luteosProductShopifyListingBatchSaveOperator = (
     req: ShopifyBatchOperatorSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/shopify/listing/batchSaveOperator`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5957,17 +5971,18 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name DownloadUsingPost13
+   * @name LuteosProductShopifyListingDownload
    * @summary 独立站-在线商品导出-V2
    * @request POST:/api/luteos/product/shopify/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost13 = (
+  luteosProductShopifyListingDownload = (
     req: ShopifyProductListingReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/shopify/listing/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5976,15 +5991,19 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name DownloadUsingPost12
+   * @name LuteosProductShopifyListingListingDownload
    * @summary 独立站父子维度导出
    * @request POST:/api/luteos/product/shopify/listing/listing/download
    * @deprecated
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost12 = (req: ShopifyListingReq, params: RequestParams = {}) =>
+  luteosProductShopifyListingListingDownload = (
+    req: ShopifyListingReq,
+    params: RequestParams = {},
+  ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/shopify/listing/listing/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -5993,18 +6012,19 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name QueryListingTagUsingPost8
+   * @name LuteosProductShopifyListingListingQueryTag
    * @summary 亚马逊在线商品父维度标签查询
    * @request POST:/api/luteos/product/shopify/listing/listing/queryTag
    * @deprecated
+   * @response `200` `ListingTagResp` OK
    */
-  queryListingTagUsingPost8 = (
+  luteosProductShopifyListingListingQueryTag = (
     req: ListingQueryTagReq,
     params: RequestParams = {},
   ) =>
     this.request<ListingTagResp, any>({
       path: `/api/luteos/product/shopify/listing/listing/queryTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6013,18 +6033,19 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name UpdateTagUsingPost7
+   * @name LuteosProductShopifyListingListingUpdateTag
    * @summary 独立站商品父子维度标签保存更新
    * @request POST:/api/luteos/product/shopify/listing/listing/updateTag
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  updateTagUsingPost7 = (
+  luteosProductShopifyListingListingUpdateTag = (
     req: ListingBatchModifyTagReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/shopify/listing/listing/updateTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6033,18 +6054,19 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name QueryParentProductIdPageUsingPost1
+   * @name LuteosProductShopifyListingQueryParentProductIdPage
    * @summary 独立站-在线商品ProductId分页查询
    * @request POST:/api/luteos/product/shopify/listing/queryParentProductIdPage
    * @deprecated
+   * @response `200` `ShopifyListingParentResp` OK
    */
-  queryParentProductIdPageUsingPost1 = (
+  luteosProductShopifyListingQueryParentProductIdPage = (
     req: ShopifyListingReq,
     params: RequestParams = {},
   ) =>
     this.request<ShopifyListingParentResp, any>({
       path: `/api/luteos/product/shopify/listing/queryParentProductIdPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6053,17 +6075,18 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name QueryProductListingPageUsingPost7
+   * @name LuteosProductShopifyListingQueryProductListingPage
    * @summary 独立站-在线商品分页查询-V2
    * @request POST:/api/luteos/product/shopify/listing/queryProductListingPage
+   * @response `200` `ShopifyProductListingResp` OK
    */
-  queryProductListingPageUsingPost7 = (
+  luteosProductShopifyListingQueryProductListingPage = (
     req: ShopifyProductListingReq,
     params: RequestParams = {},
   ) =>
     this.request<ShopifyProductListingResp, any>({
       path: `/api/luteos/product/shopify/listing/queryProductListingPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6072,18 +6095,19 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name QuerySonVariantIdPageUsingPost1
+   * @name LuteosProductShopifyListingQuerySonVariantIdPage
    * @summary 独立站-在线商品子维度分页查询
    * @request POST:/api/luteos/product/shopify/listing/querySonVariantIdPage
    * @deprecated
+   * @response `200` `ShopifySonListingResp` OK
    */
-  querySonVariantIdPageUsingPost1 = (
+  luteosProductShopifyListingQuerySonVariantIdPage = (
     req: ShopifyListingReq,
     params: RequestParams = {},
   ) =>
     this.request<ShopifySonListingResp, any>({
       path: `/api/luteos/product/shopify/listing/querySonVariantIdPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6092,17 +6116,18 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name SaveOperatorUsingPost6
+   * @name LuteosProductShopifyListingSaveOperator
    * @summary 独立站-在线商品保存运营人员
    * @request POST:/api/luteos/product/shopify/listing/saveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  saveOperatorUsingPost6 = (
+  luteosProductShopifyListingSaveOperator = (
     req: ShopifyOperatorSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/shopify/listing/saveOperator`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6111,18 +6136,19 @@ export class Api<
    * No description
    *
    * @tags 独立站在线商品
-   * @name SaveProductLinkUsingPost6
+   * @name LuteosProductShopifyListingSaveProductLink
    * @summary 独立站-在线商品保存商品链接
    * @request POST:/api/luteos/product/shopify/listing/saveProductLink
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  saveProductLinkUsingPost6 = (
+  luteosProductShopifyListingSaveProductLink = (
     req: ProductLinkSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/shopify/listing/saveProductLink`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6130,52 +6156,16 @@ export class Api<
   /**
    * No description
    *
-   * @tags 独立站在线商品
-   * @name SyncShopifyListingInventoryChangeNoticeJobUsingPost1
-   * @summary 独立站-SKU库存到货通知-发钉钉消息测试接口
-   * @request POST:/api/luteos/product/shopify/listing/syncShopifyListingInventoryChangeNoticeJob
-   */
-  syncShopifyListingInventoryChangeNoticeJobUsingPost1 = (
-    params: RequestParams = {},
-  ) =>
-    this.request<CommonRespObject, any>({
-      path: `/api/luteos/product/shopify/listing/syncShopifyListingInventoryChangeNoticeJob`,
-      method: "POST",
-      type: ContentType.Json,
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags 独立站在线商品
-   * @name SyncShopifyListingNoInventoryRecordJobUsingPost1
-   * @summary 独立站-SKU库存到货通知-记录SKU零库存测试接口
-   * @request POST:/api/luteos/product/shopify/listing/syncShopifyListingNoInventoryRecordJob
-   */
-  syncShopifyListingNoInventoryRecordJobUsingPost1 = (
-    params: RequestParams = {},
-  ) =>
-    this.request<CommonRespObject, any>({
-      path: `/api/luteos/product/shopify/listing/syncShopifyListingNoInventoryRecordJob`,
-      method: "POST",
-      type: ContentType.Json,
-      ...params,
-    });
-  /**
-   * No description
-   *
    * @tags 商品管理
-   * @name ShowSearchUsingPost1
+   * @name LuteosProductShowSearch
    * @summary 产品表现查询
    * @request POST:/api/luteos/product/showSearch
+   * @response `200` `CommonRespProductShowSearchResp` OK
    */
-  showSearchUsingPost1 = (
-    req: ProductShowSearchReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductShowSearch = (req: ProductShowSearchReq, params: RequestParams = {}) =>
     this.request<CommonRespProductShowSearchResp, any>({
       path: `/api/luteos/product/showSearch`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6184,17 +6174,15 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name ShowSearchDetailUsingPost1
+   * @name LuteosProductShowSearchDetail
    * @summary 产品表现详情
    * @request POST:/api/luteos/product/showSearchDetail
+   * @response `200` `CommonRespProductShowDetailSearchResp` OK
    */
-  showSearchDetailUsingPost1 = (
-    req: ProductShowDetailSearchReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductShowSearchDetail = (req: ProductShowDetailSearchReq, params: RequestParams = {}) =>
     this.request<CommonRespProductShowDetailSearchResp, any>({
       path: `/api/luteos/product/showSearchDetail`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6203,17 +6191,18 @@ export class Api<
    * No description
    *
    * @tags 商品管理
-   * @name ShowSearchStatisticsDetailUsingPost1
+   * @name LuteosProductShowSearchStatisticsDetail
    * @summary 产品表现统计信息详情
    * @request POST:/api/luteos/product/showSearchStatisticsDetail
+   * @response `200` `CommonRespProductShowDetailStatisticsResp` OK
    */
-  showSearchStatisticsDetailUsingPost1 = (
+  luteosProductShowSearchStatisticsDetail = (
     req: ProductShowDetailStaticsSearchReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespProductShowDetailStatisticsResp, any>({
       path: `/api/luteos/product/showSearchStatisticsDetail`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6222,17 +6211,15 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name BatchOperateUsingPost1
+   * @name LuteosProductSkuBatchOperate
    * @summary 商品sku批量操作
    * @request POST:/api/luteos/product/sku/batchOperate
+   * @response `200` `CommonRespBoolean` OK
    */
-  batchOperateUsingPost1 = (
-    req: ProductSkuBatchOpeReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuBatchOperate = (req: ProductSkuBatchOpeReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/sku/batchOperate`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6241,14 +6228,15 @@ export class Api<
    * No description
    *
    * @tags 店铺SKU管理
-   * @name ExportPlatformSkuUsingPost1
+   * @name LuteosProductSkuExportPlatformSku
    * @summary 导出店铺SKU
    * @request POST:/api/luteos/product/sku/exportPlatformSku
+   * @response `200` `void` OK
    */
-  exportPlatformSkuUsingPost1 = (params: RequestParams = {}) =>
+  luteosProductSkuExportPlatformSku = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/sku/exportPlatformSku`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -6256,17 +6244,15 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name ExportProductUsingPost6
+   * @name LuteosProductSkuExportProduct
    * @summary 商品Sku导出信息
    * @request POST:/api/luteos/product/sku/exportProduct
+   * @response `200` `CommonExportResp` OK
    */
-  exportProductUsingPost6 = (
-    req: ProductSkuListQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuExportProduct = (req: ProductSkuListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/sku/exportProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6275,17 +6261,18 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name ExportProductSkuCertificationUsingPost1
+   * @name LuteosProductSkuExportProductSkuCertification
    * @summary 商品Sku证信息导出
    * @request POST:/api/luteos/product/sku/exportProductSkuCertification
+   * @response `200` `CommonExportResp` OK
    */
-  exportProductSkuCertificationUsingPost1 = (
+  luteosProductSkuExportProductSkuCertification = (
     req: ProductSkuCertificationListReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/sku/exportProductSkuCertification`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6294,17 +6281,15 @@ export class Api<
    * No description
    *
    * @tags 商品映射
-   * @name ClearUsingPost1
+   * @name LuteosProductSkuMappingClear
    * @summary 清除映射
    * @request POST:/api/luteos/product/sku/mapping/clear
+   * @response `200` `CommonRespVoid` OK
    */
-  clearUsingPost1 = (
-    req: ProductSkuMappingClearReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuMappingClear = (req: ProductSkuMappingClearReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/sku/mapping/clear`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6313,17 +6298,18 @@ export class Api<
    * No description
    *
    * @tags 商品映射
-   * @name ExportListUsingPost3
+   * @name LuteosProductSkuMappingExportList
    * @summary 导出列表
    * @request POST:/api/luteos/product/sku/mapping/exportList
+   * @response `200` `CommonRespCommonExportResp` OK
    */
-  exportListUsingPost3 = (
+  luteosProductSkuMappingExportList = (
     req: ProductSkuMappingQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespCommonExportResp, any>({
       path: `/api/luteos/product/sku/mapping/exportList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6332,17 +6318,15 @@ export class Api<
    * No description
    *
    * @tags 商品映射
-   * @name QueryListUsingPost41
+   * @name LuteosProductSkuMappingQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/sku/mapping/queryList
+   * @response `200` `CommonRespProductSkuMappingQueryResp` OK
    */
-  queryListUsingPost41 = (
-    req: ProductSkuMappingQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuMappingQueryList = (req: ProductSkuMappingQueryReq, params: RequestParams = {}) =>
     this.request<CommonRespProductSkuMappingQueryResp, any>({
       path: `/api/luteos/product/sku/mapping/queryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6351,17 +6335,15 @@ export class Api<
    * No description
    *
    * @tags 商品映射
-   * @name UpdateUsingPost8
+   * @name LuteosProductSkuMappingUpdate
    * @summary 编辑
    * @request POST:/api/luteos/product/sku/mapping/update
+   * @response `200` `CommonRespVoid` OK
    */
-  updateUsingPost8 = (
-    req: ProductSkuMappingUpdateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuMappingUpdate = (req: ProductSkuMappingUpdateReq, params: RequestParams = {}) =>
     this.request<CommonRespVoid, any>({
       path: `/api/luteos/product/sku/mapping/update`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6370,31 +6352,30 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name ProductSkuCertificationSyncJobUsingGet1
+   * @name LuteosProductSkuProductSkuCertificationSyncJob
    * @summary 商品Sku证信息同步
    * @request GET:/api/luteos/product/sku/productSkuCertificationSyncJob
+   * @response `200` `void` OK
    */
-  productSkuCertificationSyncJobUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSkuProductSkuCertificationSyncJob = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/sku/productSkuCertificationSyncJob`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 商品SKU管理
-   * @name ProductSkuOperateUsingPost1
+   * @name LuteosProductSkuProductSkuOperate
    * @summary 商品sku操作
    * @request POST:/api/luteos/product/sku/productSkuOperate
+   * @response `200` `CommonRespBoolean` OK
    */
-  productSkuOperateUsingPost1 = (
-    req: ProductSkuOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuProductSkuOperate = (req: ProductSkuOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/sku/productSkuOperate`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6403,11 +6384,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name ProductSkuSyncCrmUsingPost1
+   * @name LuteosProductSkuProductSkuSyncCrm
    * @summary 测试接口-产品信息同步CRM
    * @request POST:/api/luteos/product/sku/productSkuSyncCrm
+   * @response `200` `CommonRespObject` OK
    */
-  productSkuSyncCrmUsingPost1 = (
+  luteosProductSkuProductSkuSyncCrm = (
     query: {
       /** skuCodeList */
       skuCodeList: string[];
@@ -6416,7 +6398,7 @@ export class Api<
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/sku/productSkuSyncCrm`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -6425,25 +6407,27 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QueryCountryUsingGet1
+   * @name LuteosProductSkuQueryCountry
    * @summary 销售区域查询
    * @request GET:/api/luteos/product/sku/queryCountry
+   * @response `200` `(CountryAreaListResp)[]` OK
    */
-  queryCountryUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSkuQueryCountry = (params: RequestParams = {}) =>
     this.request<CountryAreaListResp[], any>({
       path: `/api/luteos/product/sku/queryCountry`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 商品SKU管理
-   * @name QueryDeptOrMemberUsingGet1
+   * @name LuteosProductSkuQueryDeptOrMember
    * @summary SKU提醒部门或人员查询
    * @request GET:/api/luteos/product/sku/queryDeptOrMember
+   * @response `200` `Record<string,string>` OK
    */
-  queryDeptOrMemberUsingGet1 = (
+  luteosProductSkuQueryDeptOrMember = (
     query: {
       /** 部门或人员名称 */
       name?: string;
@@ -6468,7 +6452,7 @@ export class Api<
   ) =>
     this.request<Record<string, string>, any>({
       path: `/api/luteos/product/sku/queryDeptOrMember`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6476,11 +6460,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QueryMSkuRelationListUsingGet1
+   * @name LuteosProductSkuQueryMSkuRelationList
    * @summary 商品sku详情-店铺sku映射查询
    * @request GET:/api/luteos/product/sku/queryMSkuRelationList
+   * @response `200` `MSkuRelationListResp` OK
    */
-  queryMSkuRelationListUsingGet1 = (
+  luteosProductSkuQueryMSkuRelationList = (
     query: {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
       operationType: string;
@@ -6491,7 +6476,7 @@ export class Api<
   ) =>
     this.request<MSkuRelationListResp, any>({
       path: `/api/luteos/product/sku/queryMSkuRelationList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6499,53 +6484,57 @@ export class Api<
    * No description
    *
    * @tags 店铺SKU管理
-   * @name QueryPlatformSkuDetailUsingGet1
+   * @name LuteosProductSkuQueryPlatformSkuDetail
    * @summary 店铺SKU详情查询
    * @request GET:/api/luteos/product/sku/queryPlatformSkuDetail
+   * @response `200` `void` OK
    */
-  queryPlatformSkuDetailUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSkuQueryPlatformSkuDetail = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/sku/queryPlatformSkuDetail`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 店铺SKU管理
-   * @name QueryPlatformSkuListUsingGet1
+   * @name LuteosProductSkuQueryPlatformSkuList
    * @summary 店铺SKU列表查询
    * @request GET:/api/luteos/product/sku/queryPlatformSkuList
+   * @response `200` `void` OK
    */
-  queryPlatformSkuListUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSkuQueryPlatformSkuList = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/sku/queryPlatformSkuList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 商品SKU管理
-   * @name QueryProductSkuPerfectionUsingGet1
+   * @name LuteosProductSkuQueryProductSkuPerfection
    * @summary 获取商品sku列表信息完善度
    * @request GET:/api/luteos/product/sku/queryProductSku/perfection
+   * @response `200` `ProductSkuPerfectionQueryResp` OK
    */
-  queryProductSkuPerfectionUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSkuQueryProductSkuPerfection = (params: RequestParams = {}) =>
     this.request<ProductSkuPerfectionQueryResp, any>({
       path: `/api/luteos/product/sku/queryProductSku/perfection`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 商品SKU管理
-   * @name QueryProductSkuDetailUsingGet1
+   * @name LuteosProductSkuQueryProductSkuDetail
    * @summary 商品sku详情查询
    * @request GET:/api/luteos/product/sku/queryProductSkuDetail
+   * @response `200` `ProductSkuDetailResp` OK
    */
-  queryProductSkuDetailUsingGet1 = (
+  luteosProductSkuQueryProductSkuDetail = (
     query: {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
       operationType: string;
@@ -6556,7 +6545,7 @@ export class Api<
   ) =>
     this.request<ProductSkuDetailResp, any>({
       path: `/api/luteos/product/sku/queryProductSkuDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6564,11 +6553,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QueryProductSkuListUsingGet1
+   * @name LuteosProductSkuQueryProductSkuList
    * @summary 商品sku列表查询
    * @request GET:/api/luteos/product/sku/queryProductSkuList
+   * @response `200` `ProductSkuListQueryResp` OK
    */
-  queryProductSkuListUsingGet1 = (
+  luteosProductSkuQueryProductSkuList = (
     query: {
       /** 创建时间排序,默认false */
       asc?: boolean;
@@ -6684,7 +6674,7 @@ export class Api<
   ) =>
     this.request<ProductSkuListQueryResp, any>({
       path: `/api/luteos/product/sku/queryProductSkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6692,17 +6682,18 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QuerySkuCertificationListUsingPost1
+   * @name LuteosProductSkuQuerySkuCertificationList
    * @summary 商品Sku认证信息查询
    * @request POST:/api/luteos/product/sku/querySkuCertificationList
+   * @response `200` `ProductSkuCertificationListResp` OK
    */
-  querySkuCertificationListUsingPost1 = (
+  luteosProductSkuQuerySkuCertificationList = (
     req: ProductSkuCertificationListReq,
     params: RequestParams = {},
   ) =>
     this.request<ProductSkuCertificationListResp, any>({
       path: `/api/luteos/product/sku/querySkuCertificationList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6711,11 +6702,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QuerySkuDefaultSpecUsingGet1
+   * @name LuteosProductSkuQuerySkuDefaultSpec
    * @summary 商品sku默认供应链规格查询
    * @request GET:/api/luteos/product/sku/querySkuDefaultSpec
+   * @response `200` `SupplySkuSpecResp` OK
    */
-  querySkuDefaultSpecUsingGet1 = (
+  luteosProductSkuQuerySkuDefaultSpec = (
     query: {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
       operationType: string;
@@ -6726,7 +6718,7 @@ export class Api<
   ) =>
     this.request<SupplySkuSpecResp, any>({
       path: `/api/luteos/product/sku/querySkuDefaultSpec`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6734,11 +6726,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QuerySkuInfoUsingGet1
+   * @name LuteosProductSkuQuerySkuInfo
    * @summary 商品sku信息查询
    * @request GET:/api/luteos/product/sku/querySkuInfo
+   * @response `200` `ProductSkuInfoResp` OK
    */
-  querySkuInfoUsingGet1 = (
+  luteosProductSkuQuerySkuInfo = (
     query: {
       /** 商品sku编码 */
       skuCode: string;
@@ -6747,7 +6740,7 @@ export class Api<
   ) =>
     this.request<ProductSkuInfoResp, any>({
       path: `/api/luteos/product/sku/querySkuInfo`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6755,11 +6748,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QuerySupplierSkuListUsingGet1
+   * @name LuteosProductSkuQuerySupplierSkuList
    * @summary 供应链sku列表查询
    * @request GET:/api/luteos/product/sku/querySupplierSkuList
+   * @response `200` `SupplierSkuListQueryResp` OK
    */
-  querySupplierSkuListUsingGet1 = (
+  luteosProductSkuQuerySupplierSkuList = (
     query: {
       /** 分类编码，如果传分类编码，分类等级一定要赋值 */
       categoryCode?: string;
@@ -6793,7 +6787,7 @@ export class Api<
   ) =>
     this.request<SupplierSkuListQueryResp, any>({
       path: `/api/luteos/product/sku/querySupplierSkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6801,11 +6795,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name QuerySupplySkuListUsingGet2
+   * @name LuteosProductSkuQuerySupplySkuList
    * @summary 商品Sku 关联供应链SKU查询并返回库存
    * @request GET:/api/luteos/product/sku/querySupplySkuList
+   * @response `200` `SupplySkuQueryResp` OK
    */
-  querySupplySkuListUsingGet2 = (
+  luteosProductSkuQuerySupplySkuList = (
     query: {
       /**
        * deliverType
@@ -6821,7 +6816,7 @@ export class Api<
   ) =>
     this.request<SupplySkuQueryResp, any>({
       path: `/api/luteos/product/sku/querySupplySkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6829,11 +6824,12 @@ export class Api<
    * No description
    *
    * @tags 店铺SKU管理
-   * @name QueryUserAccountUsingGet1
+   * @name LuteosProductSkuQueryUserAccount
    * @summary 查询店铺账户
    * @request GET:/api/luteos/product/sku/queryUserAccount
+   * @response `200` `ShopUserAccountResp` OK
    */
-  queryUserAccountUsingGet1 = (
+  luteosProductSkuQueryUserAccount = (
     query: {
       /** 渠道 */
       channel: string;
@@ -6846,7 +6842,7 @@ export class Api<
   ) =>
     this.request<ShopUserAccountResp, any>({
       path: `/api/luteos/product/sku/queryUserAccount`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6854,11 +6850,12 @@ export class Api<
    * No description
    *
    * @tags 店铺SKU管理
-   * @name QueryUserAccountListUsingGet1
+   * @name LuteosProductSkuQueryUserAccountList
    * @summary 查询店铺账户集合
    * @request GET:/api/luteos/product/sku/queryUserAccountList
+   * @response `200` `ShopUserAccountListResp` OK
    */
-  queryUserAccountListUsingGet1 = (
+  luteosProductSkuQueryUserAccountList = (
     query: {
       /** 渠道 */
       channel: string;
@@ -6869,7 +6866,7 @@ export class Api<
   ) =>
     this.request<ShopUserAccountListResp, any>({
       path: `/api/luteos/product/sku/queryUserAccountList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -6877,14 +6874,15 @@ export class Api<
    * No description
    *
    * @tags 店铺SKU管理
-   * @name SavePlatformSkuRelationUsingPost1
+   * @name LuteosProductSkuSavePlatformSkuRelation
    * @summary 保存店铺SKU关系
    * @request POST:/api/luteos/product/sku/savePlatformSkuRelation
+   * @response `200` `void` OK
    */
-  savePlatformSkuRelationUsingPost1 = (params: RequestParams = {}) =>
+  luteosProductSkuSavePlatformSkuRelation = (params: RequestParams = {}) =>
     this.request<void, any>({
       path: `/api/luteos/product/sku/savePlatformSkuRelation`,
-      method: "POST",
+      method: 'POST',
       type: ContentType.Json,
       ...params,
     });
@@ -6892,14 +6890,15 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name SaveSkuUsingPost4
+   * @name LuteosProductSkuSaveSku
    * @summary 商品sku保存
    * @request POST:/api/luteos/product/sku/saveSku
+   * @response `200` `ProductSkuSaveResp` OK
    */
-  saveSkuUsingPost4 = (req: ProductSkuSaveReq, params: RequestParams = {}) =>
+  luteosProductSkuSaveSku = (req: ProductSkuSaveReq, params: RequestParams = {}) =>
     this.request<ProductSkuSaveResp, any>({
       path: `/api/luteos/product/sku/saveSku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6908,17 +6907,15 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name SaveWorkflowRecordUsingPost1
+   * @name LuteosProductSkuSaveWorkflowRecord
    * @summary 生成SKU信息补充提醒工单
    * @request POST:/api/luteos/product/sku/saveWorkflowRecord
+   * @response `200` `WorkflowSubmitResp` OK
    */
-  saveWorkflowRecordUsingPost1 = (
-    req: ProductSkuNotifyReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuSaveWorkflowRecord = (req: ProductSkuNotifyReq, params: RequestParams = {}) =>
     this.request<WorkflowSubmitResp, any>({
       path: `/api/luteos/product/sku/saveWorkflowRecord`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6927,17 +6924,15 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name SmaSkuQueryListUsingPost1
+   * @name LuteosProductSkuSmaSkuQueryList
    * @summary 查询预测SKU维度添加商品
    * @request POST:/api/luteos/product/sku/smaSkuQueryList
+   * @response `200` `SmaSkuQueryListResp` OK
    */
-  smaSkuQueryListUsingPost1 = (
-    req: SmaSkuQueryListReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSkuSmaSkuQueryList = (req: SmaSkuQueryListReq, params: RequestParams = {}) =>
     this.request<SmaSkuQueryListResp, any>({
       path: `/api/luteos/product/sku/smaSkuQueryList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6946,14 +6941,15 @@ export class Api<
    * No description
    *
    * @tags 商品供应商管理
-   * @name ExportSkuSnUsingPost1
+   * @name LuteosProductSkuSnExportSkuSn
    * @summary 商品供应商导出信息
    * @request POST:/api/luteos/product/sku/sn/exportSkuSn
+   * @response `200` `CommonExportResp` OK
    */
-  exportSkuSnUsingPost1 = (req: SkuSnQueryReq, params: RequestParams = {}) =>
+  luteosProductSkuSnExportSkuSn = (req: SkuSnQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/sku/sn/exportSkuSn`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -6962,11 +6958,12 @@ export class Api<
    * No description
    *
    * @tags 商品供应商管理
-   * @name QuerySkuSnListUsingGet1
+   * @name LuteosProductSkuSnQuerySkuSnList
    * @summary 商品供应商列表查询
    * @request GET:/api/luteos/product/sku/sn/querySkuSnList
+   * @response `200` `SkuSnQueryResp` OK
    */
-  querySkuSnListUsingGet1 = (
+  luteosProductSkuSnQuerySkuSnList = (
     query: {
       /** 产品SKU名称/产品SKU/产品SPU */
       keyword?: string;
@@ -6992,7 +6989,7 @@ export class Api<
   ) =>
     this.request<SkuSnQueryResp, any>({
       path: `/api/luteos/product/sku/sn/querySkuSnList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7000,14 +6997,15 @@ export class Api<
    * No description
    *
    * @tags 商品供应商管理
-   * @name SaveSkuSnUsingPost1
+   * @name LuteosProductSkuSnSaveSkuSn
    * @summary SN码创建
    * @request POST:/api/luteos/product/sku/sn/saveSkuSn
+   * @response `200` `CommonRespObject` OK
    */
-  saveSkuSnUsingPost1 = (req: SkuSnSaveReq, params: RequestParams = {}) =>
+  luteosProductSkuSnSaveSkuSn = (req: SkuSnSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/sku/sn/saveSkuSn`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7016,11 +7014,12 @@ export class Api<
    * No description
    *
    * @tags 商品SKU管理
-   * @name UploadSkuImgUsingPost1
+   * @name LuteosProductSkuUploadSkuImg
    * @summary 上传sku图片
    * @request POST:/api/luteos/product/sku/uploadSkuImg
+   * @response `200` `CommonRespObject` OK
    */
-  uploadSkuImgUsingPost1 = (
+  luteosProductSkuUploadSkuImg = (
     query: {
       /** fileName */
       fileName: string;
@@ -7031,7 +7030,7 @@ export class Api<
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/sku/uploadSkuImg`,
-      method: "POST",
+      method: 'POST',
       query: query,
       type: ContentType.Json,
       ...params,
@@ -7040,31 +7039,33 @@ export class Api<
    * No description
    *
    * @tags 商品中心数据统计
-   * @name QueryMemberCenterStatsUsingGet1
+   * @name LuteosProductStatsQueryMemberCenterStats
    * @summary 个人中心数据统计
    * @request GET:/api/luteos/product/stats/queryMemberCenterStats
+   * @response `200` `MemberCenterStatsQueryResp` OK
    */
-  queryMemberCenterStatsUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductStatsQueryMemberCenterStats = (params: RequestParams = {}) =>
     this.request<MemberCenterStatsQueryResp, any>({
       path: `/api/luteos/product/stats/queryMemberCenterStats`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 供应链SKU管理
-   * @name ExportSupplySkuUsingPost1
+   * @name LuteosProductSupplySkuExportSupplySku
    * @summary 供应链sku导出
    * @request POST:/api/luteos/product/supplySku/exportSupplySku
+   * @response `200` `CommonExportResp` OK
    */
-  exportSupplySkuUsingPost1 = (
+  luteosProductSupplySkuExportSupplySku = (
     req: SupplySkuListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/supplySku/exportSupplySku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7073,17 +7074,18 @@ export class Api<
    * No description
    *
    * @tags 供应链SKU管理
-   * @name ExportSupplySkuListUsingPost1
+   * @name LuteosProductSupplySkuExportSupplySkuList
    * @summary 供应链sku列表导出
    * @request POST:/api/luteos/product/supplySku/exportSupplySkuList
+   * @response `200` `CommonExportResp` OK
    */
-  exportSupplySkuListUsingPost1 = (
+  luteosProductSupplySkuExportSupplySkuList = (
     req: SupplySkuListQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/supplySku/exportSupplySkuList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7092,17 +7094,15 @@ export class Api<
    * No description
    *
    * @tags 供应链SKU管理
-   * @name OperateSupplySkuUsingPost1
+   * @name LuteosProductSupplySkuOperateSupplySku
    * @summary 供应链sku操作
    * @request POST:/api/luteos/product/supplySku/operateSupplySku
+   * @response `200` `SupplySkuCommonResp` OK
    */
-  operateSupplySkuUsingPost1 = (
-    req: SupplySkuOperateReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSupplySkuOperateSupplySku = (req: SupplySkuOperateReq, params: RequestParams = {}) =>
     this.request<SupplySkuCommonResp, any>({
       path: `/api/luteos/product/supplySku/operateSupplySku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7111,67 +7111,72 @@ export class Api<
    * No description
    *
    * @tags 供应链SKU管理
-   * @name QueryGtmMemberListUsingGet3
+   * @name LuteosProductSupplySkuQueryGtmMemberList
    * @summary 费用归属人列表
    * @request GET:/api/luteos/product/supplySku/queryGtmMemberList
+   * @response `200` `DeptMemberListQueryResp` OK
    */
-  queryGtmMemberListUsingGet3 = (params: RequestParams = {}) =>
+  luteosProductSupplySkuQueryGtmMemberList = (params: RequestParams = {}) =>
     this.request<DeptMemberListQueryResp, any>({
       path: `/api/luteos/product/supplySku/queryGtmMemberList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 供应链SKU管理
-   * @name QueryProductLineListUsingGet2
+   * @name LuteosProductSupplySkuQueryProductLineList
    * @summary 费用归属品线列表
    * @request GET:/api/luteos/product/supplySku/queryProductLineList
+   * @response `200` `FinanceProductLineListResp` OK
    */
-  queryProductLineListUsingGet2 = (params: RequestParams = {}) =>
+  luteosProductSupplySkuQueryProductLineList = (params: RequestParams = {}) =>
     this.request<FinanceProductLineListResp, any>({
       path: `/api/luteos/product/supplySku/queryProductLineList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 供应链SKU管理
-   * @name QuerySupplyPurchaserListUsingGet1
+   * @name LuteosProductSupplySkuQuerySupplyPurchaserList
    * @summary 采购员信息查询
    * @request GET:/api/luteos/product/supplySku/querySupplyPurchaserList
+   * @response `200` `SupplyPurchaserResp` OK
    */
-  querySupplyPurchaserListUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSupplySkuQuerySupplyPurchaserList = (params: RequestParams = {}) =>
     this.request<SupplyPurchaserResp, any>({
       path: `/api/luteos/product/supplySku/querySupplyPurchaserList`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 供应链SKU管理
-   * @name QuerySupplySkuPerfectionUsingGet1
+   * @name LuteosProductSupplySkuQuerySupplySkuPerfection
    * @summary 获取供应链sku信息完整度
    * @request GET:/api/luteos/product/supplySku/querySupplySku/perfection
+   * @response `200` `SupplySkuPerfectionQueryResp` OK
    */
-  querySupplySkuPerfectionUsingGet1 = (params: RequestParams = {}) =>
+  luteosProductSupplySkuQuerySupplySkuPerfection = (params: RequestParams = {}) =>
     this.request<SupplySkuPerfectionQueryResp, any>({
       path: `/api/luteos/product/supplySku/querySupplySku/perfection`,
-      method: "GET",
+      method: 'GET',
       ...params,
     });
   /**
    * No description
    *
    * @tags 供应链SKU管理
-   * @name QuerySupplySkuDetailUsingGet1
+   * @name LuteosProductSupplySkuQuerySupplySkuDetail
    * @summary 供应链sku详情
    * @request GET:/api/luteos/product/supplySku/querySupplySkuDetail
+   * @response `200` `SupplySkuDetailResp` OK
    */
-  querySupplySkuDetailUsingGet1 = (
+  luteosProductSupplySkuQuerySupplySkuDetail = (
     query: {
       /** 供应链SKU */
       productSku: string;
@@ -7180,7 +7185,7 @@ export class Api<
   ) =>
     this.request<SupplySkuDetailResp, any>({
       path: `/api/luteos/product/supplySku/querySupplySkuDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7188,11 +7193,12 @@ export class Api<
    * No description
    *
    * @tags 供应链SKU管理
-   * @name QuerySupplySkuListUsingGet3
+   * @name LuteosProductSupplySkuQuerySupplySkuList
    * @summary 供应链sku列表查询
    * @request GET:/api/luteos/product/supplySku/querySupplySkuList
+   * @response `200` `SupplySkuListQueryResp` OK
    */
-  querySupplySkuListUsingGet3 = (
+  luteosProductSupplySkuQuerySupplySkuList = (
     query: {
       /** 国家编码 */
       countryCode?: string;
@@ -7253,7 +7259,7 @@ export class Api<
   ) =>
     this.request<SupplySkuListQueryResp, any>({
       path: `/api/luteos/product/supplySku/querySupplySkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7261,17 +7267,15 @@ export class Api<
    * No description
    *
    * @tags 供应链SKU管理
-   * @name SaveSupplySkuUsingPost1
+   * @name LuteosProductSupplySkuSaveSupplySku
    * @summary 供应链sku保存
    * @request POST:/api/luteos/product/supplySku/saveSupplySku
+   * @response `200` `SupplySkuCommonResp` OK
    */
-  saveSupplySkuUsingPost1 = (
-    req: SupplySkuSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductSupplySkuSaveSupplySku = (req: SupplySkuSaveReq, params: RequestParams = {}) =>
     this.request<SupplySkuCommonResp, any>({
       path: `/api/luteos/product/supplySku/saveSupplySku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7280,17 +7284,15 @@ export class Api<
    * No description
    *
    * @tags 标签分类管理
-   * @name CreateCategoryUsingPost1
+   * @name LuteosProductTagCategoryCreateCategory
    * @summary 创建标签分类
    * @request POST:/api/luteos/product/tag/category/createCategory
+   * @response `200` `CreateCategoryResp` OK
    */
-  createCategoryUsingPost1 = (
-    req: CreateCategoryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductTagCategoryCreateCategory = (req: CreateCategoryReq, params: RequestParams = {}) =>
     this.request<CreateCategoryResp, any>({
       path: `/api/luteos/product/tag/category/createCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7299,14 +7301,15 @@ export class Api<
    * @description codeList为空时按照categoryName进行查询，codeList不为空时按照codeList查询
    *
    * @tags 标签分类管理
-   * @name ExportUsingPost13
+   * @name LuteosProductTagCategoryExport
    * @summary 导出标签分类
    * @request POST:/api/luteos/product/tag/category/export
+   * @response `200` `CommonExportResp` OK
    */
-  exportUsingPost13 = (req: CategoryListQueryReq, params: RequestParams = {}) =>
+  luteosProductTagCategoryExport = (req: CategoryListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/tag/category/export`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7315,11 +7318,12 @@ export class Api<
    * @description 传入categoryCode，返回其下一级分类节点列表
    *
    * @tags 标签分类管理
-   * @name QueryChildrenUsingGet1
+   * @name LuteosProductTagCategoryQueryChildren
    * @summary 根据分类编码查询下一级子节点
    * @request GET:/api/luteos/product/tag/category/queryChildren
+   * @response `200` `CategoryChildrenQueryResp` OK
    */
-  queryChildrenUsingGet1 = (
+  luteosProductTagCategoryQueryChildren = (
     query: {
       /** categoryCode */
       categoryCode: string;
@@ -7328,7 +7332,7 @@ export class Api<
   ) =>
     this.request<CategoryChildrenQueryResp, any>({
       path: `/api/luteos/product/tag/category/queryChildren`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7336,11 +7340,12 @@ export class Api<
    * @description 无参时返回整个树结构；传入categoryName时，根据分类名称模糊查询，返回匹配的分类及其所有父级分类的树结构
    *
    * @tags 标签分类管理
-   * @name QueryTreeUsingGet1
+   * @name LuteosProductTagCategoryQueryTree
    * @summary 查询标签分类树
    * @request GET:/api/luteos/product/tag/category/queryTree
+   * @response `200` `CategoryTreeResp` OK
    */
-  queryTreeUsingGet1 = (
+  luteosProductTagCategoryQueryTree = (
     query?: {
       /** categoryName */
       categoryName?: string;
@@ -7349,7 +7354,7 @@ export class Api<
   ) =>
     this.request<CategoryTreeResp, any>({
       path: `/api/luteos/product/tag/category/queryTree`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7357,11 +7362,12 @@ export class Api<
    * No description
    *
    * @tags 标签分类管理
-   * @name QueyCategoryListUsingGet1
+   * @name LuteosProductTagCategoryQueyCategoryList
    * @summary 查询标签分类列表
    * @request GET:/api/luteos/product/tag/category/queyCategoryList
+   * @response `200` `CategoryListQueryResp` OK
    */
-  queyCategoryListUsingGet1 = (
+  luteosProductTagCategoryQueyCategoryList = (
     query: {
       /** 分类名称 */
       categoryName?: string;
@@ -7386,7 +7392,7 @@ export class Api<
   ) =>
     this.request<CategoryListQueryResp, any>({
       path: `/api/luteos/product/tag/category/queyCategoryList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7394,17 +7400,15 @@ export class Api<
    * No description
    *
    * @tags 标签分类管理
-   * @name UpdateCategoryUsingPost1
+   * @name LuteosProductTagCategoryUpdateCategory
    * @summary 更新标签分类
    * @request POST:/api/luteos/product/tag/category/updateCategory
+   * @response `200` `UpdateCategoryResp` OK
    */
-  updateCategoryUsingPost1 = (
-    req: UpdateCategoryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductTagCategoryUpdateCategory = (req: UpdateCategoryReq, params: RequestParams = {}) =>
     this.request<UpdateCategoryResp, any>({
       path: `/api/luteos/product/tag/category/updateCategory`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7413,17 +7417,15 @@ export class Api<
    * No description
    *
    * @tags 标签管理
-   * @name ConnectProductUsingPost9
+   * @name LuteosProductTagConnectProduct
    * @summary 标签关联商品
    * @request POST:/api/luteos/product/tag/connectProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  connectProductUsingPost9 = (
-    req: TagProductConnectReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductTagConnectProduct = (req: TagProductConnectReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/tag/connectProduct`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7432,14 +7434,15 @@ export class Api<
    * No description
    *
    * @tags 标签管理
-   * @name ExportTagUsingPost1
+   * @name LuteosProductTagExportTag
    * @summary 标签信息导出
    * @request POST:/api/luteos/product/tag/exportTag
+   * @response `200` `CommonExportResp` OK
    */
-  exportTagUsingPost1 = (req: TagListQueryReq, params: RequestParams = {}) =>
+  luteosProductTagExportTag = (req: TagListQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/tag/exportTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7448,14 +7451,15 @@ export class Api<
    * No description
    *
    * @tags 标签管理
-   * @name OperateTagUsingPost1
+   * @name LuteosProductTagOperateTag
    * @summary 标签操作
    * @request POST:/api/luteos/product/tag/operateTag
+   * @response `200` `CommonRespBoolean` OK
    */
-  operateTagUsingPost1 = (req: TagOperateReq, params: RequestParams = {}) =>
+  luteosProductTagOperateTag = (req: TagOperateReq, params: RequestParams = {}) =>
     this.request<CommonRespBoolean, any>({
       path: `/api/luteos/product/tag/operateTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7464,11 +7468,12 @@ export class Api<
    * No description
    *
    * @tags 标签管理
-   * @name QueryTagDetailUsingGet1
+   * @name LuteosProductTagQueryTagDetail
    * @summary 标签详情查询
    * @request GET:/api/luteos/product/tag/queryTagDetail
+   * @response `200` `TagDetailResp` OK
    */
-  queryTagDetailUsingGet1 = (
+  luteosProductTagQueryTagDetail = (
     query: {
       /** 标签编码 */
       tagCode: string;
@@ -7477,7 +7482,7 @@ export class Api<
   ) =>
     this.request<TagDetailResp, any>({
       path: `/api/luteos/product/tag/queryTagDetail`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7485,11 +7490,12 @@ export class Api<
    * No description
    *
    * @tags 标签管理
-   * @name QueryTagListUsingGet1
+   * @name LuteosProductTagQueryTagList
    * @summary 标签列表查询
    * @request GET:/api/luteos/product/tag/queryTagList
+   * @response `200` `TagListQueryResp` OK
    */
-  queryTagListUsingGet1 = (
+  luteosProductTagQueryTagList = (
     query: {
       /** 标签分组码 */
       categoryCode?: string;
@@ -7524,7 +7530,7 @@ export class Api<
   ) =>
     this.request<TagListQueryResp, any>({
       path: `/api/luteos/product/tag/queryTagList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7532,11 +7538,12 @@ export class Api<
    * No description
    *
    * @tags 标签管理
-   * @name QueryTagProductUsingGet1
+   * @name LuteosProductTagQueryTagProduct
    * @summary 查询标签关联商品
    * @request GET:/api/luteos/product/tag/queryTagProduct
+   * @response `200` `TagProductResp` OK
    */
-  queryTagProductUsingGet1 = (
+  luteosProductTagQueryTagProduct = (
     query: {
       /** 商品spu 名称 */
       keyword?: string;
@@ -7561,7 +7568,7 @@ export class Api<
   ) =>
     this.request<TagProductResp, any>({
       path: `/api/luteos/product/tag/queryTagProduct`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7569,14 +7576,15 @@ export class Api<
    * No description
    *
    * @tags 标签管理
-   * @name SaveOrUpdateTagUsingPost1
+   * @name LuteosProductTagSaveOrUpdateTag
    * @summary 标签信息保存
    * @request POST:/api/luteos/product/tag/saveOrUpdateTag
+   * @response `200` `TagSaveResp` OK
    */
-  saveOrUpdateTagUsingPost1 = (req: TagSaveReq, params: RequestParams = {}) =>
+  luteosProductTagSaveOrUpdateTag = (req: TagSaveReq, params: RequestParams = {}) =>
     this.request<TagSaveResp, any>({
       path: `/api/luteos/product/tag/saveOrUpdateTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7585,17 +7593,18 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name ExportMetaTiktokSumListUsingPost1
+   * @name LuteosProductTiktokExportMetaTiktokSumList
    * @summary tiktok-机构达人汇总导出
    * @request POST:/api/luteos/product/tiktok/exportMetaTiktokSumList
+   * @response `200` `CommonExportResp` OK
    */
-  exportMetaTiktokSumListUsingPost1 = (
+  luteosProductTiktokExportMetaTiktokSumList = (
     req: MetaTiktokReportSumQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/tiktok/exportMetaTiktokSumList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7604,17 +7613,15 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name ExportTiktokAdsListUsingPost1
+   * @name LuteosProductTiktokExportTiktokAdsList
    * @summary tiktok-广告明细表现导出
    * @request POST:/api/luteos/product/tiktok/exportTiktokAdsList
+   * @response `200` `CommonExportResp` OK
    */
-  exportTiktokAdsListUsingPost1 = (
-    req: TiktokAdsQueryReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductTiktokExportTiktokAdsList = (req: TiktokAdsQueryReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/tiktok/exportTiktokAdsList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7623,17 +7630,18 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name ExportTiktokAffiliateAccountsSpuListUsingPost1
+   * @name LuteosProductTiktokExportTiktokAffiliateAccountsSpuList
    * @summary tiktok-机构达人表现导出
    * @request POST:/api/luteos/product/tiktok/exportTiktokAffiliateAccountsSpuList
+   * @response `200` `CommonExportResp` OK
    */
-  exportTiktokAffiliateAccountsSpuListUsingPost1 = (
+  luteosProductTiktokExportTiktokAffiliateAccountsSpuList = (
     req: TiktokAffiliateAccountsSpuQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/tiktok/exportTiktokAffiliateAccountsSpuList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7642,17 +7650,18 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name ExportTiktokWeekReportListUsingPost1
+   * @name LuteosProductTiktokExportTiktokWeekReportList
    * @summary tiktok-小店周报SPU导出
    * @request POST:/api/luteos/product/tiktok/exportTiktokWeekReportList
+   * @response `200` `CommonExportResp` OK
    */
-  exportTiktokWeekReportListUsingPost1 = (
+  luteosProductTiktokExportTiktokWeekReportList = (
     req: TiktokWeekReportQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/tiktok/exportTiktokWeekReportList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7661,17 +7670,15 @@ export class Api<
    * No description
    *
    * @tags tiktok-在线商品
-   * @name DownloadUsingPost14
+   * @name LuteosProductTiktokListingDownload
    * @summary tiktok-在线商品导出-V2
    * @request POST:/api/luteos/product/tiktok/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost14 = (
-    req: TikTokListingProductReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductTiktokListingDownload = (req: TikTokListingProductReq, params: RequestParams = {}) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/tiktok/listing/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7680,17 +7687,18 @@ export class Api<
    * No description
    *
    * @tags tiktok-在线商品
-   * @name QueryProductListingPageUsingPost8
+   * @name LuteosProductTiktokListingQueryProductListingPage
    * @summary tiktok-在线商品分页查询-V2
    * @request POST:/api/luteos/product/tiktok/listing/queryProductListingPage
+   * @response `200` `TikTokProductListingResp` OK
    */
-  queryProductListingPageUsingPost8 = (
+  luteosProductTiktokListingQueryProductListingPage = (
     req: TikTokListingProductReq,
     params: RequestParams = {},
   ) =>
     this.request<TikTokProductListingResp, any>({
       path: `/api/luteos/product/tiktok/listing/queryProductListingPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7699,17 +7707,18 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name QueryMetaTiktokSumListUsingPost1
+   * @name LuteosProductTiktokQueryMetaTiktokSumList
    * @summary tiktok-机构达人表现-汇总查询
    * @request POST:/api/luteos/product/tiktok/queryMetaTiktokSumList
+   * @response `200` `MetaTiktokReportSumQueryResp` OK
    */
-  queryMetaTiktokSumListUsingPost1 = (
+  luteosProductTiktokQueryMetaTiktokSumList = (
     req: MetaTiktokReportSumQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<MetaTiktokReportSumQueryResp, any>({
       path: `/api/luteos/product/tiktok/queryMetaTiktokSumList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7718,11 +7727,12 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name QueryTiktokAdsListUsingGet1
+   * @name LuteosProductTiktokQueryTiktokAdsList
    * @summary tiktok-广告明细表现查询
    * @request GET:/api/luteos/product/tiktok/queryTiktokAdsList
+   * @response `200` `TiktokAdsQueryResp` OK
    */
-  queryTiktokAdsListUsingGet1 = (
+  luteosProductTiktokQueryTiktokAdsList = (
     query: {
       /** 活动名称/广告组名称/店铺sku */
       keyword?: string;
@@ -7765,7 +7775,7 @@ export class Api<
   ) =>
     this.request<TiktokAdsQueryResp, any>({
       path: `/api/luteos/product/tiktok/queryTiktokAdsList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7773,11 +7783,12 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name QueryTiktokAdsPlatformSkuListUsingGet1
+   * @name LuteosProductTiktokQueryTiktokAdsPlatformSkuList
    * @summary tiktok-广告映射店铺sku查询
    * @request GET:/api/luteos/product/tiktok/queryTiktokAdsPlatformSkuList
+   * @response `200` `TiktokAdsPlatformSkuQueryResp` OK
    */
-  queryTiktokAdsPlatformSkuListUsingGet1 = (
+  luteosProductTiktokQueryTiktokAdsPlatformSkuList = (
     query: {
       /** 广告名称/店铺sku */
       keyword?: string;
@@ -7805,7 +7816,7 @@ export class Api<
   ) =>
     this.request<TiktokAdsPlatformSkuQueryResp, any>({
       path: `/api/luteos/product/tiktok/queryTiktokAdsPlatformSkuList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7813,17 +7824,18 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name QueryTiktokAffiliateAccountsSpuListUsingPost1
+   * @name LuteosProductTiktokQueryTiktokAffiliateAccountsSpuList
    * @summary tiktok-机构达人表现-周维度查询
    * @request POST:/api/luteos/product/tiktok/queryTiktokAffiliateAccountsSpuList
+   * @response `200` `TiktokAffiliateAccountsSpuQueryResp` OK
    */
-  queryTiktokAffiliateAccountsSpuListUsingPost1 = (
+  luteosProductTiktokQueryTiktokAffiliateAccountsSpuList = (
     req: TiktokAffiliateAccountsSpuQueryReq,
     params: RequestParams = {},
   ) =>
     this.request<TiktokAffiliateAccountsSpuQueryResp, any>({
       path: `/api/luteos/product/tiktok/queryTiktokAffiliateAccountsSpuList`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7832,11 +7844,12 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name QueryTiktokWeekReportListUsingGet1
+   * @name LuteosProductTiktokQueryTiktokWeekReportList
    * @summary tiktok-小店周报SPU查询
    * @request GET:/api/luteos/product/tiktok/queryTiktokWeekReportList
+   * @response `200` `TiktokWeekReportQueryResp` OK
    */
-  queryTiktokWeekReportListUsingGet1 = (
+  luteosProductTiktokQueryTiktokWeekReportList = (
     query: {
       /** 产品名称 */
       keyword?: string;
@@ -7879,7 +7892,7 @@ export class Api<
   ) =>
     this.request<TiktokWeekReportQueryResp, any>({
       path: `/api/luteos/product/tiktok/queryTiktokWeekReportList`,
-      method: "GET",
+      method: 'GET',
       query: query,
       ...params,
     });
@@ -7887,17 +7900,15 @@ export class Api<
    * No description
    *
    * @tags TK周报模块
-   * @name SaveTiktokAdsSkuUsingPost1
+   * @name LuteosProductTiktokSaveTiktokAdsSku
    * @summary tiktok-广告店铺SKU映射保存
    * @request POST:/api/luteos/product/tiktok/saveTiktokAdsSku
+   * @response `200` `TiktokAdsSkuSaveResp` OK
    */
-  saveTiktokAdsSkuUsingPost1 = (
-    req: TiktokAdsSkuSaveReq,
-    params: RequestParams = {},
-  ) =>
+  luteosProductTiktokSaveTiktokAdsSku = (req: TiktokAdsSkuSaveReq, params: RequestParams = {}) =>
     this.request<TiktokAdsSkuSaveResp, any>({
       path: `/api/luteos/product/tiktok/saveTiktokAdsSku`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7906,17 +7917,18 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name DownloadUsingPost15
+   * @name LuteosProductWalmartListingDownload
    * @summary 沃尔玛-在线商品导出-V2
    * @request POST:/api/luteos/product/walmart/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost15 = (
+  luteosProductWalmartListingDownload = (
     req: WalmartListingProductReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/walmart/listing/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7925,15 +7937,19 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name DownloadUsingPost16
+   * @name LuteosProductWalmartListingListingDownload
    * @summary 沃尔玛在线商品导出
    * @request POST:/api/luteos/product/walmart/listing/listing/download
    * @deprecated
+   * @response `200` `CommonExportResp` OK
    */
-  downloadUsingPost16 = (req: WalmartListingReq, params: RequestParams = {}) =>
+  luteosProductWalmartListingListingDownload = (
+    req: WalmartListingReq,
+    params: RequestParams = {},
+  ) =>
     this.request<CommonExportResp, any>({
       path: `/api/luteos/product/walmart/listing/listing/download`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7942,18 +7958,19 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name QueryListingTagUsingPost9
+   * @name LuteosProductWalmartListingListingQueryTag
    * @summary 沃尔玛在线商品父维度标签查询
    * @request POST:/api/luteos/product/walmart/listing/listing/queryTag
    * @deprecated
+   * @response `200` `ListingTagResp` OK
    */
-  queryListingTagUsingPost9 = (
+  luteosProductWalmartListingListingQueryTag = (
     req: ListingQueryTagReq,
     params: RequestParams = {},
   ) =>
     this.request<ListingTagResp, any>({
       path: `/api/luteos/product/walmart/listing/listing/queryTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7962,18 +7979,19 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name UpdateTagUsingPost8
+   * @name LuteosProductWalmartListingListingUpdateTag
    * @summary 沃尔玛在线商品标签保存更新
    * @request POST:/api/luteos/product/walmart/listing/listing/updateTag
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  updateTagUsingPost8 = (
+  luteosProductWalmartListingListingUpdateTag = (
     req: ListingBatchModifyTagReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/walmart/listing/listing/updateTag`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7982,15 +8000,16 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name QueryPageUsingPost1
+   * @name LuteosProductWalmartListingQueryPage
    * @summary 沃尔玛-在线商品分页查询
    * @request POST:/api/luteos/product/walmart/listing/queryPage
    * @deprecated
+   * @response `200` `WalmartListingResp` OK
    */
-  queryPageUsingPost1 = (req: WalmartListingReq, params: RequestParams = {}) =>
+  luteosProductWalmartListingQueryPage = (req: WalmartListingReq, params: RequestParams = {}) =>
     this.request<WalmartListingResp, any>({
       path: `/api/luteos/product/walmart/listing/queryPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -7999,17 +8018,18 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name QueryProductListingPageUsingPost9
+   * @name LuteosProductWalmartListingQueryProductListingPage
    * @summary 沃尔玛-在线商品分页查询-V2
    * @request POST:/api/luteos/product/walmart/listing/queryProductListingPage
+   * @response `200` `WalmartProductListingResp` OK
    */
-  queryProductListingPageUsingPost9 = (
+  luteosProductWalmartListingQueryProductListingPage = (
     req: WalmartListingProductReq,
     params: RequestParams = {},
   ) =>
     this.request<WalmartProductListingResp, any>({
       path: `/api/luteos/product/walmart/listing/queryProductListingPage`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -8018,15 +8038,16 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name SaveOperatorUsingPost7
+   * @name LuteosProductWalmartListingSaveOperator
    * @summary 沃尔玛-在线商品保存运营人员
    * @request POST:/api/luteos/product/walmart/listing/saveOperator
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  saveOperatorUsingPost7 = (req: OperatorSaveReq, params: RequestParams = {}) =>
+  luteosProductWalmartListingSaveOperator = (req: OperatorSaveReq, params: RequestParams = {}) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/walmart/listing/saveOperator`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,
@@ -8035,18 +8056,19 @@ export class Api<
    * No description
    *
    * @tags 沃尔玛-在线商品
-   * @name SaveProductLinkUsingPost7
+   * @name LuteosProductWalmartListingSaveProductLink
    * @summary 沃尔玛-在线商品保存商品链接
    * @request POST:/api/luteos/product/walmart/listing/saveProductLink
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  saveProductLinkUsingPost7 = (
+  luteosProductWalmartListingSaveProductLink = (
     req: ProductLinkSaveReq,
     params: RequestParams = {},
   ) =>
     this.request<CommonRespObject, any>({
       path: `/api/luteos/product/walmart/listing/saveProductLink`,
-      method: "POST",
+      method: 'POST',
       body: req,
       type: ContentType.Json,
       ...params,

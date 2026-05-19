@@ -1,6 +1,5 @@
 /* eslint-disable */
 /* tslint:disable */
-// @ts-nocheck
 /*
  * ---------------------------------------------------------------
  * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
@@ -1263,6 +1262,12 @@ export interface BrandDetailResp {
   productBeanList?: ProductBean[];
 }
 
+/** BrandListQueryAllResp */
+export interface BrandListQueryAllResp {
+  /** 品牌列表 */
+  brandBeanList?: BrandBean[];
+}
+
 /** BrandListQueryReq */
 export interface BrandListQueryReq {
   /** 品牌编号 */
@@ -1431,10 +1436,6 @@ export interface CategoryBean0 {
   level?: number;
   /** 分类父id */
   parentCategoryCode?: string;
-  /** 产品线编码 */
-  productLineCode?: string;
-  /** 产品线名称 */
-  productLineName?: string;
   /**
    * 状态
    * @format int32
@@ -4105,6 +4106,11 @@ export interface MemberDeptInfoBean {
   deptId?: number;
   /** 部门名称 */
   deptName?: string;
+  /**
+   * 一级部门id
+   * @format int64
+   */
+  firstDeptId?: number;
   /** 一级部门名称 */
   firstDeptName?: string;
   /** 员工编码 */
@@ -4116,8 +4122,18 @@ export interface MemberDeptInfoBean {
   parentId?: number;
   /** 父级部门名称 */
   parentName?: string;
+  /**
+   * 二级部门id
+   * @format int64
+   */
+  secondDeptId?: number;
   /** 二级部门名称 */
   secondDeptName?: string;
+  /**
+   * 三级部门id
+   * @format int64
+   */
+  thirdDeptId?: number;
   /** 三级部门名称 */
   thirdDeptName?: string;
 }
@@ -4194,24 +4210,12 @@ export interface MetaTiktokReportSumQueryResp {
 
 /** ModelBean */
 export interface ModelBean {
-  /** 品牌编码 */
-  brandCode?: string;
-  /** 品牌名称 */
-  brandName?: string;
-  /** 渠道编码 A-线上医疗款 B-线上非医疗 C-线下医疗款 D-线下非医疗 */
-  channelCode?: string;
-  /** 渠道名称 */
-  channelName?: string;
   /** 类型编码 */
   modelCode?: string;
   /** 类型名称 */
   modelName?: string;
   /** 类型备注 */
   modelRemark?: string;
-  /** 分类编码 */
-  productCategoryCode?: string;
-  /** 分类名称 */
-  productCategoryName?: string;
   /**
    * 商品数量
    * @format int32
@@ -4219,10 +4223,6 @@ export interface ModelBean {
   productCount?: number;
   /** 关联SPU/SKU */
   productSkuBeanList?: ProductSkuBean[];
-  /** 系列编码 */
-  seriesCode?: string;
-  /** 系列名称 */
-  seriesName?: string;
 }
 
 /** ModelDetailResp */
@@ -4836,7 +4836,6 @@ export interface MsrpSaveReq {
 
 /** MsrpSaveSkuReq */
 export interface MsrpSaveSkuReq {
-  operationType?: string;
   /** sku保存数据 */
   skuSaveBeanList?: MsrpSkuDetailSaveBean[];
 }
@@ -4849,7 +4848,6 @@ export interface MsrpSaveSkuResp {
 
 /** MsrpSaveSpuReq */
 export interface MsrpSaveSpuReq {
-  operationType?: string;
   /** spu保存数据 */
   spuSaveBean?: MsrpSpuDetailSaveBean;
 }
@@ -7733,6 +7731,72 @@ export interface ProductRelationListResp {
   tagBeanList?: TagBean[];
 }
 
+/** ProductSaveReq */
+export interface ProductSaveReq {
+  /** 品牌编码 */
+  brandCode?: string;
+  /** 五级分类编码 */
+  categoryCode: string;
+  /** 归属人编码 */
+  createBy?: string;
+  /** GTM经理 */
+  gtm?: string;
+  /** 型号信息 */
+  modelCodeList?: string[];
+  /** 商品名称 */
+  name: string;
+  /** 商品名称英文 */
+  nameEn?: string;
+  /** 商品属性列表 */
+  newAttrList?: ProductAttrBean[];
+  /** 商品属性列表 */
+  oldAttrList?: ProductAttrBean[];
+  /**
+   * 操作类型 1：保存草稿 2：提交审批
+   * @format int32
+   * @min 1
+   * @exclusiveMin false
+   * @max 2
+   * @exclusiveMax false
+   */
+  operateType?: number;
+  /** 计划专员 */
+  planner?: string;
+  /**
+   * 商品id
+   * @format int64
+   */
+  productId?: number;
+  /** 商品图片 */
+  productImage?: string;
+  /** 商品等级 S级：S A级：A B级：B C级：C */
+  productLevelNew?: string;
+  /** 品线 */
+  productLine?: string;
+  productSpecList?: ProductSpecSaveBean[];
+  /** 产品Id,商品编码，商品spu  */
+  productSpu: string;
+  /**
+   * 商品类型
+   * @format int32
+   */
+  productType?: number;
+  /**
+   * 产品卖点
+   * @minLength 1
+   * @maxLength 200
+   */
+  sellingPoint?: string;
+  /** 系列信息 */
+  seriesCodeList?: string[];
+  /** sku信息 */
+  skuList?: ProductSkuSaveBean[];
+  /** 是否更新sku */
+  skuUpdateFlag?: boolean;
+  /** 商品标签 */
+  tagCodeList?: string[];
+}
+
 /** ProductSaveResp */
 export interface ProductSaveResp {
   /** 商品spu编码 */
@@ -8142,8 +8206,6 @@ export interface ProductSkuBatteryBean {
   containsBatteryDesc?: string;
   /** 续航(年) */
   endurance?: string;
-  /** 供电方式 */
-  powerSupplyType?: string;
   /** 一个电池的重量(单位g) */
   singleBatteryWeight?: number;
   /** 电压(电压V) */
@@ -8287,14 +8349,6 @@ export interface ProductSkuCertificationBean {
   certificationName?: string;
   /** 认证产品名称（英文） */
   certificationProductNameEn?: string;
-  /** 认证状态 */
-  certificationStatus?: string;
-  /** 认证适用国家名称 */
-  complianceCountryName?: string;
-  /** 产品认证生效日期 */
-  effectiveDate?: string;
-  /** 产品认证失效日期 */
-  expiryDate?: string;
 }
 
 /** ProductSkuCertificationItem */
@@ -8528,8 +8582,6 @@ export interface ProductSkuDetailResp {
   certificationInfo?: ProductSkuCertificationBean;
   /** 渠道资料信息 */
   channelInfo?: ProductSkuChannelBean;
-  /** 清洁方式说明 */
-  cleaningInstructions?: string;
   /** 彩盒内的所有产品以及配件 */
   colorBoxContents?: string;
   /** 产品经理编码 */
@@ -8542,17 +8594,8 @@ export interface ProductSkuDetailResp {
   ean13?: string;
   /** EAN14码 */
   ean14?: string;
-  /** 专供渠道 */
-  exclusiveChannel?: string;
-  /** 专供国家 */
-  exclusiveCountry?: string;
   /** 硬件参数信息 */
   hardwareParamInfo?: ProductSkuHardwareParamBean;
-  /**
-   * 是否专供
-   * @format int32
-   */
-  isExclusive?: number;
   /** 型号 */
   modelCode?: string;
   /** 型号名称 */
@@ -8600,8 +8643,6 @@ export interface ProductSkuDetailResp {
   sellingPoint?: string;
   /** 装运信息 */
   shipmentInfo?: ProductSkuShipmentBean;
-  /** 适用周期 */
-  skuApplicablePeriod?: string;
   /** 商品sku编码 */
   skuCode?: string;
   /** 组合SKU Item信息 */
@@ -9393,11 +9434,6 @@ export interface ProductSkuWarrantyBean {
   /** 求助热线联系方式（电话和电子邮件） */
   helplineContact?: string;
   /**
-   * 是否保修
-   * @format int32
-   */
-  isWarranty?: number;
-  /**
    * 英国消费者保修（以月为单位）
    * @format int32
    */
@@ -9407,8 +9443,6 @@ export interface ProductSkuWarrantyBean {
    * @format int32
    */
   ukManufacturerWarranty?: number;
-  /** 保修时效 */
-  warrantyPeriod?: string;
 }
 
 /** ProductSpecSaveBean */
@@ -11428,6 +11462,10 @@ export interface SmaSkuQueryListRespItem {
 
 /** SonBean */
 export interface SonBean {
+  /** 品牌编码 */
+  brandCode?: string;
+  /** 品牌名称 */
+  brandName?: string;
   /** 分类编码 */
   categoryCode?: string;
   /** 分类名称 */
@@ -11755,8 +11793,6 @@ export interface SupplySkuDetailResp {
   operator?: string;
   /** 更新人 */
   operatorName?: string;
-  /** 检索SKU */
-  primarySku?: string;
   /**
    * 产品创建时间
    * @format date-time
@@ -14012,70 +14048,4 @@ export interface EnumBeanString {
   key?: string;
   /** 字段值, 用于前端展示 */
   value?: string;
-}
-
-/** 商品保存参数 */
-export interface _ {
-  /** 品牌编码 */
-  brandCode?: string;
-  /** 五级分类编码 */
-  categoryCode: string;
-  /** 归属人编码 */
-  createBy?: string;
-  /** GTM经理 */
-  gtm?: string;
-  /** 型号信息 */
-  modelCodeList?: string[];
-  /** 商品名称 */
-  name: string;
-  /** 商品名称英文 */
-  nameEn?: string;
-  /** 商品属性列表 */
-  newAttrList?: ProductAttrBean[];
-  /** 商品属性列表 */
-  oldAttrList?: ProductAttrBean[];
-  /**
-   * 操作类型 1：保存草稿 2：提交审批
-   * @format int32
-   * @min 1
-   * @exclusiveMin false
-   * @max 2
-   * @exclusiveMax false
-   */
-  operateType?: number;
-  /** 计划专员 */
-  planner?: string;
-  /**
-   * 商品id
-   * @format int64
-   */
-  productId?: number;
-  /** 商品图片 */
-  productImage?: string;
-  /** 商品等级 S级：S A级：A B级：B C级：C */
-  productLevelNew?: string;
-  /** 品线 */
-  productLine?: string;
-  productSpecList?: ProductSpecSaveBean[];
-  /** 产品Id,商品编码，商品spu  */
-  productSpu: string;
-  /**
-   * 商品类型
-   * @format int32
-   */
-  productType?: number;
-  /**
-   * 产品卖点
-   * @minLength 1
-   * @maxLength 200
-   */
-  sellingPoint?: string;
-  /** 系列信息 */
-  seriesCodeList?: string[];
-  /** sku信息 */
-  skuList?: ProductSkuSaveBean[];
-  /** 是否更新sku */
-  skuUpdateFlag?: boolean;
-  /** 商品标签 */
-  tagCodeList?: string[];
 }

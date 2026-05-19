@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <script src="https://g.alicdn.com/dingding/h5-dingtalk-login/0.21.0/ddlogin.js"></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html{
+      height: 100%;
+    }
+    body{
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+    .qcode_wrap {
+      width: 200px;
+      height: auto;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="qcode_wrap">
+    <div class="dd_wrap">
+      <div id="self_defined_element"></div>
+    </div>
+  </div>
+  <script>
+    // 给路特助手登录获取token用，请勿删除该页面
+    const getDDQcode = () => {
+      fetch('/api/luteos/member/queryAuthInfo?platform=assistant&authType=1', {
+        method: 'GET',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "cors",
+      }).then(function (res) {
+        if (res.status === 200) {
+          return res.json()
+        } else {
+          return Promise.reject(res.json())
+        }
+      }).then(function (data) {
+        if (+data.code === 200) {
+          const { redirectUrl, clientId, state } = data.result
+          window.DTFrameLogin(
+            {
+              id: 'self_defined_element',
+              width: 200,
+              height: 240,
+            },
+            {
+              redirect_uri: window.encodeURIComponent(redirectUrl),
+              client_id: clientId,
+              scope: 'openid',
+              response_type: 'code',
+              state,
+              prompt: 'consent',
+            },
+            (loginResult) => {
+              console.log(loginResult)
+              const { authCode, state } = loginResult;
+              window.parent.postMessage({ authCode, state }, '*');
+            },
+            (errorMsg) => {
+              console.log(`Login Error: ${errorMsg}`);
+            }
+          );
+        }
+      }).catch(function (err) {
+        console.log(err);
+      });
+      // const authRes = await queryAuthInfo('1');
+      // if (authRes?.code == 200) {
+      //     const { redirectUrl, clientId, state } = authRes?.result;
+
+      // window.DTFrameLogin(
+      //   {
+      //     id: 'self_defined_element',
+      //     width: 340,
+      //     height: 340,
+      //   },
+      //   {
+      //     redirect_uri: encodeURIComponent(redirectUrl),
+      //     client_id: clientId,
+      //     scope: 'openid',
+      //     response_type: 'code',
+      //     state,
+      //     prompt: 'consent',
+      //   },
+      //   async (loginResult) => {
+      //       const { authCode, state } = loginResult;
+      //       window.parent.postMessage({ authCode, state }, '*');
+      //   },
+      //   (errorMsg) => {
+      //     console.log(`Login Error: ${errorMsg}`);
+      //   }
+      // );
+
+      //   }
+    }
+    getDDQcode()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+@use './variables.scss' as *;
+
+// 舆情等级标签
+.level-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: $border-radius-sm;
+  font-size: 12px;
+  font-weight: 500;
+
+  &.level-p0 {
+    color: $level-p0-color;
+    background: rgba($level-p0-color, 0.1);
+    border: 1px solid rgba($level-p0-color, 0.3);
+  }
+
+  &.level-p1 {
+    color: $level-p1-color;
+    background: rgba($level-p1-color, 0.1);
+    border: 1px solid rgba($level-p1-color, 0.3);
+  }
+
+  &.level-p2 {
+    color: $level-p2-color;
+    background: rgba($level-p2-color, 0.1);
+    border: 1px solid rgba($level-p2-color, 0.3);
+  }
+
+  &.level-p3 {
+    color: $level-p3-color;
+    background: rgba($level-p3-color, 0.1);
+    border: 1px solid rgba($level-p3-color, 0.3);
+  }
+}
+
+// 增量提示
+.increment-tip {
+  display: inline-flex;
+  align-items: center;
+  color: $level-p0-color;
+  font-size: 12px;
+  margin-left: 4px;
+
+  .arrow {
+    margin-right: 2px;
+  }
+}
+
+// 情感标签
+.sentiment-tag {
+  &.positive {
+    color: $sentiment-positive;
+  }
+
+  &.negative {
+    color: $sentiment-negative;
+  }
+
+  &.neutral {
+    color: $sentiment-neutral;
+  }
+}
+// 工单状态标签
+.status-tag {
+  &.processing {
+    color: $status-processing;
+  }
+
+  &.resolved {
+    color: $status-resolved;
+  }
+
+  &.no-need {
+    color: $status-no-need;
+  }
+}

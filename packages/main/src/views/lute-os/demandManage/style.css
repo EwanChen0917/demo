@@ -1,0 +1,39 @@
+/* .status-draft {
+  background-color: #dcdfe6;
+  color: #fff;
+} */
+ a {
+  cursor: pointer;
+ }
+.status-approving {
+  background-color: #6667AB;
+  color: #fff;
+}
+.status-rejected {
+  background-color: #939597;
+  color: #fff;
+}
+.status-executing {
+  background-color: #9E7B6B;
+  color: #fff;
+}
+.status-inner-check {
+  background-color: #AD5F99;
+  color: #fff;
+}
+.status-inner-rejected {
+  background-color: #939597;
+  color: #fff;
+}
+.status-to-receive {
+  background-color: #0F4C81;
+  color: #fff;
+}
+.status-to-feedback {
+  background-color: #EFC05A;
+  color: #fff;
+  }
+.status-complete {
+  background-color: #87B04B;
+  color: #fff;
+}

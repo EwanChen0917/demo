@@ -1,0 +1,4967 @@
+[
+  {
+    "id": "slide_cover_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "bg_shape_cover_1",
+        "top": 0,
+        "fill": "#5E965A",
+        "left": 0,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "top",
+          "content": "",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 1000,
+        "height": 540,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "cover_image_cover_1",
+        "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/cover-mom.svg",
+        "top": 80,
+        "left": 575,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 341.00199475065614,
+        "height": 420.9965354330708,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "time_icon_cover_1",
+        "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/time-icon.svg",
+        "top": 462,
+        "left": 76,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 12,
+        "height": 12,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "author_icon_cover_1",
+        "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/creator-icon.svg",
+        "top": 410,
+        "left": 76,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 12,
+        "height": 12,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "dept_icon_cover_1",
+        "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/dept-icon.svg",
+        "top": 436,
+        "left": 76,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 12,
+        "height": 12,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "logo_cover_1",
+        "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/momcozy.svg",
+        "top": 60.50005249343832,
+        "left": 75.50005249343832,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 104,
+        "height": 13.50005249343832,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "main_title_cover_1",
+        "top": 134,
+        "fill": "",
+        "left": 66,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"\"><span style=\"font-size: 44px;\"><span style=\"font-family: &quot;PingFang SC&quot;;\"><span style=\"color: rgba(255, 255, 255, 0.99);\">调奶器新品机会洞察：智能便携市场的三维战略定位</span></span></span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 444,
+        "height": 56,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_cover_1",
+        "top": 204,
+        "fill": "",
+        "left": 67,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #fffffffc;font-size: 16.0px;font-family: PingFang SC;\">基于搜索热度 × 平台数据 × 市场趋势的三维共振分析，锁定高潜力产品策略方向</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 312,
+        "height": 56,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "description_cover_1",
+        "top": 289,
+        "fill": "",
+        "left": 67,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #fffffffc;font-size: 12.0px;font-family: PingFang SC;\">报告周期：2024Q4 数据来源：Google Trends、Amazon BSR、VOC用户评论分析</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 444,
+        "height": 48,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "date_cover_1",
+        "top": 456,
+        "fill": "",
+        "left": 87,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #fffffffc;font-size: 10.0px;font-family: PingFang SC;\">时间：2025-11-06</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 138.50005249343832,
+        "height": 14,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "author_cover_1",
+        "top": 404,
+        "fill": "",
+        "left": 87,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"\"><span style=\"font-size: 10px;\"><span style=\"font-family: &quot;PingFang SC&quot;;\"><span style=\"color: rgba(255, 255, 255, 0.99);\">姓名：产品战略部</span></span></span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 108,
+        "height": 14,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "department_cover_1",
+        "top": 430,
+        "fill": "",
+        "left": 87,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"\"><span style=\"font-size: 10px;\"><span style=\"font-family: &quot;PingFang SC&quot;;\"><span style=\"color: rgba(255, 255, 255, 0.99);\">部门：产品战略部</span></span></span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 201,
+        "height": 14,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_catalog_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "catalog_bg_catalog_1",
+        "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/catalog-mom.svg",
+        "top": 0,
+        "left": 0,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 500,
+        "height": 563,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "contents_title_catalog_1",
+        "top": 103,
+        "fill": "",
+        "left": 553,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #e1f4e9fc;font-size: 36.5px;font-family: PingFang SC;\">CONTENTS</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 248.5000524934383,
+        "height": 52.50005249343832,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part1_num_catalog_1",
+        "top": 190,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">一</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 95.50005249343832,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part1_title_catalog_1",
+        "top": 190,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">摘要与核心发现</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part2_num_catalog_1",
+        "top": 230,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">二</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 98,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part2_title_catalog_1",
+        "top": 230,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">宏观趋势分析</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part3_num_catalog_1",
+        "top": 270,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">三</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 98,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part3_title_catalog_1",
+        "top": 270,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">亚马逊平台洞察</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part4_num_catalog_1",
+        "top": 310,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">四</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 98,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part4_title_catalog_1",
+        "top": 310,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">三维交叉验证</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part5_num_catalog_1",
+        "top": 350,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">五</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 98,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part5_title_catalog_1",
+        "top": 350,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">执行路线图</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part6_num_catalog_1",
+        "top": 390,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">六</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 98,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part6_title_catalog_1",
+        "top": 390,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">用户画像与营销策略</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "main_title_catalog_1",
+        "top": 80,
+        "fill": "",
+        "left": 545.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 42.0px;font-family: PingFang SC;\">目录</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 132,
+        "height": 42,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_catalog_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "catalog_bg_catalog_2",
+        "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/catalog-mom.svg",
+        "top": 0,
+        "left": 0,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 500,
+        "height": 563,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "contents_title_catalog_2",
+        "top": 103,
+        "fill": "",
+        "left": 553,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #e1f4e9fc;font-size: 36.5px;font-family: PingFang SC;\">CONTENTS</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 248.5000524934383,
+        "height": 52.50005249343832,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part7_num_catalog_2",
+        "top": 190,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">七</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 97.50005249343832,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part7_title_catalog_2",
+        "top": 190,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">4P策略矩阵</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part8_num_catalog_2",
+        "top": 230,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">八</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 98,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part8_title_catalog_2",
+        "top": 230,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">风险预警与实施路径</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part9_num_catalog_2",
+        "top": 270,
+        "fill": "",
+        "left": 547.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">九</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 98,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "part9_title_catalog_2",
+        "top": 270,
+        "fill": "",
+        "left": 619,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">结论与下一步</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 321,
+        "height": 18,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "main_title_catalog_2",
+        "top": 80,
+        "fill": "",
+        "left": 545.5000524934383,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 42.0px;font-family: PingFang SC;\">目录</span></p>",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 132,
+        "height": 42,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_end_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_end_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>核心发现：三维共振确认，供需缺口显现</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_end_1",
+        "top": 120,
+        "fill": "#f59e0b",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "highlight_box_end_1",
+        "top": 160,
+        "fill": "#fef3c7",
+        "left": 50,
+        "path": "M0,0 L860,0 L860,120 L0,120 Z",
+        "type": "shape",
+        "width": 860,
+        "height": 120,
+        "rotate": 0,
+        "outline": {
+          "color": "#f59e0b",
+          "style": "solid",
+          "width": 3
+        },
+        "viewBox": [
+          860,
+          120
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "highlighted_text_end_1",
+        "top": 180,
+        "left": 80,
+        "type": "text",
+        "width": 800,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 24pt; font-weight: bold; color: #92400e; font-family: PingFang SC;'>「Baby Bottle Warmer」关键词形成三维共振，亚马逊供需比0.8揭示20%市场缺口</p>",
+        "textType": "content",
+        "defaultColor": "#92400e",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "supporting_text_end_1",
+        "top": 300,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'>基于Google Trends、亚马逊平台数据与市场增长趋势的三维交叉验证，智能便携调奶器在“Portable”与“Smart”细分领域呈现显著增长动能。差评分析显示温控精度（45%）与便携性（32%）为用户核心痛点，构成产品优化的关键突破口。</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_end_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_end_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>核心发现：三维共振确认，供需缺口显现</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "table_end_1",
+        "top": 130,
+        "data": [
+          [
+            {
+              "id": "r0c0",
+              "text": "<p style='font-size: 14pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>指标</p>",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r0c1",
+              "text": "<p style='font-size: 14pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>说明</p>",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r1c0",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'><i class='fas fa-balance-scale'></i> 0.8</p>",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r1c1",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'>亚马逊供需比，低于1表明存在20%供给缺口</p>",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r2c0",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'><i class='fas fa-thermometer-half'></i> 45%</p>",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r2c1",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'>差评中提及温控不准的比例，为主要质量痛点</p>",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r3c0",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'><i class='fas fa-mobile-alt'></i> 32%</p>",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r3c1",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'>差评反馈便携性不足，凸显移动场景需求未被满足</p>",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r4c0",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'><i class='fas fa-chart-line'></i> +28%</p>",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r4c1",
+              "text": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC;'>Portable Bottle Warmer季度环比热度增长</p>",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        ],
+        "left": 50,
+        "type": "table",
+        "theme": {
+          "color": "#5E965A",
+          "colFooter": false,
+          "colHeader": false,
+          "rowFooter": false,
+          "rowHeader": true
+        },
+        "width": 900,
+        "height": 270,
+        "rotate": 0,
+        "outline": {
+          "color": "#DADADA",
+          "style": "solid",
+          "width": 1
+        },
+        "colWidths": [
+          0.25,
+          0.75
+        ],
+        "cellMinHeight": 34
+      },
+      {
+        "id": "call_to_action_end_1",
+        "top": 420,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 18pt; font-weight: bold; color: #3182ce; font-family: PingFang SC;'>立即启动智能温控模块开发与便携设计优化，抢占中端价格带空白市场</p>",
+        "textType": "content",
+        "defaultColor": "#3182ce",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1",
+    "remark": "数据来源：《调奶器三维市场分析报告》 - 亚马逊数据采集时点2024Q4，Trends预测误差±15%",
+    "elements": [
+      {
+        "id": "title_1",
+        "top": 30,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 50,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>行动优先级矩阵：功能开发排序</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "subtitle_1",
+        "top": 90,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #5e965a; font-family: PingFang SC;'>基于核心差评痛点与市场机会的功能优先级决策</p>",
+        "textType": "subtitle",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "table_1_1",
+        "top": 140,
+        "data": [
+          [
+            {
+              "id": "r0c0",
+              "text": "功能动作",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r0c1",
+              "text": "预期GMV提升",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r0c2",
+              "text": "实施难度",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r0c3",
+              "text": "优先级",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r1c0",
+              "text": "开发智能温控模块",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r1c1",
+              "text": "+25%",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r1c2",
+              "text": "中",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r1c3",
+              "text": "高",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r2c0",
+              "text": "优化便携设计",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r2c1",
+              "text": "+18%",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r2c2",
+              "text": "低",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r2c3",
+              "text": "高",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r3c0",
+              "text": "集成消毒功能",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r3c1",
+              "text": "+15%",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r3c2",
+              "text": "中",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r3c3",
+              "text": "中",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r4c0",
+              "text": "开发APP控制功能",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r4c1",
+              "text": "+12%",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r4c2",
+              "text": "高",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r4c3",
+              "text": "中",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        ],
+        "left": 50,
+        "type": "table",
+        "theme": {
+          "color": "#5E965A",
+          "colFooter": false,
+          "colHeader": false,
+          "rowFooter": false,
+          "rowHeader": true
+        },
+        "width": 900,
+        "height": 270,
+        "rotate": 0,
+        "outline": {
+          "color": "#DADADA",
+          "style": "solid",
+          "width": 1
+        },
+        "colWidths": [
+          0.35,
+          0.25,
+          0.2,
+          0.2
+        ],
+        "cellMinHeight": 34
+      },
+      {
+        "id": "table_summary_1",
+        "top": 430,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; color: #6b7280; font-family: PingFang SC;'>智能温控与便携性优化为最高优先级，二者合计可带来43%的GMV增长潜力，且实施难度适中或较低，是当前阶段最优投入方向。APP控制虽具差异化潜力，但实施难度高，建议中期布局。</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_section_divider_02",
+    "remark": "",
+    "elements": [
+      {
+        "id": "bg_shape_section_divider_02_1",
+        "top": 0,
+        "fill": "#5E965A",
+        "left": 0,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "top",
+          "content": "",
+          "defaultColor": "#333",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 1000,
+        "height": 540,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "cover_image_section_divider_02_2",
+        "src": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
+        "top": 80,
+        "left": 575,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 341.00199475065614,
+        "height": 420.9965354330708,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "chapter_section_divider_02_3",
+        "top": 100,
+        "left": 50,
+        "type": "text",
+        "width": 200,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 72pt; font-weight: bold; color: #ffffff; opacity: 0.3; font-family: PingFang SC;'>02</p>",
+        "textType": "partNumber",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_section_divider_02_4",
+        "top": 200,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>二、宏观趋势分析</p>",
+        "textType": "title",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_section_divider_02_5",
+        "top": 290,
+        "fill": "#ffffff",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_section_divider_02_6",
+        "top": 320,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #e2e8f0; font-family: PingFang SC;'>基于Google Trends、全球市场增长率及智能设备渗透率的综合洞察</p>",
+        "textType": "subtitle",
+        "defaultColor": "#e2e8f0",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>Google Trends 12个月热度曲线解读</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "chart_1",
+        "top": 140,
+        "data": {
+          "labels": [
+            "1月",
+            "2月",
+            "3月",
+            "4月",
+            "5月",
+            "6月",
+            "7月",
+            "8月",
+            "9月",
+            "10月",
+            "11月",
+            "12月"
+          ],
+          "series": [
+            [
+              65,
+              64,
+              66,
+              65,
+              67,
+              66,
+              65,
+              68,
+              67,
+              70,
+              72,
+              73
+            ],
+            [
+              58,
+              60,
+              63,
+              65,
+              68,
+              70,
+              72,
+              75,
+              78,
+              82,
+              85,
+              89
+            ]
+          ],
+          "legends": [
+            "Baby Bottle Warmer（基础款）",
+            "Portable Bottle Warmer（便携款）"
+          ]
+        },
+        "left": 100,
+        "type": "chart",
+        "width": 760,
+        "height": 300,
+        "rotate": 0,
+        "chartType": "line",
+        "textColor": "#333333",
+        "themeColors": [
+          "#5E965A",
+          "#4A7C47",
+          "#7BAB77",
+          "#A5C9A1",
+          "#2F5A2D",
+          "#8FBF8B"
+        ]
+      },
+      {
+        "id": "description_1",
+        "top": 460,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #6b7280; font-family: PingFang SC;'>基于2024年1-12月全球搜索数据的趋势分析</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_2",
+    "remark": "演讲者备注：本页总结了四个关键洞察，包括基础款稳定性、便携款增长趋势、区域市场分布和Q4季节性高峰。",
+    "elements": [
+      {
+        "id": "title_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>Google Trends 12个月热度曲线解读</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "insight_1",
+        "top": 150,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 60,
+        "rotate": 0,
+        "content": "<ul style='font-size: 18px; color: #333333; font-family: PingFang SC; margin-top: 0; margin-bottom: 10px; padding-left: 20px;'><li>基础关键词'Baby Bottle Warmer'全年保持稳定，月均热度65，体现市场基本盘稳固。</li></ul>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "insight_2",
+        "top": 210,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 60,
+        "rotate": 0,
+        "content": "<ul style='font-size: 18px; color: #333333; font-family: PingFang SC; margin-top: 0; margin-bottom: 10px; padding-left: 20px;'><li>细分词'Portable Bottle Warmer'呈现持续增长趋势，Q4季度环比增长达28%，显示便携化需求加速释放。</li></ul>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "insight_3",
+        "top": 270,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 60,
+        "rotate": 0,
+        "content": "<ul style='font-size: 18px; color: #333333; font-family: PingFang SC; margin-top: 0; margin-bottom: 10px; padding-left: 20px;'><li>美国为最大需求市场（峰值热度100），德国（85）、英国（78）紧随其后，构成核心目标区域。</li></ul>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "insight_4",
+        "top": 330,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 60,
+        "rotate": 0,
+        "content": "<ul style='font-size: 18px; color: #333333; font-family: PingFang SC; margin-top: 0; margin-bottom: 10px; padding-left: 20px;'><li>所有关键词在Q4（10-12月）出现明显季节性高峰，受节日季及冬季育儿需求驱动，热度提升35%-50%。</li></ul>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "source_2",
+        "top": 420,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; color: #6b7280; font-family: PingFang SC;'>数据来源：Google Trends (2024年1月-12月), 数据采集时点：2024Q4</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_1_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>全球市场增长率与智能渗透趋势</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1_1",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "chart_1_1",
+        "top": 140,
+        "data": {
+          "labels": [
+            "2023年",
+            "2024年",
+            "2025年（预测）"
+          ],
+          "series": [
+            [
+              40,
+              45,
+              50
+            ],
+            [
+              12,
+              12,
+              12
+            ],
+            [
+              40,
+              50,
+              60
+            ]
+          ],
+          "legends": [
+            "市场规模（亿美元）",
+            "年增长率（%）",
+            "智能设备渗透率（%）"
+          ]
+        },
+        "left": 100,
+        "type": "chart",
+        "width": 760,
+        "height": 300,
+        "rotate": 0,
+        "chartType": "column",
+        "textColor": "#333333",
+        "themeColors": [
+          "#5E965A",
+          "#4A7C47",
+          "#7BAB77",
+          "#A5C9A1",
+          "#2F5A2D",
+          "#8FBF8B"
+        ]
+      },
+      {
+        "id": "description_1_1",
+        "top": 460,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #6b7280; font-family: PingFang SC;'>2023-2025年全球调奶器市场规模、增长率及智能设备渗透率分析</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1_2",
+    "remark": "演讲者备注：本页展示关键洞察与数据来源。智能渗透率快速上升，反映消费者对智能化功能的偏好增强；中国市场的高增长值得重点关注；智能便携品类存在结构性机会。",
+    "elements": [
+      {
+        "id": "title_1_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>全球市场增长率与智能渗透趋势</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "insight_1_2_1",
+        "top": 150,
+        "left": 70,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 18pt; color: #333333; font-family: PingFang SC;'>• 全球调奶器市场规模预计在2025年达到50亿美元，呈现稳定增长趋势。</p>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "insight_1_2_2",
+        "top": 210,
+        "left": 70,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 18pt; color: #333333; font-family: PingFang SC;'>• 年增长率保持在12%，中国市场增速更高，达15%，显示强劲需求动力。</p>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "insight_1_2_3",
+        "top": 270,
+        "left": 70,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 18pt; color: #333333; font-family: PingFang SC;'>• 智能设备渗透率从2023年的40%提升至2025年的60%，表明智能化已成为主流发展方向。</p>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "insight_1_2_4",
+        "top": 330,
+        "left": 70,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 18pt; color: #333333; font-family: PingFang SC;'>• 智能便携细分市场存在显著供需缺口，是当前产品布局的关键机会窗口。</p>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "source_1_2",
+        "top": 460,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; color: #6b7280; font-style: italic; font-family: PingFang SC;'>数据来源：Statista 2024, Amazon平台数据采集时点2024Q4, 内部Trends分析模型</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_section_divider_1",
+    "remark": "章节分隔：亚马逊平台洞察",
+    "elements": [
+      {
+        "id": "bg_shape_section_divider_1",
+        "top": 0,
+        "fill": "#5E965A",
+        "left": 0,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "top",
+          "content": "",
+          "defaultColor": "#333",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 1000,
+        "height": 540,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "cover_image_section_divider_1",
+        "src": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "top": 80,
+        "left": 575,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 341.00199475065614,
+        "height": 420.9965354330708,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "chapter_section_divider_1",
+        "top": 100,
+        "left": 50,
+        "type": "text",
+        "width": 200,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 72pt; font-weight: bold; color: #ffffff; opacity: 0.3; font-family: PingFang SC;'>三</p>",
+        "textType": "partNumber",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_section_divider_1",
+        "top": 200,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>亚马逊平台洞察</p>",
+        "textType": "title",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_section_divider_1",
+        "top": 290,
+        "fill": "#ffffff",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_section_divider_1",
+        "top": 320,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #e2e8f0; font-family: PingFang SC;'>基于TOP50产品BSR趋势、价格带分布与用户评论增长分析，揭示中端便携市场的结构性机会</p>",
+        "textType": "subtitle",
+        "defaultColor": "#e2e8f0",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_content_list_1",
+    "remark": "结束",
+    "elements": [
+      {
+        "id": "title_content_list_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>价格分层与供需比分析</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_content_list_1",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_content_list_1",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 18pt; color: #4a7c47; font-family: PingFang SC;'>基于亚马逊TOP50产品数据的价格带分布与市场供需关系洞察</p>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "list_item_1_content_list_1",
+        "top": 190,
+        "left": 50,
+        "type": "text",
+        "width": 450,
+        "height": 180,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; line-height: 1.6; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-crown' style='color: #5E965A; margin-right: 8px;'></i><strong>高端智能设备（$150-$330）</strong></p><ul style='margin-top: 8px; font-size: 14pt; line-height: 1.6; padding-left: 24px;'><li><strong>市场占比</strong>：20%</li><li><strong>BSR表现</strong>：加速度+15%，增长势头强劲</li><li><strong>供需比</strong>：1.0，接近平衡状态</li><li><strong>核心特征</strong>：集成APP控制、精准温控、多功能一体化设计</li><li><strong>代表产品</strong>：Baby Brezza Pro ($159.99)，评分4.5，评论数12,345</li><li><em>该区间竞争集中于技术壁垒构建，适合品牌溢价布局</em></li></ul>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "list_item_2_content_list_1",
+        "top": 190,
+        "left": 510,
+        "type": "text",
+        "width": 450,
+        "height": 180,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; line-height: 1.6; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-chart-line' style='color: #5E965A; margin-right: 8px;'></i><strong>中端便携设备（$20-$80）</strong></p><ul style='margin-top: 8px; font-size: 14pt; line-height: 1.6; padding-left: 24px;'><li><strong>市场占比</strong>：35%（最大细分市场）</li><li><strong>供需比</strong>：0.6，存在显著<strong>供应缺口</strong></li><li><strong>趋势斜率</strong>：+28%（季度环比增长）</li><li><strong>核心需求</strong>：便携性、快速加热、基础智能化</li><li><strong>用户画像</strong>：25-35岁职场父母，追求性价比与实用性</li><li><em>机会点：填补智能便携市场空白，直击差评痛点</em></li><li><em><strong>推荐定位</strong>：$49.99主力款，形成渗透定价优势</em></li></ul>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_content_list_2",
+    "remark": "结束",
+    "elements": [
+      {
+        "id": "title_content_list_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>价格分层与供需比分析</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_content_list_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "list_item_3_content_list_2",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 450,
+        "height": 200,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; line-height: 1.6; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-balance-scale' style='color: #5E965A; margin-right: 8px;'></i><strong>基础功能产品（$8-$20）</strong></p><ul style='margin-top: 8px; font-size: 14pt; line-height: 1.6; padding-left: 24px;'><li><strong>市场占比</strong>：45%，占据绝对数量优势</li><li><strong>供需比</strong>：1.4，<strong>供过于求</strong>，竞争激烈</li><li><strong>典型特征</strong>：机械控温、无智能功能、材质普通</li><li><strong>代表产品</strong>：Dr.Brown's Bottle Warmer ($10.99)，销量高但创新不足</li><li><em>风险提示：利润空间薄，易陷入价格战</em></li><li><em>策略建议：避免直接进入，可推出简化版作为引流型号</em></li></ul>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "list_item_4_content_list_2",
+        "top": 140,
+        "left": 510,
+        "type": "text",
+        "width": 450,
+        "height": 200,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; line-height: 1.6; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-sync-alt' style='color: #5E965A; margin-right: 8px;'></i><strong>三维共振关键词验证</strong></p><ul style='margin-top: 8px; font-size: 14pt; line-height: 1.6; padding-left: 24px;'><li><strong>Portable Bottle Warmer</strong>：搜索热度78，供需比0.6，趋势斜率+28% → <strong>是</strong></li><li><strong>Smart Bottle Warmer</strong>：搜索热度45，供需比0.8，趋势斜率+22% → <strong>是</strong></li><li><strong>核心结论</strong>：<ul style='padding-left: 20px; margin-top: 6px;'><li><em>“智能+便携”组合形成明确市场机会</em></li><li><strong>供需缺口达40%以上</strong>，中端价格带为战略突破口</li><li>建议主推\"<strong>Portable Smart Bottle Warmer</strong>\"作为核心关键词</li></ul></li></ul>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_差评高频词与留评率趋势_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_差评高频词与留评率趋势_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>差评高频词与留评率趋势</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_差评高频词与留评率趋势_1",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "chart_差评高频词与留评率趋势_1",
+        "top": 140,
+        "data": {
+          "labels": [
+            "温度不准",
+            "便携性差",
+            "加热慢",
+            "噪音大",
+            "操作复杂"
+          ],
+          "series": [
+            [
+              1245,
+              892,
+              756,
+              432,
+              378
+            ],
+            [
+              3.1,
+              3.4,
+              3.6,
+              3.8,
+              3.7
+            ]
+          ],
+          "legends": [
+            "差评关键词出现频率（次）",
+            "对应功能用户满意度评分（/5.0）"
+          ]
+        },
+        "left": 100,
+        "type": "chart",
+        "width": 760,
+        "height": 300,
+        "rotate": 0,
+        "chartType": "radar",
+        "textColor": "#333333",
+        "themeColors": [
+          "#5E965A",
+          "#4A7C47",
+          "#7BAB77",
+          "#A5C9A1",
+          "#2F5A2D",
+          "#8FBF8B"
+        ]
+      },
+      {
+        "id": "description_差评高频词与留评率趋势_1",
+        "top": 460,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #6b7280; font-family: PingFang SC;'>基于亚马逊TOP50产品1-3星评论及用户行为数据</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_差评高频词与留评率趋势_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_差评高频词与留评率趋势_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>差评高频词与留评率趋势</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_差评高频词与留评率趋势_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "insights_差评高频词与留评率趋势_1",
+        "top": 150,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 280,
+        "rotate": 0,
+        "content": "<ul style='font-size: 18px; color: #333333; font-family: PingFang SC; line-height: 1.8;'><li>“温度不准”是差评中最突出的问题，出现频次高达1,245次，直接影响用户对产品核心功能的信任。</li><li>“便携性差”位列第二，反映当前市场在移动喂养场景下的设计短板，存在明显优化空间。</li><li>尽管“加热慢”问题反馈较多，但其用户满意度相对较高，说明部分用户对此容忍度较强，但仍为关键体验瓶颈。</li><li>留评率数据显示，智能设备平均留评率达12.5%，显著高于行业均值8.2%，表明高价值产品更易激发用户表达意愿。</li><li>雷达图揭示：基础性能缺陷（温控、速度）对用户情绪影响远超次要问题（噪音、操作），应作为产品迭代优先级。</li></ul>",
+        "textType": "content",
+        "defaultColor": "#333333",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "source_差评高频词与留评率趋势_1",
+        "top": 450,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='font-size: 14pt; color: #6b7280; font-family: PingFang SC; line-height: 1.6;'>数据来源：亚马逊TOP50产品评论分析（2024Q4）、VOC原始数据集（5,000条1-3星评论）</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_section_divider_04",
+    "remark": "",
+    "elements": [
+      {
+        "id": "bg_shape_section_divider_04_1",
+        "top": 0,
+        "fill": "#5E965A",
+        "left": 0,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "top",
+          "content": "",
+          "defaultColor": "#333",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 1000,
+        "height": 562.5,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "cover_image_section_divider_04_2",
+        "src": "https://images.unsplash.com/photo-1563986768609-322da1d053a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "top": 0,
+        "left": 0,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 1000,
+        "height": 562.5,
+        "rotate": 0,
+        "opacity": 0.3,
+        "fixedRatio": true
+      },
+      {
+        "id": "chapter_section_divider_04_3",
+        "top": 100,
+        "left": 50,
+        "type": "text",
+        "width": 200,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 72pt; font-weight: bold; color: #ffffff; opacity: 0.3; font-family: PingFang SC;'>04</p>",
+        "textType": "partNumber",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_section_divider_04_4",
+        "top": 200,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>四、三维交叉验证</p>",
+        "textType": "title",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_section_divider_04_5",
+        "top": 290,
+        "fill": "#ffffff",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_section_divider_04_6",
+        "top": 320,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #e2e8f0; font-family: PingFang SC;'>通过热度-供需矩阵与机会产品特征清单，验证智能便携调奶器的市场可行性与产品定义方向</p>",
+        "textType": "subtitle",
+        "defaultColor": "#e2e8f0",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_content_table_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_content_table_1_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>热度-供需矩阵热力图</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_content_table_1_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_content_table_1_3",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #5e965a; font-family: PingFang SC;'>基于搜索热度、平台供需比与趋势斜率的三维交叉验证</p>",
+        "textType": "subtitle",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "content_content_table_1_4",
+        "top": 190,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 120,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; line-height: 1.6; color: #2d3748; font-family: PingFang SC;'>通过Google Trends、亚马逊平台数据与市场增长趋势的三维交叉分析，识别出具备高潜力的关键词机会。本热力图综合评估各关键词在搜索需求、市场竞争程度及成长性三个维度的表现，明确智能便携调奶器的核心突破口。</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_content_table_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_content_table_2_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 24pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>关键词三维表现分析</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "table_content_table_2_2",
+        "top": 110,
+        "data": [
+          [
+            {
+              "id": "r0c0",
+              "text": "关键词",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r0c1",
+              "text": "搜索热度",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r0c2",
+              "text": "供需比",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r0c3",
+              "text": "趋势斜率",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r1c0",
+              "text": "Baby Bottle Warmer",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r1c1",
+              "text": "65",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r1c2",
+              "text": "1.2",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r1c3",
+              "text": "-",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r2c0",
+              "text": "Portable Bottle Warmer",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r2c1",
+              "text": "78",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r2c2",
+              "text": "0.6",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r2c3",
+              "text": "+28%",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r3c0",
+              "text": "Smart Bottle Warmer",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r3c1",
+              "text": "45",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r3c2",
+              "text": "0.8",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r3c3",
+              "text": "+22%",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ],
+          [
+            {
+              "id": "r4c0",
+              "text": "Rapid Bottle Warmer",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r4c1",
+              "text": "55",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r4c2",
+              "text": "0.9",
+              "colspan": 1,
+              "rowspan": 1
+            },
+            {
+              "id": "r4c3",
+              "text": "+18%",
+              "colspan": 1,
+              "rowspan": 1
+            }
+          ]
+        ],
+        "left": 50,
+        "type": "table",
+        "theme": {
+          "color": "#5E965A",
+          "colFooter": false,
+          "colHeader": false,
+          "rowFooter": false,
+          "rowHeader": true
+        },
+        "width": 900,
+        "height": 270,
+        "rotate": 0,
+        "outline": {
+          "color": "#DADADA",
+          "style": "solid",
+          "width": 1
+        },
+        "colWidths": [
+          0.6,
+          0.15,
+          0.15,
+          0.1
+        ],
+        "cellMinHeight": 34
+      },
+      {
+        "id": "note_content_table_2_3",
+        "top": 400,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='font-size: 14pt; color: #5e965a; font-style: italic; font-family: PingFang SC;'>注：绿色图标表示形成三维共振，具备推广价值</p>",
+        "textType": "content",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_content_table_3",
+    "remark": "演讲者备注：重点强调两个共振关键词的组合策略，建议优先布局便携式产品线，并强化‘智能’功能卖点。",
+    "elements": [
+      {
+        "id": "title_content_table_3_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 24pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>核心战略建议</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "highlight_bar_content_table_3_2",
+        "top": 100,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 900 0 L 900 4 L 0 4 Z",
+        "type": "shape",
+        "width": 900,
+        "height": 4,
+        "rotate": 0,
+        "viewBox": [
+          900,
+          4
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "bullets_content_table_3_3",
+        "top": 120,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 180,
+        "rotate": 0,
+        "content": "<ul style='font-size: 16pt; color: #2d3748; font-family: PingFang SC; line-height: 1.8; padding-left: 20px;'>\n  <li style='margin-bottom: 12px;'>✅ <strong>Portable Bottle Warmer</strong>：搜索热度78，供需比0.6（显著缺口），趋势斜率+28%，形成强三维共振</li>\n  <li style='margin-bottom: 12px;'>✅ <strong>Smart Bottle Warmer</strong>：热度45，供需比0.8，趋势斜率+22%，具备明确增长潜力，确认共振</li>\n  <li style='margin-bottom: 12px;'>🔶 Rapid Bottle Warmer：存在温和供需缺口，可作为次级补充方向</li>\n  <li>Baby Bottle Warmer：基础品类竞争饱和，暂不投入资源</li>\n</ul>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "takeaway_content_table_3_4",
+        "top": 320,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='font-size: 18pt; font-weight: bold; color: #2F5A2D; font-family: PingFang SC; text-align: center;'>“Portable Bottle Warmer”与“Smart Bottle Warmer”形成明确三维共振，是当前最具增长潜力的战略关键词，应作为核心推广方向。</p>",
+        "textType": "content",
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_end_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_end_1",
+        "top": 40,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>机会产品七大特征清单</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "feature1_end_1",
+        "top": 130,
+        "fill": "#f0fdf4",
+        "left": 70,
+        "path": "M 0 0 L 240 0 L 240 150 L 0 150 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 20pt; color: #2f5a2d; font-family: PingFang SC; font-weight: bold;'>智能温控</span><br/><br/><span style='font-size: 12pt; color: #4a7c47;'>采用PID算法与双NTC温度传感器，实现±1°C精准恒温控制，解决现有产品温控不准导致的营养破坏问题（占差评45%），确保奶粉中维生素与益生菌活性最大化。</span></p>",
+          "defaultColor": "#2f5a2d",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 240,
+        "height": 150,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          240,
+          150
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "feature2_end_1",
+        "top": 130,
+        "fill": "#f0fdf4",
+        "left": 340,
+        "path": "M 0 0 L 240 0 L 240 150 L 0 150 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 20pt; color: #2f5a2d; font-family: PingFang SC; font-weight: bold;'>快速加热</span><br/><br/><span style='font-size: 12pt; color: #4a7c47;'>搭载U型加热专利技术，3分钟内完成奶液加热，比市场平均速度快40%，显著缓解宝宝哭闹时父母的喂养压力，响应速度需求（占差评18%）。</span></p>",
+          "defaultColor": "#2f5a2d",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 240,
+        "height": 150,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          240,
+          150
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "feature3_end_1",
+        "top": 130,
+        "fill": "#f0fdf4",
+        "left": 610,
+        "path": "M 0 0 L 240 0 L 240 150 L 0 150 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 20pt; color: #2f5a2d; font-family: PingFang SC; font-weight: bold;'>便携设计</span><br/><br/><span style='font-size: 12pt; color: #4a7c47;'>整机重量低于500g，支持车载电源与移动电源供电，适配通勤、旅行等多场景使用，直击‘not portable enough’用户痛点（占差评32%），提升出行喂养自由度。</span></p>",
+          "defaultColor": "#2f5a2d",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 240,
+        "height": 150,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          240,
+          150
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "feature4_end_1",
+        "top": 310,
+        "fill": "#f0fdf4",
+        "left": 70,
+        "path": "M 0 0 L 240 0 L 240 150 L 0 150 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 20pt; color: #2f5a2d; font-family: PingFang SC; font-weight: bold;'>多功能集成</span><br/><br/><span style='font-size: 12pt; color: #4a7c47;'>融合暖奶、消毒、保温与存储四大功能于一体，减少用户购置额外设备的成本，延长产品生命周期，满足现代家庭对一体化育儿解决方案的需求。</span></p>",
+          "defaultColor": "#2f5a2d",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 240,
+        "height": 150,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          240,
+          150
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "feature5_end_1",
+        "top": 310,
+        "fill": "#f0fdf4",
+        "left": 340,
+        "path": "M 0 0 L 240 0 L 240 150 L 0 150 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 20pt; color: #2f5a2d; font-family: PingFang SC; font-weight: bold;'>APP控制</span><br/><br/><span style='font-size: 12pt; color: #4a7c47;'>支持远程温控预设、个性化模式记忆及喂养记录追踪，通过智能联动提升多任务处理效率，契合科技新生代父母对智能化育儿工具的偏好。</span></p>",
+          "defaultColor": "#2f5a2d",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 240,
+        "height": 150,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          240,
+          150
+        ],
+        "fixedRatio": false
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_end_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_end_2",
+        "top": 40,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>机会产品七大特征清单</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "feature6_end_2",
+        "top": 130,
+        "fill": "#f0fdf4",
+        "left": 70,
+        "path": "M 0 0 L 240 0 L 240 150 L 0 150 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 20pt; color: #2f5a2d; font-family: PingFang SC; font-weight: bold;'>模块化易清洁</span><br/><br/><span style='font-size: 12pt; color: #4a7c47;'>采用卡扣式快拆结构，无需工具即可完成全机拆解，清洗时间由传统5分钟缩短至2分钟以内，有效降低因卫生死角引发的用户流失风险（客服数据占比43%）。</span></p>",
+          "defaultColor": "#2f5a2d",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 240,
+        "height": 150,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          240,
+          150
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "feature7_end_2",
+        "top": 130,
+        "fill": "#f0fdf4",
+        "left": 340,
+        "path": "M 0 0 L 240 0 L 240 150 L 0 150 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 20pt; color: #2f5a2d; font-family: PingFang SC; font-weight: bold;'>安全材质认证</span><br/><br/><span style='font-size: 12pt; color: #4a7c47;'>全机身采用BPA Free食品级材料，通过SGS与FDA双重安全认证，从源头保障婴儿饮食安全，回应用户最高频关注点（VOC分析中‘材质安全’为首要关键词）。</span></p>",
+          "defaultColor": "#2f5a2d",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 240,
+        "height": 150,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          240,
+          150
+        ],
+        "fixedRatio": false
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_section_divider_1",
+    "remark": "章节分隔：执行路线图",
+    "elements": [
+      {
+        "id": "bg_shape_section_divider_1",
+        "top": 0,
+        "fill": "#5E965A",
+        "left": 0,
+        "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+        "text": {
+          "align": "top",
+          "content": "",
+          "defaultColor": "#333",
+          "defaultFontName": ""
+        },
+        "type": "shape",
+        "flipH": false,
+        "flipV": false,
+        "width": 1000,
+        "height": 540,
+        "rotate": 0,
+        "outline": {
+          "color": "#000000",
+          "style": "solid",
+          "width": 0
+        },
+        "viewBox": [
+          200,
+          200
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "cover_image_section_divider_1",
+        "src": "https://images.unsplash.com/photo-1506784323955-0d6f2aef7f7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "top": 80,
+        "left": 575,
+        "type": "image",
+        "flipH": false,
+        "flipV": false,
+        "width": 341.00199475065614,
+        "height": 420.9965354330708,
+        "rotate": 0,
+        "fixedRatio": true
+      },
+      {
+        "id": "chapter_section_divider_1",
+        "top": 100,
+        "left": 50,
+        "type": "text",
+        "width": 200,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 72pt; font-weight: bold; color: #ffffff; opacity: 0.3; font-family: PingFang SC;'>五</p>",
+        "textType": "partNumber",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_section_divider_1",
+        "top": 200,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>执行路线图</p>",
+        "textType": "title",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_section_divider_1",
+        "top": 290,
+        "fill": "#ffffff",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_section_divider_1",
+        "top": 320,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #e2e8f0; font-family: PingFang SC;'>产品代际演进、迭代建议与关键词优化策略，明确短期、中期、长期发展路径</p>",
+        "textType": "subtitle",
+        "defaultColor": "#e2e8f0",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_content_list_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_content_list_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>关键词优化方案</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_content_list_1",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_content_list_1",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 18pt; color: #4A7C47; font-family: PingFang SC; font-style: italic;'>基于三维市场分析的精准关键词布局策略</p>",
+        "textType": "content",
+        "defaultColor": "#4A7C47",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "list_item_1_content_list_1",
+        "top": 190,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 120,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; color: #2d3748; font-family: PingFang SC;'><strong>🎯 主推关键词</strong><br/>• <strong>Portable Smart Bottle Warmer</strong><br/>  - 搜索热度：78（Google Trends）<br/>  - 亚马逊供需比：0.6（显著供不应求）<br/>  - 趋势斜率：+28%（季度环比增长）<br/>  - <em>推荐理由</em>：形成「搜索热度 × 平台供需 × 增长趋势」三维共振，是当前最优突破口<br/>  - 转化预期：带动GMV提升25%-30%</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_content_list_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_content_list_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>关键词优化方案</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_content_list_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "list_item_2_content_list_2",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 120,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; color: #2d3748; font-family: PingFang SC;'><strong>⚡ 辅助关键词</strong><br/>• <strong>Rapid Heating Baby Warmer</strong><br/>  - 搜索热度：55<br/>  - 亚马逊供需比：0.9（轻度缺口）<br/>  - 趋势斜率：+18%<br/>  - <em>推荐理由</em>：直击用户对加热速度的核心诉求（占差评18%），与产品3分钟快速加热功能高度匹配<br/>  - 应用场景：用于A+页面功能对比、TikTok短视频标签、KOL内容植入</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "list_item_3_content_list_2",
+        "top": 270,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 160,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; color: #2d3748; font-family: PingFang SC;'><strong>🔗 长尾关键词</strong><br/>• <strong>APP Controlled Milk Warmer</strong><br/>  - 搜索热度：42<br/>  - 亚马逊供需比：0.75<br/>  - 竞争度：低（TOP50中仅2款产品使用该描述）<br/>  - <em>推荐理由</em>：精准覆盖科技新生代父母群体，强化智能控制差异化卖点<br/>  - 扩展变体：<br/>    &nbsp;&nbsp;• \"Smart Bottle Warmer with App Control\"<br/>    &nbsp;&nbsp;• \"WiFi Enabled Baby Bottle Warmer\"<br/>    &nbsp;&nbsp;• \"Remote Temperature Control Bottle Warmer\"</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_pyramid_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_pyramid_1",
+        "top": 40,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 50,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>用户画像三维模型</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "subtitle_pyramid_1",
+        "top": 100,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 16pt; color: #5e965a; font-family: PingFang SC;'>从人口统计、行为数据与心理洞察三个维度构建目标用户全景</p>",
+        "textType": "subtitle",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "level1_pyramid_1",
+        "top": 150,
+        "fill": "#3b82f6",
+        "left": 250,
+        "path": "M 0 0 L 500 0 L 500 70 L 0 70 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 16pt; color: #ffffff; font-family: PingFang SC; font-weight: bold;'>人口统计维度</span></p>",
+          "defaultColor": "#ffffff",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 500,
+        "height": 70,
+        "rotate": 0,
+        "viewBox": [
+          500,
+          70
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "desc1_pyramid_1",
+        "top": 225,
+        "left": 250,
+        "type": "text",
+        "width": 500,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 14pt; color: #6b7280; font-family: PingFang SC;'>基础社会属性与人群分布特征</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "items1_pyramid_1",
+        "top": 260,
+        "left": 250,
+        "type": "text",
+        "width": 500,
+        "height": 80,
+        "rotate": 0,
+        "content": "<ul style='font-size: 12pt; color: #1f1f1f; font-family: PingFang SC; margin-top: 0; margin-bottom: 0; padding-left: 20px; text-align: left;'><li>年龄：25-35岁新生父母（占比68%）</li><li>家庭收入：年收入$60K-$120K中产家庭</li><li>教育水平：本科及以上学历（占比72%）</li><li>职业分布：双职工家庭（58%）、职场妈妈（32%）</li></ul>",
+        "textType": "content",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "level2_pyramid_1",
+        "top": 350,
+        "fill": "#10b981",
+        "left": 225,
+        "path": "M 0 0 L 550 0 L 550 70 L 0 70 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 16pt; color: #ffffff; font-family: PingFang SC; font-weight: bold;'>行为数据维度</span></p>",
+          "defaultColor": "#ffffff",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 550,
+        "height": 70,
+        "rotate": 0,
+        "viewBox": [
+          550,
+          70
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "desc2_pyramid_1",
+        "top": 425,
+        "left": 225,
+        "type": "text",
+        "width": 550,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 14pt; color: #6b7280; font-family: PingFang SC;'>购买习惯、使用场景与信息获取路径</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_pyramid_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_pyramid_2",
+        "top": 40,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 50,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>用户画像三维模型</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "level2_pyramid_2",
+        "top": 100,
+        "fill": "#10b981",
+        "left": 225,
+        "path": "M 0 0 L 550 0 L 550 70 L 0 70 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 16pt; color: #ffffff; font-family: PingFang SC; font-weight: bold;'>行为数据维度</span></p>",
+          "defaultColor": "#ffffff",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 550,
+        "height": 70,
+        "rotate": 0,
+        "viewBox": [
+          550,
+          70
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "items2_pyramid_2",
+        "top": 175,
+        "left": 225,
+        "type": "text",
+        "width": 550,
+        "height": 100,
+        "rotate": 0,
+        "content": "<ul style='font-size: 12pt; color: #1f1f1f; font-family: PingFang SC; margin-top: 0; margin-bottom: 0; padding-left: 20px; text-align: left;'><li>购买频次：平均每1.5年更换一次喂养设备</li><li>使用场景：家庭夜间喂养（日均3-5次）、出行场景（周均2-3次）</li><li>渠道偏好：亚马逊母婴类目搜索（45%）、社交媒体种草转化（28%）</li><li>信息获取：育儿社群（63%）、KOL推荐（41%）</li></ul>",
+        "textType": "content",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "level3_pyramid_2",
+        "top": 290,
+        "fill": "#f59e0b",
+        "left": 200,
+        "path": "M 0 0 L 600 0 L 600 70 L 0 70 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 16pt; color: #ffffff; font-family: PingFang SC; font-weight: bold;'>心理洞察维度</span></p>",
+          "defaultColor": "#ffffff",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 600,
+        "height": 70,
+        "rotate": 0,
+        "viewBox": [
+          600,
+          70
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "desc3_pyramid_2",
+        "top": 365,
+        "left": 200,
+        "type": "text",
+        "width": 600,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 14pt; color: #6b7280; font-family: PingFang SC;'>深层需求、焦虑点与价值驱动因素</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "items3_pyramid_2",
+        "top": 400,
+        "left": 200,
+        "type": "text",
+        "width": 600,
+        "height": 90,
+        "rotate": 0,
+        "content": "<ul style='font-size: 12pt; color: #1f1f1f; font-family: PingFang SC; margin-top: 0; margin-bottom: 0; padding-left: 20px; text-align: left;'><li>核心焦虑：营养破坏风险（87%）、操作便利性不足（76%）</li><li>价值取向：「高效精致育儿主义」、「科技简化生活」</li><li>决策驱动：安全性优先（92%）、时间节省价值（78%）</li><li>情感诉求：在忙碌生活中实现科学育儿的掌控感</li></ul>",
+        "textType": "content",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_pyramid_3",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_pyramid_3",
+        "top": 40,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 50,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>用户画像三维模型</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "level1_pyramid_3",
+        "top": 120,
+        "fill": "#3b82f6",
+        "left": 350,
+        "path": "M 0 0 L 300 0 L 300 60 L 0 60 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 16pt; color: #ffffff; font-family: PingFang SC; font-weight: bold;'>人口统计</span></p>",
+          "defaultColor": "#ffffff",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 300,
+        "height": 60,
+        "rotate": 0,
+        "viewBox": [
+          300,
+          60
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "level2_pyramid_3",
+        "top": 190,
+        "fill": "#10b981",
+        "left": 300,
+        "path": "M 0 0 L 400 0 L 400 60 L 0 60 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 16pt; color: #ffffff; font-family: PingFang SC; font-weight: bold;'>行为数据</span></p>",
+          "defaultColor": "#ffffff",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 400,
+        "height": 60,
+        "rotate": 0,
+        "viewBox": [
+          400,
+          60
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "level3_pyramid_3",
+        "top": 260,
+        "fill": "#f59e0b",
+        "left": 250,
+        "path": "M 0 0 L 500 0 L 500 60 L 0 60 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: center;'><span style='font-size: 16pt; color: #ffffff; font-family: PingFang SC; font-weight: bold;'>心理洞察</span></p>",
+          "defaultColor": "#ffffff",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 500,
+        "height": 60,
+        "rotate": 0,
+        "viewBox": [
+          500,
+          60
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "conclusion_pyramid_3",
+        "top": 350,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 14pt; color: #6b7280; font-family: PingFang SC;'>三维用户画像揭示了智能便携调奶器的核心用户为高知中产父母，其决策由安全性和效率双重驱动，在产品设计与营销中需同步满足功能刚性与情感共鸣</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_1_1",
+        "top": 30,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>4P策略矩阵总览</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1_1",
+        "top": 100,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "comparison_title_left_1_1",
+        "top": 130,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 20pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>产品策略</p>",
+        "textType": "content",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "strategy_bg_left_1_1",
+        "top": 120,
+        "fill": "#A5C9A1",
+        "left": 50,
+        "path": "M0 0 L350 0 L350 420 L0 420 Z",
+        "type": "shape",
+        "width": 350,
+        "height": 420,
+        "rotate": 0,
+        "viewBox": [
+          350,
+          420
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "features_left_1_1",
+        "top": 170,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 150,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>核心特性：</strong><br/>• ±1℃精准温控系统（PID算法+双NTC传感器）<br/>• 3分钟快速加热（U型加热专利技术）<br/>• 模块化易清洁设计，清洗时间降低60%<br/>• BPA Free食品级材质，符合SGS认证<br/>• 便携轻量化设计（&lt;500g），支持宽电压车载/充电宝供电<br/>• APP远程控制+温度记忆功能</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "pros_left_1_1",
+        "top": 330,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>优势：</strong><br/>• 直击差评前两大痛点（温控不准占45%，速度慢占18%）<br/>• 填补$20-$150价格带中端空白市场<br/>• 技术成熟度高，供应链稳定，研发风险低<br/>• 模块化结构便于后期维护与升级</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "cons_left_1_1",
+        "top": 440,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>劣势：</strong><br/>• 穿戴式结构需平衡重量与舒适性，佩戴稳定性待验证<br/>• APP功能开发周期较长，初期版本可能功能有限</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "rating_left_1_1",
+        "top": 500,
+        "left": 320,
+        "type": "text",
+        "width": 80,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: right; font-size: 14pt; color: #2F5A2D; font-family: PingFang SC;'><strong>评分：5★</strong></p>",
+        "textType": "content",
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_1_2",
+        "top": 30,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>4P策略矩阵总览</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1_2",
+        "top": 100,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "comparison_title_right_1_2",
+        "top": 130,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 20pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>价格策略</p>",
+        "textType": "content",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "strategy_bg_right_1_2",
+        "top": 120,
+        "fill": "#A5C9A1",
+        "left": 570,
+        "path": "M0 0 L350 0 L350 420 L0 420 Z",
+        "type": "shape",
+        "width": 350,
+        "height": 420,
+        "rotate": 0,
+        "viewBox": [
+          350,
+          420
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "features_right_1_2",
+        "top": 170,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 150,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>核心特性：</strong><br/>• 主推款定价$49.99，采用渗透定价抢占市场份额<br/>• 三级价格阶梯：$29.99简化版（引流）、$49.99标准版（主力）、$149+旗舰版（溢价）<br/>• 心理定价策略（.99结尾）+节省提示增强购买冲动<br/>• 捆绑销售（调奶器+消毒袋套装$59.99）提升客单价20%<br/>• 会员订阅享耗材8折优惠，强化用户粘性<br/>• 黑五特价$44.99，契合Q4节日季热度提升35-50%</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "pros_right_1_2",
+        "top": 330,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>优势：</strong><br/>• 精准匹配用户支付意愿分层（58%用户接受$49.99）<br/>• 价格锚点清晰，简化版与旗舰版形成有效对比<br/>• 多维度定价覆盖不同渠道与消费场景</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "cons_right_1_2",
+        "top": 440,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>劣势：</strong><br/>• 低价策略可能影响品牌高端形象建立<br/>• 若成本控制不佳，利润率承压</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "rating_right_1_2",
+        "top": 500,
+        "left": 840,
+        "type": "text",
+        "width": 80,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: right; font-size: 14pt; color: #2F5A2D; font-family: PingFang SC;'><strong>评分：4★</strong></p>",
+        "textType": "content",
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1_3",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_1_3",
+        "top": 30,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>4P策略矩阵总览</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1_3",
+        "top": 100,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "comparison_title_bottom_left_1_3",
+        "top": 130,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 20pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>渠道策略</p>",
+        "textType": "content",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "strategy_bg_bottom_left_1_3",
+        "top": 120,
+        "fill": "#A5C9A1",
+        "left": 50,
+        "path": "M0 0 L350 0 L350 420 L0 420 Z",
+        "type": "shape",
+        "width": 350,
+        "height": 420,
+        "rotate": 0,
+        "viewBox": [
+          350,
+          420
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "features_bottom_left_1_3",
+        "top": 170,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 150,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>核心特性：</strong><br/>• 亚马逊FBA为核心渠道，优化关键词如\"Portable Smart Bottle Warmer\"<br/>• 独立站（Shopify）沉淀私域流量，支持会员体系<br/>• TikTok小店、Instagram Shopping实现社交直购<br/>• 线下试点BuyBuy Baby母婴连锁及医院周边门店<br/>• 专业渠道合作儿科诊所、早教机构提升信任背书<br/>• 通过Amazon Global拓展德国（热度85）、英国（热度78）市场<br/>• 异业合作联合母婴摄影、育儿社群开展体验推广</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "pros_bottom_left_1_3",
+        "top": 330,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>优势：</strong><br/>• 全渠道布局覆盖用户决策路径各触点<br/>• 线上为主、线下为辅，控制初期运营复杂度<br/>• 跨境与本地化并行，最大化市场覆盖</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "cons_bottom_left_1_3",
+        "top": 440,
+        "left": 70,
+        "type": "text",
+        "width": 310,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>劣势：</strong><br/>• 线下渠道投入大、回报周期长<br/>• 多平台运营需较强团队协同能力</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "rating_bottom_left_1_3",
+        "top": 500,
+        "left": 320,
+        "type": "text",
+        "width": 80,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: right; font-size: 14pt; color: #2F5A2D; font-family: PingFang SC;'><strong>评分：4★</strong></p>",
+        "textType": "content",
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1_4",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_1_4",
+        "top": 30,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>4P策略矩阵总览</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1_4",
+        "top": 100,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "comparison_title_bottom_right_1_4",
+        "top": 130,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 20pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>促销策略</p>",
+        "textType": "content",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "strategy_bg_bottom_right_1_4",
+        "top": 120,
+        "fill": "#A5C9A1",
+        "left": 570,
+        "path": "M0 0 L350 0 L350 420 L0 420 Z",
+        "type": "shape",
+        "width": 350,
+        "height": 420,
+        "rotate": 0,
+        "viewBox": [
+          350,
+          420
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "features_bottom_right_1_4",
+        "top": 170,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 150,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>核心特性：</strong><br/>• KOL矩阵合作：职场妈妈博主为主，内容比例4:3:2:1<br/>• TikTok短视频展示出行、夜间等真实使用场景<br/>• Instagram图文呈现一日育儿流程，突出便捷价值<br/>• 亚马逊Vine计划积累高质量评价，目标评分≥4.7星<br/>• A+页面嵌入竞品功能对比图（温控精度、清洗效率）<br/>• 留评返现+分享有礼驱动用户裂变<br/>• 制作\"冲奶知识科普\"系列视频建立专业权威</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "pros_bottom_right_1_4",
+        "top": 330,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>优势：</strong><br/>• 内容种草精准触达目标人群（25-35岁新生父母）<br/>• 多形式内容适配不同平台传播逻辑<br/>• 用户激励机制有效提升转化与复购</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "cons_bottom_right_1_4",
+        "top": 440,
+        "left": 590,
+        "type": "text",
+        "width": 310,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'><strong>劣势：</strong><br/>• KOL合作管理成本较高，效果波动大<br/>• UGC内容质量参差不齐，需持续审核引导</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "rating_bottom_right_1_4",
+        "top": 500,
+        "left": 840,
+        "type": "text",
+        "width": 80,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: right; font-size: 14pt; color: #2F5A2D; font-family: PingFang SC;'><strong>评分：5★</strong></p>",
+        "textType": "content",
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_1_5",
+    "remark": "演讲者备注：总结强调四大策略的协同效应与市场前景，突出产品定位与增长潜力。",
+    "elements": [
+      {
+        "id": "title_1_5",
+        "top": 30,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>4P策略矩阵总览</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_1_5",
+        "top": 100,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "conclusion_1_5",
+        "top": 130,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 380,
+        "rotate": 0,
+        "content": "<p style='font-size: 14pt; color: #1f1f1f; font-family: PingFang SC; line-height: 1.8; text-align: justify;'>四大策略协同构建完整商业闭环：<em>产品以精准温控和便携智能为核心差异化优势</em>，<em>价格通过渗透与阶梯组合实现广泛覆盖</em>，<em>渠道线上线下融合打通全域流量</em>，<em>促销借助KOL与内容营销建立认知与信任</em>。综合来看，该4P矩阵具备高度可行性与市场竞争力，有望在6-12个月内推动产品成为中端智能调奶器细分市场的领导品牌。</p>",
+        "textType": "content",
+        "lineHeight": 1.8,
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_结束_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_结束_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>风险预警与应对方案</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_结束_1",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "subtitle_结束_1",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #5e965a; font-family: PingFang SC;'>智能便携调奶器项目四大核心风险识别与系统性应对策略</p>",
+        "textType": "subtitle",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "content_结束_1",
+        "top": 190,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 120,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; line-height: 1.6; color: #2d3748; font-family: PingFang SC;'>在推进智能便携调奶器产品上市过程中，需前瞻性识别潜在风险并制定可执行的应对机制。基于三维交叉分析模型，本报告从技术、市场、供应链及运营四个维度进行全面评估，确保项目在高潜力赛道中稳健前行。</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "bullets_结束_1",
+        "top": 320,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 150,
+        "rotate": 0,
+        "content": "<ul><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-microchip' style='color: #5E965A; margin-right: 8px;'></i><strong>技术风险：</strong>传感器精度稳定性、密封件耐久性</li><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC; margin-left: 40px;'><i class='fas fa-shield-alt' style='color: #4A7C47; margin-right: 8px;'></i>应对：加速老化测试、多供应商备份</li><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-chart-line' style='color: #5E965A; margin-right: 8px;'></i><strong>市场风险：</strong>价格敏感度高于预期、竞品快速跟进</li><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC; margin-left: 40px;'><i class='fas fa-lightbulb' style='color: #4A7C47; margin-right: 8px;'></i>应对：建立价格护城河、快速迭代建立技术壁垒</li></ul>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_结束_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_结束_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>风险预警与应对方案</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_结束_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "bullets_结束_2",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 150,
+        "rotate": 0,
+        "content": "<ul><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-truck' style='color: #5E965A; margin-right: 8px;'></i><strong>供应链风险：</strong>核心部件成本波动、产能爬坡压力</li><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC; margin-left: 40px;'><i class='fas fa-sync-alt' style='color: #4A7C47; margin-right: 8px;'></i>应对：锁定长期协议、建立二级供应商体系</li><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC;'><i class='fas fa-cogs' style='color: #5E965A; margin-right: 8px;'></i><strong>运营风险：</strong>亚马逊政策变化、用户评价管理</li><li style='font-size: 16pt; color: #2d3748; font-family: PingFang SC; margin-left: 40px;'><i class='fas fa-users' style='color: #4A7C47; margin-right: 8px;'></i>应对：多渠道布局、建立用户关怀团队</li></ul>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "key_takeaway_结束_2",
+        "top": 300,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='font-size: 16pt; line-height: 1.6; color: #2F5A2D; font-family: PingFang SC;'><strong>关键结论：</strong>通过建立“风险-应对”双轨机制，将不确定性转化为组织韧性。重点防范技术稳定性与平台政策变动，确保产品在上市后6个月内实现类目前20名目标，并维持4.7星以上用户评分。</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_conclusion_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_conclusion_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>结论：高潜力项目，具备领导地位潜质</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_conclusion_1",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "summary_conclusion_1",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 200,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6;'>机会、能力、市场匹配度评分<br>综合匹配度81.7<br>战略结论</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "conclusion_bg_conclusion_1",
+        "top": 360,
+        "fill": "#f0fdf4",
+        "left": 50,
+        "path": "M0,0 L860,0 L860,80 L0,80 Z",
+        "type": "shape",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          860,
+          80
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "key_message_conclusion_1",
+        "top": 380,
+        "left": 70,
+        "type": "text",
+        "width": 820,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; font-weight: bold; color: #2f5a2d; font-family: PingFang SC;'>💡 智能便携调奶器项目在机会、能力与市场三维度上高度协同，综合匹配度达81.7/100，属于高潜力项目。通过精准温控、快速加热与便携设计三大核心功能直击用户痛点，结合渗透定价与全渠道布局，有望在6-12个月内建立细分市场领导地位。</p>",
+        "textType": "content",
+        "defaultColor": "#2f5a2d",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_conclusion_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_conclusion_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 32pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>下一步行动建议</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "title_underline_conclusion_2",
+        "top": 120,
+        "fill": "#5e965a",
+        "left": 50,
+        "path": "M 0 0 L 200 0 L 200 3 L 0 3 Z",
+        "type": "shape",
+        "width": 200,
+        "height": 3,
+        "rotate": 0,
+        "viewBox": [
+          200,
+          3
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "call_to_action_conclusion_2",
+        "top": 140,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 18pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>立即启动Q2产品原型测试与亚马逊Listing优化，锁定首批KOL合作资源，为Q4正式上市奠定基础。</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "next_steps_conclusion_2",
+        "top": 240,
+        "left": 70,
+        "type": "text",
+        "width": 840,
+        "height": 220,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 16pt; color: #2d3748; font-family: PingFang SC; line-height: 1.8;'>• 完成PID温控算法验证与模块化结构耐久性测试（Q2 2025）<br>• 启动亚马逊Vine计划积累早期评价，优化A+页面内容<br>• 开展职场妈妈用户场景实测，收集真实反馈用于迭代<br>• 拓展欧洲市场渠道，完成德国、英国本地化认证准备</p>",
+        "textType": "content",
+        "lineHeight": 1.6,
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_next_steps_1",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_next_steps_1",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 36pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>后续步骤</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "subtitle_next_steps_1",
+        "top": 120,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 18pt; color: #5e965a; font-family: PingFang SC;'>立即行动、短期迭代、长期规划三阶段执行路线</p>",
+        "textType": "subtitle",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "step1_next_steps_1",
+        "top": 190,
+        "fill": "#f0fdf4",
+        "left": 100,
+        "path": "M 0 0 L 800 0 L 800 60 L 0 60 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: left; padding-left: 20px;'><span style='font-size: 18pt; color: #059669; font-family: PingFang SC; font-weight: bold;'>1. </span><span style='font-size: 16pt; color: #2d3748;'>立即行动（1-2周）</span></p>",
+          "defaultColor": "#2d3748",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 800,
+        "height": 60,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          800,
+          60
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "desc1_next_steps_1",
+        "top": 260,
+        "left": 120,
+        "type": "text",
+        "width": 760,
+        "height": 50,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; color: #2d3748; font-family: PingFang SC; line-height: 1.5;'>基于用户旅程分析与竞品洞察，快速调整市场沟通策略，突出核心卖点并启动预热传播。</p>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "timeline1_next_steps_1",
+        "top": 310,
+        "left": 120,
+        "type": "text",
+        "width": 380,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 12pt; color: #6b7280; font-family: PingFang SC;'>时间：2025年11月 - 2025年12月初</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "responsible1_next_steps_1",
+        "top": 310,
+        "left": 500,
+        "type": "text",
+        "width": 380,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 12pt; color: #6b7280; font-family: PingFang SC;'>负责人：市场部、产品运营组</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "resources1_title_next_steps_1",
+        "top": 350,
+        "left": 120,
+        "type": "text",
+        "width": 760,
+        "height": 25,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; font-weight: bold; color: #2f5a2d; font-family: PingFang SC;'>所需资源：</p>",
+        "textType": "content",
+        "defaultColor": "#2f5a2d",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "resources1_list_next_steps_1",
+        "top": 380,
+        "left": 140,
+        "type": "text",
+        "width": 740,
+        "height": 60,
+        "rotate": 0,
+        "content": "<ul style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6; margin: 0; padding-left: 20px;'><li>产品详情页优化方案</li><li>夜间使用场景演示视频脚本</li><li>社交媒体内容日历</li><li>KOL合作名单初筛</li></ul>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_next_steps_2",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_next_steps_2",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 36pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>后续步骤</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "subtitle_next_steps_2",
+        "top": 120,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 18pt; color: #5e965a; font-family: PingFang SC;'>立即行动、短期迭代、长期规划三阶段执行路线</p>",
+        "textType": "subtitle",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "step2_next_steps_2",
+        "top": 190,
+        "fill": "#f0fdf4",
+        "left": 100,
+        "path": "M 0 0 L 800 0 L 800 60 L 0 60 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: left; padding-left: 20px;'><span style='font-size: 18pt; color: #059669; font-family: PingFang SC; font-weight: bold;'>2. </span><span style='font-size: 16pt; color: #2d3748;'>短期迭代（1-3个月）</span></p>",
+          "defaultColor": "#2d3748",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 800,
+        "height": 60,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          800,
+          60
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "desc2_next_steps_2",
+        "top": 260,
+        "left": 120,
+        "type": "text",
+        "width": 760,
+        "height": 50,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; color: #2d3748; font-family: PingFang SC; line-height: 1.5;'>完成P0级功能优化，开展用户测试验证设计假设，并推进亚马逊Listing优化与Vine评价积累。</p>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "timeline2_next_steps_2",
+        "top": 310,
+        "left": 120,
+        "type": "text",
+        "width": 380,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 12pt; color: #6b7280; font-family: PingFang SC;'>时间：2025年12月 - 2026年2月</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "responsible2_next_steps_2",
+        "top": 310,
+        "left": 500,
+        "type": "text",
+        "width": 380,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 12pt; color: #6b7280; font-family: PingFang SC;'>负责人：研发部、用户体验团队、电商运营组</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "resources2_title_next_steps_2",
+        "top": 350,
+        "left": 120,
+        "type": "text",
+        "width": 760,
+        "height": 25,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; font-weight: bold; color: #2f5a2d; font-family: PingFang SC;'>所需资源：</p>",
+        "textType": "content",
+        "defaultColor": "#2f5a2d",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "resources2_list_next_steps_2",
+        "top": 380,
+        "left": 140,
+        "type": "text",
+        "width": 740,
+        "height": 60,
+        "rotate": 0,
+        "content": "<ul style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6; margin: 0; padding-left: 20px;'><li>原型测试设备</li><li>用户测试招募渠道</li><li>A/B测试工具</li><li>FBA发货准备清单</li></ul>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_next_steps_3",
+    "remark": "",
+    "elements": [
+      {
+        "id": "title_next_steps_3",
+        "top": 50,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 36pt; font-weight: bold; color: #1f1f1f; font-family: PingFang SC;'>后续步骤</p>",
+        "textType": "title",
+        "defaultColor": "#1f1f1f",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "subtitle_next_steps_3",
+        "top": 120,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 40,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 18pt; color: #5e965a; font-family: PingFang SC;'>立即行动、短期迭代、长期规划三阶段执行路线</p>",
+        "textType": "subtitle",
+        "defaultColor": "#5e965a",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "step3_next_steps_3",
+        "top": 190,
+        "fill": "#f0fdf4",
+        "left": 100,
+        "path": "M 0 0 L 800 0 L 800 60 L 0 60 Z",
+        "text": {
+          "align": "middle",
+          "content": "<p style='text-align: left; padding-left: 20px;'><span style='font-size: 18pt; color: #059669; font-family: PingFang SC; font-weight: bold;'>3. </span><span style='font-size: 16pt; color: #2d3748;'>长期规划（3-6个月）</span></p>",
+          "defaultColor": "#2d3748",
+          "defaultFontName": "PingFang SC"
+        },
+        "type": "shape",
+        "width": 800,
+        "height": 60,
+        "rotate": 0,
+        "outline": {
+          "color": "#5e965a",
+          "style": "solid",
+          "width": 2
+        },
+        "viewBox": [
+          800,
+          60
+        ],
+        "fixedRatio": false
+      },
+      {
+        "id": "desc3_next_steps_3",
+        "top": 260,
+        "left": 120,
+        "type": "text",
+        "width": 760,
+        "height": 50,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; color: #2d3748; font-family: PingFang SC; line-height: 1.5;'>开发P1/P2级创新功能，布局物联网生态，拓展欧洲市场并建立NPS监测体系持续优化产品体验。</p>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "timeline3_next_steps_3",
+        "top": 310,
+        "left": 120,
+        "type": "text",
+        "width": 380,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 12pt; color: #6b7280; font-family: PingFang SC;'>时间：2026年3月 - 2026年8月</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "responsible3_next_steps_3",
+        "top": 310,
+        "left": 500,
+        "type": "text",
+        "width": 380,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 12pt; color: #6b7280; font-family: PingFang SC;'>负责人：产品战略部、国际业务组、软件研发团队</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "resources3_title_next_steps_3",
+        "top": 350,
+        "left": 120,
+        "type": "text",
+        "width": 760,
+        "height": 25,
+        "rotate": 0,
+        "content": "<p style='text-align: left; font-size: 14pt; font-weight: bold; color: #2f5a2d; font-family: PingFang SC;'>所需资源：</p>",
+        "textType": "content",
+        "defaultColor": "#2f5a2d",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "resources3_list_next_steps_3",
+        "top": 380,
+        "left": 140,
+        "type": "text",
+        "width": 740,
+        "height": 60,
+        "rotate": 0,
+        "content": "<ul style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6; margin: 0; padding-left: 20px;'><li>APP控制模块开发计划</li><li>车载充电适配技术方案</li><li>Amazon Global入驻流程</li><li>用户满意度调研系统</li></ul>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "deadline_next_steps_3",
+        "top": 470,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 30,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 14pt; color: #6b7280; font-family: PingFang SC;'>截止时间：2026年8月31日</p>",
+        "textType": "content",
+        "defaultColor": "#6b7280",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "metrics_title_next_steps_3",
+        "top": 500,
+        "left": 50,
+        "type": "text",
+        "width": 900,
+        "height": 25,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 14pt; font-weight: bold; color: #2f5a2d; font-family: PingFang SC;'>成功指标：</p>",
+        "textType": "content",
+        "defaultColor": "#2f5a2d",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "metrics_list_next_steps_3",
+        "top": 530,
+        "left": 70,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<ul style='font-size: 12pt; color: #2d3748; font-family: PingFang SC; line-height: 1.6; margin: 0; padding-left: 20px; text-align: left;'><li>6个月内进入亚马逊调奶器类目前20名</li><li>首年营收达成$500K</li><li>用户满意度评分≥4.7星</li><li>复购率提升至25%</li><li>差评中温控与便携相关问题下降40%</li></ul>",
+        "textType": "content",
+        "defaultColor": "#2d3748",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#ffffff"
+    }
+  },
+  {
+    "id": "slide_thanks_1",
+    "remark": "本页为致谢页，表达对听众参与的感谢，并传递后续交流意愿。",
+    "elements": [
+      {
+        "id": "main_title_thanks_1",
+        "top": 80,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 120,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 48pt; font-weight: bold; color: #ffffff; font-family: PingFang SC;'>感谢聆听</p>",
+        "textType": "title",
+        "defaultColor": "#ffffff",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "subtitle_thanks_1",
+        "top": 210,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 20pt; color: #e2e8f0; font-family: PingFang SC;'>感谢参与《调奶器三维市场分析报告》分享</p>",
+        "textType": "subtitle",
+        "defaultColor": "#e2e8f0",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "current_points_thanks_1",
+        "top": 280,
+        "left": 300,
+        "type": "text",
+        "width": 400,
+        "height": 100,
+        "rotate": 0,
+        "content": "<ul style='text-align: left; font-size: 18pt; color: #cbd5e1; font-family: PingFang SC; line-height: 1.8;'><li>感谢参与</li><li>开放交流</li></ul>",
+        "textType": "content",
+        "defaultColor": "#cbd5e1",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "closing_message_thanks_1",
+        "top": 400,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 60,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 16pt; color: #cbd5e1; font-family: PingFang SC;'>我们致力于通过数据驱动的洞察，为智能母婴产品开发提供科学决策支持。期待与您进一步探讨产品创新方向。</p>",
+        "textType": "content",
+        "defaultColor": "#cbd5e1",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#5E965A"
+    }
+  },
+  {
+    "id": "slide_thanks_2",
+    "remark": "本页展示联系信息与下一步行动计划，便于会后跟进与协作。",
+    "elements": [
+      {
+        "id": "main_title_thanks_2",
+        "top": 80,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 80,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 36pt; font-weight: bold; color: #2F5A2D; font-family: PingFang SC;'>联系方式与后续行动</p>",
+        "textType": "title",
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "contact_info_thanks_2",
+        "top": 170,
+        "left": 50,
+        "type": "text",
+        "width": 860,
+        "height": 100,
+        "rotate": 0,
+        "content": "<p style='text-align: center; font-size: 18pt; color: #4A7C47; font-family: PingFang SC; line-height: 1.6;'>深圳市路特创新科技有限公司<br>产品战略与市场分析部<br>邮箱：strategy@lutechinnovation.com<br>日期：2025-11-06</p>",
+        "textType": "content",
+        "defaultColor": "#4A7C47",
+        "defaultFontName": "PingFang SC"
+      },
+      {
+        "id": "next_steps_thanks_2",
+        "top": 290,
+        "left": 100,
+        "type": "text",
+        "width": 800,
+        "height": 180,
+        "rotate": 0,
+        "content": "<div style='font-size: 16pt; color: #2F5A2D; font-family: PingFang SC; line-height: 1.8; text-align: left;'>- <strong>短期行动</strong>：启动智能温控模块原型开发（Q2 2024）<br>- <strong>中期规划</strong>：开展便携设计用户测试（Q3 2024）<br>- <strong>长期目标</strong>：布局物联网生态，冲击亚马逊类目前20（2025年）<br>- <em>欢迎内部员工提交产品优化建议至内网创新平台</em></div>",
+        "textType": "content",
+        "defaultColor": "#2F5A2D",
+        "defaultFontName": "PingFang SC"
+      }
+    ],
+    "background": {
+      "type": "solid",
+      "color": "#A5C9A1"
+    }
+  }
+]

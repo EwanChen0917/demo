@@ -1,0 +1,122 @@
+@use 'sass:map';
+@use 'element-plus/theme-chalk/src/common/var' as *;
+
+.keen-ui {
+  .el-dialog:not(.custom-dialog) {
+    padding: 0;
+    border-radius: 10px;
+
+    .el-dialog__header {
+      margin: 0;
+      padding: 16px 20px;
+      border-bottom: 1px solid #ededed;
+      color: #000;
+
+      /* 重要/Medium 16 */
+      font-family: 'PingFang SC Medium';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px; /* 150% */
+
+      .el-dialog__title {
+        color: var(---N9, #1f1f1f);
+        font-family: 'PingFang SC Medium';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px; /* 157.143% */
+      }
+
+      .el-dialog__headerbtn {
+        width: 54px;
+        height: 54px;
+      }
+    }
+
+    .el-dialog__body {
+      min-height: 200px;
+      max-height: calc(100vh - 320px);
+      padding: 16px;
+      overflow: auto;
+      background-color: #fff;
+      .el-table thead th {
+        font-family: 'PingFang SC';
+      }
+    }
+
+    .el-dialog__footer {
+      border-top: 1px solid #ededed;
+      padding: 12px 20px;
+
+      //兼容
+      span {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+
+        .el-button + .el-button {
+          margin-left: 0;
+        }
+      }
+
+      .left {
+        float: left;
+      }
+    }
+
+    /*.el-dialog__header {
+      border-bottom: $modal-header-border-width solid $modal-header-border-color;
+    }
+    .el-dialog__title {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .el-dialog__body {
+      padding: 2rem;
+      &:has(.el-pagination) {
+        padding-bottom: 0;
+      }
+    }
+
+    .el-dialog__footer {
+      text-align: center;
+      border-top: $modal-header-border-width solid $modal-footer-border-color;
+      padding-top: 1.75rem;
+    }*/
+  }
+
+  .custom-dialog {
+    padding: 32px 24px;
+
+    .el-dialog__header {
+      padding-bottom: 16px;
+    }
+
+    .el-dialog__footer {
+      padding-top: 24px;
+    }
+
+    .header-title {
+      text-align: center;
+      font-family: 'PingFang SC Regular';
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22.4px;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+  .ui-dialog {
+    .el-dialog__body {
+      background: var(---N2, #f0f2f5) !important;
+    }
+  }
+  .el-dialog {
+    --el-dialog-margin-top: 10vh;
+  }
+}

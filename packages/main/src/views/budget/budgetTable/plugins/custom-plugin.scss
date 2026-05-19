@@ -1,0 +1,141 @@
+.budgetSelect {
+  position: absolute;
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: visible;
+  right: auto;
+
+  input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box !important;
+    padding: 8px 2px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+  }
+
+  .select-box {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    overflow-y: auto;
+    max-height: 300px;
+    min-height: 150px;
+    min-width: 300px;
+    margin-top: 2px;
+    background-color: white;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+
+    & > div {
+      padding: 2px 3px;
+
+      &:hover {
+        background-color: #ececec;
+      }
+
+      &.selected {
+        background-color: var(--el-color-primary);
+        color: white;
+      }
+    }
+  }
+}
+
+.budgetAutoComplete {
+  position: absolute;
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: visible;
+  right: auto;
+
+  input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box !important;
+    padding: 8px 2px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+  }
+
+  .select-box {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    overflow-y: auto;
+    max-height: 300px;
+    min-height: 150px;
+    min-width: 300px;
+    margin-top: 2px;
+    background-color: white;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+
+    & > div {
+      padding: 2px 3px;
+
+      &:hover {
+        background-color: #ececec;
+      }
+
+      &.selected {
+        background-color: var(--el-color-primary);
+        color: white;
+      }
+    }
+  }
+}
+
+.budgetNumberInput {
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+
+  input {
+    width: 100%;
+    box-sizing: border-box !important;
+    padding: 4px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+  }
+}
+
+.budgetPercentInput {
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+  }
+}
+
+.budgetTextInput {
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+
+  input {
+    width: 100%;
+    box-sizing: border-box !important;
+    padding: 4px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+  }
+}

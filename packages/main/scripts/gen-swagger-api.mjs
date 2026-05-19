@@ -109,20 +109,47 @@ async function collectGeneratedTsFiles(targetPath) {
   return nestedFiles.flat();
 }
 
+let prettierModulePromise;
+
+async function getPrettierModule() {
+  if (!prettierModulePromise) {
+    prettierModulePromise = import('prettier').catch(() => null);
+  }
+  return prettierModulePromise;
+}
+
+async function formatWithPrettierIfAvailable(content, filePath) {
+  const prettier = await getPrettierModule();
+  if (!prettier?.format) {
+    return content;
+  }
+
+  try {
+    return await prettier.format(content, { filepath: filePath, parser: 'typescript' });
+  } catch (error) {
+    console.warn(`[gen:api] prettier format skipped for ${filePath}`);
+    console.warn(error?.message ?? error);
+    return content;
+  }
+}
+
+async function sanitizeGeneratedTextFile(filePath) {
+  const rawText = await fs.readFile(filePath, 'utf8');
+  const formatted = await formatWithPrettierIfAvailable(rawText, filePath);
+  const content = formatted.endsWith('\n') ? formatted : `${formatted}\n`;
+
+  const tempPath = `${filePath}.tmp`;
+  await fs.writeFile(tempPath, content, 'utf8');
+  await fs.rename(tempPath, filePath);
+}
+
 async function normalizeGeneratedOutput(outputPath) {
   if (!outputPath) {
     return;
   }
 
   const tsFiles = await collectGeneratedTsFiles(outputPath);
-  await Promise.all(
-    tsFiles.map(async (filePath) => {
-      const content = await fs.readFile(filePath, 'utf8');
-      const tempPath = `${filePath}.tmp`;
-      await fs.writeFile(tempPath, content, 'utf8');
-      await fs.rename(tempPath, filePath);
-    }),
-  );
+  await Promise.all(tsFiles.map((filePath) => sanitizeGeneratedTextFile(filePath)));
 }
 
 async function createGeneratedIndexFile(outputPath) {
@@ -135,7 +162,13 @@ async function createGeneratedIndexFile(outputPath) {
   const indexContent = `export * from './Api';
 export { Api as ApiRouteTypes } from './ApiRoute';
 export * from './data-contracts';
-export * from './http-client';
+export { ContentType, HttpClient } from './http-client';
+export type {
+  ApiConfig,
+  FullRequestParams,
+  QueryParamsType,
+  RequestParams,
+} from './http-client';
 
 import { Api } from './Api';
 import { wrapperApi } from '../wrapperApi';

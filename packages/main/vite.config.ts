@@ -15,11 +15,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 const vueRuntimePath = require.resolve('vue/dist/vue.runtime.esm-bundler.js');
 const vueRouterPath = require.resolve('vue-router/dist/vue-router.mjs');
-const elementPlusPath = path.dirname(require.resolve('element-plus/package.json'));
+const elementPlusPath = path.dirname(require.resolve('@lute-root-ui/element-plus/package.json'));
 const workspaceRoot = path.resolve(__dirname, '../../');
 const buildOutDirConfig = getOutDirConfig(__dirname);
 const commonResolveConfig = {
-  dedupe: ['vue', 'vue-router', 'pinia', 'element-plus'],
+  dedupe: ['vue', 'vue-router', 'pinia', '@lute-root-ui/element-plus'],
   alias: {
     '@': path.resolve(__dirname, './src'),
     '@app/a': path.resolve(__dirname, '../a/src'),
@@ -30,7 +30,7 @@ const commonResolveConfig = {
     'element-plus': elementPlusPath,
   },
 };
-const elementPlusPlugins = createElementPlusPlugins(__dirname, ['../shared/src/components']);
+const elementPlusPlugins = createElementPlusPlugins(__dirname, ['src/components', '../shared/src/components']);
 const svgSpritePlugin = createSvgSprite([
   path.resolve(__dirname, 'src/icons'),
   path.resolve(__dirname, '../shared/src/icons'),
@@ -48,6 +48,7 @@ export default defineConfig(({ mode }) => {
     return {
       ...prodConfig,
       root: workspaceRoot,
+      publicDir: path.resolve(__dirname, 'public'),
       base: '/',
       plugins: [...(prodConfig.plugins ?? []), ...elementPlusPlugins, svgSpritePlugin],
       resolve: commonResolveConfig,
@@ -99,6 +100,7 @@ export default defineConfig(({ mode }) => {
     return {
       ...devConfig,
       root: workspaceRoot,
+      publicDir: path.resolve(__dirname, 'public'),
       base: '/',
       plugins: [...(devConfig.plugins ?? []), ...elementPlusPlugins, svgSpritePlugin],
       resolve: commonResolveConfig,

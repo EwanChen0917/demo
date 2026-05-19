@@ -1,0 +1,98 @@
+.w-40 {
+  width: 40%;
+}
+.smart-meeting-room-page {
+  width: 100%;
+  .main-content {
+    display: flex;
+    gap: 108px;
+    height: 82vh;
+    margin-top: 24px;
+    .room-list-section {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .el-empty {
+        margin-top: 8px;
+        flex: 1;
+      }
+      .room-list-header {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 18px;
+        .room-search-input {
+          flex: 1;
+        }
+      }
+    }
+
+    .equipment-list-section {
+      // display: flex;
+      // flex-direction: column;
+      margin-top: 6px;
+      height: 92.5%;
+      .equipment-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        .equipment-title {
+          font-weight: bold;
+          font-size: 16px;
+        }
+        :not(:last-child, :first-child) {
+          margin-left: 16px;
+        }
+
+        /* 刷新图标容器 */
+        .refresh-icon {
+          margin-left: 12px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: background-color 0.18s, opacity 0.18s, transform 0.12s;
+        }
+        .refresh-icon:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+          transform: translateY(-1px);
+        }
+        .refresh-icon.loading {
+          pointer-events: none; /* 禁用重复点击 */
+          opacity: 0.8;
+          background-color: rgba(0, 0, 0, 0.03);
+        }
+      }
+
+      /* 仅在 loading 时才旋转 */
+      .rotate-animation {
+        animation: rotate 1s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      :deep(.el-empty) {
+        // background-color: red;
+        height: 100%;
+      }
+    }
+  }
+}
+:deep(.el-pagination) {
+  padding-right: 2px;
+  box-shadow: none;
+}

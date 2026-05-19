@@ -1,0 +1,114 @@
+<template>
+  <el-dialog :title="title" v-model="visibility" width="600px" :before-close="close">
+    <div class="import-container">
+      <p>
+        <KeenFileUpload
+          accept=".xlsx,.xls"
+          class="packing-upload"
+          v-model="file"
+          directory="erp/template"
+          ref="uploadRef"
+        >
+          <el-button type="primary" size="small">选择文件</el-button>
+          <el-button
+            :loading="downloadLoading"
+            size="small"
+            type="primary"
+            link
+            @click.stop="downloadTemplate"
+          >
+            下载模板
+          </el-button>
+        </KeenFileUpload>
+      </p>
+      <div class="notice">
+        <div class="label">注意：</div>
+        <div class="value">
+          <ul>
+            <li>1、仅支持xls文件</li>
+            <li>2、请根据模板字段填写</li>
+          </ul>
+        </div>
+      </div>
+      <div class="notice" v-if="notice">
+        <div class="label">说明：</div>
+        <div class="value">
+          <ul>
+            <li>请注意未填写必填字段将上传失败</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <template #footer>
+      <span>
+        <el-button @click="close">取消</el-button>
+        <el-button type="primary" :disabled="!file.length" @click="confirmUpload">确定</el-button>
+      </span>
+    </template>
+  </el-dialog>
+</template>
+
+<script setup lang="ts">
+  import { erpApi } from '@/api';
+  import { urlDownload } from '@/utils/download';
+  import { openWindow } from '@/utils';
+  import * as swal from '@/utils/swal';
+
+  const props = defineProps<{
+    title: string;
+  }>();
+
+  const downloadLoading = ref(false);
+  const file = ref<any[]>([]);
+  const visibility = ref(false);
+  const downloadTemplate = async () => {
+    downloadLoading.value = true;
+    const res = await erpApi.luteosErpRateCfgDownTemplate().finally(() => {
+      downloadLoading.value = false;
+    });
+    urlDownload(res as string);
+  };
+  const uploadRef = ref();
+  const emits = defineEmits<{
+    (success: string, data: any);
+  }>();
+  const confirmUpload = async () => {
+    const res = await erpApi.luteosErpRateCfgUpload({
+      fileName: file.value[0].name,
+      ossKey: file.value[0].ossKey,
+    });
+    file.value = [];
+    console.log(res);
+    emits('success', res);
+    close();
+  };
+  const open = () => {
+    visibility.value = true;
+  };
+  const close = () => {
+    uploadRef.value?.uploadRef.clearFiles();
+    visibility.value = false;
+  };
+  defineExpose({ open });
+</script>
+
+<style scoped lang="scss">
+  .notice {
+    display: flex;
+    margin-top: 20px;
+    color: #888c94;
+    font-size: 12px;
+
+    .value {
+      flex: 1;
+      margin-left: 10px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+</style>

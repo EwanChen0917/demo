@@ -33,7 +33,7 @@ export { commonCssConfig };
 export const createComponentsPlugin = (dirsPath: string[], dtsPath: string): any => {
   return Components({
     dirs: dirsPath,
-    resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
+    resolvers: [ElementPlusResolver({ importStyle: false })],
     dts: dtsPath,
   });
 };
@@ -41,7 +41,7 @@ export const createComponentsPlugin = (dirsPath: string[], dtsPath: string): any
 export const createElementPlusPlugins = (packageRoot: string, componentDirs: string[]) => [
   AutoImport({
     imports: ['vue', 'vue-router'],
-    resolvers: [ElementPlusResolver()],
+    resolvers: [ElementPlusResolver({ importStyle: false })],
     dts: path.resolve(packageRoot, 'src/auto-imports.d.ts'),
   }),
   createComponentsPlugin(

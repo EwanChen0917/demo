@@ -68,7 +68,7 @@ export const createProdConfig = (
       output: {
         manualChunks: {
           vue: ['vue', 'vue-router', 'pinia'],
-          'element-plus': ['element-plus'],
+          element: ['@lute-root-ui/element-plus'],
         },
       },
     },

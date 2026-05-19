@@ -1,6 +1,5 @@
 /* eslint-disable */
 /* tslint:disable */
-// @ts-nocheck
 /*
  * ---------------------------------------------------------------
  * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
@@ -44,6 +43,7 @@ import {
   B2CProductListingResp,
   BatchOperatorReq,
   BrandDetailResp,
+  BrandListQueryAllResp,
   BrandListQueryReq,
   BrandListQueryResp,
   BrandOperateReq,
@@ -118,7 +118,6 @@ import {
   ListingQueryTagV2Req,
   ListingTagResp,
   LuteConditionResp,
-  MSkuRelationListResp,
   MacAddrOperateReq,
   MacAddrQueryReq,
   MacAddrQueryResp,
@@ -171,6 +170,7 @@ import {
   ModelProductConnectReq,
   ModelSaveReq,
   ModelSaveResp,
+  MSkuRelationListResp,
   MsrpBatchQueryReq,
   MsrpBatchSaveResp,
   MsrpCalculateBaseReq,
@@ -232,6 +232,7 @@ import {
   ProductPerformanceDetailResp,
   ProductPerformanceResp,
   ProductRelationListResp,
+  ProductSaveReq,
   ProductSaveResp,
   ProductSellerSkuQueryResp,
   ProductShadowDetailStaticsSearchReq,
@@ -289,8 +290,6 @@ import {
   SeriesProductConnectReq,
   SeriesSaveReq,
   SeriesSaveResp,
-  ShopUserAccountListResp,
-  ShopUserAccountResp,
   ShopifyBatchOperatorSaveReq,
   ShopifyListingParentResp,
   ShopifyListingReq,
@@ -298,6 +297,8 @@ import {
   ShopifyProductListingReq,
   ShopifyProductListingResp,
   ShopifySonListingResp,
+  ShopUserAccountListResp,
+  ShopUserAccountResp,
   SkuActiveDiscountPlanAddReq,
   SkuActiveDiscountPlanQueryResp,
   SkuSnQueryReq,
@@ -324,8 +325,6 @@ import {
   TagProductResp,
   TagSaveReq,
   TagSaveResp,
-  TikTokListingProductReq,
-  TikTokProductListingResp,
   TiktokAdsPlatformSkuQueryResp,
   TiktokAdsQueryReq,
   TiktokAdsQueryResp,
@@ -333,6 +332,8 @@ import {
   TiktokAdsSkuSaveResp,
   TiktokAffiliateAccountsSpuQueryReq,
   TiktokAffiliateAccountsSpuQueryResp,
+  TikTokListingProductReq,
+  TikTokProductListingResp,
   TiktokWeekReportQueryReq,
   TiktokWeekReportQueryResp,
   UpdateCategoryReq,
@@ -343,19 +344,19 @@ import {
   WalmartProductListingResp,
   WeekApproveLogResp,
   WorkflowSubmitResp,
-  _,
-} from "./data-contracts";
+} from './data-contracts';
 
 export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name BatchModifyPlanUsingPost2
+   * @name LuteosProductAmazonListingBatchModifyPlan
    * @summary 亚马逊-在线商父ASIN批量添加/更新计划人员
    * @request POST:/api/luteos/product/amazon/listing/batchModifyPlan
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace BatchModifyPlanUsingPost2 {
+  export namespace LuteosProductAmazonListingBatchModifyPlan {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyPlanReq;
@@ -363,7 +364,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -371,11 +372,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name BatchUpdateOperatorUsingPost1
+   * @name LuteosProductAmazonListingBatchUpdateOperator
    * @summary 在线商品新增/更新运营人员
    * @request POST:/api/luteos/product/amazon/listing/batchUpdateOperator
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace BatchUpdateOperatorUsingPost1 {
+  export namespace LuteosProductAmazonListingBatchUpdateOperator {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = BatchOperatorReq;
@@ -383,7 +385,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -391,11 +393,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name DownloadUsingPost10
+   * @name LuteosProductAmazonListingDownload
    * @summary 亚马逊父子维度导出-V2
    * @request POST:/api/luteos/product/amazon/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost10 {
+  export namespace LuteosProductAmazonListingDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonProductListingReq;
@@ -403,7 +406,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -411,12 +414,13 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name DownloadUsingPost9
+   * @name LuteosProductAmazonListingListingDownload
    * @summary 亚马逊父子维度导出
    * @request POST:/api/luteos/product/amazon/listing/listing/download
    * @deprecated
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost9 {
+  export namespace LuteosProductAmazonListingListingDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonListingReq;
@@ -424,7 +428,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -432,12 +436,13 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name QueryListingTagUsingPost5
+   * @name LuteosProductAmazonListingListingQueryTag
    * @summary 亚马逊在线商品父维度标签查询
    * @request POST:/api/luteos/product/amazon/listing/listing/queryTag
    * @deprecated
+   * @response `200` `ListingTagResp` OK
    */
-  export namespace QueryListingTagUsingPost5 {
+  export namespace LuteosProductAmazonListingListingQueryTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingQueryTagReq;
@@ -445,7 +450,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ListingTagResp;
   }
@@ -453,12 +458,13 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name UpdateTagUsingPost5
+   * @name LuteosProductAmazonListingListingUpdateTag
    * @summary 亚马逊在线商品父维度标签保存更新
    * @request POST:/api/luteos/product/amazon/listing/listing/updateTag
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace UpdateTagUsingPost5 {
+  export namespace LuteosProductAmazonListingListingUpdateTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyTagReq;
@@ -466,7 +472,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -474,11 +480,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name UpdateTagV2UsingPost1
+   * @name LuteosProductAmazonListingListingUpdateTagV2
    * @summary 在线商品标签保存更新
    * @request POST:/api/luteos/product/amazon/listing/listing/updateTagV2
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace UpdateTagV2UsingPost1 {
+  export namespace LuteosProductAmazonListingListingUpdateTagV2 {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyTagV2Req;
@@ -486,7 +493,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -494,11 +501,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name QueryListUsingPost31
+   * @name LuteosProductAmazonListingQueryAsinPage
    * @summary 亚马逊-在线商品分页查询-V2
    * @request POST:/api/luteos/product/amazon/listing/queryAsinPage
+   * @response `200` `AmazonProductListingResp` OK
    */
-  export namespace QueryListUsingPost31 {
+  export namespace LuteosProductAmazonListingQueryAsinPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonProductListingReq;
@@ -506,7 +514,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AmazonProductListingResp;
   }
@@ -514,12 +522,13 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name QueryParentAsinUsingPost1
+   * @name LuteosProductAmazonListingQueryParentAsinPage
    * @summary 亚马逊-在线商品父ASIN分页查询
    * @request POST:/api/luteos/product/amazon/listing/queryParentAsinPage
    * @deprecated
+   * @response `200` `AmazonListingParentResp` OK
    */
-  export namespace QueryParentAsinUsingPost1 {
+  export namespace LuteosProductAmazonListingQueryParentAsinPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonListingReq;
@@ -527,7 +536,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AmazonListingParentResp;
   }
@@ -535,12 +544,13 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name QueryAsinUsingPost1
+   * @name LuteosProductAmazonListingQueryParentSonPage
    * @summary 亚马逊-在线商品子ASIN分页查询
    * @request POST:/api/luteos/product/amazon/listing/queryParentSonPage
    * @deprecated
+   * @response `200` `AmazonListingResp` OK
    */
-  export namespace QueryAsinUsingPost1 {
+  export namespace LuteosProductAmazonListingQueryParentSonPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonListingReq;
@@ -548,7 +558,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AmazonListingResp;
   }
@@ -556,11 +566,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name QueryListingTagV2UsingPost1
+   * @name LuteosProductAmazonListingQueryTagV2
    * @summary 在线商品标签查询
    * @request POST:/api/luteos/product/amazon/listing/queryTagV2
+   * @response `200` `ListingTagResp` OK
    */
-  export namespace QueryListingTagV2UsingPost1 {
+  export namespace LuteosProductAmazonListingQueryTagV2 {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingQueryTagV2Req;
@@ -568,7 +579,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ListingTagResp;
   }
@@ -576,11 +587,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name SaveOperatorV2UsingPost1
+   * @name LuteosProductAmazonListingSaveOperatorV2
    * @summary 在线商品保存运营人员
    * @request POST:/api/luteos/product/amazon/listing/saveOperatorV2
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveOperatorV2UsingPost1 {
+  export namespace LuteosProductAmazonListingSaveOperatorV2 {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OperatorCommonSaveReq;
@@ -588,7 +600,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -596,11 +608,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊-在线商品
-   * @name SaveProductLinkV2UsingPost1
+   * @name LuteosProductAmazonListingSaveProductLinkV2
    * @summary 在线商品保存商品链接
    * @request POST:/api/luteos/product/amazon/listing/saveProductLinkV2
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveProductLinkV2UsingPost1 {
+  export namespace LuteosProductAmazonListingSaveProductLinkV2 {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductLinkCommonSaveReq;
@@ -608,7 +621,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -616,11 +629,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊运营人员稽查
-   * @name DownloadUsingPost11
+   * @name LuteosProductAmazonOperatorCheckDownload
    * @summary 导出
    * @request POST:/api/luteos/product/amazon/operatorCheck/download
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost11 {
+  export namespace LuteosProductAmazonOperatorCheckDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonProductOperatorCheckReq;
@@ -628,7 +642,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -636,11 +650,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊运营人员稽查
-   * @name QueryDetailUsingPost7
+   * @name LuteosProductAmazonOperatorCheckQueryDetail
    * @summary 详情查询
    * @request POST:/api/luteos/product/amazon/operatorCheck/queryDetail
+   * @response `200` `CommonRespListAmazonOperatorCheckDetailBean` OK
    */
-  export namespace QueryDetailUsingPost7 {
+  export namespace LuteosProductAmazonOperatorCheckQueryDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonProductOperatorCheckDetailReq;
@@ -648,7 +663,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListAmazonOperatorCheckDetailBean;
   }
@@ -656,11 +671,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊运营人员稽查
-   * @name QueryListUsingPost32
+   * @name LuteosProductAmazonOperatorCheckQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/amazon/operatorCheck/queryList
+   * @response `200` `AmazonProductOperatorListResp` OK
    */
-  export namespace QueryListUsingPost32 {
+  export namespace LuteosProductAmazonOperatorCheckQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonProductOperatorCheckReq;
@@ -668,7 +684,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AmazonProductOperatorListResp;
   }
@@ -676,11 +692,12 @@ export namespace Api {
   /**
    * No description
    * @tags 亚马逊运营人员稽查
-   * @name QuerySpuGtmListUsingGet1
+   * @name LuteosProductAmazonOperatorCheckQuerySpuGtmList
    * @summary 查询GTM小组列表
    * @request GET:/api/luteos/product/amazon/operatorCheck/querySpuGtmList
+   * @response `200` `CommonRespListString` OK
    */
-  export namespace QuerySpuGtmListUsingGet1 {
+  export namespace LuteosProductAmazonOperatorCheckQuerySpuGtmList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -688,7 +705,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListString;
   }
@@ -696,11 +713,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name ConnectCategoryUsingPost2
+   * @name LuteosProductAttrConnectCategory
    * @summary 属性关联分类
    * @request POST:/api/luteos/product/attr/connectCategory
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace ConnectCategoryUsingPost2 {
+  export namespace LuteosProductAttrConnectCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AttrCategoryConnectReq;
@@ -708,7 +726,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -716,11 +734,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name ExportAttrUsingPost1
+   * @name LuteosProductAttrExportAttr
    * @summary 属性信息导出
    * @request POST:/api/luteos/product/attr/exportAttr
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportAttrUsingPost1 {
+  export namespace LuteosProductAttrExportAttr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AttrListQueryReq;
@@ -728,7 +747,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -736,11 +755,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name OperateAttrUsingPost1
+   * @name LuteosProductAttrOperateAttr
    * @summary 属性操作
    * @request POST:/api/luteos/product/attr/operateAttr
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace OperateAttrUsingPost1 {
+  export namespace LuteosProductAttrOperateAttr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AttrOperateReq;
@@ -748,7 +768,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -756,11 +776,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name QueryAttrDetailUsingGet1
+   * @name LuteosProductAttrQueryAttrDetail
    * @summary 属性详情查询
    * @request GET:/api/luteos/product/attr/queryAttrDetail
+   * @response `200` `AttrDetailResp` OK
    */
-  export namespace QueryAttrDetailUsingGet1 {
+  export namespace LuteosProductAttrQueryAttrDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 属性编码,必填 */
@@ -771,7 +792,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AttrDetailResp;
   }
@@ -779,11 +800,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name QueryAttrListUsingGet1
+   * @name LuteosProductAttrQueryAttrList
    * @summary 属性列表查询
    * @request GET:/api/luteos/product/attr/queryAttrList
+   * @response `200` `AttrListQueryResp` OK
    */
-  export namespace QueryAttrListUsingGet1 {
+  export namespace LuteosProductAttrQueryAttrList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 属性Id */
@@ -814,7 +836,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AttrListQueryResp;
   }
@@ -822,11 +844,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name QueryCategoryLeveListUsingGet1
+   * @name LuteosProductAttrQueryCategoryLevelList
    * @summary 分类列表查询
    * @request GET:/api/luteos/product/attr/queryCategoryLevelList
+   * @response `200` `CategoryLevelQueryInAttrResp` OK
    */
-  export namespace QueryCategoryLeveListUsingGet1 {
+  export namespace LuteosProductAttrQueryCategoryLevelList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类id */
@@ -855,7 +878,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryLevelQueryInAttrResp;
   }
@@ -863,11 +886,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理, 属性管理
-   * @name QueryProductAttrListUsingGet1
+   * @name LuteosProductAttrQueryProductAttrList
    * @summary 商品属性列表查询
    * @request GET:/api/luteos/product/attr/queryProductAttrList
+   * @response `200` `ProductAttrListQueryResp` OK
    */
-  export namespace QueryProductAttrListUsingGet1 {
+  export namespace LuteosProductAttrQueryProductAttrList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 五级分类编码 */
@@ -878,7 +902,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductAttrListQueryResp;
   }
@@ -886,11 +910,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name SaveOrUpdateAttrUsingPost1
+   * @name LuteosProductAttrSaveOrUpdateAttr
    * @summary 属性信息保存
    * @request POST:/api/luteos/product/attr/saveOrUpdateAttr
+   * @response `200` `AttrSaveResp` OK
    */
-  export namespace SaveOrUpdateAttrUsingPost1 {
+  export namespace LuteosProductAttrSaveOrUpdateAttr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AttrSaveReq;
@@ -898,7 +923,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AttrSaveResp;
   }
@@ -906,11 +931,12 @@ export namespace Api {
   /**
    * No description
    * @tags 属性管理
-   * @name SaveOrUpdateAttrValUsingPost1
+   * @name LuteosProductAttrSaveOrUpdateAttrVal
    * @summary 属性值信息保存
    * @request POST:/api/luteos/product/attr/saveOrUpdateAttrVal
+   * @response `200` `AttrValSaveResp` OK
    */
-  export namespace SaveOrUpdateAttrValUsingPost1 {
+  export namespace LuteosProductAttrSaveOrUpdateAttrVal {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AttrValSaveReq;
@@ -918,7 +944,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = AttrValSaveResp;
   }
@@ -926,11 +952,12 @@ export namespace Api {
   /**
    * No description
    * @tags B2C-在线商品
-   * @name QueryProductListingPageUsingGet1
+   * @name LuteosProductB2CListingQueryChannelList
    * @summary b2c-渠道列表
    * @request GET:/api/luteos/product/b2c/listing/queryChannelList
+   * @response `200` `B2CChannelResp` OK
    */
-  export namespace QueryProductListingPageUsingGet1 {
+  export namespace LuteosProductB2CListingQueryChannelList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -938,7 +965,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = B2CChannelResp;
   }
@@ -946,11 +973,12 @@ export namespace Api {
   /**
    * No description
    * @tags B2C-在线商品
-   * @name QueryProductListingPageUsingPost5
+   * @name LuteosProductB2CListingQueryProductListingPage
    * @summary b2c-在线商品分页查询-V2
    * @request POST:/api/luteos/product/b2c/listing/queryProductListingPage
+   * @response `200` `B2CProductListingResp` OK
    */
-  export namespace QueryProductListingPageUsingPost5 {
+  export namespace LuteosProductB2CListingQueryProductListingPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = B2CListingProductReq;
@@ -958,7 +986,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = B2CProductListingResp;
   }
@@ -966,11 +994,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品条形码
-   * @name CancelUsingPost1
+   * @name LuteosProductBarcodeCancel
    * @summary 产品条形码取消
    * @request POST:/api/luteos/product/barcode/cancel
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace CancelUsingPost1 {
+  export namespace LuteosProductBarcodeCancel {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductBarCodeCancelReq;
@@ -978,7 +1007,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -986,11 +1015,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品条形码, 红人管理
-   * @name DownLoadMetaOrderTemplateUsingPost2
+   * @name LuteosProductBarcodeDownLoadBarCodeTemplate
    * @summary 下载导入条形码模板
    * @request POST:/api/luteos/product/barcode/downLoadBarCodeTemplate
+   * @response `200` `CommonRespString` OK
    */
-  export namespace DownLoadMetaOrderTemplateUsingPost2 {
+  export namespace LuteosProductBarcodeDownLoadBarCodeTemplate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -998,7 +1028,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -1006,11 +1036,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品条形码
-   * @name ExportUsingPost11
+   * @name LuteosProductBarcodeExport
    * @summary 产品条形码导出信息
    * @request POST:/api/luteos/product/barcode/export
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportUsingPost11 {
+  export namespace LuteosProductBarcodeExport {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductBarCodeQueryReq;
@@ -1018,7 +1049,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -1026,11 +1057,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品条形码
-   * @name QueryListUsingPost39
+   * @name LuteosProductBarcodeQueryList
    * @summary 产品条形码查询
    * @request POST:/api/luteos/product/barcode/queryList
+   * @response `200` `ProductBarCodeQueryResp` OK
    */
-  export namespace QueryListUsingPost39 {
+  export namespace LuteosProductBarcodeQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductBarCodeQueryReq;
@@ -1038,7 +1070,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductBarCodeQueryResp;
   }
@@ -1046,11 +1078,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品条形码
-   * @name SaveOrUpdateUsingPost14
+   * @name LuteosProductBarcodeSaveOrUpdate
    * @summary 商品条形码保存
    * @request POST:/api/luteos/product/barcode/saveOrUpdate
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveOrUpdateUsingPost14 {
+  export namespace LuteosProductBarcodeSaveOrUpdate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductBarCodeSaveUpdateReq;
@@ -1058,7 +1091,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -1066,11 +1099,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name BatchOperateProductUsingPost1
+   * @name LuteosProductBatchOperateProduct
    * @summary 商品信息批量操作
    * @request POST:/api/luteos/product/batchOperateProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace BatchOperateProductUsingPost1 {
+  export namespace LuteosProductBatchOperateProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductBatchOperateReq;
@@ -1078,7 +1112,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -1086,11 +1120,12 @@ export namespace Api {
   /**
    * No description
    * @tags 品牌管理
-   * @name ConnectProductUsingPost5
+   * @name LuteosProductBrandConnectProduct
    * @summary 品牌关联商品
    * @request POST:/api/luteos/product/brand/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  export namespace ConnectProductUsingPost5 {
+  export namespace LuteosProductBrandConnectProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = BrandProductConnectReq;
@@ -1098,7 +1133,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -1106,11 +1141,12 @@ export namespace Api {
   /**
    * No description
    * @tags 品牌管理
-   * @name ExportBrandUsingPost1
+   * @name LuteosProductBrandExportBrand
    * @summary 品牌信息导出
    * @request POST:/api/luteos/product/brand/exportBrand
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportBrandUsingPost1 {
+  export namespace LuteosProductBrandExportBrand {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = BrandListQueryReq;
@@ -1118,7 +1154,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -1126,11 +1162,12 @@ export namespace Api {
   /**
    * No description
    * @tags 品牌管理
-   * @name OperateBrandUsingPost1
+   * @name LuteosProductBrandOperateBrand
    * @summary 品牌操作
    * @request POST:/api/luteos/product/brand/operateBrand
+   * @response `200` `CommonRespString` OK
    */
-  export namespace OperateBrandUsingPost1 {
+  export namespace LuteosProductBrandOperateBrand {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = BrandOperateReq;
@@ -1138,7 +1175,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -1146,11 +1183,33 @@ export namespace Api {
   /**
    * No description
    * @tags 品牌管理
-   * @name QueryBrandDetailUsingGet1
+   * @name LuteosProductBrandQueryBrandAll
+   * @summary 获取所有品牌
+   * @request GET:/api/luteos/product/brand/queryBrandAll
+   * @response `200` `BrandListQueryAllResp` OK
+   */
+  export namespace LuteosProductBrandQueryBrandAll {
+    export type RequestParams = {};
+    export type RequestQuery = {};
+    export type RequestBody = never;
+    export type RequestHeaders = {
+      /** token */
+      Authorization?: any;
+      /** token */
+      'lute-account-str'?: any;
+    };
+    export type ResponseBody = BrandListQueryAllResp;
+  }
+
+  /**
+   * No description
+   * @tags 品牌管理
+   * @name LuteosProductBrandQueryBrandDetail
    * @summary 品牌详情查询
    * @request GET:/api/luteos/product/brand/queryBrandDetail
+   * @response `200` `BrandDetailResp` OK
    */
-  export namespace QueryBrandDetailUsingGet1 {
+  export namespace LuteosProductBrandQueryBrandDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 品牌编码 */
@@ -1161,7 +1220,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = BrandDetailResp;
   }
@@ -1169,11 +1228,12 @@ export namespace Api {
   /**
    * No description
    * @tags 品牌管理
-   * @name QueryBrandListUsingGet1
+   * @name LuteosProductBrandQueryBrandList
    * @summary 品牌列表查询
    * @request GET:/api/luteos/product/brand/queryBrandList
+   * @response `200` `BrandListQueryResp` OK
    */
-  export namespace QueryBrandListUsingGet1 {
+  export namespace LuteosProductBrandQueryBrandList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 品牌编号 */
@@ -1204,7 +1264,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = BrandListQueryResp;
   }
@@ -1212,11 +1272,12 @@ export namespace Api {
   /**
    * No description
    * @tags 品牌管理
-   * @name SaveOrUpdateBrandUsingPost1
+   * @name LuteosProductBrandSaveOrUpdateBrand
    * @summary 品牌信息保存
    * @request POST:/api/luteos/product/brand/saveOrUpdateBrand
+   * @response `200` `BrandSaveResp` OK
    */
-  export namespace SaveOrUpdateBrandUsingPost1 {
+  export namespace LuteosProductBrandSaveOrUpdateBrand {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = BrandSaveReq;
@@ -1224,7 +1285,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = BrandSaveResp;
   }
@@ -1232,11 +1293,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name ConnectAttrUsingPost1
+   * @name LuteosProductCategoryConnectAttr
    * @summary 分类关联属性
    * @request POST:/api/luteos/product/category/connectAttr
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace ConnectAttrUsingPost1 {
+  export namespace LuteosProductCategoryConnectAttr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = CategoryAttrConnectReq;
@@ -1244,7 +1306,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -1252,11 +1314,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name ExportCategoryUsingPost1
+   * @name LuteosProductCategoryExportCategory
    * @summary 分类信息导出
    * @request POST:/api/luteos/product/category/exportCategory
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportCategoryUsingPost1 {
+  export namespace LuteosProductCategoryExportCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = CategoryListQueryReq;
@@ -1264,7 +1327,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -1272,11 +1335,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name OperateModelUsingPost2
+   * @name LuteosProductCategoryOperateCategory
    * @summary 分类操作
    * @request POST:/api/luteos/product/category/operateCategory
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace OperateModelUsingPost2 {
+  export namespace LuteosProductCategoryOperateCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = CategoryOperateReq;
@@ -1284,7 +1348,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -1292,11 +1356,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name QueryCategoryDetailUsingGet1
+   * @name LuteosProductCategoryQueryCategoryDetail
    * @summary 分类详情查询
    * @request GET:/api/luteos/product/category/queryCategoryDetail
+   * @response `200` `CategoryDetailResp` OK
    */
-  export namespace QueryCategoryDetailUsingGet1 {
+  export namespace LuteosProductCategoryQueryCategoryDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码 */
@@ -1307,7 +1372,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryDetailResp;
   }
@@ -1315,11 +1380,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name QueryCategoryLevelListUsingGet1
+   * @name LuteosProductCategoryQueryCategoryLevelList
    * @summary 分类下级查询
    * @request GET:/api/luteos/product/category/queryCategoryLevelList
+   * @response `200` `CategoryLevelQueryResp` OK
    */
-  export namespace QueryCategoryLevelListUsingGet1 {
+  export namespace LuteosProductCategoryQueryCategoryLevelList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码 */
@@ -1330,7 +1396,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryLevelQueryResp;
   }
@@ -1338,11 +1404,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name QueryCategoryListUsingGet2
+   * @name LuteosProductCategoryQueryCategoryList
    * @summary 分类列表查询
    * @request GET:/api/luteos/product/category/queryCategoryList
+   * @response `200` `CategoryListQueryResp` OK
    */
-  export namespace QueryCategoryListUsingGet2 {
+  export namespace LuteosProductCategoryQueryCategoryList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类id */
@@ -1378,7 +1445,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryListQueryResp;
   }
@@ -1386,11 +1453,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name QueryCategoryListByParamUsingGet1
+   * @name LuteosProductCategoryQueryCategoryListByParam
    * @summary 查询分类列表-不含层级
    * @request GET:/api/luteos/product/category/queryCategoryListByParam
+   * @response `200` `CategoryListQueryResp` OK
    */
-  export namespace QueryCategoryListByParamUsingGet1 {
+  export namespace LuteosProductCategoryQueryCategoryListByParam {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码 */
@@ -1429,7 +1497,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryListQueryResp;
   }
@@ -1437,11 +1505,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name QueryCategoryTopAndLeafLevelListUsingGet1
+   * @name LuteosProductCategoryQueryCategoryTopAndLeafLevelList
    * @summary 分类一级/五级查询
    * @request GET:/api/luteos/product/category/queryCategoryTopAndLeafLevelList
+   * @response `200` `CategoryLevelQueryResp` OK
    */
-  export namespace QueryCategoryTopAndLeafLevelListUsingGet1 {
+  export namespace LuteosProductCategoryQueryCategoryTopAndLeafLevelList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码 */
@@ -1452,7 +1521,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryLevelQueryResp;
   }
@@ -1460,11 +1529,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name GetCategoryTreeUsingGet2
+   * @name LuteosProductCategoryQueryCategoryTree
    * @summary 获取分类树
    * @request GET:/api/luteos/product/category/queryCategoryTree
+   * @response `200` `CategoryTreeResp` OK
    */
-  export namespace GetCategoryTreeUsingGet2 {
+  export namespace LuteosProductCategoryQueryCategoryTree {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码, 不传则查询整棵分类树 */
@@ -1494,7 +1564,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryTreeResp;
   }
@@ -1502,11 +1572,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name QuerySubCategoryListUsingGet1
+   * @name LuteosProductCategoryQuerySubCategoryList
    * @summary 下级分类列表查询
    * @request GET:/api/luteos/product/category/querySubCategoryList
+   * @response `200` `CategoryListQueryResp` OK
    */
-  export namespace QuerySubCategoryListUsingGet1 {
+  export namespace LuteosProductCategoryQuerySubCategoryList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码 */
@@ -1517,7 +1588,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryListQueryResp;
   }
@@ -1525,31 +1596,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品分类管理
-   * @name QueryThreeCategoryUsingGet1
-   * @summary 查询三级分类
-   * @request GET:/api/luteos/product/category/queryThreeCategory
-   */
-  export namespace QueryThreeCategoryUsingGet1 {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = never;
-    export type RequestHeaders = {
-      /** token */
-      Authorization?: any;
-      /** token */
-      "lute-account-str"?: any;
-    };
-    export type ResponseBody = CategoryListQueryResp;
-  }
-
-  /**
-   * No description
-   * @tags 商品分类管理
-   * @name SaveCategoryUsingPost2
+   * @name LuteosProductCategorySaveOrUpdateCategory
    * @summary 分类信息保存
    * @request POST:/api/luteos/product/category/saveOrUpdateCategory
+   * @response `200` `CategorySaveResp` OK
    */
-  export namespace SaveCategoryUsingPost2 {
+  export namespace LuteosProductCategorySaveOrUpdateCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = CategorySaveReq;
@@ -1557,7 +1609,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategorySaveResp;
   }
@@ -1565,11 +1617,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name CheckRepeatProductUsingPost1
+   * @name LuteosProductCheckRepeatProduct
    * @summary 商品编码重复校验
    * @request POST:/api/luteos/product/checkRepeatProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace CheckRepeatProductUsingPost1 {
+  export namespace LuteosProductCheckRepeatProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductCheckRepeatReq;
@@ -1577,7 +1630,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -1585,11 +1638,12 @@ export namespace Api {
   /**
    * No description
    * @tags 在线商品标签
-   * @name UpdateTagUsingPost6
+   * @name LuteosProductCommonListingListingUpdateTag
    * @summary 在线商品标签保存更新
    * @request POST:/api/luteos/product/common/listing/listing/updateTag
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace UpdateTagUsingPost6 {
+  export namespace LuteosProductCommonListingListingUpdateTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyTagV2Req;
@@ -1597,7 +1651,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -1605,11 +1659,12 @@ export namespace Api {
   /**
    * No description
    * @tags 在线商品标签
-   * @name QueryListingTagUsingPost6
+   * @name LuteosProductCommonListingQueryTag
    * @summary 在线商品标签查询
    * @request POST:/api/luteos/product/common/listing/queryTag
+   * @response `200` `ListingTagResp` OK
    */
-  export namespace QueryListingTagUsingPost6 {
+  export namespace LuteosProductCommonListingQueryTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingQueryTagV2Req;
@@ -1617,7 +1672,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ListingTagResp;
   }
@@ -1625,11 +1680,12 @@ export namespace Api {
   /**
    * No description
    * @tags 在线商品标签
-   * @name SaveOperatorUsingPost4
+   * @name LuteosProductCommonListingSaveOperator
    * @summary 在线商品保存运营人员
    * @request POST:/api/luteos/product/common/listing/saveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveOperatorUsingPost4 {
+  export namespace LuteosProductCommonListingSaveOperator {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OperatorCommonSaveReq;
@@ -1637,7 +1693,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -1645,11 +1701,12 @@ export namespace Api {
   /**
    * No description
    * @tags 在线商品标签
-   * @name SaveProductLinkUsingPost4
+   * @name LuteosProductCommonListingSaveProductLink
    * @summary 在线商品保存商品链接
    * @request POST:/api/luteos/product/common/listing/saveProductLink
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveProductLinkUsingPost4 {
+  export namespace LuteosProductCommonListingSaveProductLink {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductLinkCommonSaveReq;
@@ -1657,7 +1714,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -1665,11 +1722,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name ConnectCategoryUsingPost3
+   * @name LuteosProductConnectCategory
    * @summary 商品关联分类
    * @request POST:/api/luteos/product/connectCategory
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace ConnectCategoryUsingPost3 {
+  export namespace LuteosProductConnectCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductConnectCategoryReq;
@@ -1677,7 +1735,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -1685,11 +1743,12 @@ export namespace Api {
   /**
    * No description
    * @tags 衍生项目管理
-   * @name DownloadUsingGet1
+   * @name LuteosProductDeriveDownload
    * @summary 衍生项目列表导出
    * @request GET:/api/luteos/product/derive/download
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingGet1 {
+  export namespace LuteosProductDeriveDownload {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 申请原因 */
@@ -1735,7 +1794,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -1743,11 +1802,12 @@ export namespace Api {
   /**
    * No description
    * @tags 衍生项目管理
-   * @name QueryDeriveListUsingGet1
+   * @name LuteosProductDeriveQueryDeriveList
    * @summary 衍生项目列表查询
    * @request GET:/api/luteos/product/derive/queryDeriveList
+   * @response `200` `DeriveQueryResp` OK
    */
-  export namespace QueryDeriveListUsingGet1 {
+  export namespace LuteosProductDeriveQueryDeriveList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 申请原因 */
@@ -1793,7 +1853,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = DeriveQueryResp;
   }
@@ -1801,11 +1861,12 @@ export namespace Api {
   /**
    * No description
    * @tags 衍生项目管理
-   * @name QueryDeriveListParamUsingGet1
+   * @name LuteosProductDeriveQueryDeriveListParam
    * @summary 衍生项目列表查询参数
    * @request GET:/api/luteos/product/derive/queryDeriveListParam
+   * @response `200` `DeriveListParamResp` OK
    */
-  export namespace QueryDeriveListParamUsingGet1 {
+  export namespace LuteosProductDeriveQueryDeriveListParam {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -1813,7 +1874,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = DeriveListParamResp;
   }
@@ -1821,11 +1882,12 @@ export namespace Api {
   /**
    * No description
    * @tags 易仓SKU管理
-   * @name ExportEccangSkuUsingPost1
+   * @name LuteosProductEccangSkuExportEccangSku
    * @summary 导出供应链SKU
    * @request POST:/api/luteos/product/eccangSku/exportEccangSku
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportEccangSkuUsingPost1 {
+  export namespace LuteosProductEccangSkuExportEccangSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = EccangSkuQueryReq;
@@ -1833,7 +1895,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -1841,11 +1903,12 @@ export namespace Api {
   /**
    * No description
    * @tags 易仓SKU管理
-   * @name QueryEccangSkuFullListUsingGet1
+   * @name LuteosProductEccangSkuQueryEccangSkuFullList
    * @summary 供应链SKU列表全字段查询
    * @request GET:/api/luteos/product/eccangSku/queryEccangSkuFullList
+   * @response `200` `EccangSkuFullQueryResp` OK
    */
-  export namespace QueryEccangSkuFullListUsingGet1 {
+  export namespace LuteosProductEccangSkuQueryEccangSkuFullList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 关键字 名称/供应链sku */
@@ -1870,7 +1933,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = EccangSkuFullQueryResp;
   }
@@ -1878,11 +1941,12 @@ export namespace Api {
   /**
    * No description
    * @tags 易仓SKU管理
-   * @name QueryEccangSkuListUsingGet1
+   * @name LuteosProductEccangSkuQueryEccangSkuList
    * @summary 供应链SKU列表查询
    * @request GET:/api/luteos/product/eccangSku/queryEccangSkuList
+   * @response `200` `EccangSkuQueryResp` OK
    */
-  export namespace QueryEccangSkuListUsingGet1 {
+  export namespace LuteosProductEccangSkuQueryEccangSkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -1922,7 +1986,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = EccangSkuQueryResp;
   }
@@ -1930,11 +1994,12 @@ export namespace Api {
   /**
    * No description
    * @tags 易仓SKU管理
-   * @name SyncEccangUsingPost1
+   * @name LuteosProductEccangSkuSyncEccang
    * @summary 同步易仓
    * @request POST:/api/luteos/product/eccangSku/syncEccang
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SyncEccangUsingPost1 {
+  export namespace LuteosProductEccangSkuSyncEccang {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = EccangSkuQueryReq;
@@ -1942,7 +2007,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -1950,11 +2015,12 @@ export namespace Api {
   /**
    * No description
    * @tags 易仓SKU管理
-   * @name ExportEccangSkuV2UsingPost1
+   * @name LuteosProductEccangSkuV2ExportEccangSku
    * @summary 导出供应链SKU-v2
    * @request POST:/api/luteos/product/eccangSku/v2/exportEccangSku
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportEccangSkuV2UsingPost1 {
+  export namespace LuteosProductEccangSkuV2ExportEccangSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = EccangSkuQueryReq;
@@ -1962,7 +2028,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -1970,11 +2036,12 @@ export namespace Api {
   /**
    * No description
    * @tags 易仓SKU管理
-   * @name QueryEccangSkuListV2UsingGet1
+   * @name LuteosProductEccangSkuV2QueryEccangSkuList
    * @summary 供应链SKU列表查询-v2
    * @request GET:/api/luteos/product/eccangSku/v2/queryEccangSkuList
+   * @response `200` `EccangSkuQueryV2Resp` OK
    */
-  export namespace QueryEccangSkuListV2UsingGet1 {
+  export namespace LuteosProductEccangSkuV2QueryEccangSkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -2014,7 +2081,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = EccangSkuQueryV2Resp;
   }
@@ -2022,11 +2089,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品到期推荐策略管理
-   * @name InfoUsingGet2
+   * @name LuteosProductExpireConfigInfo
    * @summary 获取商品到期配置详情
    * @request GET:/api/luteos/product/expire-config/info
+   * @response `200` `void` OK
    */
-  export namespace InfoUsingGet2 {
+  export namespace LuteosProductExpireConfigInfo {
     export type RequestParams = {};
     export type RequestQuery = {
       /** recordCode */
@@ -2037,7 +2105,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -2045,11 +2113,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品到期推荐策略管理
-   * @name ListUsingGet15
+   * @name LuteosProductExpireConfigList
    * @summary 获取商品到期配置列表
    * @request GET:/api/luteos/product/expire-config/list
+   * @response `200` `void` OK
    */
-  export namespace ListUsingGet15 {
+  export namespace LuteosProductExpireConfigList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -2057,7 +2126,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -2065,11 +2134,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品到期推荐策略管理
-   * @name SaveUsingPost20
+   * @name LuteosProductExpireConfigSave
    * @summary 新增商品到期配置
    * @request POST:/api/luteos/product/expire-config/save
+   * @response `200` `void` OK
    */
-  export namespace SaveUsingPost20 {
+  export namespace LuteosProductExpireConfigSave {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -2077,7 +2147,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -2085,11 +2155,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品到期推荐策略管理
-   * @name UpdateUsingPost7
+   * @name LuteosProductExpireConfigUpdate
    * @summary 更新商品到期配置
    * @request POST:/api/luteos/product/expire-config/update
+   * @response `200` `void` OK
    */
-  export namespace UpdateUsingPost7 {
+  export namespace LuteosProductExpireConfigUpdate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -2097,7 +2168,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -2105,11 +2176,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name ExportProductUsingPost5
+   * @name LuteosProductExportProduct
    * @summary 商品导出信息
    * @request POST:/api/luteos/product/exportProduct
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportProductUsingPost5 {
+  export namespace LuteosProductExportProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductListQueryReq;
@@ -2117,7 +2189,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -2125,11 +2197,12 @@ export namespace Api {
   /**
    * No description
    * @tags 组合产品管理
-   * @name QueryGroupDetailUsingGet2
+   * @name LuteosProductGroupQueryGroupDetail
    * @summary 组合产品详情查询
    * @request GET:/api/luteos/product/group/queryGroupDetail
+   * @response `200` `ProductGroupDetailResp` OK
    */
-  export namespace QueryGroupDetailUsingGet2 {
+  export namespace LuteosProductGroupQueryGroupDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 组合产品SPU */
@@ -2140,7 +2213,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductGroupDetailResp;
   }
@@ -2148,11 +2221,12 @@ export namespace Api {
   /**
    * No description
    * @tags 组合产品管理
-   * @name QueryProductGroupListUsingGet2
+   * @name LuteosProductGroupQueryProductGroupList
    * @summary 组合产品列表查询
    * @request GET:/api/luteos/product/group/queryProductGroupList
+   * @response `200` `ProductGroupListResp` OK
    */
-  export namespace QueryProductGroupListUsingGet2 {
+  export namespace LuteosProductGroupQueryProductGroupList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码，如果传分类编码，分类等级一定要赋值 */
@@ -2190,7 +2264,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductGroupListResp;
   }
@@ -2198,11 +2272,12 @@ export namespace Api {
   /**
    * No description
    * @tags 组合产品管理
-   * @name SaveProductGroupUsingPost2
+   * @name LuteosProductGroupSaveProductGroup
    * @summary 组合产品信息保存
    * @request POST:/api/luteos/product/group/saveProductGroup
+   * @response `200` `ProductGroupSaveResp` OK
    */
-  export namespace SaveProductGroupUsingPost2 {
+  export namespace LuteosProductGroupSaveProductGroup {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductGroupSaveReq;
@@ -2210,7 +2285,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductGroupSaveResp;
   }
@@ -2218,11 +2293,12 @@ export namespace Api {
   /**
    * No description
    * @tags 组合SKU管理
-   * @name QueryGroupDetailUsingGet3
+   * @name LuteosProductGroupSkuQueryGroupSkuDetail
    * @summary 组合SKU详情查询
    * @request GET:/api/luteos/product/group/sku/queryGroupSkuDetail
+   * @response `200` `ProductGroupSkuDetailResp` OK
    */
-  export namespace QueryGroupDetailUsingGet3 {
+  export namespace LuteosProductGroupSkuQueryGroupSkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 组合SKU编码 */
@@ -2233,7 +2309,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductGroupSkuDetailResp;
   }
@@ -2241,11 +2317,12 @@ export namespace Api {
   /**
    * No description
    * @tags 组合SKU管理
-   * @name QueryProductGroupListUsingGet3
+   * @name LuteosProductGroupSkuQueryProductGroupSkuList
    * @summary 组合SKU列表查询
    * @request GET:/api/luteos/product/group/sku/queryProductGroupSkuList
+   * @response `200` `ProductGroupSkuListResp` OK
    */
-  export namespace QueryProductGroupListUsingGet3 {
+  export namespace LuteosProductGroupSkuQueryProductGroupSkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码，如果传分类编码，分类等级一定要赋值 */
@@ -2283,7 +2360,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductGroupSkuListResp;
   }
@@ -2291,11 +2368,12 @@ export namespace Api {
   /**
    * No description
    * @tags 组合SKU管理
-   * @name SaveProductGroupUsingPost3
+   * @name LuteosProductGroupSkuSaveProductGroupSku
    * @summary 组合SKU信息保存
    * @request POST:/api/luteos/product/group/sku/saveProductGroupSku
+   * @response `200` `ProductGroupSkuSaveResp` OK
    */
-  export namespace SaveProductGroupUsingPost3 {
+  export namespace LuteosProductGroupSkuSaveProductGroupSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductGroupSkuSaveReq;
@@ -2303,7 +2381,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductGroupSkuSaveResp;
   }
@@ -2311,11 +2389,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品品线管理
-   * @name QueryDetailUsingGet10
+   * @name LuteosProductLineQueryDetail
    * @summary 查询详情
    * @request GET:/api/luteos/product/line/queryDetail
+   * @response `200` `ProductLineDetailResp` OK
    */
-  export namespace QueryDetailUsingGet10 {
+  export namespace LuteosProductLineQueryDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** code */
@@ -2326,7 +2405,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductLineDetailResp;
   }
@@ -2334,11 +2413,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品品线管理
-   * @name QueryListUsingPost40
+   * @name LuteosProductLineQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/line/queryList
+   * @response `200` `ProductLineListResp` OK
    */
-  export namespace QueryListUsingPost40 {
+  export namespace LuteosProductLineQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductLineListQueryReq;
@@ -2346,7 +2426,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductLineListResp;
   }
@@ -2354,11 +2434,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品品线管理
-   * @name SaveOrUpdateUsingPost15
+   * @name LuteosProductLineSaveOrUpdate
    * @summary 新增或者编辑品线
    * @request POST:/api/luteos/product/line/saveOrUpdate
+   * @response `200` `CommonRespListProductLineSaveResp` OK
    */
-  export namespace SaveOrUpdateUsingPost15 {
+  export namespace LuteosProductLineSaveOrUpdate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductLineSaveReq;
@@ -2366,7 +2447,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListProductLineSaveResp;
   }
@@ -2374,11 +2455,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name BatchOperateMacAddrUsingPost1
+   * @name LuteosProductMacBatchOperateMacAddr
    * @summary 批量操作MAC地址
    * @request POST:/api/luteos/product/mac/batchOperateMacAddr
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace BatchOperateMacAddrUsingPost1 {
+  export namespace LuteosProductMacBatchOperateMacAddr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacAddrOperateReq;
@@ -2386,7 +2468,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -2394,11 +2476,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name CheckRelSupplySkuUsingPost1
+   * @name LuteosProductMacCheckRelSupplySku
    * @summary 关联供应链产品sku校验
    * @request POST:/api/luteos/product/mac/checkRelSupplySku
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace CheckRelSupplySkuUsingPost1 {
+  export namespace LuteosProductMacCheckRelSupplySku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacRelSupplyCheckReq;
@@ -2406,7 +2489,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -2414,11 +2497,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name ExportMacAddrUsingPost1
+   * @name LuteosProductMacExportMacAddr
    * @summary MAC地址导出
    * @request POST:/api/luteos/product/mac/exportMacAddr
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportMacAddrUsingPost1 {
+  export namespace LuteosProductMacExportMacAddr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacAddrQueryReq;
@@ -2426,7 +2510,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -2434,11 +2518,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name OperateUsingPost4
+   * @name LuteosProductMacOperate
    * @summary 贴片工厂操作
    * @request POST:/api/luteos/product/mac/operate
+   * @response `200` `MacFactoryOperateResp` OK
    */
-  export namespace OperateUsingPost4 {
+  export namespace LuteosProductMacOperate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacFactoryOperateReq;
@@ -2446,7 +2531,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacFactoryOperateResp;
   }
@@ -2454,11 +2539,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name OperateProductCodeUsingPost1
+   * @name LuteosProductMacOperateProductCode
    * @summary 产品代码操作
    * @request POST:/api/luteos/product/mac/operateProductCode
+   * @response `200` `MacProductCodeOperateResp` OK
    */
-  export namespace OperateProductCodeUsingPost1 {
+  export namespace LuteosProductMacOperateProductCode {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacProductCodeOperateReq;
@@ -2466,7 +2552,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacProductCodeOperateResp;
   }
@@ -2474,11 +2560,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name QueryDetailUsingGet8
+   * @name LuteosProductMacQueryDetail
    * @summary 贴片工厂详情查询
    * @request GET:/api/luteos/product/mac/queryDetail
+   * @response `200` `MacFactoryDetailResp` OK
    */
-  export namespace QueryDetailUsingGet8 {
+  export namespace LuteosProductMacQueryDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 工厂编码 */
@@ -2489,7 +2576,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacFactoryDetailResp;
   }
@@ -2497,11 +2584,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name QueryListUsingGet6
+   * @name LuteosProductMacQueryList
    * @summary 贴片工厂列表查询
    * @request GET:/api/luteos/product/mac/queryList
+   * @response `200` `MacFactoryQueryResp` OK
    */
-  export namespace QueryListUsingGet6 {
+  export namespace LuteosProductMacQueryList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 供应商名称/工厂名称/工厂代码 */
@@ -2526,7 +2614,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacFactoryQueryResp;
   }
@@ -2534,11 +2622,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name QueryMacAddressListUsingPost4
+   * @name LuteosProductMacQueryMacAddressList
    * @summary MAC地址列表查询
    * @request POST:/api/luteos/product/mac/queryMacAddressList
+   * @response `200` `MacAddrQueryResp` OK
    */
-  export namespace QueryMacAddressListUsingPost4 {
+  export namespace LuteosProductMacQueryMacAddressList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacAddrQueryReq;
@@ -2546,7 +2635,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacAddrQueryResp;
   }
@@ -2554,11 +2643,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name QueryProductCodeDetailUsingGet1
+   * @name LuteosProductMacQueryProductCodeDetail
    * @summary 产品代码详情查询
    * @request GET:/api/luteos/product/mac/queryProductCodeDetail
+   * @response `200` `MacProductCodeDetailResp` OK
    */
-  export namespace QueryProductCodeDetailUsingGet1 {
+  export namespace LuteosProductMacQueryProductCodeDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 产品代码 */
@@ -2569,7 +2659,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacProductCodeDetailResp;
   }
@@ -2577,11 +2667,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name QueryProductCodeListUsingGet1
+   * @name LuteosProductMacQueryProductCodeList
    * @summary 产品代码列表查询
    * @request GET:/api/luteos/product/mac/queryProductCodeList
+   * @response `200` `MacProductCodeQueryResp` OK
    */
-  export namespace QueryProductCodeListUsingGet1 {
+  export namespace LuteosProductMacQueryProductCodeList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 产品代码/系列/关联项目 */
@@ -2606,7 +2697,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacProductCodeQueryResp;
   }
@@ -2614,11 +2705,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name QueryPurchaseOrderListUsingPost1
+   * @name LuteosProductMacQueryPurchaseOrderList
    * @summary PO采购订单查询
    * @request POST:/api/luteos/product/mac/queryPurchaseOrderList
+   * @response `200` `PurchaseOrderQueryResp` OK
    */
-  export namespace QueryPurchaseOrderListUsingPost1 {
+  export namespace LuteosProductMacQueryPurchaseOrderList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 工厂代码 */
@@ -2649,7 +2741,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = PurchaseOrderQueryResp;
   }
@@ -2657,11 +2749,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name QuerySupplierCodeListUsingGet1
+   * @name LuteosProductMacQuerySupplierList
    * @summary 供应商列表查询
    * @request GET:/api/luteos/product/mac/querySupplierList
+   * @response `200` `CommonRespMacSupplierQueryResp` OK
    */
-  export namespace QuerySupplierCodeListUsingGet1 {
+  export namespace LuteosProductMacQuerySupplierList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -2669,7 +2762,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMacSupplierQueryResp;
   }
@@ -2677,11 +2770,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name SaveFactoryUsingPost1
+   * @name LuteosProductMacSaveFactory
    * @summary 贴片工厂新增
    * @request POST:/api/luteos/product/mac/saveFactory
+   * @response `200` `MacFactorySaveResp` OK
    */
-  export namespace SaveFactoryUsingPost1 {
+  export namespace LuteosProductMacSaveFactory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacFactorySaveReq;
@@ -2689,7 +2783,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacFactorySaveResp;
   }
@@ -2697,11 +2791,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name SaveMacAddressUsingPost1
+   * @name LuteosProductMacSaveMacAddress
    * @summary MAC地址保存
    * @request POST:/api/luteos/product/mac/saveMacAddress
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace SaveMacAddressUsingPost1 {
+  export namespace LuteosProductMacSaveMacAddress {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacAddrSaveReq;
@@ -2709,7 +2804,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -2717,11 +2812,12 @@ export namespace Api {
   /**
    * No description
    * @tags MAC地址管理
-   * @name SaveProductCodeUsingPost1
+   * @name LuteosProductMacSaveProductCode
    * @summary 产品代码保存
    * @request POST:/api/luteos/product/mac/saveProductCode
+   * @response `200` `MacProductCodeSaveResp` OK
    */
-  export namespace SaveProductCodeUsingPost1 {
+  export namespace LuteosProductMacSaveProductCode {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MacProductCodeSaveReq;
@@ -2729,7 +2825,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MacProductCodeSaveResp;
   }
@@ -2737,11 +2833,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购用户地址管理
-   * @name DeleteUserAddrUsingPost1
+   * @name LuteosProductMallAddrDeleteUserAddr
    * @summary 删除用户地址
    * @request POST:/api/luteos/product/mall/addr/deleteUserAddr
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace DeleteUserAddrUsingPost1 {
+  export namespace LuteosProductMallAddrDeleteUserAddr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallUserDeleteReq;
@@ -2749,7 +2846,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -2757,11 +2854,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购用户地址管理
-   * @name QueryDefaultAddrUsingGet1
+   * @name LuteosProductMallAddrQueryDefaultAddr
    * @summary 查询用户默认地址
    * @request GET:/api/luteos/product/mall/addr/queryDefaultAddr
+   * @response `200` `MallUserDefaultAddrResp` OK
    */
-  export namespace QueryDefaultAddrUsingGet1 {
+  export namespace LuteosProductMallAddrQueryDefaultAddr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -2769,7 +2867,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallUserDefaultAddrResp;
   }
@@ -2777,11 +2875,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购用户地址管理
-   * @name QueryUserAddrUsingGet1
+   * @name LuteosProductMallAddrQueryUserAddr
    * @summary 查询用户地址详情
    * @request GET:/api/luteos/product/mall/addr/queryUserAddr
+   * @response `200` `MallUserDefaultAddrResp` OK
    */
-  export namespace QueryUserAddrUsingGet1 {
+  export namespace LuteosProductMallAddrQueryUserAddr {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 地址编码 */
@@ -2792,7 +2891,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallUserDefaultAddrResp;
   }
@@ -2800,11 +2899,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购用户地址管理
-   * @name QueryUserAddrListUsingGet1
+   * @name LuteosProductMallAddrQueryUserAddrList
    * @summary 查询地址管理列表
    * @request GET:/api/luteos/product/mall/addr/queryUserAddrList
+   * @response `200` `MallUserAddrListResp` OK
    */
-  export namespace QueryUserAddrListUsingGet1 {
+  export namespace LuteosProductMallAddrQueryUserAddrList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -2812,7 +2912,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallUserAddrListResp;
   }
@@ -2820,11 +2920,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购用户地址管理
-   * @name SaveUserAddrUsingPost1
+   * @name LuteosProductMallAddrSaveUserAddr
    * @summary 保存用户地址
    * @request POST:/api/luteos/product/mall/addr/saveUserAddr
+   * @response `200` `MallUserAddrSaveResp` OK
    */
-  export namespace SaveUserAddrUsingPost1 {
+  export namespace LuteosProductMallAddrSaveUserAddr {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallUserAddrSaveReq;
@@ -2832,7 +2933,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallUserAddrSaveResp;
   }
@@ -2840,11 +2941,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name ConfirmReceiveUsingPost1
+   * @name LuteosProductMallConfirmReceive
    * @summary 确认收货
    * @request POST:/api/luteos/product/mall/confirmReceive
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace ConfirmReceiveUsingPost1 {
+  export namespace LuteosProductMallConfirmReceive {
     export type RequestParams = {};
     export type RequestQuery = {
       /** orderCode */
@@ -2855,7 +2957,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -2863,11 +2965,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name ExportOrderUsingPost1
+   * @name LuteosProductMallExportOrder
    * @summary 导出内购订单
    * @request POST:/api/luteos/product/mall/exportOrder
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportOrderUsingPost1 {
+  export namespace LuteosProductMallExportOrder {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallOrderListReq;
@@ -2875,7 +2978,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -2883,11 +2986,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name ExportProductListUsingPost1
+   * @name LuteosProductMallExportProductList
    * @summary 导出内购产品清单
    * @request POST:/api/luteos/product/mall/exportProductList
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportProductListUsingPost1 {
+  export namespace LuteosProductMallExportProductList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallProductListReq;
@@ -2895,7 +2999,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -2903,11 +3007,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name OperateOrderUsingPost3
+   * @name LuteosProductMallOperateOrder
    * @summary 操作内购订单
    * @request POST:/api/luteos/product/mall/operateOrder
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace OperateOrderUsingPost3 {
+  export namespace LuteosProductMallOperateOrder {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallOrderOperateReq;
@@ -2915,7 +3020,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -2923,11 +3028,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name OperateProductUsingPost2
+   * @name LuteosProductMallOperateProduct
    * @summary 操作内购商品
    * @request POST:/api/luteos/product/mall/operateProduct
+   * @response `200` `MallProductSaveResp` OK
    */
-  export namespace OperateProductUsingPost2 {
+  export namespace LuteosProductMallOperateProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallProductOperateReq;
@@ -2935,7 +3041,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallProductSaveResp;
   }
@@ -2943,11 +3049,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name QueryOrderDetailUsingGet1
+   * @name LuteosProductMallQueryOrderDetail
    * @summary 查询内购订单详情-管理端
    * @request GET:/api/luteos/product/mall/queryOrderDetail
+   * @response `200` `MallOrderDetailResp` OK
    */
-  export namespace QueryOrderDetailUsingGet1 {
+  export namespace LuteosProductMallQueryOrderDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -2963,7 +3070,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallOrderDetailResp;
   }
@@ -2971,11 +3078,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name QueryOrderListUsingGet1
+   * @name LuteosProductMallQueryOrderList
    * @summary 查询内购订单列表-管理端
    * @request GET:/api/luteos/product/mall/queryOrderList
+   * @response `200` `MallOrderListResp` OK
    */
-  export namespace QueryOrderListUsingGet1 {
+  export namespace LuteosProductMallQueryOrderList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 创建人 */
@@ -3023,7 +3131,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallOrderListResp;
   }
@@ -3031,11 +3139,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name QueryOrderStatusUsingGet1
+   * @name LuteosProductMallQueryOrderStatus
    * @summary 查询内购订单支付状态
    * @request GET:/api/luteos/product/mall/queryOrderStatus
+   * @response `200` `MallOrderStatusResp` OK
    */
-  export namespace QueryOrderStatusUsingGet1 {
+  export namespace LuteosProductMallQueryOrderStatus {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 订单编码 */
@@ -3046,7 +3155,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallOrderStatusResp;
   }
@@ -3054,11 +3163,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name QueryProductDetailUsingGet1
+   * @name LuteosProductMallQueryProductDetail
    * @summary 查询内购商品详情
    * @request GET:/api/luteos/product/mall/queryProductDetail
+   * @response `200` `MallProductDetailResp` OK
    */
-  export namespace QueryProductDetailUsingGet1 {
+  export namespace LuteosProductMallQueryProductDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 供应链sku */
@@ -3069,7 +3179,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallProductDetailResp;
   }
@@ -3077,11 +3187,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name QueryProductListUsingPost3
+   * @name LuteosProductMallQueryProductList
    * @summary 查询内购商品列表
    * @request POST:/api/luteos/product/mall/queryProductList
+   * @response `200` `MallProductListResp` OK
    */
-  export namespace QueryProductListUsingPost3 {
+  export namespace LuteosProductMallQueryProductList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallProductListReq;
@@ -3089,7 +3200,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallProductListResp;
   }
@@ -3097,11 +3208,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name SaveProductUsingPost2
+   * @name LuteosProductMallSaveProduct
    * @summary 保存内购商品
    * @request POST:/api/luteos/product/mall/saveProduct
+   * @response `200` `MallProductSaveResp` OK
    */
-  export namespace SaveProductUsingPost2 {
+  export namespace LuteosProductMallSaveProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallProductSaveReq;
@@ -3109,7 +3221,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallProductSaveResp;
   }
@@ -3117,11 +3229,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城管理
-   * @name SyncErpUsingGet1
+   * @name LuteosProductMallSyncErp
    * @summary 同步易仓
    * @request GET:/api/luteos/product/mall/syncErp
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace SyncErpUsingGet1 {
+  export namespace LuteosProductMallSyncErp {
     export type RequestParams = {};
     export type RequestQuery = {
       /** orderCode */
@@ -3132,7 +3245,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -3140,11 +3253,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城用户端管理
-   * @name OperateOrderUsingPost2
+   * @name LuteosProductMallUserOperateOrder
    * @summary 操作订单
    * @request POST:/api/luteos/product/mall/user/operateOrder
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace OperateOrderUsingPost2 {
+  export namespace LuteosProductMallUserOperateOrder {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallClientOrderOperateReq;
@@ -3152,7 +3266,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -3160,11 +3274,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城用户端管理
-   * @name OperateShoppingCartUsingPost1
+   * @name LuteosProductMallUserOperateShoppingCart
    * @summary 操作购物车
    * @request POST:/api/luteos/product/mall/user/operateShoppingCart
+   * @response `200` `MallShopCartOperateResp` OK
    */
-  export namespace OperateShoppingCartUsingPost1 {
+  export namespace LuteosProductMallUserOperateShoppingCart {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallShopCartOperateReq;
@@ -3172,7 +3287,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallShopCartOperateResp;
   }
@@ -3180,11 +3295,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城用户端管理
-   * @name PreTradeUsingGet1
+   * @name LuteosProductMallUserPreTrade
    * @summary 测试生成二维码
    * @request GET:/api/luteos/product/mall/user/preTrade
+   * @response `200` `CommonRespString` OK
    */
-  export namespace PreTradeUsingGet1 {
+  export namespace LuteosProductMallUserPreTrade {
     export type RequestParams = {};
     export type RequestQuery = {
       /** orderCode */
@@ -3199,7 +3315,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -3207,11 +3323,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城用户端管理
-   * @name QueryCartCountUsingPost1
+   * @name LuteosProductMallUserQueryCartCount
    * @summary 查询购物车清单数量
    * @request POST:/api/luteos/product/mall/user/queryCartCount
+   * @response `200` `MallShopCartCountResp` OK
    */
-  export namespace QueryCartCountUsingPost1 {
+  export namespace LuteosProductMallUserQueryCartCount {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -3219,7 +3336,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallShopCartCountResp;
   }
@@ -3227,11 +3344,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城用户端管理
-   * @name QueryProductClientListUsingPost1
+   * @name LuteosProductMallUserQueryProductList
    * @summary 查询商品首页列表
    * @request POST:/api/luteos/product/mall/user/queryProductList
+   * @response `200` `MallProductClientListResp` OK
    */
-  export namespace QueryProductClientListUsingPost1 {
+  export namespace LuteosProductMallUserQueryProductList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallProductClientListReq;
@@ -3239,7 +3357,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallProductClientListResp;
   }
@@ -3247,11 +3365,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城用户端管理
-   * @name QueryShoppingCartListUsingGet1
+   * @name LuteosProductMallUserQueryShoppingCartList
    * @summary 查询购物车列表
    * @request GET:/api/luteos/product/mall/user/queryShoppingCartList
+   * @response `200` `MallShopCartListResp` OK
    */
-  export namespace QueryShoppingCartListUsingGet1 {
+  export namespace LuteosProductMallUserQueryShoppingCartList {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -3274,7 +3393,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallShopCartListResp;
   }
@@ -3282,11 +3401,12 @@ export namespace Api {
   /**
    * No description
    * @tags 内购商城用户端管理
-   * @name SubmitOrderUsingPost1
+   * @name LuteosProductMallUserSubmitOrder
    * @summary 提交订单
    * @request POST:/api/luteos/product/mall/user/submitOrder
+   * @response `200` `MallOrderSubmitResp` OK
    */
-  export namespace SubmitOrderUsingPost1 {
+  export namespace LuteosProductMallUserSubmitOrder {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MallOrderSubmitReq;
@@ -3294,7 +3414,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MallOrderSubmitResp;
   }
@@ -3302,11 +3422,12 @@ export namespace Api {
   /**
    * No description
    * @tags 型号管理
-   * @name ConnectProductUsingPost6
+   * @name LuteosProductModelConnectProduct
    * @summary 型号关联商品
    * @request POST:/api/luteos/product/model/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  export namespace ConnectProductUsingPost6 {
+  export namespace LuteosProductModelConnectProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ModelProductConnectReq;
@@ -3314,7 +3435,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -3322,11 +3443,12 @@ export namespace Api {
   /**
    * No description
    * @tags 型号管理
-   * @name ExportModelUsingPost1
+   * @name LuteosProductModelExportModel
    * @summary 型号信息导出
    * @request POST:/api/luteos/product/model/exportModel
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportModelUsingPost1 {
+  export namespace LuteosProductModelExportModel {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ModelListQueryReq;
@@ -3334,7 +3456,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -3342,11 +3464,12 @@ export namespace Api {
   /**
    * No description
    * @tags 型号管理
-   * @name OperateModelUsingPost3
+   * @name LuteosProductModelOperateModel
    * @summary 型号操作
    * @request POST:/api/luteos/product/model/operateModel
+   * @response `200` `CommonRespString` OK
    */
-  export namespace OperateModelUsingPost3 {
+  export namespace LuteosProductModelOperateModel {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ModelOperateReq;
@@ -3354,7 +3477,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -3362,11 +3485,12 @@ export namespace Api {
   /**
    * No description
    * @tags 型号管理
-   * @name QueryModelDetailUsingGet1
+   * @name LuteosProductModelQueryModelDetail
    * @summary 型号详情查询
    * @request GET:/api/luteos/product/model/queryModelDetail
+   * @response `200` `ModelDetailResp` OK
    */
-  export namespace QueryModelDetailUsingGet1 {
+  export namespace LuteosProductModelQueryModelDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 型号编码 */
@@ -3377,7 +3501,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ModelDetailResp;
   }
@@ -3385,11 +3509,12 @@ export namespace Api {
   /**
    * No description
    * @tags 型号管理
-   * @name QueryModelListUsingGet1
+   * @name LuteosProductModelQueryModelList
    * @summary 型号列表查询
    * @request GET:/api/luteos/product/model/queryModelList
+   * @response `200` `ModelListQueryResp` OK
    */
-  export namespace QueryModelListUsingGet1 {
+  export namespace LuteosProductModelQueryModelList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 勾选导出的编码 */
@@ -3418,7 +3543,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ModelListQueryResp;
   }
@@ -3426,11 +3551,12 @@ export namespace Api {
   /**
    * No description
    * @tags 型号管理
-   * @name SaveOrUpdateModelUsingPost1
+   * @name LuteosProductModelSaveOrUpdateModel
    * @summary 型号信息保存
    * @request POST:/api/luteos/product/model/saveOrUpdateModel
+   * @response `200` `ModelSaveResp` OK
    */
-  export namespace SaveOrUpdateModelUsingPost1 {
+  export namespace LuteosProductModelSaveOrUpdateModel {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ModelSaveReq;
@@ -3438,7 +3564,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ModelSaveResp;
   }
@@ -3446,11 +3572,12 @@ export namespace Api {
   /**
    * No description
    * @tags 在线商品跟卖监控
-   * @name QueryChartDataUsingPost1
+   * @name LuteosProductMonitorQueryChartData
    * @summary 趋势图数据
    * @request POST:/api/luteos/product/monitor/queryChartData
+   * @response `200` `OnlineProductChartResp` OK
    */
-  export namespace QueryChartDataUsingPost1 {
+  export namespace LuteosProductMonitorQueryChartData {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OnlineProductChartReq;
@@ -3458,7 +3585,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = OnlineProductChartResp;
   }
@@ -3466,11 +3593,12 @@ export namespace Api {
   /**
    * No description
    * @tags 在线商品跟卖监控
-   * @name QueryListUsingPost38
+   * @name LuteosProductMonitorQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/monitor/queryList
+   * @response `200` `OnlineProductMonitorResp` OK
    */
-  export namespace QueryListUsingPost38 {
+  export namespace LuteosProductMonitorQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OnlineProductMonitorReq;
@@ -3478,7 +3606,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = OnlineProductMonitorResp;
   }
@@ -3486,11 +3614,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name AddActiveUsingPost2
+   * @name LuteosProductMsrpAddActive
    * @summary 活动折扣计划表-SPU新增编辑
    * @request POST:/api/luteos/product/msrp/addActive
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace AddActiveUsingPost2 {
+  export namespace LuteosProductMsrpAddActive {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ActiveDiscountPlanAddReq;
@@ -3498,7 +3627,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3506,11 +3635,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name AddSkuActiveUsingPost2
+   * @name LuteosProductMsrpAddSkuActive
    * @summary 活动折扣计划表-SKU新增编辑
    * @request POST:/api/luteos/product/msrp/addSkuActive
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace AddSkuActiveUsingPost2 {
+  export namespace LuteosProductMsrpAddSkuActive {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SkuActiveDiscountPlanAddReq;
@@ -3518,7 +3648,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3526,11 +3656,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name ApproveActiveUsingPost2
+   * @name LuteosProductMsrpApproveActive
    * @summary 活动折扣计划表-提交审批
    * @request POST:/api/luteos/product/msrp/approveActive
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace ApproveActiveUsingPost2 {
+  export namespace LuteosProductMsrpApproveActive {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = DiscountPlanWeekApproveReq;
@@ -3538,7 +3669,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3546,11 +3677,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name BatchAddActiveUsingPost2
+   * @name LuteosProductMsrpBatchAddActive
    * @summary 活动折扣计划表-批量保存
    * @request POST:/api/luteos/product/msrp/batchAddActive
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace BatchAddActiveUsingPost2 {
+  export namespace LuteosProductMsrpBatchAddActive {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ActiveDiscountPlanBatchAddReq;
@@ -3558,7 +3690,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3566,11 +3698,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name BatchSaveUsingPost2
+   * @name LuteosProductMsrpBatchSave
    * @summary msrp管理-批量编辑保存
    * @request POST:/api/luteos/product/msrp/batchSave
+   * @response `200` `MsrpBatchSaveResp` OK
    */
-  export namespace BatchSaveUsingPost2 {
+  export namespace LuteosProductMsrpBatchSave {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSaveReq;
@@ -3578,7 +3711,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MsrpBatchSaveResp;
   }
@@ -3586,11 +3719,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name GetOnlinePromotionRateUsingGet2
+   * @name LuteosProductMsrpCalculationGetOnlinePromotionRate
    * @summary 定价测算-线上促销率查询
    * @request GET:/api/luteos/product/msrp/calculation/getOnlinePromotionRate
+   * @response `200` `CommonRespMsrpOnlinePromotionResp` OK
    */
-  export namespace GetOnlinePromotionRateUsingGet2 {
+  export namespace LuteosProductMsrpCalculationGetOnlinePromotionRate {
     export type RequestParams = {};
     export type RequestQuery = {
       /** channel */
@@ -3607,7 +3741,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpOnlinePromotionResp;
   }
@@ -3615,11 +3749,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name QueryAllEuSiteUsingGet2
+   * @name LuteosProductMsrpCalculationQueryAllEuSite
    * @summary 定价测算-EU范围站点
    * @request GET:/api/luteos/product/msrp/calculation/queryAllEuSite
+   * @response `200` `CommonRespListString` OK
    */
-  export namespace QueryAllEuSiteUsingGet2 {
+  export namespace LuteosProductMsrpCalculationQueryAllEuSite {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -3627,7 +3762,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListString;
   }
@@ -3635,11 +3770,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name QueryCalculateBaseDataUsingPost2
+   * @name LuteosProductMsrpCalculationQueryCalculateBaseData
    * @summary 定价测算-BI数据查询
    * @request POST:/api/luteos/product/msrp/calculation/queryCalculateBaseData
+   * @response `200` `CommonRespMsrpCalculateBaseDataResp` OK
    */
-  export namespace QueryCalculateBaseDataUsingPost2 {
+  export namespace LuteosProductMsrpCalculationQueryCalculateBaseData {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpCalculateBaseReq;
@@ -3647,7 +3783,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpCalculateBaseDataResp;
   }
@@ -3655,11 +3791,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name QueryChannelUsingGet2
+   * @name LuteosProductMsrpCalculationQueryChannel
    * @summary 定价测算-渠道下拉框
    * @request GET:/api/luteos/product/msrp/calculation/queryChannel
+   * @response `200` `CommonRespListString` OK
    */
-  export namespace QueryChannelUsingGet2 {
+  export namespace LuteosProductMsrpCalculationQueryChannel {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -3667,7 +3804,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListString;
   }
@@ -3675,11 +3812,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name QueryCurrencyUsingGet2
+   * @name LuteosProductMsrpCalculationQueryCurrency
    * @summary 定价测算-汇率查询
    * @request GET:/api/luteos/product/msrp/calculation/queryCurrency
+   * @response `200` `CommonRespMapStringOdsFinanceCurrency` OK
    */
-  export namespace QueryCurrencyUsingGet2 {
+  export namespace LuteosProductMsrpCalculationQueryCurrency {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -3687,7 +3825,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMapStringOdsFinanceCurrency;
   }
@@ -3695,11 +3833,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name QueryDetailUsingPost8
+   * @name LuteosProductMsrpCalculationQueryDetail
    * @summary msrp定价测算-详情
    * @request POST:/api/luteos/product/msrp/calculation/queryDetail
+   * @response `200` `CommonRespMsrpCalculatePriceDetailResp` OK
    */
-  export namespace QueryDetailUsingPost8 {
+  export namespace LuteosProductMsrpCalculationQueryDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -3713,7 +3852,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpCalculatePriceDetailResp;
   }
@@ -3721,11 +3860,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name QueryListUsingPost34
+   * @name LuteosProductMsrpCalculationQueryList
    * @summary msrp定价测算列表查询
    * @request POST:/api/luteos/product/msrp/calculation/queryList
+   * @response `200` `MsrpCalculatePriceQueryListResp` OK
    */
-  export namespace QueryListUsingPost34 {
+  export namespace LuteosProductMsrpCalculationQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpQueryListReq;
@@ -3733,7 +3873,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MsrpCalculatePriceQueryListResp;
   }
@@ -3741,11 +3881,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name SaveCalculateMsrpUsingPost2
+   * @name LuteosProductMsrpCalculationSave
    * @summary msrp定价测算-新增
    * @request POST:/api/luteos/product/msrp/calculation/save
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveCalculateMsrpUsingPost2 {
+  export namespace LuteosProductMsrpCalculationSave {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpCalculatePriceDetailSaveReq;
@@ -3753,7 +3894,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3761,11 +3902,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp定价测算管理
-   * @name SubmitCalculateMsrpUsingPost2
+   * @name LuteosProductMsrpCalculationSubmit
    * @summary msrp定价测算-确定
    * @request POST:/api/luteos/product/msrp/calculation/submit
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SubmitCalculateMsrpUsingPost2 {
+  export namespace LuteosProductMsrpCalculationSubmit {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -3779,7 +3921,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3787,11 +3929,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name CancelApproveActiveUsingPost2
+   * @name LuteosProductMsrpCancelApproveActive
    * @summary 活动折扣计划表-撤销审批
    * @request POST:/api/luteos/product/msrp/cancelApproveActive
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace CancelApproveActiveUsingPost2 {
+  export namespace LuteosProductMsrpCancelApproveActive {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = DiscountPlanWeekCancelReq;
@@ -3799,7 +3942,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3807,11 +3950,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name DeleteSkuDetailUsingPost2
+   * @name LuteosProductMsrpDeleteSkuDetail
    * @summary msrp管理-删除sku
    * @request POST:/api/luteos/product/msrp/deleteSkuDetail
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace DeleteSkuDetailUsingPost2 {
+  export namespace LuteosProductMsrpDeleteSkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSpuDetailReq;
@@ -3819,7 +3963,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -3827,11 +3971,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name EditActiveUsingPost2
+   * @name LuteosProductMsrpEditActive
    * @summary 活动折扣计划表-点击触笔进入编辑
    * @request POST:/api/luteos/product/msrp/editActive
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace EditActiveUsingPost2 {
+  export namespace LuteosProductMsrpEditActive {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = DiscountPlanWeekEditReq;
@@ -3839,7 +3984,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -3847,11 +3992,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name ExportMsrpUsingPost2
+   * @name LuteosProductMsrpExportMsrp
    * @summary MSRP管理导出
    * @request POST:/api/luteos/product/msrp/exportMsrp
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportMsrpUsingPost2 {
+  export namespace LuteosProductMsrpExportMsrp {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpQueryListReq;
@@ -3859,7 +4005,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -3867,11 +4013,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryApproveLogUsingGet2
+   * @name LuteosProductMsrpQueryApproveLog
    * @summary 活动折扣计划表-审批记录
    * @request GET:/api/luteos/product/msrp/queryApproveLog
+   * @response `200` `WeekApproveLogResp` OK
    */
-  export namespace QueryApproveLogUsingGet2 {
+  export namespace LuteosProductMsrpQueryApproveLog {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 记录编码 */
@@ -3882,7 +4029,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = WeekApproveLogResp;
   }
@@ -3890,11 +4037,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryBatchActiveUsingPost2
+   * @name LuteosProductMsrpQueryBatchActive
    * @summary 活动折扣计划表-批量编辑查询
    * @request POST:/api/luteos/product/msrp/queryBatchActive
+   * @response `200` `ActiveDiscountPlanBatchEditQueryResp` OK
    */
-  export namespace QueryBatchActiveUsingPost2 {
+  export namespace LuteosProductMsrpQueryBatchActive {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ActiveDiscountPlanBatchEditQueryReq;
@@ -3902,7 +4050,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ActiveDiscountPlanBatchEditQueryResp;
   }
@@ -3910,11 +4058,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryBatchEditListUsingPost2
+   * @name LuteosProductMsrpQueryBatchEditList
    * @summary msrp管理-批量编辑查询
    * @request POST:/api/luteos/product/msrp/queryBatchEditList
+   * @response `200` `CommonRespMsrpQueryChannelBatchListResp` OK
    */
-  export namespace QueryBatchEditListUsingPost2 {
+  export namespace LuteosProductMsrpQueryBatchEditList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpBatchQueryReq;
@@ -3922,7 +4071,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpQueryChannelBatchListResp;
   }
@@ -3930,11 +4079,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryEditActiveUsingGet2
+   * @name LuteosProductMsrpQueryEditActive
    * @summary 活动折扣计划表-SPU列表编辑查询&详情查询
    * @request GET:/api/luteos/product/msrp/queryEditActive
+   * @response `200` `ActiveDiscountPlanAddQueryResp` OK
    */
-  export namespace QueryEditActiveUsingGet2 {
+  export namespace LuteosProductMsrpQueryEditActive {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道编码 */
@@ -3955,7 +4105,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ActiveDiscountPlanAddQueryResp;
   }
@@ -3963,11 +4113,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryListUsingPost35
+   * @name LuteosProductMsrpQueryList
    * @summary msrp列表查询
    * @request POST:/api/luteos/product/msrp/queryList
+   * @response `200` `MsrpQueryListResp` OK
    */
-  export namespace QueryListUsingPost35 {
+  export namespace LuteosProductMsrpQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpQueryListReq;
@@ -3975,7 +4126,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MsrpQueryListResp;
   }
@@ -3983,11 +4134,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryOneSkuDetailUsingGet2
+   * @name LuteosProductMsrpQueryOneSkuDetail
    * @summary msrp管理-查询sku详情
    * @request GET:/api/luteos/product/msrp/queryOneSkuDetail
+   * @response `200` `CommonRespMsrpSkuDetailBean` OK
    */
-  export namespace QueryOneSkuDetailUsingGet2 {
+  export namespace LuteosProductMsrpQueryOneSkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** countryCode */
@@ -4002,7 +4154,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpSkuDetailBean;
   }
@@ -4010,11 +4162,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryOneSpuDetailUsingGet2
+   * @name LuteosProductMsrpQueryOneSpuDetail
    * @summary msrp管理-促销查spu详情
    * @request GET:/api/luteos/product/msrp/queryOneSpuDetail
+   * @response `200` `CommonRespMsrpSpuDetailResp` OK
    */
-  export namespace QueryOneSpuDetailUsingGet2 {
+  export namespace LuteosProductMsrpQueryOneSpuDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** channel */
@@ -4029,7 +4182,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpSpuDetailResp;
   }
@@ -4037,11 +4190,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryOperatorBySpuAndCountryAndChannelUsingGet2
+   * @name LuteosProductMsrpQueryOperatorBySpuAndCountryAndChannel
    * @summary 根据spu,国家，渠道获取运营人员
    * @request GET:/api/luteos/product/msrp/queryOperatorBySpuAndCountryAndChannel
+   * @response `200` `CommonRespOperatorQueryResp` OK
    */
-  export namespace QueryOperatorBySpuAndCountryAndChannelUsingGet2 {
+  export namespace LuteosProductMsrpQueryOperatorBySpuAndCountryAndChannel {
     export type RequestParams = {};
     export type RequestQuery = {
       /** channel */
@@ -4056,7 +4210,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespOperatorQueryResp;
   }
@@ -4064,11 +4218,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryPlanListUsingPost2
+   * @name LuteosProductMsrpQueryPlanList
    * @summary 活动折扣计划表-列表查询
    * @request POST:/api/luteos/product/msrp/queryPlanList
+   * @response `200` `ActiveDiscountPlanListResp` OK
    */
-  export namespace QueryPlanListUsingPost2 {
+  export namespace LuteosProductMsrpQueryPlanList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ActiveDiscountPlanReq;
@@ -4076,7 +4231,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ActiveDiscountPlanListResp;
   }
@@ -4084,11 +4239,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QueryRelationLogUsingGet3
+   * @name LuteosProductMsrpQueryRelationLog
    * @summary msrp日志详情查询
    * @request GET:/api/luteos/product/msrp/queryRelationLog
+   * @response `200` `SaleSkuLogDetailQueryResp` OK
    */
-  export namespace QueryRelationLogUsingGet3 {
+  export namespace LuteosProductMsrpQueryRelationLog {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -4134,7 +4290,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SaleSkuLogDetailQueryResp;
   }
@@ -4142,11 +4298,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QuerySkuDetailUsingPost2
+   * @name LuteosProductMsrpQuerySkuDetail
    * @summary msrp管理-查询sku详情
    * @request POST:/api/luteos/product/msrp/querySkuDetail
+   * @response `200` `CommonRespMsrpSkuDetailResp` OK
    */
-  export namespace QuerySkuDetailUsingPost2 {
+  export namespace LuteosProductMsrpQuerySkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSpuDetailReq;
@@ -4154,7 +4311,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpSkuDetailResp;
   }
@@ -4162,11 +4319,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QuerySkuEditActiveUsingGet2
+   * @name LuteosProductMsrpQuerySkuEditActive
    * @summary 活动折扣计划表-SKU列表编辑查询&详情查询
    * @request GET:/api/luteos/product/msrp/querySkuEditActive
+   * @response `200` `SkuActiveDiscountPlanQueryResp` OK
    */
-  export namespace QuerySkuEditActiveUsingGet2 {
+  export namespace LuteosProductMsrpQuerySkuEditActive {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 记录编码 */
@@ -4177,7 +4335,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SkuActiveDiscountPlanQueryResp;
   }
@@ -4185,11 +4343,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QuerySkuListUsingPost2
+   * @name LuteosProductMsrpQuerySkuList
    * @summary msrp管理新增-查询
    * @request POST:/api/luteos/product/msrp/querySkuList
+   * @response `200` `MsrpQueryChannelListResp` OK
    */
-  export namespace QuerySkuListUsingPost2 {
+  export namespace LuteosProductMsrpQuerySkuList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSkuListQueryReq;
@@ -4197,7 +4356,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MsrpQueryChannelListResp;
   }
@@ -4205,11 +4364,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name QuerySpuDetailUsingPost2
+   * @name LuteosProductMsrpQuerySpuDetail
    * @summary msrp管理-查询spu详情
    * @request POST:/api/luteos/product/msrp/querySpuDetail
+   * @response `200` `CommonRespMsrpSpuDetailResp` OK
    */
-  export namespace QuerySpuDetailUsingPost2 {
+  export namespace LuteosProductMsrpQuerySpuDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSpuDetailReq;
@@ -4217,7 +4377,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpSpuDetailResp;
   }
@@ -4225,11 +4385,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name SaveMsrpUsingPost2
+   * @name LuteosProductMsrpSave
    * @summary msrp管理-新增
    * @request POST:/api/luteos/product/msrp/save
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveMsrpUsingPost2 {
+  export namespace LuteosProductMsrpSave {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSaveReq;
@@ -4237,7 +4398,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -4245,11 +4406,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name SaveSkuUsingPost3
+   * @name LuteosProductMsrpSaveSku
    * @summary msrp管理-sku编辑
    * @request POST:/api/luteos/product/msrp/saveSku
+   * @response `200` `MsrpSaveSkuResp` OK
    */
-  export namespace SaveSkuUsingPost3 {
+  export namespace LuteosProductMsrpSaveSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSaveSkuReq;
@@ -4257,7 +4419,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MsrpSaveSkuResp;
   }
@@ -4265,11 +4427,12 @@ export namespace Api {
   /**
    * No description
    * @tags msrp管理
-   * @name SaveSpuUsingPost2
+   * @name LuteosProductMsrpSaveSpu
    * @summary msrp管理-spu编辑
    * @request POST:/api/luteos/product/msrp/saveSpu
+   * @response `200` `MsrpSaveSpuResp` OK
    */
-  export namespace SaveSpuUsingPost2 {
+  export namespace LuteosProductMsrpSaveSpu {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MsrpSaveSpuReq;
@@ -4277,7 +4440,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MsrpSaveSpuResp;
   }
@@ -4285,11 +4448,12 @@ export namespace Api {
   /**
    * No description
    * @tags 多平台价格监控
-   * @name QueryListUsingPost36
+   * @name LuteosProductMultiPriceQueryList
    * @summary 多平台价格列表查询
    * @request POST:/api/luteos/product/multi-price/queryList
+   * @response `200` `CommonRespMultiPriceQueryListResp` OK
    */
-  export namespace QueryListUsingPost36 {
+  export namespace LuteosProductMultiPriceQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MultiPriceQueryListReq;
@@ -4297,7 +4461,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMultiPriceQueryListResp;
   }
@@ -4305,11 +4469,12 @@ export namespace Api {
   /**
    * No description
    * @tags 多平台价格监控
-   * @name QueryPriceDetailUsingGet1
+   * @name LuteosProductMultiPriceQueryPriceDetail
    * @summary 查询价格详情
    * @request GET:/api/luteos/product/multi-price/queryPriceDetail
+   * @response `200` `CommonRespListMultiPriceDetailResp` OK
    */
-  export namespace QueryPriceDetailUsingGet1 {
+  export namespace LuteosProductMultiPriceQueryPriceDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** code */
@@ -4322,7 +4487,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListMultiPriceDetailResp;
   }
@@ -4330,11 +4495,12 @@ export namespace Api {
   /**
    * No description
    * @tags 线下渠道-在线商品
-   * @name QueryProductListingPageUsingPost6
+   * @name LuteosProductOfflineListingQueryProductListingPage
    * @summary 线下渠道-在线商品分页查询-V2
    * @request POST:/api/luteos/product/offline/listing/queryProductListingPage
+   * @response `200` `OfflineProductListingResp` OK
    */
-  export namespace QueryProductListingPageUsingPost6 {
+  export namespace LuteosProductOfflineListingQueryProductListingPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OfflineListingProductReq;
@@ -4342,7 +4508,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = OfflineProductListingResp;
   }
@@ -4350,11 +4516,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU新旧产品映射管理
-   * @name ExportUsingPost12
+   * @name LuteosProductOldNewMappingExport
    * @summary 导出
    * @request POST:/api/luteos/product/oldNewMapping/export
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportUsingPost12 {
+  export namespace LuteosProductOldNewMappingExport {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuOldNewListQueryReq;
@@ -4362,7 +4529,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -4370,11 +4537,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU新旧产品映射管理
-   * @name QueryListUsingGet7
+   * @name LuteosProductOldNewMappingQueryList
    * @summary 列表查询
    * @request GET:/api/luteos/product/oldNewMapping/queryList
+   * @response `200` `ProductSkuOldNewMappingResp` OK
    */
-  export namespace QueryListUsingGet7 {
+  export namespace LuteosProductOldNewMappingQueryList {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -4411,7 +4579,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSkuOldNewMappingResp;
   }
@@ -4419,11 +4587,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU新旧产品映射管理
-   * @name SaveOrUpdateSkuOldNewUsingPost1
+   * @name LuteosProductOldNewMappingSaveOrUpdate
    * @summary 商品sku新旧保存
    * @request POST:/api/luteos/product/oldNewMapping/saveOrUpdate
+   * @response `200` `CommonRespString` OK
    */
-  export namespace SaveOrUpdateSkuOldNewUsingPost1 {
+  export namespace LuteosProductOldNewMappingSaveOrUpdate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuOldNewSaveOrUpdReq;
@@ -4431,7 +4600,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -4439,11 +4608,12 @@ export namespace Api {
   /**
    * No description
    * @tags 新平台-在线商品
-   * @name ExportUsingGet1
+   * @name LuteosProductOnlineExport
    * @summary 导出
    * @request GET:/api/luteos/product/online/export
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportUsingGet1 {
+  export namespace LuteosProductOnlineExport {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -4482,7 +4652,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -4490,11 +4660,12 @@ export namespace Api {
   /**
    * No description
    * @tags 新平台-在线商品
-   * @name QueryListingTagUsingPost7
+   * @name LuteosProductOnlineListingQueryTag
    * @summary 标签查询
    * @request POST:/api/luteos/product/online/listing/queryTag
+   * @response `200` `ListingTagResp` OK
    */
-  export namespace QueryListingTagUsingPost7 {
+  export namespace LuteosProductOnlineListingQueryTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingQueryTagReq;
@@ -4502,7 +4673,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ListingTagResp;
   }
@@ -4510,11 +4681,12 @@ export namespace Api {
   /**
    * No description
    * @tags 新平台-在线商品
-   * @name QueryListUsingPost37
+   * @name LuteosProductOnlineQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/online/queryList
+   * @response `200` `OnlineProductQueryResp` OK
    */
-  export namespace QueryListUsingPost37 {
+  export namespace LuteosProductOnlineQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OnlineProductQueryReq;
@@ -4522,7 +4694,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = OnlineProductQueryResp;
   }
@@ -4530,11 +4702,12 @@ export namespace Api {
   /**
    * No description
    * @tags 新平台-在线商品
-   * @name SaveUsingPost19
+   * @name LuteosProductOnlineSave
    * @summary 保存在线商品
    * @request POST:/api/luteos/product/online/save
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveUsingPost19 {
+  export namespace LuteosProductOnlineSave {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OnlineProductSaveReq;
@@ -4542,7 +4715,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -4550,11 +4723,12 @@ export namespace Api {
   /**
    * No description
    * @tags 新平台-在线商品
-   * @name SaveOperatorUsingPost5
+   * @name LuteosProductOnlineSaveOperator
    * @summary 保存运营人员
    * @request POST:/api/luteos/product/online/saveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveOperatorUsingPost5 {
+  export namespace LuteosProductOnlineSaveOperator {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OperatorSaveReq;
@@ -4562,7 +4736,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -4570,11 +4744,12 @@ export namespace Api {
   /**
    * No description
    * @tags 新平台-在线商品
-   * @name SaveProductLinkUsingPost5
+   * @name LuteosProductOnlineSaveProductLink
    * @summary 保存商品链接
    * @request POST:/api/luteos/product/online/saveProductLink
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveProductLinkUsingPost5 {
+  export namespace LuteosProductOnlineSaveProductLink {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductLinkSaveReq;
@@ -4582,7 +4757,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -4590,11 +4765,12 @@ export namespace Api {
   /**
    * No description
    * @tags 新平台-在线商品
-   * @name SaveTagUsingPost1
+   * @name LuteosProductOnlineSaveTag
    * @summary 保存标签
    * @request POST:/api/luteos/product/online/saveTag
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveTagUsingPost1 {
+  export namespace LuteosProductOnlineSaveTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyTagReq;
@@ -4602,7 +4778,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -4610,11 +4786,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name OperateProductUsingPost3
+   * @name LuteosProductOperateProduct
    * @summary 商品信息操作
    * @request POST:/api/luteos/product/operateProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace OperateProductUsingPost3 {
+  export namespace LuteosProductOperateProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductOperateReq;
@@ -4622,7 +4799,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -4630,11 +4807,12 @@ export namespace Api {
   /**
    * No description
    * @tags 在线商品-产品表现
-   * @name QueryPerformanceUsingPost1
+   * @name LuteosProductPerformanceQueryPerformance
    * @summary 在线商品-商品表现-V2
    * @request POST:/api/luteos/product/performance/queryPerformance
+   * @response `200` `WalmartProductListingResp` OK
    */
-  export namespace QueryPerformanceUsingPost1 {
+  export namespace LuteosProductPerformanceQueryPerformance {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PerformanceProductReq;
@@ -4642,7 +4820,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = WalmartProductListingResp;
   }
@@ -4650,11 +4828,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品表现
-   * @name QuerySkuListUsingGet3
+   * @name LuteosProductPerformanceQuerySkuList
    * @summary SKU列表查询
    * @request GET:/api/luteos/product/performance/querySkuList
+   * @response `200` `ProductPerformanceResp` OK
    */
-  export namespace QuerySkuListUsingGet3 {
+  export namespace LuteosProductPerformanceQuerySkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -4694,7 +4873,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductPerformanceResp;
   }
@@ -4702,11 +4881,12 @@ export namespace Api {
   /**
    * No description
    * @tags 产品表现
-   * @name QuerySkuPerformanceUsingGet1
+   * @name LuteosProductPerformanceQuerySkuPerformance
    * @summary SKU产品表现
    * @request GET:/api/luteos/product/performance/querySkuPerformance
+   * @response `200` `ProductPerformanceDetailResp` OK
    */
-  export namespace QuerySkuPerformanceUsingGet1 {
+  export namespace LuteosProductPerformanceQuerySkuPerformance {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -4743,7 +4923,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductPerformanceDetailResp;
   }
@@ -4751,11 +4931,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name ApplyListUsingPost1
+   * @name LuteosProductPromotionPlanApplyList
    * @summary 促销计划申请列表
    * @request POST:/api/luteos/product/promotion-plan/applyList
+   * @response `200` `PromotionPlanApplyListResp` OK
    */
-  export namespace ApplyListUsingPost1 {
+  export namespace LuteosProductPromotionPlanApplyList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanListQueryReq;
@@ -4763,7 +4944,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = PromotionPlanApplyListResp;
   }
@@ -4771,11 +4952,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name CreateUsingPost1
+   * @name LuteosProductPromotionPlanCreate
    * @summary 促销计划-新增
    * @request POST:/api/luteos/product/promotion-plan/create
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace CreateUsingPost1 {
+  export namespace LuteosProductPromotionPlanCreate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanCreateReq;
@@ -4783,7 +4965,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -4791,11 +4973,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name CreateCheckUsingPost1
+   * @name LuteosProductPromotionPlanCreateCheck
    * @summary 促销计划-新增校验
    * @request POST:/api/luteos/product/promotion-plan/createCheck
+   * @response `200` `CommonRespPlanCreateCheckResp` OK
    */
-  export namespace CreateCheckUsingPost1 {
+  export namespace LuteosProductPromotionPlanCreateCheck {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanCreateReq;
@@ -4803,7 +4986,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespPlanCreateCheckResp;
   }
@@ -4811,11 +4994,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name DeleteUsingPost8
+   * @name LuteosProductPromotionPlanDelete
    * @summary 促销计划-删除
    * @request POST:/api/luteos/product/promotion-plan/delete
+   * @response `200` `CommonRespPromotionPlanDeleteResp` OK
    */
-  export namespace DeleteUsingPost8 {
+  export namespace LuteosProductPromotionPlanDelete {
     export type RequestParams = {};
     export type RequestQuery = {
       /** confirm */
@@ -4828,7 +5012,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespPromotionPlanDeleteResp;
   }
@@ -4836,11 +5020,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name DetailUsingGet6
+   * @name LuteosProductPromotionPlanDetail
    * @summary 促销计划-详情
    * @request GET:/api/luteos/product/promotion-plan/detail
+   * @response `200` `CommonRespPromotionPlanDetailResp` OK
    */
-  export namespace DetailUsingGet6 {
+  export namespace LuteosProductPromotionPlanDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** planCode */
@@ -4851,7 +5036,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespPromotionPlanDetailResp;
   }
@@ -4859,11 +5044,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name ExportPromotionPlanUsingPost1
+   * @name LuteosProductPromotionPlanExportPromotionPlan
    * @summary 促销计划导出
    * @request POST:/api/luteos/product/promotion-plan/exportPromotionPlan
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportPromotionPlanUsingPost1 {
+  export namespace LuteosProductPromotionPlanExportPromotionPlan {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanListQueryReq;
@@ -4871,7 +5057,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -4879,11 +5065,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name GetAddActivityDetailUsingGet1
+   * @name LuteosProductPromotionPlanGetAddActivityDetail
    * @summary 添加活动详情列表
    * @request GET:/api/luteos/product/promotion-plan/getAddActivityDetail
+   * @response `200` `CommonRespAddActivityDetailResp` OK
    */
-  export namespace GetAddActivityDetailUsingGet1 {
+  export namespace LuteosProductPromotionPlanGetAddActivityDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** planCodeList */
@@ -4894,7 +5081,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespAddActivityDetailResp;
   }
@@ -4902,11 +5089,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name ListBySkuUsingPost1
+   * @name LuteosProductPromotionPlanListBySku
    * @summary 促销计划-SKU维度分页列表
    * @request POST:/api/luteos/product/promotion-plan/listBySku
+   * @response `200` `PromotionPlanListQuerySkuResp` OK
    */
-  export namespace ListBySkuUsingPost1 {
+  export namespace LuteosProductPromotionPlanListBySku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanListQueryReq;
@@ -4914,7 +5102,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = PromotionPlanListQuerySkuResp;
   }
@@ -4922,11 +5110,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name ListBySpuUsingPost1
+   * @name LuteosProductPromotionPlanListBySpu
    * @summary 促销计划-SPU维度分页列表
    * @request POST:/api/luteos/product/promotion-plan/listBySpu
+   * @response `200` `PromotionPlanListQuerySpuResp` OK
    */
-  export namespace ListBySpuUsingPost1 {
+  export namespace LuteosProductPromotionPlanListBySpu {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanListQueryReq;
@@ -4934,7 +5123,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = PromotionPlanListQuerySpuResp;
   }
@@ -4942,11 +5131,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name QuerySkuListUsingGet4
+   * @name LuteosProductPromotionPlanQuerySkuList
    * @summary 查询sku列表
    * @request GET:/api/luteos/product/promotion-plan/querySkuList
+   * @response `200` `CommonRespMsrpSkuListResp` OK
    */
-  export namespace QuerySkuListUsingGet4 {
+  export namespace LuteosProductPromotionPlanQuerySkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** countryCode */
@@ -4959,7 +5149,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespMsrpSkuListResp;
   }
@@ -4967,11 +5157,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name QuerySpuListUsingGet1
+   * @name LuteosProductPromotionPlanQuerySpuList
    * @summary 查询spu列表
    * @request GET:/api/luteos/product/promotion-plan/querySpuList
+   * @response `200` `CommonRespProductListQueryResp` OK
    */
-  export namespace QuerySpuListUsingGet1 {
+  export namespace LuteosProductPromotionPlanQuerySpuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 时间排序,默认false */
@@ -5072,7 +5263,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespProductListQueryResp;
   }
@@ -5080,11 +5271,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name ReviewUsingPost1
+   * @name LuteosProductPromotionPlanReview
    * @summary 促销计划-审核
    * @request POST:/api/luteos/product/promotion-plan/review
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace ReviewUsingPost1 {
+  export namespace LuteosProductPromotionPlanReview {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanReviewReq;
@@ -5092,7 +5284,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -5100,11 +5292,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name ReviewListUsingPost1
+   * @name LuteosProductPromotionPlanReviewList
    * @summary 促销计划-审核列表
    * @request POST:/api/luteos/product/promotion-plan/reviewList
+   * @response `200` `CommonRespPromotionPlanReviewListResp` OK
    */
-  export namespace ReviewListUsingPost1 {
+  export namespace LuteosProductPromotionPlanReviewList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanReviewListReq;
@@ -5112,7 +5305,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespPromotionPlanReviewListResp;
   }
@@ -5120,11 +5313,12 @@ export namespace Api {
   /**
    * No description
    * @tags 促销计划
-   * @name UpdateUsingPost9
+   * @name LuteosProductPromotionPlanUpdate
    * @summary 促销计划-更新
    * @request POST:/api/luteos/product/promotion-plan/update
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace UpdateUsingPost9 {
+  export namespace LuteosProductPromotionPlanUpdate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = PromotionPlanCreateReq;
@@ -5132,7 +5326,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -5140,11 +5334,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryDetailUsingGet9
+   * @name LuteosProductQueryDetail
    * @summary 商品详情查询
    * @request GET:/api/luteos/product/queryDetail
+   * @response `200` `ProductDetailQueryResp` OK
    */
-  export namespace QueryDetailUsingGet9 {
+  export namespace LuteosProductQueryDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
@@ -5157,7 +5352,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductDetailQueryResp;
   }
@@ -5165,11 +5360,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryOperatorListUsingGet4
+   * @name LuteosProductQueryOperatorList
    * @summary 获取采购员列表
    * @request GET:/api/luteos/product/queryOperatorList
+   * @response `200` `PurchaseOperatorQueryResp` OK
    */
-  export namespace QueryOperatorListUsingGet4 {
+  export namespace LuteosProductQueryOperatorList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 产品经理编码 */
@@ -5180,7 +5376,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = PurchaseOperatorQueryResp;
   }
@@ -5188,11 +5384,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryPlatfromSkuIdentifyUsingGet1
+   * @name LuteosProductQueryPlatfromSkuIdentify
    * @summary 原平台标识查询
    * @request GET:/api/luteos/product/queryPlatfromSkuIdentify
+   * @response `200` `CommonRespListString` OK
    */
-  export namespace QueryPlatfromSkuIdentifyUsingGet1 {
+  export namespace LuteosProductQueryPlatfromSkuIdentify {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -5207,7 +5404,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListString;
   }
@@ -5215,11 +5412,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryProductPerfectionUsingGet1
+   * @name LuteosProductQueryProductPerfection
    * @summary 获取商品列表信息完善度
    * @request GET:/api/luteos/product/queryProduct/perfection
+   * @response `200` `ProductPerfectionQueryResp` OK
    */
-  export namespace QueryProductPerfectionUsingGet1 {
+  export namespace LuteosProductQueryProductPerfection {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -5227,7 +5425,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductPerfectionQueryResp;
   }
@@ -5235,31 +5433,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryProductAllModelListUsingPost1
-   * @summary 产品型号列表查询
-   * @request POST:/api/luteos/product/queryProductAllModelList
-   */
-  export namespace QueryProductAllModelListUsingPost1 {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = never;
-    export type RequestHeaders = {
-      /** token */
-      Authorization?: any;
-      /** token */
-      "lute-account-str"?: any;
-    };
-    export type ResponseBody = CommonRespString;
-  }
-
-  /**
-   * No description
-   * @tags 商品管理
-   * @name QueryProductByCategoryUsingPost1
+   * @name LuteosProductQueryProductByCategory
    * @summary 根据分类查询商品
    * @request POST:/api/luteos/product/queryProductByCategory
+   * @response `200` `ProductCategoryResp` OK
    */
-  export namespace QueryProductByCategoryUsingPost1 {
+  export namespace LuteosProductQueryProductByCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductCategoryReq;
@@ -5267,7 +5446,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductCategoryResp;
   }
@@ -5275,11 +5454,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryProductInfoUsingGet1
+   * @name LuteosProductQueryProductInfo
    * @summary 商品信息查询
    * @request GET:/api/luteos/product/queryProductInfo
+   * @response `200` `ProductInfoResp` OK
    */
-  export namespace QueryProductInfoUsingGet1 {
+  export namespace LuteosProductQueryProductInfo {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 商品spu编码 */
@@ -5290,7 +5470,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductInfoResp;
   }
@@ -5298,11 +5478,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryProductListUsingGet3
+   * @name LuteosProductQueryProductList
    * @summary 商品列表查询
    * @request GET:/api/luteos/product/queryProductList
+   * @response `200` `ProductListQueryResp` OK
    */
-  export namespace QueryProductListUsingGet3 {
+  export namespace LuteosProductQueryProductList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 时间排序,默认false */
@@ -5403,7 +5584,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductListQueryResp;
   }
@@ -5411,11 +5592,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QueryProductRelationListUsingGet1
+   * @name LuteosProductQueryProductRelationList
    * @summary 商品关联信息列表查询
    * @request GET:/api/luteos/product/queryProductRelationList
+   * @response `200` `ProductRelationListResp` OK
    */
-  export namespace QueryProductRelationListUsingGet1 {
+  export namespace LuteosProductQueryProductRelationList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -5423,7 +5605,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductRelationListResp;
   }
@@ -5431,11 +5613,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name QuerySupplySkuUsingGet1
+   * @name LuteosProductQuerySupplySku
    * @summary 供应链SKU查询
    * @request GET:/api/luteos/product/querySupplySku
+   * @response `200` `CommonRespListString` OK
    */
-  export namespace QuerySupplySkuUsingGet1 {
+  export namespace LuteosProductQuerySupplySku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -5443,7 +5626,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespListString;
   }
@@ -5451,11 +5634,12 @@ export namespace Api {
   /**
    * No description
    * @tags 批量删除, 竞品监控
-   * @name BatchDeletedUsingPost5
+   * @name LuteosProductRankingListBatchDeleted
    * @summary 批量删除
    * @request POST:/api/luteos/product/rankingList/batchDeleted
+   * @response `200` `CommonRespString` OK
    */
-  export namespace BatchDeletedUsingPost5 {
+  export namespace LuteosProductRankingListBatchDeleted {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonRankingListBatchOperationReq;
@@ -5463,7 +5647,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -5471,11 +5655,12 @@ export namespace Api {
   /**
    * No description
    * @tags 批量编辑, 竞品监控
-   * @name BatchOperationUsingPost1
+   * @name LuteosProductRankingListBatchOperation
    * @summary 批量编辑
    * @request POST:/api/luteos/product/rankingList/batchOperation
+   * @response `200` `CommonRespString` OK
    */
-  export namespace BatchOperationUsingPost1 {
+  export namespace LuteosProductRankingListBatchOperation {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonRankingListBatchOperationReq;
@@ -5483,7 +5668,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -5491,11 +5676,12 @@ export namespace Api {
   /**
    * No description
    * @tags 竞品监控
-   * @name DownTemplateUsingPost3
+   * @name LuteosProductRankingListDownTemplate
    * @summary 下载-竞品监控导入模板
    * @request POST:/api/luteos/product/rankingList/downTemplate
+   * @response `200` `CommonRespString` OK
    */
-  export namespace DownTemplateUsingPost3 {
+  export namespace LuteosProductRankingListDownTemplate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -5503,7 +5689,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -5511,11 +5697,12 @@ export namespace Api {
   /**
    * No description
    * @tags 竞品监控, 编辑
-   * @name OperationUsingPost1
+   * @name LuteosProductRankingListOperation
    * @summary 编辑运营/组长/备注
    * @request POST:/api/luteos/product/rankingList/operation
+   * @response `200` `CommonRespString` OK
    */
-  export namespace OperationUsingPost1 {
+  export namespace LuteosProductRankingListOperation {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonRankingListOperationReq;
@@ -5523,7 +5710,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -5531,11 +5718,12 @@ export namespace Api {
   /**
    * No description
    * @tags 竞品监控
-   * @name QueryListUsingPost33
+   * @name LuteosProductRankingListQueryList
    * @summary 竞品监控列表查询
    * @request POST:/api/luteos/product/rankingList/queryList
+   * @response `200` `CommonRespAmazonRankingListQueryListResp` OK
    */
-  export namespace QueryListUsingPost33 {
+  export namespace LuteosProductRankingListQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonRankingListQueryListReq;
@@ -5543,7 +5731,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespAmazonRankingListQueryListResp;
   }
@@ -5551,11 +5739,12 @@ export namespace Api {
   /**
    * No description
    * @tags 竞品监控
-   * @name SaveUsingPost18
+   * @name LuteosProductRankingListSave
    * @summary 新增/编辑
    * @request POST:/api/luteos/product/rankingList/save
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace SaveUsingPost18 {
+  export namespace LuteosProductRankingListSave {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AmazonRankingListSaveReq;
@@ -5563,7 +5752,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -5571,11 +5760,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name RemoveProductUsingGet1
+   * @name LuteosProductRemoveProduct
    * @summary 删除商品
    * @request GET:/api/luteos/product/removeProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace RemoveProductUsingGet1 {
+  export namespace LuteosProductRemoveProduct {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 商品编码 */
@@ -5586,7 +5776,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -5594,11 +5784,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name ExportSaleSkuUsingPost1
+   * @name LuteosProductSaleSkuExportSaleSku
    * @summary 导出销售映射
    * @request POST:/api/luteos/product/saleSku/exportSaleSku
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSaleSkuUsingPost1 {
+  export namespace LuteosProductSaleSkuExportSaleSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SaleSkuQueryReq;
@@ -5606,7 +5797,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -5614,11 +5805,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name QueryDictSalesChannelListUsingPost1
+   * @name LuteosProductSaleSkuQueryDictSalesChannelList
    * @summary 查询销售渠道字典表
    * @request POST:/api/luteos/product/saleSku/queryDictSalesChannelList
+   * @response `200` `DictSalesChannelResp` OK
    */
-  export namespace QueryDictSalesChannelListUsingPost1 {
+  export namespace LuteosProductSaleSkuQueryDictSalesChannelList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 关键词 */
@@ -5649,7 +5841,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = DictSalesChannelResp;
   }
@@ -5657,11 +5849,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name QueryLuteChannelListUsingPost1
+   * @name LuteosProductSaleSkuQueryLuteChannelList
    * @summary 查询路特筛选条件
    * @request POST:/api/luteos/product/saleSku/queryLuteChannelList
+   * @response `200` `LuteConditionResp` OK
    */
-  export namespace QueryLuteChannelListUsingPost1 {
+  export namespace LuteosProductSaleSkuQueryLuteChannelList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -5669,7 +5862,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = LuteConditionResp;
   }
@@ -5677,11 +5870,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name QueryRelationLogUsingGet4
+   * @name LuteosProductSaleSkuQueryRelationLog
    * @summary 日志详情查询
    * @request GET:/api/luteos/product/saleSku/queryRelationLog
+   * @response `200` `SaleSkuLogDetailQueryResp` OK
    */
-  export namespace QueryRelationLogUsingGet4 {
+  export namespace LuteosProductSaleSkuQueryRelationLog {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -5706,7 +5900,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SaleSkuLogDetailQueryResp;
   }
@@ -5714,11 +5908,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name QuerySaleSkuDetailUsingGet1
+   * @name LuteosProductSaleSkuQuerySaleSkuDetail
    * @summary 销售映射详情查询
    * @request GET:/api/luteos/product/saleSku/querySaleSkuDetail
+   * @response `200` `SaleSkuDetailQueryResp` OK
    */
-  export namespace QuerySaleSkuDetailUsingGet1 {
+  export namespace LuteosProductSaleSkuQuerySaleSkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 唯一键 */
@@ -5729,7 +5924,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SaleSkuDetailQueryResp;
   }
@@ -5737,11 +5932,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name QuerySaleSkuListUsingGet1
+   * @name LuteosProductSaleSkuQuerySaleSkuList
    * @summary 销售映射列表查询
    * @request GET:/api/luteos/product/saleSku/querySaleSkuList
+   * @response `200` `SaleSkuQueryResp` OK
    */
-  export namespace QuerySaleSkuListUsingGet1 {
+  export namespace LuteosProductSaleSkuQuerySaleSkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -5790,7 +5986,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SaleSkuQueryResp;
   }
@@ -5798,11 +5994,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name QuerySourceUsingGet1
+   * @name LuteosProductSaleSkuQuerySource
    * @summary 获取数据来源
    * @request GET:/api/luteos/product/saleSku/querySource
+   * @response `200` `SaleSkuSourcelQueryResp` OK
    */
-  export namespace QuerySourceUsingGet1 {
+  export namespace LuteosProductSaleSkuQuerySource {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -5810,7 +6007,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SaleSkuSourcelQueryResp;
   }
@@ -5818,11 +6015,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name RemoveSaleSkuRelationUsingPost1
+   * @name LuteosProductSaleSkuRemoveSaleSkuRelation
    * @summary 删除销售映射关系
    * @request POST:/api/luteos/product/saleSku/removeSaleSkuRelation
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace RemoveSaleSkuRelationUsingPost1 {
+  export namespace LuteosProductSaleSkuRemoveSaleSkuRelation {
     export type RequestParams = {};
     export type RequestQuery = {
       /** uniqueCode */
@@ -5833,7 +6031,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -5841,11 +6039,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射管理
-   * @name SaveSaleSkuRelationUsingPost1
+   * @name LuteosProductSaleSkuSaveSaleSkuRelation
    * @summary 保存销售映射关系
    * @request POST:/api/luteos/product/saleSku/saveSaleSkuRelation
+   * @response `200` `SaleSkuSaveResp` OK
    */
-  export namespace SaveSaleSkuRelationUsingPost1 {
+  export namespace LuteosProductSaleSkuSaveSaleSkuRelation {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SaleSkuSaveReq;
@@ -5853,7 +6052,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SaleSkuSaveResp;
   }
@@ -5861,11 +6060,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射缺失管理
-   * @name ExportSaleSkuRelationMissUsingPost1
+   * @name LuteosProductSaleSkuRelationMissExport
    * @summary 导出销售映射缺失
    * @request POST:/api/luteos/product/saleSkuRelationMiss/export
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSaleSkuRelationMissUsingPost1 {
+  export namespace LuteosProductSaleSkuRelationMissExport {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SaleSkuRelationMissQueryReq;
@@ -5873,7 +6073,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -5881,11 +6081,12 @@ export namespace Api {
   /**
    * No description
    * @tags 销售映射缺失管理
-   * @name QuerySaleSkuRelationMissListUsingGet1
+   * @name LuteosProductSaleSkuRelationMissQueryList
    * @summary 销售映射缺失列表查询
    * @request GET:/api/luteos/product/saleSkuRelationMiss/queryList
+   * @response `200` `SaleSkuRelationMissQueryResp` OK
    */
-  export namespace QuerySaleSkuRelationMissListUsingGet1 {
+  export namespace LuteosProductSaleSkuRelationMissQueryList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -5932,7 +6133,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SaleSkuRelationMissQueryResp;
   }
@@ -5940,19 +6141,20 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name SaveProductUsingPost3
+   * @name LuteosProductSaveProduct
    * @summary 商品信息保存
    * @request POST:/api/luteos/product/saveProduct
+   * @response `200` `ProductSaveResp` OK
    */
-  export namespace SaveProductUsingPost3 {
+  export namespace LuteosProductSaveProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
-    export type RequestBody = _;
+    export type RequestBody = ProductSaveReq;
     export type RequestHeaders = {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSaveResp;
   }
@@ -5960,11 +6162,12 @@ export namespace Api {
   /**
    * No description
    * @tags RPA在线商品
-   * @name ExportSellerSkuUnusualListUsingGet1
+   * @name LuteosProductSellerSkuExportSellerSkuUnusualList
    * @summary 导出销售异常
    * @request GET:/api/luteos/product/seller/sku/exportSellerSkuUnusualList
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSellerSkuUnusualListUsingGet1 {
+  export namespace LuteosProductSellerSkuExportSellerSkuUnusualList {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -5987,7 +6190,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -5995,11 +6198,12 @@ export namespace Api {
   /**
    * No description
    * @tags RPA在线商品
-   * @name OperateSellerSkuStatusUsingGet1
+   * @name LuteosProductSellerSkuOperateSellerSkuStatus
    * @summary 变更商品提醒状态
    * @request GET:/api/luteos/product/seller/sku/operateSellerSkuStatus
+   * @response `200` `void` OK
    */
-  export namespace OperateSellerSkuStatusUsingGet1 {
+  export namespace LuteosProductSellerSkuOperateSellerSkuStatus {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 店铺渠道 */
@@ -6019,7 +6223,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -6027,11 +6231,12 @@ export namespace Api {
   /**
    * No description
    * @tags RPA在线商品
-   * @name QuerySellerSkuUnusualListUsingGet1
+   * @name LuteosProductSellerSkuQuerySellerSkuUnusualList
    * @summary 查询销售异常
    * @request GET:/api/luteos/product/seller/sku/querySellerSkuUnusualList
+   * @response `200` `ProductSellerSkuQueryResp` OK
    */
-  export namespace QuerySellerSkuUnusualListUsingGet1 {
+  export namespace LuteosProductSellerSkuQuerySellerSkuUnusualList {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -6054,7 +6259,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSellerSkuQueryResp;
   }
@@ -6062,11 +6267,12 @@ export namespace Api {
   /**
    * No description
    * @tags 敏感类型管理
-   * @name ConnectProductUsingPost7
+   * @name LuteosProductSensitiveTypeConnectProduct
    * @summary 敏感类型关联商品
    * @request POST:/api/luteos/product/sensitiveType/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  export namespace ConnectProductUsingPost7 {
+  export namespace LuteosProductSensitiveTypeConnectProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SensitiveTypeProductConnectReq;
@@ -6074,7 +6280,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -6082,11 +6288,12 @@ export namespace Api {
   /**
    * No description
    * @tags 敏感类型管理
-   * @name ExportSensitiveTypeUsingPost1
+   * @name LuteosProductSensitiveTypeExportSensitiveType
    * @summary 敏感类型信息导出
    * @request POST:/api/luteos/product/sensitiveType/exportSensitiveType
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSensitiveTypeUsingPost1 {
+  export namespace LuteosProductSensitiveTypeExportSensitiveType {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SensitiveTypeListQueryReq;
@@ -6094,7 +6301,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -6102,11 +6309,12 @@ export namespace Api {
   /**
    * No description
    * @tags 敏感类型管理
-   * @name OperateSensitiveTypeUsingPost1
+   * @name LuteosProductSensitiveTypeOperateSensitiveType
    * @summary 敏感类型操作
    * @request POST:/api/luteos/product/sensitiveType/operateSensitiveType
+   * @response `200` `CommonRespString` OK
    */
-  export namespace OperateSensitiveTypeUsingPost1 {
+  export namespace LuteosProductSensitiveTypeOperateSensitiveType {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SensitiveTypeOperateReq;
@@ -6114,7 +6322,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -6122,11 +6330,12 @@ export namespace Api {
   /**
    * No description
    * @tags 敏感类型管理
-   * @name QuerySensitiveTypeDetailUsingGet1
+   * @name LuteosProductSensitiveTypeQuerySensitiveTypeDetail
    * @summary 敏感类型详情查询
    * @request GET:/api/luteos/product/sensitiveType/querySensitiveTypeDetail
+   * @response `200` `SensitiveTypeDetailResp` OK
    */
-  export namespace QuerySensitiveTypeDetailUsingGet1 {
+  export namespace LuteosProductSensitiveTypeQuerySensitiveTypeDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 敏感类型编码 */
@@ -6137,7 +6346,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SensitiveTypeDetailResp;
   }
@@ -6145,11 +6354,12 @@ export namespace Api {
   /**
    * No description
    * @tags 敏感类型管理
-   * @name QuerySensitiveTypeListUsingGet1
+   * @name LuteosProductSensitiveTypeQuerySensitiveTypeList
    * @summary 敏感类型列表查询
    * @request GET:/api/luteos/product/sensitiveType/querySensitiveTypeList
+   * @response `200` `SensitiveTypeListQueryResp` OK
    */
-  export namespace QuerySensitiveTypeListUsingGet1 {
+  export namespace LuteosProductSensitiveTypeQuerySensitiveTypeList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 勾选导出的编码 */
@@ -6180,7 +6390,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SensitiveTypeListQueryResp;
   }
@@ -6188,11 +6398,12 @@ export namespace Api {
   /**
    * No description
    * @tags 敏感类型管理
-   * @name SaveOrUpdateSensitiveTypeUsingPost1
+   * @name LuteosProductSensitiveTypeSaveOrUpdateSensitiveType
    * @summary 敏感类型信息保存
    * @request POST:/api/luteos/product/sensitiveType/saveOrUpdateSensitiveType
+   * @response `200` `SensitiveTypeSaveResp` OK
    */
-  export namespace SaveOrUpdateSensitiveTypeUsingPost1 {
+  export namespace LuteosProductSensitiveTypeSaveOrUpdateSensitiveType {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SensitiveTypeSaveReq;
@@ -6200,7 +6411,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SensitiveTypeSaveResp;
   }
@@ -6208,11 +6419,12 @@ export namespace Api {
   /**
    * No description
    * @tags 系列管理
-   * @name ConnectProductUsingPost8
+   * @name LuteosProductSeriesConnectProduct
    * @summary 系列关联商品
    * @request POST:/api/luteos/product/series/connectProduct
+   * @response `200` `CommonRespString` OK
    */
-  export namespace ConnectProductUsingPost8 {
+  export namespace LuteosProductSeriesConnectProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SeriesProductConnectReq;
@@ -6220,7 +6432,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -6228,11 +6440,12 @@ export namespace Api {
   /**
    * No description
    * @tags 系列管理
-   * @name ExportSeriesUsingPost1
+   * @name LuteosProductSeriesExportSeries
    * @summary 系列信息导出
    * @request POST:/api/luteos/product/series/exportSeries
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSeriesUsingPost1 {
+  export namespace LuteosProductSeriesExportSeries {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SeriesListQueryReq;
@@ -6240,7 +6453,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -6248,11 +6461,12 @@ export namespace Api {
   /**
    * No description
    * @tags 系列管理
-   * @name OperateSeriesUsingPost1
+   * @name LuteosProductSeriesOperateSeries
    * @summary 系列操作
    * @request POST:/api/luteos/product/series/operateSeries
+   * @response `200` `CommonRespString` OK
    */
-  export namespace OperateSeriesUsingPost1 {
+  export namespace LuteosProductSeriesOperateSeries {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SeriesOperateReq;
@@ -6260,7 +6474,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespString;
   }
@@ -6268,11 +6482,12 @@ export namespace Api {
   /**
    * No description
    * @tags 系列管理
-   * @name QuerySeriesDetailUsingGet1
+   * @name LuteosProductSeriesQuerySeriesDetail
    * @summary 系列详情查询
    * @request GET:/api/luteos/product/series/querySeriesDetail
+   * @response `200` `SeriesDetailResp` OK
    */
-  export namespace QuerySeriesDetailUsingGet1 {
+  export namespace LuteosProductSeriesQuerySeriesDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 系列编码 */
@@ -6283,7 +6498,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SeriesDetailResp;
   }
@@ -6291,11 +6506,12 @@ export namespace Api {
   /**
    * No description
    * @tags 系列管理
-   * @name QuerySeriesListUsingGet1
+   * @name LuteosProductSeriesQuerySeriesList
    * @summary 系列列表查询
    * @request GET:/api/luteos/product/series/querySeriesList
+   * @response `200` `SeriesListQueryResp` OK
    */
-  export namespace QuerySeriesListUsingGet1 {
+  export namespace LuteosProductSeriesQuerySeriesList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 勾选导出的编码 */
@@ -6324,7 +6540,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SeriesListQueryResp;
   }
@@ -6332,11 +6548,12 @@ export namespace Api {
   /**
    * No description
    * @tags 系列管理
-   * @name SaveOrUpdateSeriesUsingPost1
+   * @name LuteosProductSeriesSaveOrUpdateSeries
    * @summary 系列信息保存
    * @request POST:/api/luteos/product/series/saveOrUpdateSeries
+   * @response `200` `SeriesSaveResp` OK
    */
-  export namespace SaveOrUpdateSeriesUsingPost1 {
+  export namespace LuteosProductSeriesSaveOrUpdateSeries {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SeriesSaveReq;
@@ -6344,7 +6561,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SeriesSaveResp;
   }
@@ -6352,11 +6569,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name ShadowSearchUsingPost1
+   * @name LuteosProductShadowSearch
    * @summary 产品影子查询
    * @request POST:/api/luteos/product/shadowSearch
+   * @response `200` `CommonRespProductShadowSearchResp` OK
    */
-  export namespace ShadowSearchUsingPost1 {
+  export namespace LuteosProductShadowSearch {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductShadowSearchReq;
@@ -6364,7 +6582,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespProductShadowSearchResp;
   }
@@ -6372,11 +6590,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name ShadowSearchStatisticsDetailUsingPost1
+   * @name LuteosProductShadowSearchStatisticsDetail
    * @summary 产品影子统计信息详情
    * @request POST:/api/luteos/product/shadowSearchStatisticsDetail
+   * @response `200` `CommonRespProductShadowDetailStatisticsResp` OK
    */
-  export namespace ShadowSearchStatisticsDetailUsingPost1 {
+  export namespace LuteosProductShadowSearchStatisticsDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductShadowDetailStaticsSearchReq;
@@ -6384,7 +6603,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespProductShadowDetailStatisticsResp;
   }
@@ -6392,12 +6611,13 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name BatchModifyPlanUsingPost3
+   * @name LuteosProductShopifyListingBatchModifyPlan
    * @summary 独立站-在线商父ASIN批量添加/更新计划人员
    * @request POST:/api/luteos/product/shopify/listing/batchModifyPlan
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace BatchModifyPlanUsingPost3 {
+  export namespace LuteosProductShopifyListingBatchModifyPlan {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyPlanReq;
@@ -6405,7 +6625,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -6413,11 +6633,12 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name BatchSaveOperatorUsingPost1
+   * @name LuteosProductShopifyListingBatchSaveOperator
    * @summary 独立站-批量保存运营人员
    * @request POST:/api/luteos/product/shopify/listing/batchSaveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace BatchSaveOperatorUsingPost1 {
+  export namespace LuteosProductShopifyListingBatchSaveOperator {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ShopifyBatchOperatorSaveReq;
@@ -6425,7 +6646,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -6433,11 +6654,12 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name DownloadUsingPost13
+   * @name LuteosProductShopifyListingDownload
    * @summary 独立站-在线商品导出-V2
    * @request POST:/api/luteos/product/shopify/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost13 {
+  export namespace LuteosProductShopifyListingDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ShopifyProductListingReq;
@@ -6445,7 +6667,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -6453,12 +6675,13 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name DownloadUsingPost12
+   * @name LuteosProductShopifyListingListingDownload
    * @summary 独立站父子维度导出
    * @request POST:/api/luteos/product/shopify/listing/listing/download
    * @deprecated
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost12 {
+  export namespace LuteosProductShopifyListingListingDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ShopifyListingReq;
@@ -6466,7 +6689,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -6474,12 +6697,13 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name QueryListingTagUsingPost8
+   * @name LuteosProductShopifyListingListingQueryTag
    * @summary 亚马逊在线商品父维度标签查询
    * @request POST:/api/luteos/product/shopify/listing/listing/queryTag
    * @deprecated
+   * @response `200` `ListingTagResp` OK
    */
-  export namespace QueryListingTagUsingPost8 {
+  export namespace LuteosProductShopifyListingListingQueryTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingQueryTagReq;
@@ -6487,7 +6711,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ListingTagResp;
   }
@@ -6495,12 +6719,13 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name UpdateTagUsingPost7
+   * @name LuteosProductShopifyListingListingUpdateTag
    * @summary 独立站商品父子维度标签保存更新
    * @request POST:/api/luteos/product/shopify/listing/listing/updateTag
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace UpdateTagUsingPost7 {
+  export namespace LuteosProductShopifyListingListingUpdateTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyTagReq;
@@ -6508,7 +6733,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -6516,12 +6741,13 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name QueryParentProductIdPageUsingPost1
+   * @name LuteosProductShopifyListingQueryParentProductIdPage
    * @summary 独立站-在线商品ProductId分页查询
    * @request POST:/api/luteos/product/shopify/listing/queryParentProductIdPage
    * @deprecated
+   * @response `200` `ShopifyListingParentResp` OK
    */
-  export namespace QueryParentProductIdPageUsingPost1 {
+  export namespace LuteosProductShopifyListingQueryParentProductIdPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ShopifyListingReq;
@@ -6529,7 +6755,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ShopifyListingParentResp;
   }
@@ -6537,11 +6763,12 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name QueryProductListingPageUsingPost7
+   * @name LuteosProductShopifyListingQueryProductListingPage
    * @summary 独立站-在线商品分页查询-V2
    * @request POST:/api/luteos/product/shopify/listing/queryProductListingPage
+   * @response `200` `ShopifyProductListingResp` OK
    */
-  export namespace QueryProductListingPageUsingPost7 {
+  export namespace LuteosProductShopifyListingQueryProductListingPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ShopifyProductListingReq;
@@ -6549,7 +6776,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ShopifyProductListingResp;
   }
@@ -6557,12 +6784,13 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name QuerySonVariantIdPageUsingPost1
+   * @name LuteosProductShopifyListingQuerySonVariantIdPage
    * @summary 独立站-在线商品子维度分页查询
    * @request POST:/api/luteos/product/shopify/listing/querySonVariantIdPage
    * @deprecated
+   * @response `200` `ShopifySonListingResp` OK
    */
-  export namespace QuerySonVariantIdPageUsingPost1 {
+  export namespace LuteosProductShopifyListingQuerySonVariantIdPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ShopifyListingReq;
@@ -6570,7 +6798,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ShopifySonListingResp;
   }
@@ -6578,11 +6806,12 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name SaveOperatorUsingPost6
+   * @name LuteosProductShopifyListingSaveOperator
    * @summary 独立站-在线商品保存运营人员
    * @request POST:/api/luteos/product/shopify/listing/saveOperator
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveOperatorUsingPost6 {
+  export namespace LuteosProductShopifyListingSaveOperator {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ShopifyOperatorSaveReq;
@@ -6590,7 +6819,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -6598,12 +6827,13 @@ export namespace Api {
   /**
    * No description
    * @tags 独立站在线商品
-   * @name SaveProductLinkUsingPost6
+   * @name LuteosProductShopifyListingSaveProductLink
    * @summary 独立站-在线商品保存商品链接
    * @request POST:/api/luteos/product/shopify/listing/saveProductLink
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveProductLinkUsingPost6 {
+  export namespace LuteosProductShopifyListingSaveProductLink {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductLinkSaveReq;
@@ -6611,47 +6841,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
-    };
-    export type ResponseBody = CommonRespObject;
-  }
-
-  /**
-   * No description
-   * @tags 独立站在线商品
-   * @name SyncShopifyListingInventoryChangeNoticeJobUsingPost1
-   * @summary 独立站-SKU库存到货通知-发钉钉消息测试接口
-   * @request POST:/api/luteos/product/shopify/listing/syncShopifyListingInventoryChangeNoticeJob
-   */
-  export namespace SyncShopifyListingInventoryChangeNoticeJobUsingPost1 {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = never;
-    export type RequestHeaders = {
-      /** token */
-      Authorization?: any;
-      /** token */
-      "lute-account-str"?: any;
-    };
-    export type ResponseBody = CommonRespObject;
-  }
-
-  /**
-   * No description
-   * @tags 独立站在线商品
-   * @name SyncShopifyListingNoInventoryRecordJobUsingPost1
-   * @summary 独立站-SKU库存到货通知-记录SKU零库存测试接口
-   * @request POST:/api/luteos/product/shopify/listing/syncShopifyListingNoInventoryRecordJob
-   */
-  export namespace SyncShopifyListingNoInventoryRecordJobUsingPost1 {
-    export type RequestParams = {};
-    export type RequestQuery = {};
-    export type RequestBody = never;
-    export type RequestHeaders = {
-      /** token */
-      Authorization?: any;
-      /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -6659,11 +6849,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name ShowSearchUsingPost1
+   * @name LuteosProductShowSearch
    * @summary 产品表现查询
    * @request POST:/api/luteos/product/showSearch
+   * @response `200` `CommonRespProductShowSearchResp` OK
    */
-  export namespace ShowSearchUsingPost1 {
+  export namespace LuteosProductShowSearch {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductShowSearchReq;
@@ -6671,7 +6862,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespProductShowSearchResp;
   }
@@ -6679,11 +6870,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name ShowSearchDetailUsingPost1
+   * @name LuteosProductShowSearchDetail
    * @summary 产品表现详情
    * @request POST:/api/luteos/product/showSearchDetail
+   * @response `200` `CommonRespProductShowDetailSearchResp` OK
    */
-  export namespace ShowSearchDetailUsingPost1 {
+  export namespace LuteosProductShowSearchDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductShowDetailSearchReq;
@@ -6691,7 +6883,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespProductShowDetailSearchResp;
   }
@@ -6699,11 +6891,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品管理
-   * @name ShowSearchStatisticsDetailUsingPost1
+   * @name LuteosProductShowSearchStatisticsDetail
    * @summary 产品表现统计信息详情
    * @request POST:/api/luteos/product/showSearchStatisticsDetail
+   * @response `200` `CommonRespProductShowDetailStatisticsResp` OK
    */
-  export namespace ShowSearchStatisticsDetailUsingPost1 {
+  export namespace LuteosProductShowSearchStatisticsDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductShowDetailStaticsSearchReq;
@@ -6711,7 +6904,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespProductShowDetailStatisticsResp;
   }
@@ -6719,11 +6912,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name BatchOperateUsingPost1
+   * @name LuteosProductSkuBatchOperate
    * @summary 商品sku批量操作
    * @request POST:/api/luteos/product/sku/batchOperate
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace BatchOperateUsingPost1 {
+  export namespace LuteosProductSkuBatchOperate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuBatchOpeReq;
@@ -6731,7 +6925,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -6739,11 +6933,12 @@ export namespace Api {
   /**
    * No description
    * @tags 店铺SKU管理
-   * @name ExportPlatformSkuUsingPost1
+   * @name LuteosProductSkuExportPlatformSku
    * @summary 导出店铺SKU
    * @request POST:/api/luteos/product/sku/exportPlatformSku
+   * @response `200` `void` OK
    */
-  export namespace ExportPlatformSkuUsingPost1 {
+  export namespace LuteosProductSkuExportPlatformSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -6751,7 +6946,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -6759,11 +6954,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name ExportProductUsingPost6
+   * @name LuteosProductSkuExportProduct
    * @summary 商品Sku导出信息
    * @request POST:/api/luteos/product/sku/exportProduct
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportProductUsingPost6 {
+  export namespace LuteosProductSkuExportProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuListQueryReq;
@@ -6771,7 +6967,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -6779,11 +6975,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name ExportProductSkuCertificationUsingPost1
+   * @name LuteosProductSkuExportProductSkuCertification
    * @summary 商品Sku证信息导出
    * @request POST:/api/luteos/product/sku/exportProductSkuCertification
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportProductSkuCertificationUsingPost1 {
+  export namespace LuteosProductSkuExportProductSkuCertification {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuCertificationListReq;
@@ -6791,7 +6988,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -6799,11 +6996,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品映射
-   * @name ClearUsingPost1
+   * @name LuteosProductSkuMappingClear
    * @summary 清除映射
    * @request POST:/api/luteos/product/sku/mapping/clear
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace ClearUsingPost1 {
+  export namespace LuteosProductSkuMappingClear {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuMappingClearReq;
@@ -6811,7 +7009,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -6819,11 +7017,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品映射
-   * @name ExportListUsingPost3
+   * @name LuteosProductSkuMappingExportList
    * @summary 导出列表
    * @request POST:/api/luteos/product/sku/mapping/exportList
+   * @response `200` `CommonRespCommonExportResp` OK
    */
-  export namespace ExportListUsingPost3 {
+  export namespace LuteosProductSkuMappingExportList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuMappingQueryReq;
@@ -6831,7 +7030,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespCommonExportResp;
   }
@@ -6839,11 +7038,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品映射
-   * @name QueryListUsingPost41
+   * @name LuteosProductSkuMappingQueryList
    * @summary 列表查询
    * @request POST:/api/luteos/product/sku/mapping/queryList
+   * @response `200` `CommonRespProductSkuMappingQueryResp` OK
    */
-  export namespace QueryListUsingPost41 {
+  export namespace LuteosProductSkuMappingQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuMappingQueryReq;
@@ -6851,7 +7051,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespProductSkuMappingQueryResp;
   }
@@ -6859,11 +7059,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品映射
-   * @name UpdateUsingPost8
+   * @name LuteosProductSkuMappingUpdate
    * @summary 编辑
    * @request POST:/api/luteos/product/sku/mapping/update
+   * @response `200` `CommonRespVoid` OK
    */
-  export namespace UpdateUsingPost8 {
+  export namespace LuteosProductSkuMappingUpdate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuMappingUpdateReq;
@@ -6871,7 +7072,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespVoid;
   }
@@ -6879,11 +7080,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name ProductSkuCertificationSyncJobUsingGet1
+   * @name LuteosProductSkuProductSkuCertificationSyncJob
    * @summary 商品Sku证信息同步
    * @request GET:/api/luteos/product/sku/productSkuCertificationSyncJob
+   * @response `200` `void` OK
    */
-  export namespace ProductSkuCertificationSyncJobUsingGet1 {
+  export namespace LuteosProductSkuProductSkuCertificationSyncJob {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -6891,7 +7093,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -6899,11 +7101,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name ProductSkuOperateUsingPost1
+   * @name LuteosProductSkuProductSkuOperate
    * @summary 商品sku操作
    * @request POST:/api/luteos/product/sku/productSkuOperate
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace ProductSkuOperateUsingPost1 {
+  export namespace LuteosProductSkuProductSkuOperate {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuOperateReq;
@@ -6911,7 +7114,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -6919,11 +7122,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name ProductSkuSyncCrmUsingPost1
+   * @name LuteosProductSkuProductSkuSyncCrm
    * @summary 测试接口-产品信息同步CRM
    * @request POST:/api/luteos/product/sku/productSkuSyncCrm
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace ProductSkuSyncCrmUsingPost1 {
+  export namespace LuteosProductSkuProductSkuSyncCrm {
     export type RequestParams = {};
     export type RequestQuery = {
       /** skuCodeList */
@@ -6934,7 +7138,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -6942,11 +7146,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QueryCountryUsingGet1
+   * @name LuteosProductSkuQueryCountry
    * @summary 销售区域查询
    * @request GET:/api/luteos/product/sku/queryCountry
+   * @response `200` `(CountryAreaListResp)[]` OK
    */
-  export namespace QueryCountryUsingGet1 {
+  export namespace LuteosProductSkuQueryCountry {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -6954,7 +7159,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CountryAreaListResp[];
   }
@@ -6962,11 +7167,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QueryDeptOrMemberUsingGet1
+   * @name LuteosProductSkuQueryDeptOrMember
    * @summary SKU提醒部门或人员查询
    * @request GET:/api/luteos/product/sku/queryDeptOrMember
+   * @response `200` `Record<string,string>` OK
    */
-  export namespace QueryDeptOrMemberUsingGet1 {
+  export namespace LuteosProductSkuQueryDeptOrMember {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 部门或人员名称 */
@@ -6993,7 +7199,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = Record<string, string>;
   }
@@ -7001,11 +7207,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QueryMSkuRelationListUsingGet1
+   * @name LuteosProductSkuQueryMSkuRelationList
    * @summary 商品sku详情-店铺sku映射查询
    * @request GET:/api/luteos/product/sku/queryMSkuRelationList
+   * @response `200` `MSkuRelationListResp` OK
    */
-  export namespace QueryMSkuRelationListUsingGet1 {
+  export namespace LuteosProductSkuQueryMSkuRelationList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
@@ -7018,7 +7225,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MSkuRelationListResp;
   }
@@ -7026,11 +7233,12 @@ export namespace Api {
   /**
    * No description
    * @tags 店铺SKU管理
-   * @name QueryPlatformSkuDetailUsingGet1
+   * @name LuteosProductSkuQueryPlatformSkuDetail
    * @summary 店铺SKU详情查询
    * @request GET:/api/luteos/product/sku/queryPlatformSkuDetail
+   * @response `200` `void` OK
    */
-  export namespace QueryPlatformSkuDetailUsingGet1 {
+  export namespace LuteosProductSkuQueryPlatformSkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7038,7 +7246,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -7046,11 +7254,12 @@ export namespace Api {
   /**
    * No description
    * @tags 店铺SKU管理
-   * @name QueryPlatformSkuListUsingGet1
+   * @name LuteosProductSkuQueryPlatformSkuList
    * @summary 店铺SKU列表查询
    * @request GET:/api/luteos/product/sku/queryPlatformSkuList
+   * @response `200` `void` OK
    */
-  export namespace QueryPlatformSkuListUsingGet1 {
+  export namespace LuteosProductSkuQueryPlatformSkuList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7058,7 +7267,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -7066,11 +7275,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QueryProductSkuPerfectionUsingGet1
+   * @name LuteosProductSkuQueryProductSkuPerfection
    * @summary 获取商品sku列表信息完善度
    * @request GET:/api/luteos/product/sku/queryProductSku/perfection
+   * @response `200` `ProductSkuPerfectionQueryResp` OK
    */
-  export namespace QueryProductSkuPerfectionUsingGet1 {
+  export namespace LuteosProductSkuQueryProductSkuPerfection {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7078,7 +7288,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSkuPerfectionQueryResp;
   }
@@ -7086,11 +7296,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QueryProductSkuDetailUsingGet1
+   * @name LuteosProductSkuQueryProductSkuDetail
    * @summary 商品sku详情查询
    * @request GET:/api/luteos/product/sku/queryProductSkuDetail
+   * @response `200` `ProductSkuDetailResp` OK
    */
-  export namespace QueryProductSkuDetailUsingGet1 {
+  export namespace LuteosProductSkuQueryProductSkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
@@ -7103,7 +7314,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSkuDetailResp;
   }
@@ -7111,11 +7322,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QueryProductSkuListUsingGet1
+   * @name LuteosProductSkuQueryProductSkuList
    * @summary 商品sku列表查询
    * @request GET:/api/luteos/product/sku/queryProductSkuList
+   * @response `200` `ProductSkuListQueryResp` OK
    */
-  export namespace QueryProductSkuListUsingGet1 {
+  export namespace LuteosProductSkuQueryProductSkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 创建时间排序,默认false */
@@ -7233,7 +7445,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSkuListQueryResp;
   }
@@ -7241,11 +7453,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QuerySkuCertificationListUsingPost1
+   * @name LuteosProductSkuQuerySkuCertificationList
    * @summary 商品Sku认证信息查询
    * @request POST:/api/luteos/product/sku/querySkuCertificationList
+   * @response `200` `ProductSkuCertificationListResp` OK
    */
-  export namespace QuerySkuCertificationListUsingPost1 {
+  export namespace LuteosProductSkuQuerySkuCertificationList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuCertificationListReq;
@@ -7253,7 +7466,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSkuCertificationListResp;
   }
@@ -7261,11 +7474,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QuerySkuDefaultSpecUsingGet1
+   * @name LuteosProductSkuQuerySkuDefaultSpec
    * @summary 商品sku默认供应链规格查询
    * @request GET:/api/luteos/product/sku/querySkuDefaultSpec
+   * @response `200` `SupplySkuSpecResp` OK
    */
-  export namespace QuerySkuDefaultSpecUsingGet1 {
+  export namespace LuteosProductSkuQuerySkuDefaultSpec {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 操作类型。detail:详情，update:编辑，delete：删除 */
@@ -7278,7 +7492,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplySkuSpecResp;
   }
@@ -7286,11 +7500,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QuerySkuInfoUsingGet1
+   * @name LuteosProductSkuQuerySkuInfo
    * @summary 商品sku信息查询
    * @request GET:/api/luteos/product/sku/querySkuInfo
+   * @response `200` `ProductSkuInfoResp` OK
    */
-  export namespace QuerySkuInfoUsingGet1 {
+  export namespace LuteosProductSkuQuerySkuInfo {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 商品sku编码 */
@@ -7301,7 +7516,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSkuInfoResp;
   }
@@ -7309,11 +7524,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QuerySupplierSkuListUsingGet1
+   * @name LuteosProductSkuQuerySupplierSkuList
    * @summary 供应链sku列表查询
    * @request GET:/api/luteos/product/sku/querySupplierSkuList
+   * @response `200` `SupplierSkuListQueryResp` OK
    */
-  export namespace QuerySupplierSkuListUsingGet1 {
+  export namespace LuteosProductSkuQuerySupplierSkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类编码，如果传分类编码，分类等级一定要赋值 */
@@ -7349,7 +7565,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplierSkuListQueryResp;
   }
@@ -7357,11 +7573,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name QuerySupplySkuListUsingGet2
+   * @name LuteosProductSkuQuerySupplySkuList
    * @summary 商品Sku 关联供应链SKU查询并返回库存
    * @request GET:/api/luteos/product/sku/querySupplySkuList
+   * @response `200` `SupplySkuQueryResp` OK
    */
-  export namespace QuerySupplySkuListUsingGet2 {
+  export namespace LuteosProductSkuQuerySupplySkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /**
@@ -7379,7 +7596,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplySkuQueryResp;
   }
@@ -7387,11 +7604,12 @@ export namespace Api {
   /**
    * No description
    * @tags 店铺SKU管理
-   * @name QueryUserAccountUsingGet1
+   * @name LuteosProductSkuQueryUserAccount
    * @summary 查询店铺账户
    * @request GET:/api/luteos/product/sku/queryUserAccount
+   * @response `200` `ShopUserAccountResp` OK
    */
-  export namespace QueryUserAccountUsingGet1 {
+  export namespace LuteosProductSkuQueryUserAccount {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -7406,7 +7624,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ShopUserAccountResp;
   }
@@ -7414,11 +7632,12 @@ export namespace Api {
   /**
    * No description
    * @tags 店铺SKU管理
-   * @name QueryUserAccountListUsingGet1
+   * @name LuteosProductSkuQueryUserAccountList
    * @summary 查询店铺账户集合
    * @request GET:/api/luteos/product/sku/queryUserAccountList
+   * @response `200` `ShopUserAccountListResp` OK
    */
-  export namespace QueryUserAccountListUsingGet1 {
+  export namespace LuteosProductSkuQueryUserAccountList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 渠道 */
@@ -7431,7 +7650,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ShopUserAccountListResp;
   }
@@ -7439,11 +7658,12 @@ export namespace Api {
   /**
    * No description
    * @tags 店铺SKU管理
-   * @name SavePlatformSkuRelationUsingPost1
+   * @name LuteosProductSkuSavePlatformSkuRelation
    * @summary 保存店铺SKU关系
    * @request POST:/api/luteos/product/sku/savePlatformSkuRelation
+   * @response `200` `void` OK
    */
-  export namespace SavePlatformSkuRelationUsingPost1 {
+  export namespace LuteosProductSkuSavePlatformSkuRelation {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7451,7 +7671,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = void;
   }
@@ -7459,11 +7679,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name SaveSkuUsingPost4
+   * @name LuteosProductSkuSaveSku
    * @summary 商品sku保存
    * @request POST:/api/luteos/product/sku/saveSku
+   * @response `200` `ProductSkuSaveResp` OK
    */
-  export namespace SaveSkuUsingPost4 {
+  export namespace LuteosProductSkuSaveSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuSaveReq;
@@ -7471,7 +7692,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ProductSkuSaveResp;
   }
@@ -7479,11 +7700,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name SaveWorkflowRecordUsingPost1
+   * @name LuteosProductSkuSaveWorkflowRecord
    * @summary 生成SKU信息补充提醒工单
    * @request POST:/api/luteos/product/sku/saveWorkflowRecord
+   * @response `200` `WorkflowSubmitResp` OK
    */
-  export namespace SaveWorkflowRecordUsingPost1 {
+  export namespace LuteosProductSkuSaveWorkflowRecord {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductSkuNotifyReq;
@@ -7491,7 +7713,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = WorkflowSubmitResp;
   }
@@ -7499,11 +7721,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name SmaSkuQueryListUsingPost1
+   * @name LuteosProductSkuSmaSkuQueryList
    * @summary 查询预测SKU维度添加商品
    * @request POST:/api/luteos/product/sku/smaSkuQueryList
+   * @response `200` `SmaSkuQueryListResp` OK
    */
-  export namespace SmaSkuQueryListUsingPost1 {
+  export namespace LuteosProductSkuSmaSkuQueryList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SmaSkuQueryListReq;
@@ -7511,7 +7734,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SmaSkuQueryListResp;
   }
@@ -7519,11 +7742,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品供应商管理
-   * @name ExportSkuSnUsingPost1
+   * @name LuteosProductSkuSnExportSkuSn
    * @summary 商品供应商导出信息
    * @request POST:/api/luteos/product/sku/sn/exportSkuSn
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSkuSnUsingPost1 {
+  export namespace LuteosProductSkuSnExportSkuSn {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SkuSnQueryReq;
@@ -7531,7 +7755,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -7539,11 +7763,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品供应商管理
-   * @name QuerySkuSnListUsingGet1
+   * @name LuteosProductSkuSnQuerySkuSnList
    * @summary 商品供应商列表查询
    * @request GET:/api/luteos/product/sku/sn/querySkuSnList
+   * @response `200` `SkuSnQueryResp` OK
    */
-  export namespace QuerySkuSnListUsingGet1 {
+  export namespace LuteosProductSkuSnQuerySkuSnList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 产品SKU名称/产品SKU/产品SPU */
@@ -7571,7 +7796,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SkuSnQueryResp;
   }
@@ -7579,11 +7804,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品供应商管理
-   * @name SaveSkuSnUsingPost1
+   * @name LuteosProductSkuSnSaveSkuSn
    * @summary SN码创建
    * @request POST:/api/luteos/product/sku/sn/saveSkuSn
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveSkuSnUsingPost1 {
+  export namespace LuteosProductSkuSnSaveSkuSn {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SkuSnSaveReq;
@@ -7591,7 +7817,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -7599,11 +7825,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品SKU管理
-   * @name UploadSkuImgUsingPost1
+   * @name LuteosProductSkuUploadSkuImg
    * @summary 上传sku图片
    * @request POST:/api/luteos/product/sku/uploadSkuImg
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace UploadSkuImgUsingPost1 {
+  export namespace LuteosProductSkuUploadSkuImg {
     export type RequestParams = {};
     export type RequestQuery = {
       /** fileName */
@@ -7616,7 +7843,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -7624,11 +7851,12 @@ export namespace Api {
   /**
    * No description
    * @tags 商品中心数据统计
-   * @name QueryMemberCenterStatsUsingGet1
+   * @name LuteosProductStatsQueryMemberCenterStats
    * @summary 个人中心数据统计
    * @request GET:/api/luteos/product/stats/queryMemberCenterStats
+   * @response `200` `MemberCenterStatsQueryResp` OK
    */
-  export namespace QueryMemberCenterStatsUsingGet1 {
+  export namespace LuteosProductStatsQueryMemberCenterStats {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7636,7 +7864,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MemberCenterStatsQueryResp;
   }
@@ -7644,11 +7872,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name ExportSupplySkuUsingPost1
+   * @name LuteosProductSupplySkuExportSupplySku
    * @summary 供应链sku导出
    * @request POST:/api/luteos/product/supplySku/exportSupplySku
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSupplySkuUsingPost1 {
+  export namespace LuteosProductSupplySkuExportSupplySku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SupplySkuListQueryReq;
@@ -7656,7 +7885,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -7664,11 +7893,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name ExportSupplySkuListUsingPost1
+   * @name LuteosProductSupplySkuExportSupplySkuList
    * @summary 供应链sku列表导出
    * @request POST:/api/luteos/product/supplySku/exportSupplySkuList
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportSupplySkuListUsingPost1 {
+  export namespace LuteosProductSupplySkuExportSupplySkuList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SupplySkuListQueryReq;
@@ -7676,7 +7906,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -7684,11 +7914,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name OperateSupplySkuUsingPost1
+   * @name LuteosProductSupplySkuOperateSupplySku
    * @summary 供应链sku操作
    * @request POST:/api/luteos/product/supplySku/operateSupplySku
+   * @response `200` `SupplySkuCommonResp` OK
    */
-  export namespace OperateSupplySkuUsingPost1 {
+  export namespace LuteosProductSupplySkuOperateSupplySku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SupplySkuOperateReq;
@@ -7696,7 +7927,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplySkuCommonResp;
   }
@@ -7704,11 +7935,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name QueryGtmMemberListUsingGet3
+   * @name LuteosProductSupplySkuQueryGtmMemberList
    * @summary 费用归属人列表
    * @request GET:/api/luteos/product/supplySku/queryGtmMemberList
+   * @response `200` `DeptMemberListQueryResp` OK
    */
-  export namespace QueryGtmMemberListUsingGet3 {
+  export namespace LuteosProductSupplySkuQueryGtmMemberList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7716,7 +7948,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = DeptMemberListQueryResp;
   }
@@ -7724,11 +7956,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name QueryProductLineListUsingGet2
+   * @name LuteosProductSupplySkuQueryProductLineList
    * @summary 费用归属品线列表
    * @request GET:/api/luteos/product/supplySku/queryProductLineList
+   * @response `200` `FinanceProductLineListResp` OK
    */
-  export namespace QueryProductLineListUsingGet2 {
+  export namespace LuteosProductSupplySkuQueryProductLineList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7736,7 +7969,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = FinanceProductLineListResp;
   }
@@ -7744,11 +7977,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name QuerySupplyPurchaserListUsingGet1
+   * @name LuteosProductSupplySkuQuerySupplyPurchaserList
    * @summary 采购员信息查询
    * @request GET:/api/luteos/product/supplySku/querySupplyPurchaserList
+   * @response `200` `SupplyPurchaserResp` OK
    */
-  export namespace QuerySupplyPurchaserListUsingGet1 {
+  export namespace LuteosProductSupplySkuQuerySupplyPurchaserList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7756,7 +7990,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplyPurchaserResp;
   }
@@ -7764,11 +7998,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name QuerySupplySkuPerfectionUsingGet1
+   * @name LuteosProductSupplySkuQuerySupplySkuPerfection
    * @summary 获取供应链sku信息完整度
    * @request GET:/api/luteos/product/supplySku/querySupplySku/perfection
+   * @response `200` `SupplySkuPerfectionQueryResp` OK
    */
-  export namespace QuerySupplySkuPerfectionUsingGet1 {
+  export namespace LuteosProductSupplySkuQuerySupplySkuPerfection {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
@@ -7776,7 +8011,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplySkuPerfectionQueryResp;
   }
@@ -7784,11 +8019,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name QuerySupplySkuDetailUsingGet1
+   * @name LuteosProductSupplySkuQuerySupplySkuDetail
    * @summary 供应链sku详情
    * @request GET:/api/luteos/product/supplySku/querySupplySkuDetail
+   * @response `200` `SupplySkuDetailResp` OK
    */
-  export namespace QuerySupplySkuDetailUsingGet1 {
+  export namespace LuteosProductSupplySkuQuerySupplySkuDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 供应链SKU */
@@ -7799,7 +8035,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplySkuDetailResp;
   }
@@ -7807,11 +8043,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name QuerySupplySkuListUsingGet3
+   * @name LuteosProductSupplySkuQuerySupplySkuList
    * @summary 供应链sku列表查询
    * @request GET:/api/luteos/product/supplySku/querySupplySkuList
+   * @response `200` `SupplySkuListQueryResp` OK
    */
-  export namespace QuerySupplySkuListUsingGet3 {
+  export namespace LuteosProductSupplySkuQuerySupplySkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 国家编码 */
@@ -7874,7 +8111,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplySkuListQueryResp;
   }
@@ -7882,11 +8119,12 @@ export namespace Api {
   /**
    * No description
    * @tags 供应链SKU管理
-   * @name SaveSupplySkuUsingPost1
+   * @name LuteosProductSupplySkuSaveSupplySku
    * @summary 供应链sku保存
    * @request POST:/api/luteos/product/supplySku/saveSupplySku
+   * @response `200` `SupplySkuCommonResp` OK
    */
-  export namespace SaveSupplySkuUsingPost1 {
+  export namespace LuteosProductSupplySkuSaveSupplySku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = SupplySkuSaveReq;
@@ -7894,7 +8132,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = SupplySkuCommonResp;
   }
@@ -7902,11 +8140,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签分类管理
-   * @name CreateCategoryUsingPost1
+   * @name LuteosProductTagCategoryCreateCategory
    * @summary 创建标签分类
    * @request POST:/api/luteos/product/tag/category/createCategory
+   * @response `200` `CreateCategoryResp` OK
    */
-  export namespace CreateCategoryUsingPost1 {
+  export namespace LuteosProductTagCategoryCreateCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = CreateCategoryReq;
@@ -7914,7 +8153,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CreateCategoryResp;
   }
@@ -7922,11 +8161,12 @@ export namespace Api {
   /**
    * @description codeList为空时按照categoryName进行查询，codeList不为空时按照codeList查询
    * @tags 标签分类管理
-   * @name ExportUsingPost13
+   * @name LuteosProductTagCategoryExport
    * @summary 导出标签分类
    * @request POST:/api/luteos/product/tag/category/export
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportUsingPost13 {
+  export namespace LuteosProductTagCategoryExport {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = CategoryListQueryReq;
@@ -7934,7 +8174,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -7942,11 +8182,12 @@ export namespace Api {
   /**
    * @description 传入categoryCode，返回其下一级分类节点列表
    * @tags 标签分类管理
-   * @name QueryChildrenUsingGet1
+   * @name LuteosProductTagCategoryQueryChildren
    * @summary 根据分类编码查询下一级子节点
    * @request GET:/api/luteos/product/tag/category/queryChildren
+   * @response `200` `CategoryChildrenQueryResp` OK
    */
-  export namespace QueryChildrenUsingGet1 {
+  export namespace LuteosProductTagCategoryQueryChildren {
     export type RequestParams = {};
     export type RequestQuery = {
       /** categoryCode */
@@ -7957,7 +8198,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryChildrenQueryResp;
   }
@@ -7965,11 +8206,12 @@ export namespace Api {
   /**
    * @description 无参时返回整个树结构；传入categoryName时，根据分类名称模糊查询，返回匹配的分类及其所有父级分类的树结构
    * @tags 标签分类管理
-   * @name QueryTreeUsingGet1
+   * @name LuteosProductTagCategoryQueryTree
    * @summary 查询标签分类树
    * @request GET:/api/luteos/product/tag/category/queryTree
+   * @response `200` `CategoryTreeResp` OK
    */
-  export namespace QueryTreeUsingGet1 {
+  export namespace LuteosProductTagCategoryQueryTree {
     export type RequestParams = {};
     export type RequestQuery = {
       /** categoryName */
@@ -7980,7 +8222,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryTreeResp;
   }
@@ -7988,11 +8230,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签分类管理
-   * @name QueyCategoryListUsingGet1
+   * @name LuteosProductTagCategoryQueyCategoryList
    * @summary 查询标签分类列表
    * @request GET:/api/luteos/product/tag/category/queyCategoryList
+   * @response `200` `CategoryListQueryResp` OK
    */
-  export namespace QueyCategoryListUsingGet1 {
+  export namespace LuteosProductTagCategoryQueyCategoryList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 分类名称 */
@@ -8019,7 +8262,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CategoryListQueryResp;
   }
@@ -8027,11 +8270,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签分类管理
-   * @name UpdateCategoryUsingPost1
+   * @name LuteosProductTagCategoryUpdateCategory
    * @summary 更新标签分类
    * @request POST:/api/luteos/product/tag/category/updateCategory
+   * @response `200` `UpdateCategoryResp` OK
    */
-  export namespace UpdateCategoryUsingPost1 {
+  export namespace LuteosProductTagCategoryUpdateCategory {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = UpdateCategoryReq;
@@ -8039,7 +8283,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = UpdateCategoryResp;
   }
@@ -8047,11 +8291,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签管理
-   * @name ConnectProductUsingPost9
+   * @name LuteosProductTagConnectProduct
    * @summary 标签关联商品
    * @request POST:/api/luteos/product/tag/connectProduct
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace ConnectProductUsingPost9 {
+  export namespace LuteosProductTagConnectProduct {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TagProductConnectReq;
@@ -8059,7 +8304,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -8067,11 +8312,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签管理
-   * @name ExportTagUsingPost1
+   * @name LuteosProductTagExportTag
    * @summary 标签信息导出
    * @request POST:/api/luteos/product/tag/exportTag
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportTagUsingPost1 {
+  export namespace LuteosProductTagExportTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TagListQueryReq;
@@ -8079,7 +8325,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8087,11 +8333,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签管理
-   * @name OperateTagUsingPost1
+   * @name LuteosProductTagOperateTag
    * @summary 标签操作
    * @request POST:/api/luteos/product/tag/operateTag
+   * @response `200` `CommonRespBoolean` OK
    */
-  export namespace OperateTagUsingPost1 {
+  export namespace LuteosProductTagOperateTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TagOperateReq;
@@ -8099,7 +8346,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespBoolean;
   }
@@ -8107,11 +8354,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签管理
-   * @name QueryTagDetailUsingGet1
+   * @name LuteosProductTagQueryTagDetail
    * @summary 标签详情查询
    * @request GET:/api/luteos/product/tag/queryTagDetail
+   * @response `200` `TagDetailResp` OK
    */
-  export namespace QueryTagDetailUsingGet1 {
+  export namespace LuteosProductTagQueryTagDetail {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 标签编码 */
@@ -8122,7 +8370,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TagDetailResp;
   }
@@ -8130,11 +8378,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签管理
-   * @name QueryTagListUsingGet1
+   * @name LuteosProductTagQueryTagList
    * @summary 标签列表查询
    * @request GET:/api/luteos/product/tag/queryTagList
+   * @response `200` `TagListQueryResp` OK
    */
-  export namespace QueryTagListUsingGet1 {
+  export namespace LuteosProductTagQueryTagList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 标签分组码 */
@@ -8171,7 +8420,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TagListQueryResp;
   }
@@ -8179,11 +8428,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签管理
-   * @name QueryTagProductUsingGet1
+   * @name LuteosProductTagQueryTagProduct
    * @summary 查询标签关联商品
    * @request GET:/api/luteos/product/tag/queryTagProduct
+   * @response `200` `TagProductResp` OK
    */
-  export namespace QueryTagProductUsingGet1 {
+  export namespace LuteosProductTagQueryTagProduct {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 商品spu 名称 */
@@ -8210,7 +8460,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TagProductResp;
   }
@@ -8218,11 +8468,12 @@ export namespace Api {
   /**
    * No description
    * @tags 标签管理
-   * @name SaveOrUpdateTagUsingPost1
+   * @name LuteosProductTagSaveOrUpdateTag
    * @summary 标签信息保存
    * @request POST:/api/luteos/product/tag/saveOrUpdateTag
+   * @response `200` `TagSaveResp` OK
    */
-  export namespace SaveOrUpdateTagUsingPost1 {
+  export namespace LuteosProductTagSaveOrUpdateTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TagSaveReq;
@@ -8230,7 +8481,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TagSaveResp;
   }
@@ -8238,11 +8489,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name ExportMetaTiktokSumListUsingPost1
+   * @name LuteosProductTiktokExportMetaTiktokSumList
    * @summary tiktok-机构达人汇总导出
    * @request POST:/api/luteos/product/tiktok/exportMetaTiktokSumList
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportMetaTiktokSumListUsingPost1 {
+  export namespace LuteosProductTiktokExportMetaTiktokSumList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MetaTiktokReportSumQueryReq;
@@ -8250,7 +8502,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8258,11 +8510,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name ExportTiktokAdsListUsingPost1
+   * @name LuteosProductTiktokExportTiktokAdsList
    * @summary tiktok-广告明细表现导出
    * @request POST:/api/luteos/product/tiktok/exportTiktokAdsList
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportTiktokAdsListUsingPost1 {
+  export namespace LuteosProductTiktokExportTiktokAdsList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TiktokAdsQueryReq;
@@ -8270,7 +8523,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8278,11 +8531,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name ExportTiktokAffiliateAccountsSpuListUsingPost1
+   * @name LuteosProductTiktokExportTiktokAffiliateAccountsSpuList
    * @summary tiktok-机构达人表现导出
    * @request POST:/api/luteos/product/tiktok/exportTiktokAffiliateAccountsSpuList
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportTiktokAffiliateAccountsSpuListUsingPost1 {
+  export namespace LuteosProductTiktokExportTiktokAffiliateAccountsSpuList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TiktokAffiliateAccountsSpuQueryReq;
@@ -8290,7 +8544,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8298,11 +8552,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name ExportTiktokWeekReportListUsingPost1
+   * @name LuteosProductTiktokExportTiktokWeekReportList
    * @summary tiktok-小店周报SPU导出
    * @request POST:/api/luteos/product/tiktok/exportTiktokWeekReportList
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace ExportTiktokWeekReportListUsingPost1 {
+  export namespace LuteosProductTiktokExportTiktokWeekReportList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TiktokWeekReportQueryReq;
@@ -8310,7 +8565,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8318,11 +8573,12 @@ export namespace Api {
   /**
    * No description
    * @tags tiktok-在线商品
-   * @name DownloadUsingPost14
+   * @name LuteosProductTiktokListingDownload
    * @summary tiktok-在线商品导出-V2
    * @request POST:/api/luteos/product/tiktok/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost14 {
+  export namespace LuteosProductTiktokListingDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TikTokListingProductReq;
@@ -8330,7 +8586,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8338,11 +8594,12 @@ export namespace Api {
   /**
    * No description
    * @tags tiktok-在线商品
-   * @name QueryProductListingPageUsingPost8
+   * @name LuteosProductTiktokListingQueryProductListingPage
    * @summary tiktok-在线商品分页查询-V2
    * @request POST:/api/luteos/product/tiktok/listing/queryProductListingPage
+   * @response `200` `TikTokProductListingResp` OK
    */
-  export namespace QueryProductListingPageUsingPost8 {
+  export namespace LuteosProductTiktokListingQueryProductListingPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TikTokListingProductReq;
@@ -8350,7 +8607,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TikTokProductListingResp;
   }
@@ -8358,11 +8615,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name QueryMetaTiktokSumListUsingPost1
+   * @name LuteosProductTiktokQueryMetaTiktokSumList
    * @summary tiktok-机构达人表现-汇总查询
    * @request POST:/api/luteos/product/tiktok/queryMetaTiktokSumList
+   * @response `200` `MetaTiktokReportSumQueryResp` OK
    */
-  export namespace QueryMetaTiktokSumListUsingPost1 {
+  export namespace LuteosProductTiktokQueryMetaTiktokSumList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = MetaTiktokReportSumQueryReq;
@@ -8370,7 +8628,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = MetaTiktokReportSumQueryResp;
   }
@@ -8378,11 +8636,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name QueryTiktokAdsListUsingGet1
+   * @name LuteosProductTiktokQueryTiktokAdsList
    * @summary tiktok-广告明细表现查询
    * @request GET:/api/luteos/product/tiktok/queryTiktokAdsList
+   * @response `200` `TiktokAdsQueryResp` OK
    */
-  export namespace QueryTiktokAdsListUsingGet1 {
+  export namespace LuteosProductTiktokQueryTiktokAdsList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 活动名称/广告组名称/店铺sku */
@@ -8427,7 +8686,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TiktokAdsQueryResp;
   }
@@ -8435,11 +8694,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name QueryTiktokAdsPlatformSkuListUsingGet1
+   * @name LuteosProductTiktokQueryTiktokAdsPlatformSkuList
    * @summary tiktok-广告映射店铺sku查询
    * @request GET:/api/luteos/product/tiktok/queryTiktokAdsPlatformSkuList
+   * @response `200` `TiktokAdsPlatformSkuQueryResp` OK
    */
-  export namespace QueryTiktokAdsPlatformSkuListUsingGet1 {
+  export namespace LuteosProductTiktokQueryTiktokAdsPlatformSkuList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 广告名称/店铺sku */
@@ -8469,7 +8729,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TiktokAdsPlatformSkuQueryResp;
   }
@@ -8477,11 +8737,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name QueryTiktokAffiliateAccountsSpuListUsingPost1
+   * @name LuteosProductTiktokQueryTiktokAffiliateAccountsSpuList
    * @summary tiktok-机构达人表现-周维度查询
    * @request POST:/api/luteos/product/tiktok/queryTiktokAffiliateAccountsSpuList
+   * @response `200` `TiktokAffiliateAccountsSpuQueryResp` OK
    */
-  export namespace QueryTiktokAffiliateAccountsSpuListUsingPost1 {
+  export namespace LuteosProductTiktokQueryTiktokAffiliateAccountsSpuList {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TiktokAffiliateAccountsSpuQueryReq;
@@ -8489,7 +8750,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TiktokAffiliateAccountsSpuQueryResp;
   }
@@ -8497,11 +8758,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name QueryTiktokWeekReportListUsingGet1
+   * @name LuteosProductTiktokQueryTiktokWeekReportList
    * @summary tiktok-小店周报SPU查询
    * @request GET:/api/luteos/product/tiktok/queryTiktokWeekReportList
+   * @response `200` `TiktokWeekReportQueryResp` OK
    */
-  export namespace QueryTiktokWeekReportListUsingGet1 {
+  export namespace LuteosProductTiktokQueryTiktokWeekReportList {
     export type RequestParams = {};
     export type RequestQuery = {
       /** 产品名称 */
@@ -8546,7 +8808,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TiktokWeekReportQueryResp;
   }
@@ -8554,11 +8816,12 @@ export namespace Api {
   /**
    * No description
    * @tags TK周报模块
-   * @name SaveTiktokAdsSkuUsingPost1
+   * @name LuteosProductTiktokSaveTiktokAdsSku
    * @summary tiktok-广告店铺SKU映射保存
    * @request POST:/api/luteos/product/tiktok/saveTiktokAdsSku
+   * @response `200` `TiktokAdsSkuSaveResp` OK
    */
-  export namespace SaveTiktokAdsSkuUsingPost1 {
+  export namespace LuteosProductTiktokSaveTiktokAdsSku {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = TiktokAdsSkuSaveReq;
@@ -8566,7 +8829,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = TiktokAdsSkuSaveResp;
   }
@@ -8574,11 +8837,12 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name DownloadUsingPost15
+   * @name LuteosProductWalmartListingDownload
    * @summary 沃尔玛-在线商品导出-V2
    * @request POST:/api/luteos/product/walmart/listing/download
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost15 {
+  export namespace LuteosProductWalmartListingDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = WalmartListingProductReq;
@@ -8586,7 +8850,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8594,12 +8858,13 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name DownloadUsingPost16
+   * @name LuteosProductWalmartListingListingDownload
    * @summary 沃尔玛在线商品导出
    * @request POST:/api/luteos/product/walmart/listing/listing/download
    * @deprecated
+   * @response `200` `CommonExportResp` OK
    */
-  export namespace DownloadUsingPost16 {
+  export namespace LuteosProductWalmartListingListingDownload {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = WalmartListingReq;
@@ -8607,7 +8872,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonExportResp;
   }
@@ -8615,12 +8880,13 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name QueryListingTagUsingPost9
+   * @name LuteosProductWalmartListingListingQueryTag
    * @summary 沃尔玛在线商品父维度标签查询
    * @request POST:/api/luteos/product/walmart/listing/listing/queryTag
    * @deprecated
+   * @response `200` `ListingTagResp` OK
    */
-  export namespace QueryListingTagUsingPost9 {
+  export namespace LuteosProductWalmartListingListingQueryTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingQueryTagReq;
@@ -8628,7 +8894,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = ListingTagResp;
   }
@@ -8636,12 +8902,13 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name UpdateTagUsingPost8
+   * @name LuteosProductWalmartListingListingUpdateTag
    * @summary 沃尔玛在线商品标签保存更新
    * @request POST:/api/luteos/product/walmart/listing/listing/updateTag
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace UpdateTagUsingPost8 {
+  export namespace LuteosProductWalmartListingListingUpdateTag {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ListingBatchModifyTagReq;
@@ -8649,7 +8916,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -8657,12 +8924,13 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name QueryPageUsingPost1
+   * @name LuteosProductWalmartListingQueryPage
    * @summary 沃尔玛-在线商品分页查询
    * @request POST:/api/luteos/product/walmart/listing/queryPage
    * @deprecated
+   * @response `200` `WalmartListingResp` OK
    */
-  export namespace QueryPageUsingPost1 {
+  export namespace LuteosProductWalmartListingQueryPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = WalmartListingReq;
@@ -8670,7 +8938,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = WalmartListingResp;
   }
@@ -8678,11 +8946,12 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name QueryProductListingPageUsingPost9
+   * @name LuteosProductWalmartListingQueryProductListingPage
    * @summary 沃尔玛-在线商品分页查询-V2
    * @request POST:/api/luteos/product/walmart/listing/queryProductListingPage
+   * @response `200` `WalmartProductListingResp` OK
    */
-  export namespace QueryProductListingPageUsingPost9 {
+  export namespace LuteosProductWalmartListingQueryProductListingPage {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = WalmartListingProductReq;
@@ -8690,7 +8959,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = WalmartProductListingResp;
   }
@@ -8698,12 +8967,13 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name SaveOperatorUsingPost7
+   * @name LuteosProductWalmartListingSaveOperator
    * @summary 沃尔玛-在线商品保存运营人员
    * @request POST:/api/luteos/product/walmart/listing/saveOperator
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveOperatorUsingPost7 {
+  export namespace LuteosProductWalmartListingSaveOperator {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = OperatorSaveReq;
@@ -8711,7 +8981,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }
@@ -8719,12 +8989,13 @@ export namespace Api {
   /**
    * No description
    * @tags 沃尔玛-在线商品
-   * @name SaveProductLinkUsingPost7
+   * @name LuteosProductWalmartListingSaveProductLink
    * @summary 沃尔玛-在线商品保存商品链接
    * @request POST:/api/luteos/product/walmart/listing/saveProductLink
    * @deprecated
+   * @response `200` `CommonRespObject` OK
    */
-  export namespace SaveProductLinkUsingPost7 {
+  export namespace LuteosProductWalmartListingSaveProductLink {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ProductLinkSaveReq;
@@ -8732,7 +9003,7 @@ export namespace Api {
       /** token */
       Authorization?: any;
       /** token */
-      "lute-account-str"?: any;
+      'lute-account-str'?: any;
     };
     export type ResponseBody = CommonRespObject;
   }

@@ -1,0 +1,18 @@
+.el-dropdown {
+  .el-button-group > .el-button {
+    float: left;
+    position: relative;
+    z-index: 0;
+  }
+  .el-button-group > .el-button:not(.is-disabled) {
+    margin-right: -1px;
+  }
+  .el-button-group > .el-button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .el-button-group > .el-button:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

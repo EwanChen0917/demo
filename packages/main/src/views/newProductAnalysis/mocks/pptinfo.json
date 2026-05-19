@@ -1,0 +1,888 @@
+{
+  "projectId": 1489,
+  "data": {
+    "size": {
+      "width": 1000,
+      "height": 562.5
+    },
+    "title": "集奶碗新品机会洞察",
+    "slides": [
+      {
+        "id": "slide_cover_1",
+        "remark": "",
+        "elements": [
+          {
+            "id": "bg_shape_cover_1",
+            "top": 0,
+            "fill": "#5E965A",
+            "left": 0,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "top",
+              "content": "",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 1000,
+            "height": 562.5,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "cover_image_cover_1",
+            "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/cover-mom.svg",
+            "top": 80,
+            "left": 575,
+            "type": "image",
+            "flipH": false,
+            "flipV": false,
+            "width": 341.00199475065614,
+            "height": 420.9965354330708,
+            "rotate": 0,
+            "fixedRatio": true
+          },
+          {
+            "id": "time_icon_cover_1",
+            "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/time-icon.svg",
+            "top": 462,
+            "left": 76,
+            "type": "image",
+            "flipH": false,
+            "flipV": false,
+            "width": 12,
+            "height": 12,
+            "rotate": 0,
+            "fixedRatio": true
+          },
+          {
+            "id": "author_icon_cover_1",
+            "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/creator-icon.svg",
+            "top": 410,
+            "left": 76,
+            "type": "image",
+            "flipH": false,
+            "flipV": false,
+            "width": 12,
+            "height": 12,
+            "rotate": 0,
+            "fixedRatio": true
+          },
+          {
+            "id": "dept_icon_cover_1",
+            "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/dept-icon.svg",
+            "top": 436,
+            "left": 76,
+            "type": "image",
+            "flipH": false,
+            "flipV": false,
+            "width": 12,
+            "height": 12,
+            "rotate": 0,
+            "fixedRatio": true
+          },
+          {
+            "id": "logo_cover_1",
+            "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/momcozy.svg",
+            "top": 60.50005249343832,
+            "left": 75.50005249343832,
+            "type": "image",
+            "flipH": false,
+            "flipV": false,
+            "width": 104,
+            "height": 13.50005249343832,
+            "rotate": 0,
+            "fixedRatio": true
+          },
+          {
+            "id": "main_title_cover_1",
+            "top": 134,
+            "fill": "",
+            "left": 66,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"\"><span style=\"font-size: 44px;\"><span style=\"font-family: &quot;PingFang SC&quot;;\"><span style=\"color: rgba(255, 255, 255, 0.99);\">集奶碗新品机会洞察：三维共振驱动市场突破</span></span></span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 444,
+            "height": 56,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "subtitle_cover_1",
+            "top": 204,
+            "fill": "",
+            "left": 67,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #fffffffc;font-size: 18.0px;font-family: PingFang SC;\">基于Google Trends与全球市场数据，揭示集奶碗品类的季节性需求波动及智能育儿设备高速增长背景</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 312,
+            "height": 56,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "description_cover_1",
+            "top": 289,
+            "fill": "",
+            "left": 67,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #fffffffc;font-size: 12.0px;font-family: PingFang SC;\">搜索热度在2025年8月达到峰值100，表明北半球夏季为哺乳期妈妈对集奶碗需求的高峰期</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 444,
+            "height": 48,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "date_cover_1",
+            "top": 456,
+            "fill": "",
+            "left": 87,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #fffffffc;font-size: 10.0px;font-family: PingFang SC;\">时间：2025-11-13</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 138.50005249343832,
+            "height": 14,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "author_cover_1",
+            "top": 404,
+            "fill": "",
+            "left": 87,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"\"><span style=\"font-size: 10px;\"><span style=\"font-family: &quot;PingFang SC&quot;;\"><span style=\"color: rgba(255, 255, 255, 0.99);\">姓名：产品战略部</span></span></span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 108,
+            "height": 14,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "department_cover_1",
+            "top": 430,
+            "fill": "",
+            "left": 87,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"\"><span style=\"font-size: 10px;\"><span style=\"font-family: &quot;PingFang SC&quot;;\"><span style=\"color: rgba(255, 255, 255, 0.99);\">部门：产品战略部</span></span></span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 201,
+            "height": 14,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          }
+        ],
+        "background": {
+          "type": "solid",
+          "color": "#F9FFF9"
+        }
+      },
+      {
+        "id": "slide_catalog_1",
+        "remark": "",
+        "elements": [
+          {
+            "id": "catalog_bg_catalog_1",
+            "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/catalog-mom.svg",
+            "top": 0,
+            "left": 0,
+            "type": "image",
+            "flipH": false,
+            "flipV": false,
+            "width": 500,
+            "height": 563,
+            "rotate": 0,
+            "fixedRatio": true
+          },
+          {
+            "id": "contents_title_catalog_1",
+            "top": 103,
+            "fill": "",
+            "left": 553,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #e1f4e9fc;font-size: 36.5px;font-family: PingFang SC;\">CONTENTS</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 248.5000524934383,
+            "height": 52.50005249343832,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part1_num_catalog_1",
+            "top": 190,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">一</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 95.50005249343832,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part1_title_catalog_1",
+            "top": 190,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">摘要与核心发现</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part2_num_catalog_1",
+            "top": 230,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">二</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 98,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part2_title_catalog_1",
+            "top": 230,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">宏观趋势分析</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part3_num_catalog_1",
+            "top": 270,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">三</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 98,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part3_title_catalog_1",
+            "top": 270,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">亚马逊平台洞察</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part4_num_catalog_1",
+            "top": 310,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">四</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 98,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part4_title_catalog_1",
+            "top": 310,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">三维交叉验证</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part5_num_catalog_1",
+            "top": 350,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">五</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 98,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part5_title_catalog_1",
+            "top": 350,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">执行路线图</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part6_num_catalog_1",
+            "top": 390,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">六</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 98,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part6_title_catalog_1",
+            "top": 390,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">用户画像与产品策略</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "main_title_catalog_1",
+            "top": 80,
+            "fill": "",
+            "left": 545.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 42.0px;font-family: PingFang SC;\">目录</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 132,
+            "height": 42,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          }
+        ],
+        "background": {
+          "type": "solid",
+          "color": "#F9FFF9"
+        }
+      },
+      {
+        "id": "slide_catalog_2",
+        "remark": "",
+        "elements": [
+          {
+            "id": "catalog_bg_catalog_2",
+            "src": "https://lute-public-dev.oss-cn-shenzhen.aliyuncs.com/image/catalog-mom.svg",
+            "top": 0,
+            "left": 0,
+            "type": "image",
+            "flipH": false,
+            "flipV": false,
+            "width": 500,
+            "height": 563,
+            "rotate": 0,
+            "fixedRatio": true
+          },
+          {
+            "id": "contents_title_catalog_2",
+            "top": 103,
+            "fill": "",
+            "left": 553,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #e1f4e9fc;font-size: 36.5px;font-family: PingFang SC;\">CONTENTS</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 248.5000524934383,
+            "height": 52.50005249343832,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part7_num_catalog_2",
+            "top": 190,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">七</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 97.50005249343832,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part7_title_catalog_2",
+            "top": 190,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">4P营销模型</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part8_num_catalog_2",
+            "top": 230,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">八</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 97.50005249343832,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part8_title_catalog_2",
+            "top": 230,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">实施路径与风险预警</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part9_num_catalog_2",
+            "top": 270,
+            "fill": "",
+            "left": 547.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #5e965afc;font-size: 14.0px;font-family: PingFang SC;\">九</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 97.50005249343832,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "part9_title_catalog_2",
+            "top": 270,
+            "fill": "",
+            "left": 619,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 14.0px;font-family: PingFang SC;\">结论与后续步骤</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 321,
+            "height": 18,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          },
+          {
+            "id": "main_title_catalog_2",
+            "top": 80,
+            "fill": "",
+            "left": 545.5000524934383,
+            "path": "M 0 0 L 200 0 L 200 200 L 0 200 Z",
+            "text": {
+              "align": "middle",
+              "content": "<p style=\"text-align: left;\"><span style=\"color: #1f1f1ffc;font-size: 42.0px;font-family: PingFang SC;\">目录</span></p>",
+              "defaultColor": "#333",
+              "defaultFontName": ""
+            },
+            "type": "shape",
+            "flipH": false,
+            "flipV": false,
+            "width": 132,
+            "height": 42,
+            "rotate": 0,
+            "outline": {
+              "color": "#000000",
+              "style": "solid",
+              "width": 0
+            },
+            "viewBox": [200, 200],
+            "fixedRatio": false
+          }
+        ],
+        "background": {
+          "type": "solid",
+          "color": "#F9FFF9"
+        }
+      }
+    ],
+    "themeColors": ["#5E965A", "#4A7C47", "#7BAB77", "#A5C9A1", "#2F5A2D", "#8FBF8B"]
+  }
+}

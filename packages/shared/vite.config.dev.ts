@@ -9,9 +9,8 @@ export const createDevConfig = (overrides: UserConfig = {}): UserConfig => {
       middlewareMode: false,
       proxy: {
         '/api': {
-          target: 'http://localhost:3000',
+          target: 'https://erp.luteos.site',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
         },
       },
     },

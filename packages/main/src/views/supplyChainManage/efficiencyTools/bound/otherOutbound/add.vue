@@ -1,0 +1,9 @@
+<template>
+  <actions mode="add" />
+</template>
+
+<script setup lang="ts" name="otherOutboundAdd">
+import actions from './actions.vue';
+</script>
+
+<style scoped lang="scss"></style>

@@ -103,6 +103,21 @@ export const exportConfirm = () =>
     },
   });
 
+/** 异步导入/上传成功后的引导（上传任务中心） */
+export const importUploadConfirm = () =>
+  confirm({
+    title: '异步上传中，请前往上传任务中心查看。',
+    icon: 'success',
+    iconHtml:
+      '<i class="iconfont icon-chenggongzhuangtai" style="color:#02b96b;font-size:24px"></i>',
+    confirmButtonText: '去查看',
+    cancelButtonText: '知道了',
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-active-light',
+    },
+  });
+
 export const delConfirm = () =>
   confirm({
     title: '确定要删除吗？',
@@ -113,7 +128,20 @@ export const delConfirm = () =>
       cancelButton: 'btn btn-active-light',
     },
   });
-
+  
+export const taskConfirm = (title='异步处理中，请前往任务列表查看。') =>
+  confirm({
+    title: title,
+    icon: 'success',
+    iconHtml:
+      '<i class="iconfont icon-chenggongzhuangtai" style="color:#02b96b;font-size:24px"></i>',
+    confirmButtonText: '去查看',
+    cancelButtonText: '知道了',
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-active-light',
+    },
+  });
 export const unbindConfirm = () => confirm('确定取消关联吗');
 
 export const cancelConfirm = () => confirm('确定要取消吗？所有数据将会丢失～');

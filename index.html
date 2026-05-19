@@ -1,12 +1,123 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue3 Monorepo - Main</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta name="keywords" content="路特创新 用户第一 开放创新 简单高效 结果导向" />
+    <meta
+      name="description"
+      content="成为全球最值得信赖的母婴科技生态品牌，为妈妈与家庭创造长期信任、温暖的产品与体验。"
+    />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <title>路特数字化平台</title>
+    <link
+      rel="stylesheet"
+      href="https://lute-public-prod.oss-cn-shenzhen.aliyuncs.com/icon/iconfont.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://lute-public-prod.oss-cn-shenzhen.aliyuncs.com/icon/iconfont-menu.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://lute-public-prod.oss-cn-shenzhen.aliyuncs.com/icon/iconfont-common.css"
+    />
+    <link href="/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
-    <div id="app"></div>
+  <body
+    id="kt_app_body"
+    data-kt-app-layout="dark-sidebar"
+    data-kt-app-header-fixed="true"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-hoverable="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    data-kt-app-toolbar-enabled="true"
+    class="app-default keen-ui"
+  >
+    <div id="app">
+      <style>
+        .app-loading {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .app-loading .app-loading-wrap {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: flex;
+          -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .app-loading .app-loading-item {
+          position: relative;
+          display: inline-block;
+          width: 92px;
+          height: 43px;
+          vertical-align: middle;
+          background-image: url('/assets/images/icon/loading.webp');
+          background-size: 92px 41px;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      </style>
+      <div class="app-loading">
+        <div class="app-loading-wrap">
+          <div class="app-loading-item"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var defaultThemeMode = 'light';
+      var themeMode;
+      if (document.documentElement) {
+        if (document.documentElement.hasAttribute('data-bs-theme-mode')) {
+          themeMode = document.documentElement.getAttribute('data-bs-theme-mode');
+        } else {
+          if (localStorage.getItem('data-bs-theme') !== null) {
+            themeMode = localStorage.getItem('data-bs-theme');
+          } else {
+            themeMode = defaultThemeMode;
+          }
+        }
+        if (themeMode === 'system') {
+          themeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-bs-theme', themeMode);
+      }
+    </script>
+    <script>
+      var hostUrl = '/assets/';
+    </script>
+    <script src="/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="/assets/js/scripts.bundle.js"></script>
+
+    <script>
+      if (typeof window !== 'undefined' && typeof window.global === 'undefined') {
+        window.global = window;
+      }
+    </script>
+    <script src="https://g.alicdn.com/dingding/h5-dingtalk-login/0.21.0/ddlogin.js"></script>
     <script type="module" src="/packages/main/src/main.ts"></script>
   </body>
 </html>

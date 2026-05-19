@@ -11,6 +11,9 @@ export const commonCssConfig = {
     preprocessorOptions: {
       scss: {
         silenceDeprecations: ['legacy-js-api'],
+        // Vite 5.4 默认使用 Sass legacy API（render），需用 includePaths
+        includePaths: [path.resolve(__dirname, '../../node_modules')],
+        additionalData: `@use "@/styles/variable.scss" as *;`,
       },
     },
   },
@@ -23,6 +26,7 @@ export const baseConfig: UserConfig = {
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      'element-plus': '@lute-root-ui/element-plus',
     },
   },
 };

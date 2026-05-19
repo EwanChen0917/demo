@@ -1,0 +1,98 @@
+export default [
+  {
+    path: '/gtm/report',
+    meta: { title: '经营分析周报', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/index.vue'),
+    name: 'gtmReport',
+  },
+  {
+    path: '/shopify/report',
+    meta: { title: '独立站分析周报', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/shopifyReport/index.vue'),
+    name: 'shopifyReport',
+  },
+  {
+    path: '/tiktok/report',
+    meta: { title: 'TikTok分析周报', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/tiktokReport/index.vue'),
+    name: 'tiktokReport',
+  },
+  {
+    path: '/amazon/report',
+    meta: { title: 'Amazon分析周报', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/amazonReport/index.vue'),
+    name: 'amazonReport',
+  },
+  {
+    path: '/amazon/day/report/',
+    meta: { title: 'Amazon分析日志', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/amazonDayReport/index.vue'),
+    name: 'amazonDayReport',
+  },
+  {
+    path: '/monthReport',
+    meta: { title: '经营分析月报', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/monthReport/index.vue'),
+    name: 'monthReport',
+  },
+  {
+    path: '/newProduct',
+    meta: { title: 'SPU新品分析', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/newProduct/index.vue'),
+    name: 'newProduct',
+  },
+  {
+    path: '/FundsAndCashFlow',
+    meta: { title: '资金与现金流', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/FundsAndCashFlow/index.vue'),
+    name: 'FundsAndCashFlow',
+  },
+  {
+    path: '/supplyChainStockingAnalysis',
+    meta: { title: '供应链备货分析', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/supplyChainStockingAnalysis/index.vue'),
+    name: 'supplyChainStockingAnalysis',
+  },
+  {
+    path: '/voc/report',
+    meta: { title: 'VOC看板', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/vocReport/index.vue'),
+    name: 'vocReport',
+  },
+  {
+    path: '/new/voc/report',
+    meta: { title: 'VOC看板', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/vocReportNew/index.vue'),
+    name: 'vocReportNew',
+  },
+  {
+    path: '/amazonTask/report',
+    meta: { title: 'Amazon任务看板', toolbar: false, footer: false, isFrame: true },
+    component: () => import('@/views/report/amazonTaskReport/index.vue'),
+    name: 'amazonTaskReport',
+  },
+  {
+    path: '/mpcNewProductAnalysis',
+    meta: { title: 'MPC新品复盘分析', toolbar: false, footer: false, isFrame: false },
+    component: () => import('@/views/report/mpcNewProductAnalysis/index.vue'),
+    name: 'mpcNewProductAnalysis',
+  },
+  {
+    path: '/bi/shopifyGoal',
+    meta: { title: '周报&本月目标达成', toolbar: false, footer: false, isFrame: false },
+    component: () => import('@/views/report/shopifyGoal/index.vue'),
+    name: 'shopifyGoal',
+  },
+  {
+    path: '/bi/tiktokGoal',
+    meta: { title: '周报&本月目标达成', toolbar: false, footer: false, isFrame: false },
+    component: () => import('@/views/report/tiktokGoal/index.vue'),
+    name: 'tiktokGoal',
+  },
+  {
+    path: '/bi/retailGoal',
+    meta: { title: '周报&本月目标达成', toolbar: false, footer: false, isFrame: false },
+    component: () => import('@/views/report/retailGoal/index.vue'),
+    name: 'retailGoal',
+  },
+];

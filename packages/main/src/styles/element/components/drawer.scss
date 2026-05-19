@@ -1,0 +1,33 @@
+.custom-drawer {
+  border-radius: 8px 0 0 8px;
+  --el-drawer-bg-color: #f0f2f5;
+  --el-drawer-padding-primary: 14px 8px 14px 20px;
+
+  .el-drawer__header {
+    border-radius: 8px 0 0 0;
+    margin-bottom: 0;
+    background-color: #fff;
+    padding-bottom: 14px;
+    color: #000;
+
+    /* 重要/Medium 16 */
+    font-family: 'PingFang SC Medium';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    border-bottom: 1px solid #dfe2e6;
+    .el-drawer__title {
+      font-size: 14px;
+    }
+  }
+
+  .el-drawer__footer {
+    text-align: left;
+    background-color: #fff;
+    border-radius: 0 0 0 8px;
+    border-top: 1px solid #dfe2e6;
+    background: #fff;
+    --el-drawer-padding-primary: 12px 20px;
+  }
+}

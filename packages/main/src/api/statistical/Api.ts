@@ -1,0 +1,581 @@
+/* eslint-disable */
+/* tslint:disable */
+/*
+ * ---------------------------------------------------------------
+ * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
+ * ##                                                           ##
+ * ## AUTHOR: acacode                                           ##
+ * ## SOURCE: https://github.com/acacode/swagger-typescript-api ##
+ * ---------------------------------------------------------------
+ */
+
+import {
+  CommonExportResp,
+  CommonRespBoolean,
+  ExecutorBeanListResp,
+  OpinionClassificationBeanResp,
+  OpinionCountryResp,
+  OpinionDataCenterListReq,
+  OpinionDataCenterListResp,
+  OpinionDataListReq,
+  OpinionDataListResp,
+  OpinionDataResp,
+  OpinionDataStatusReq,
+  OpinionLevelResp,
+  OpinionMonitoringReq,
+  OpinionMonitoringResp,
+  OpinionParamListResp,
+  OpinionParamReq,
+  OpinionPrTagResp,
+  OpinionSmPlatformResp,
+  OpinionSpuCateResp,
+  OpinionStatisticsResp,
+  OpinionTagTreeReq,
+  OpinionTagTreeResp,
+  OpinionTranslationResp,
+  OpinionTranslationSubmitReq,
+  OpinionTrendResp,
+  WorkOrderListReq,
+  WorkOrderListResp,
+  WorkOrderLogResp,
+  WorkOrderOperateReq,
+  WorkOrderOperateResp,
+  WorkOrderSaveReq,
+  WorkOrderSaveResp,
+} from './data-contracts';
+import { ContentType, HttpClient, RequestParams } from './http-client';
+
+export class Api<SecurityDataType = unknown> extends HttpClient<SecurityDataType> {
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionExportOpinionData
+   * @summary 舆情数据中心列表导出
+   * @request POST:/api/luteos/ai/analyze/opinion/exportOpinionData
+   * @response `200` `CommonExportResp` OK
+   */
+  luteosAiAnalyzeOpinionExportOpinionData = (
+    req: OpinionDataCenterListReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<CommonExportResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/exportOpinionData`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionGetOpinionCount
+   * @summary 工单数量统计
+   * @request GET:/api/luteos/ai/analyze/opinion/getOpinionCount
+   * @response `200` `OpinionStatisticsResp` OK
+   */
+  luteosAiAnalyzeOpinionGetOpinionCount = (
+    query?: {
+      /** 分类 */
+      classification?: string;
+      /**
+       * 创建时间结束
+       * @format date
+       */
+      endTime?: string;
+      /**
+       * 创建时间开始
+       * @format date
+       */
+      startTime?: string;
+    },
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionStatisticsResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/getOpinionCount`,
+      method: 'GET',
+      query: query,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionGetOpinionTagCount
+   * @summary 工单标签数量统计
+   * @request GET:/api/luteos/ai/analyze/opinion/getOpinionTagCount
+   * @response `200` `OpinionStatisticsResp` OK
+   */
+  luteosAiAnalyzeOpinionGetOpinionTagCount = (
+    query?: {
+      /** 分类 */
+      classification?: string;
+      /**
+       * 创建时间结束
+       * @format date
+       */
+      endTime?: string;
+      /**
+       * 创建时间开始
+       * @format date
+       */
+      startTime?: string;
+    },
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionStatisticsResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/getOpinionTagCount`,
+      method: 'GET',
+      query: query,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionGetOpinionTrendCount
+   * @summary 工单趋势数量统计
+   * @request GET:/api/luteos/ai/analyze/opinion/getOpinionTrendCount
+   * @response `200` `OpinionStatisticsResp` OK
+   */
+  luteosAiAnalyzeOpinionGetOpinionTrendCount = (
+    query?: {
+      /** 分类 */
+      classification?: string;
+      /**
+       * 创建时间结束
+       * @format date
+       */
+      endTime?: string;
+      /**
+       * 创建时间开始
+       * @format date
+       */
+      startTime?: string;
+    },
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionStatisticsResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/getOpinionTrendCount`,
+      method: 'GET',
+      query: query,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionHotNews
+   * @summary 首页-获取最新新闻
+   * @request GET:/api/luteos/ai/analyze/opinion/hotNews
+   * @response `200` `(OpinionDataResp)[]` OK
+   */
+  luteosAiAnalyzeOpinionHotNews = (params: RequestParams = {}) =>
+    this.request<OpinionDataResp[], any>({
+      path: `/api/luteos/ai/analyze/opinion/hotNews`,
+      method: 'GET',
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionClassificationMonitor
+   * @summary 舆情来源分布-新闻/社媒
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionClassificationMonitor
+   * @response `200` `OpinionClassificationBeanResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionClassificationMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionClassificationBeanResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionClassificationMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionCountryMonitor
+   * @summary 国家分布
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionCountryMonitor
+   * @response `200` `OpinionCountryResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionCountryMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionCountryResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionCountryMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionLevelMonitor
+   * @summary 舆情等级分布
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionLevelMonitor
+   * @response `200` `OpinionLevelResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionLevelMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionLevelResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionLevelMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionMonitor
+   * @summary 工单实时监测
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionMonitor
+   * @response `200` `OpinionMonitoringResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionMonitoringResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionPrTagMonitor
+   * @summary 问题分布
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionPrTagMonitor
+   * @response `200` `OpinionPrTagResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionPrTagMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionPrTagResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionPrTagMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionSmPlatformMonitor
+   * @summary 社媒来源平台分布（Top10+其他，饼图/柱状图共用）
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionSmPlatformMonitor
+   * @response `200` `OpinionSmPlatformResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionSmPlatformMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionSmPlatformResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionSmPlatformMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionSpuCateMonitor
+   * @summary 产品分布
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionSpuCateMonitor
+   * @response `200` `OpinionSpuCateResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionSpuCateMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionSpuCateResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionSpuCateMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-监控
+   * @name LuteosAiAnalyzeOpinionMonitoringQueryOpinionTrendMonitor
+   * @summary 工单数量趋势
+   * @request POST:/api/luteos/ai/analyze/opinion/monitoring/queryOpinionTrendMonitor
+   * @response `200` `OpinionTrendResp` OK
+   */
+  luteosAiAnalyzeOpinionMonitoringQueryOpinionTrendMonitor = (
+    req: OpinionMonitoringReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionTrendResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/monitoring/queryOpinionTrendMonitor`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionQueryExecutorList
+   * @summary 查询执行者列表
+   * @request POST:/api/luteos/ai/analyze/opinion/queryExecutorList
+   * @response `200` `ExecutorBeanListResp` OK
+   */
+  luteosAiAnalyzeOpinionQueryExecutorList = (params: RequestParams = {}) =>
+    this.request<ExecutorBeanListResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/queryExecutorList`,
+      method: 'POST',
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionQueryJournalismList
+   * @summary 新闻社媒数据列表
+   * @request POST:/api/luteos/ai/analyze/opinion/queryJournalismList
+   * @response `200` `OpinionDataListResp` OK
+   */
+  luteosAiAnalyzeOpinionQueryJournalismList = (
+    req: OpinionDataListReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionDataListResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/queryJournalismList`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionQueryList
+   * @summary 舆情数据列表
+   * @request POST:/api/luteos/ai/analyze/opinion/queryList
+   * @response `200` `OpinionDataListResp` OK
+   */
+  luteosAiAnalyzeOpinionQueryList = (req: OpinionDataListReq, params: RequestParams = {}) =>
+    this.request<OpinionDataListResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/queryList`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionQueryOpinionDataCenterList
+   * @summary 查询舆情数据中心列表
+   * @request POST:/api/luteos/ai/analyze/opinion/queryOpinionDataCenterList
+   * @response `200` `OpinionDataCenterListResp` OK
+   */
+  luteosAiAnalyzeOpinionQueryOpinionDataCenterList = (
+    req: OpinionDataCenterListReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionDataCenterListResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/queryOpinionDataCenterList`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionQueryOpinionParamList
+   * @summary 查询条件参数列表
+   * @request POST:/api/luteos/ai/analyze/opinion/queryOpinionParamList
+   * @response `200` `OpinionParamListResp` OK
+   */
+  luteosAiAnalyzeOpinionQueryOpinionParamList = (
+    req: OpinionParamReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionParamListResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/queryOpinionParamList`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionQueryTagTree
+   * @summary 查询标签树结构
+   * @request POST:/api/luteos/ai/analyze/opinion/queryTagTree
+   * @response `200` `OpinionTagTreeResp` OK
+   */
+  luteosAiAnalyzeOpinionQueryTagTree = (req: OpinionTagTreeReq, params: RequestParams = {}) =>
+    this.request<OpinionTagTreeResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/queryTagTree`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * @description 待译正文须由前端传入。成功则落库并返回译文与 contentSignature（SHA-256）；失败不建记录，返回 10002163。相同 opinionUniqueCode+正文 命中缓存直接返回。
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionTranslationSubmit
+   * @summary 提交舆情正文翻译
+   * @request POST:/api/luteos/ai/analyze/opinion/translation/submit
+   * @response `200` `OpinionTranslationResp` OK
+   */
+  luteosAiAnalyzeOpinionTranslationSubmit = (
+    req: OpinionTranslationSubmitReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<OpinionTranslationResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/translation/submit`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionUpdateStatus
+   * @summary 修改舆情数据状态
+   * @request POST:/api/luteos/ai/analyze/opinion/updateStatus
+   * @response `200` `CommonRespBoolean` OK
+   */
+  luteosAiAnalyzeOpinionUpdateStatus = (req: OpinionDataStatusReq, params: RequestParams = {}) =>
+    this.request<CommonRespBoolean, any>({
+      path: `/api/luteos/ai/analyze/opinion/updateStatus`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionWorkOrderExportWorkOrder
+   * @summary 导出工单
+   * @request POST:/api/luteos/ai/analyze/opinion/workOrder/exportWorkOrder
+   * @response `200` `CommonExportResp` OK
+   */
+  luteosAiAnalyzeOpinionWorkOrderExportWorkOrder = (
+    req: WorkOrderListReq,
+    params: RequestParams = {},
+  ) =>
+    this.request<CommonExportResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/workOrder/exportWorkOrder`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionWorkOrderList
+   * @summary 工单列表
+   * @request POST:/api/luteos/ai/analyze/opinion/workOrder/list
+   * @response `200` `WorkOrderListResp` OK
+   */
+  luteosAiAnalyzeOpinionWorkOrderList = (req: WorkOrderListReq, params: RequestParams = {}) =>
+    this.request<WorkOrderListResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/workOrder/list`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionWorkOrderOperate
+   * @summary 操作工单
+   * @request POST:/api/luteos/ai/analyze/opinion/workOrder/operate
+   * @response `200` `WorkOrderOperateResp` OK
+   */
+  luteosAiAnalyzeOpinionWorkOrderOperate = (req: WorkOrderOperateReq, params: RequestParams = {}) =>
+    this.request<WorkOrderOperateResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/workOrder/operate`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionWorkOrderQueryLog
+   * @summary 舆情工单日志
+   * @request POST:/api/luteos/ai/analyze/opinion/workOrder/queryLog
+   * @response `200` `WorkOrderLogResp` OK
+   */
+  luteosAiAnalyzeOpinionWorkOrderQueryLog = (
+    query?: {
+      /** 工单编码 */
+      workOrderCode?: string;
+    },
+    params: RequestParams = {},
+  ) =>
+    this.request<WorkOrderLogResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/workOrder/queryLog`,
+      method: 'POST',
+      query: query,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags 舆情系统-工单数据
+   * @name LuteosAiAnalyzeOpinionWorkOrderSave
+   * @summary 创建工单
+   * @request POST:/api/luteos/ai/analyze/opinion/workOrder/save
+   * @response `200` `WorkOrderSaveResp` OK
+   */
+  luteosAiAnalyzeOpinionWorkOrderSave = (req: WorkOrderSaveReq, params: RequestParams = {}) =>
+    this.request<WorkOrderSaveResp, any>({
+      path: `/api/luteos/ai/analyze/opinion/workOrder/save`,
+      method: 'POST',
+      body: req,
+      type: ContentType.Json,
+      ...params,
+    });
+}
